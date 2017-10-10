@@ -1,0 +1,62 @@
+name 
+{%- if logged_in -%}
+,code, id
+{%- endif -%}
+,title_ca, title_es, title_en
+{%- if logged_in -%}
+	, state, private, automatic, update_string
+{%- endif -%}
+,license_title, date_published
+{%- if logged_in -%}
+, date_modified
+{%- endif -%}
+, organization_parent_name_ca, organization_name_ca, frequency, total_views, total_downloads, tags_list, fuente
+{%- if logged_in -%}
+	, author, department, maintainer, maintainer_tel, maintainer_email, broadcasting_management, broadcasting_department, broadcasting_maintainer, broadcasting_maintainer_tel, broadcasting_maintainer_email
+{%- endif -%}
+, url_tornada_ca, url_tornada_es, url_tornada_en, notes_ca, notes_es, notes_en, url_busqueda_ca, url_busqueda_es, url_busqueda_en
+{%- if logged_in -%}
+	,observations
+{%- endif -%}
+		
+{%- for format in formats -%}
+	, {{ format }}
+{%- endfor -%}
+{%- for year in range (year_from, year_to) -%}
+	, {{ year }}
+{%- endfor -%}
+
+{% for package in packages %}
+{{ package.name }}
+{%- if logged_in -%}
+,{{ package.code }}, {{ package.id }}
+{%- endif -%}
+,"{{ package.title_translated.ca | safe }}", "{{ package.title_translated.es | safe }}", "{{ package.title_translated.en | safe }}"
+{%- if logged_in -%}
+	,{{ package.state }} ,{{ package.private }}, {{package.automatic}}, {{ package.update_string }}
+{%- endif -%}
+,"{{ package.license_title | safe }}", {{package.fecha_publicacion}}
+{%- if logged_in -%}
+	, {{package.metadata_modified[0:10]}}
+{%- endif -%}
+{%- if package.organization.parent -%}
+	, "{{ package.organization.parent.display_name | safe }}"
+{%- else -%}
+	,
+{%- endif -%}
+, "{{ package.organization.display_name | safe }}", "{{ package.frequency }}", {{ package.tracking_total }}, {{ package.downloads }}, "{{ package.flattened_tags | safe }}", "{{ package.fuente | safe }}"
+{%- if logged_in -%}
+	,"{{ package.author | safe }}", "{{ package.department | safe }}", "{{ package.maintainer | safe }}", "{{ package.maintainer_tel | safe }}", "{{ package.maintainer_email | safe  }}", "{{ package.broadcasting_management | safe }}", "{{ package.broadcasting_department | safe }}", "{{ package.broadcasting_maintainer | safe }}", "{{ package.broadcasting_maintainer_tel | safe }}", "{{ package.broadcasting_maintainer_email | safe }}"
+{%- endif -%}
+, "{{ package.url_tornada.ca }}", "{{ package.url_tornada.es }}", "{{ package.url_tornada.en }}", "{{ package.notes_translated.ca | safe }}", "{{ package.notes_translated.es | safe  }}", "{{ package.notes_translated.en | safe }}", {{site_url}}ca/dataset?q=&name={{ package.name }}, {{site_url}}es/dataset?q=&name={{ package.name }}, {{site_url}}en/dataset?q=&name={{ package.name }}
+{%- if logged_in -%}
+	, "{{ package.observations | safe }}"
+{%- endif -%}	
+{%- for key,value in package['formats'].iteritems() -%}
+	, {{ value }}
+{%- endfor -%}
+{%- for key,value in package['years'].iteritems() -%}
+	, {{ value }}
+{%- endfor -%}
+
+{% endfor -%}

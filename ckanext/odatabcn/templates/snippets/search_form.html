@@ -1,0 +1,45 @@
+{% ckan_extends %}
+
+	
+  {% block search_input %}
+    <div class="search-input control-group {{ search_class }}">
+	  <label for="q" class="hidden">{{ _('Search') }}</label>
+      <input type="text" class="search" name="q" value="{{ query }}" autocomplete="off" placeholder="{{ placeholder }}">
+      {% block search_input_button %}
+		{{ super() }}
+      {% endblock %}
+    </div>
+  {% endblock %}
+
+
+  {% block search_facets %}
+    {% if facets %}
+      <p class="filter-list">
+        {% for field in facets.fields %}
+          {% set search_facets_items = facets.search.get(field)['items'] %}
+          <span class="facet">{{ facets.titles.get(field) }}:</span>
+          {% for value in facets.fields[field] %}
+            <span class="filtered pill">
+              {%- if facets.translated_fields and facets.translated_fields.has_key((field,value)) -%}
+                {{ facets.translated_fields[(field,value)] }}
+              {%- else -%}
+                {{ _(h.list_dict_filter(search_facets_items, 'name', 'display_name', value)) }}
+              {%- endif %}
+              <a href="{{ facets.remove_field(field, value) }}" class="remove" title="{{ _('Remove') }}"><i class="icon-remove"></i></a>
+            </span>
+          {% endfor %}
+        {% endfor %}
+        {% if c.group_dict.name %}
+          {% set url_base = h.url_for(controller='package', action='search') %}  
+			    {% set href = url_base + '?' + request.query_string if request.query_string else url_base %}
+        
+          <span class="facet">{{ _('Organization') }}:</span>
+          <span class="filtered pill">
+            {{ h.get_translated(c.group_dict, 'title') }}
+            <a href="{{ href }}" class="remove" title="{{ _('Remove') }}"><i class="icon-remove"></i></a>
+          </span>
+        {% endif %}
+      </p>     
+      <a class="show-filters btn">{{ _('Filter Results') }}</a>
+    {% endif %}
+  {% endblock %}
