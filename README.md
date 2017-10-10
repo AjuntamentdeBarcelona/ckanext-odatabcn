@@ -15,9 +15,11 @@ It also provides additional functionalities:
 
 #### Commands
 
-Enables console commands that are executed through cron jobs:
+This plugin also enables console commands that are executed through cron jobs:
  - `paster odatabcn update-tracking`: update resource ids on the tracking_summary table
  - `paster odatabcn update-dataset-total`: update the number of datasets published and deactivated last month on the odb_dataset_total custom table
+ 
+The shell scripts that are included on crontab can be found inside the `scripts` folder.
 
 ### EditFieldsPlugin
 
