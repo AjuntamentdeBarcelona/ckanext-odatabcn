@@ -57,13 +57,25 @@ class Odatabcn(CkanCommand):
 					ELSE split_part(t.url, '/', 8)
 					END AS resource_id
 					FROM tracking_summary t 
-					LEFT JOIN resource r ON r.url = t.url
-					WHERE t.tracking_type='resource' AND r.state = 'active' AND t.url = ts.url AND t.tracking_date = ts.tracking_date)
+					LEFT JOIN resource r ON r.url = t.url AND r.state = 'active' 
+					WHERE t.tracking_type='resource' AND t.url = ts.url AND t.tracking_date = ts.tracking_date
+					ORDER BY created ASC LIMIT 1)
 				WHERE resource_id IS NULL
 				AND tracking_type = 'resource';'''
 		model.Session.execute(sql)
 		model.Session.commit()
-		print 'Se han actualizado los IDs de los recursos en la tabla tracking_summary'
+		print 'Resource IDs have been updated on tracking_summary'
+		
+		# Insert absolute view count
+		sql_count = '''UPDATE tracking_summary ts
+					SET count_absolute = (SELECT COUNT(*)
+						FROM tracking_raw r
+						WHERE r.url = ts.url
+						AND CAST(r.access_timestamp as Date) = ts.tracking_date)
+					WHERE ts.count_absolute IS NULL;'''
+		model.Session.execute(sql_count)
+		model.Session.commit()
+		print 'Absolute view counts have been updated on tracking_summary'
 		
 	def update_dataset_total(self):
 	
