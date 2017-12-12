@@ -49,10 +49,12 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 
 	# Add custom facets
 	def dataset_facets(self, facets_dict, package_type):
+		facets_dict['geolocation'] = toolkit._('Geolocation')
 		facets_dict['frequency'] = toolkit._('Frequency')
 		return facets_dict
 		
-	def organization_facets(self, facets_dict, organization_type, package_type):	
+	def organization_facets(self, facets_dict, organization_type, package_type):
+		facets_dict['geolocation'] = toolkit._('Geolocation')	
 		facets_dict['frequency'] = toolkit._('Frequency')
 		return facets_dict
 
@@ -125,13 +127,15 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 		ckan_conn_string = "host='%s' dbname='%s' user='%s' password='%s'" % (dbc['db_host'], dbc['db_name'], dbc['db_user'], dbc['db_pass'])
 		ckan_conn = psycopg2.connect(ckan_conn_string)
 		ckan_cursor = ckan_conn.cursor()
-		ckan_cursor.execute("""select sum(count) from tracking_summary t inner join resource r on t.resource_id=r.id where tracking_type='resource' AND r.id=%s""", (resource_dict['id'],))
+		ckan_cursor.execute("""select sum(count), sum(count_absolute) from tracking_summary t inner join resource r on t.resource_id=r.id where tracking_type='resource' AND r.id=%s""", (resource_dict['id'],))
 		row = ckan_cursor.fetchone()
 
 		if len(row) != 0:
 			resource_dict['downloads'] = row[0]
+			resource_dict['downloads_absolute'] = row[1]
 		else:
 			resource_dict['downloads'] = '0'
+			resource_dict['downloads_absolute'] = '0'
 
 		ckan_cursor.close()
 		ckan_conn.close()
