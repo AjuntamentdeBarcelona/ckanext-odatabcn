@@ -85,6 +85,10 @@ class CSVController(t.BaseController):
 
 		# Incluimos la informacion que necesitamos mostrar para cada dataset
 		for package in packages:
+			for key in package['notes_translated']:
+				if package['notes_translated'][key]:
+					package['notes_translated'][key] = package['notes_translated'][key].replace('\n', ' ').replace('\r', ' ')
+			
 			#Obtenemos las vistas y descargas
 			sql = '''SELECT SUM(count) AS total, package_id 
 						FROM tracking_summary 
@@ -105,6 +109,7 @@ class CSVController(t.BaseController):
 			# y si el dataset esta automatizado
 			flattened_formats = ','
 			downloads = 0
+			downloads_absolute = 0
 			automatic = 'N'
 			if 'update_string' in package and package['update_string']:
 				automatic = 'S'
@@ -116,6 +121,9 @@ class CSVController(t.BaseController):
 					
 				if not (resource['downloads'] == 'None'):
 					downloads += int(resource['downloads'])
+					
+				if 'downloads_absolute' in resource and not (resource['downloads_absolute'] == 'None'):
+					downloads_absolute += int(resource['downloads_absolute'])
 				
 				if automatic == 'N':
 					if (
@@ -128,6 +136,7 @@ class CSVController(t.BaseController):
 					
 			package['flattened_formats'] = flattened_formats
 			package['downloads'] = downloads
+			package['downloads_absolute'] = downloads_absolute
 			package['automatic'] = automatic
 			
 			# Establecemos la tabla de formatos para cada dataset
