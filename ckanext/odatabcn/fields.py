@@ -18,7 +18,8 @@ def delete_private_data(pkg_dict):
 			'broadcasting_management', 
 			'broadcasting_department',
 			'withdraw_date',
-			'withdraw_reason'
+			'withdraw_reason',
+			'metadata_created'
 		)
 	for key in keys:
 		if key in pkg_dict:
