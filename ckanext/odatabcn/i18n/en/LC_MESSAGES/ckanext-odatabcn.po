@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ckan 2.6.0b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2016-10-18 10:37+0100\n"
-"PO-Revision-Date: 2017-09-26 15:01+0200\n"
+"PO-Revision-Date: 2017-11-20 08:50+0100\n"
 "Last-Translator: Isabel Ruiz <isaruizmellado@gmail.com>, 2016\n"
 "Language-Team: Spanish (https://www.transifex.com/okfn/teams/11162/es/)\n"
 "MIME-Version: 1.0\n"
@@ -2058,3 +2058,333 @@ msgstr "What is the Challenge?"
 
 msgid "Novetats Repte"
 msgstr "Challenge News"
+
+msgid "Centres Participants"
+msgstr "Participating Centers"
+
+msgid "Yes_no_map_view"
+msgstr "Yes, no map view"
+
+msgid "Yes_with_map_view"
+msgstr "Yes, with map view"
+
+msgid "Absoluts"
+msgstr "Absolute"
+
+msgid "Activitats econòmiques"
+msgstr "Economic activities"
+
+msgid "Administració"
+msgstr "Administration"
+
+msgid "Agenda diària"
+msgstr "Daily schedule"
+
+msgid "Agraïments"
+msgstr "Thanks"
+
+msgid "Agregats"
+msgstr "Aggregates"
+
+msgid "Altes omissió"
+msgstr "High omission"
+
+msgid "Antiguitat"
+msgstr "Antiquity"
+
+msgid "Arbres"
+msgstr "Trees"
+
+msgid "Àrea metropolitana de Barcelona"
+msgstr "Metropolitan area of Barcelona"
+
+msgid "Associacions"
+msgstr "Associations"
+
+msgid "Ateneus"
+msgstr "Ateneos"
+
+msgid "Baixes"
+msgstr "Low"
+
+msgid "Barris"
+msgstr "Neighborhood"
+
+msgid "Base cartogràfica"
+msgstr "Map base"
+
+msgid "Benzineres"
+msgstr "Gas stations"
+
+msgid "Canvis domicili"
+msgstr "Changes of address"
+
+msgid "Càrrecs electes"
+msgstr "Elected positions"
+
+msgid "Carrer 10"
+msgstr "Street 10"
+
+msgid "Carrer 20"
+msgstr "Street 20"
+
+msgid "Carrer 30"
+msgstr "Street 30"
+
+msgid "Cementeris"
+msgstr "Cemeteries"
+
+msgid "Centres comerciales"
+msgstr "Malls"
+
+msgid "Centres informació"
+msgstr "Information centers"
+
+msgid "Ciclomotors"
+msgstr "Mopeds"
+
+msgid "Ciutadania"
+msgstr "Citizenship"
+
+msgid "Codis"
+msgstr "Codes"
+
+msgid "Comissionats"
+msgstr "Commissioners"
+
+msgid "Companyies serveis"
+msgstr "Services companies"
+
+msgid "Conservació"
+msgstr "Conservation"
+
+msgid "Consultes"
+msgstr "Queries"
+
+msgid "Contenidors reciclatge"
+msgstr "Recycling container"
+
+msgid "Contractes compravenda"
+msgstr "Contracts for sale"
+
+msgid "Contractes lloguer"
+msgstr "Rental contracts"
+
+msgid "Defuncions"
+msgstr "Deaths"
+
+msgid "Densitat"
+msgstr "Density"
+
+msgid "Desagregats"
+msgstr "Disaggregated"
+
+msgid "Difusió"
+msgstr "Diffusion"
+
+msgid "Documents"
+msgstr "Documents"
+
+msgid "Domicilis"
+msgstr "Domiciles"
+
+msgid "Dutxes"
+msgstr "Showers"
+
+msgid "Edats"
+msgstr "Ages"
+
+msgid "Edats quinquennals"
+msgstr "Five-year ages"
+
+msgid "Eleccions autonòmiques"
+msgstr "Regional elections"
+
+msgid "Eleccions europees"
+msgstr "European elections"
+
+msgid "Eleccions generals"
+msgstr "General elections"
+
+msgid "Eleccions locals"
+msgstr "Local elections"
+
+msgid "Electors"
+msgstr "Electors"
+
+msgid "En construcció"
+msgstr "In construction"
+
+msgid "Energia"
+msgstr "Energy"
+
+msgid "Entitats usuàries"
+msgstr "User entities"
+
+msgid "Escales mecàniques"
+msgstr "Mechanic stairs"
+
+msgid "Espais creació"
+msgstr "Creation spaces"
+
+msgid "Esperança vida"
+msgstr "Hope life"
+
+msgid "Estacions autobusos"
+msgstr "Bus stations"
+
+msgid "Fàbriques creació"
+msgstr "Creation factories"
+
+msgid "Formació"
+msgstr "Training"
+
+msgid "Geoservei"
+msgstr "Geoservice"
+
+msgid "Gerents"
+msgstr "Managers"
+
+msgid "Grans grups"
+msgstr "Large groups"
+
+msgid "Habitacions"
+msgstr "Bedrooms"
+
+msgid "Immigració"
+msgstr "Immigration"
+
+msgid "Incidències"
+msgstr "Incidences"
+
+msgid "Informació"
+msgstr "Information"
+
+msgid "Inscripcions"
+msgstr "Inscriptions"
+
+msgid "Interès local"
+msgstr "Local interest"
+
+msgid "Itineraris"
+msgstr "Itineraries"
+
+msgid "Lloguer mensual"
+msgstr "Monthly rent"
+
+msgid "Locals"
+msgstr "Local"
+
+msgid "Locals cadastrals"
+msgstr "Cadastral premises"
+
+msgid "Locals comercials"
+msgstr "Commercial premises"
+
+msgid "Manteniment"
+msgstr "Maintenance"
+
+msgid "Mapa àmbits"
+msgstr "Map areas"
+
+msgid "Mapa ciutat"
+msgstr "City map"
+
+msgid "Mapa retolació"
+msgstr "Map lettering"
+
+msgid "Mapa temàtic"
+msgstr "Thematic map"
+
+msgid "Mapa viabilitat"
+msgstr "Viability map"
+
+msgid "Matriculacions"
+msgstr "Registrations"
+
+msgid "Metres quadrats"
+msgstr "Square meter"
+
+msgid "Mitjana"
+msgstr "Average"
+
+msgid "Mitjans comunicació"
+msgstr "Communication means"
+
+msgid "Mobilitat"
+msgstr "Mobility"
+
+msgid "Nacionalitat"
+msgstr "Nationality"
+
+msgid "Nivell acadèmic"
+msgstr "Academic level"
+
+msgid "Nombre immobles"
+msgstr "Real estate number"
+
+msgid "Número plantes sobre rasant"
+msgstr "Number of plants above ground"
+
+msgid "Número plantes sota rasant"
+msgstr "Number of floors below ground"
+
+msgid "Olis"
+msgstr "Oils"
+
+msgid "Orografia"
+msgstr "Orography"
+
+msgid "Padró"
+msgstr "Census"
+
+msgid "Parades bus"
+msgstr "Bus stops"
+
+msgid "Parades transport públic"
+msgstr "Stops public transport"
+
+msgid "Patis escolars"
+msgstr "School playgrounds"
+
+msgid "Pensió jubilació"
+msgstr "Retirement pension"
+
+msgid "Pensions invalidesa"
+msgstr "Disability pension"
+
+msgid "Per barris"
+msgstr "By neighborhoods"
+
+msgid "Per lloc destí"
+msgstr "By destination place"
+
+msgid "Per lloc naixement"
+msgstr "By birthplace"
+
+msgid "Per lloc procedència"
+msgstr "By place of origin"
+
+msgid "Per nacionalitat"
+msgstr "By nationality"
+
+msgid "Per propietari"
+msgstr "By owner"
+
+msgid "Per sexe"
+msgstr "By sex"
+
+msgid "Plànol"
+msgstr "Map"
+
+msgid "Relleu"
+msgstr "Relief"
+
+msgid "Sanitat"
+msgstr "Health"
+
+msgid "Servei geogràfic"
+msgstr "Geographic service"
+
+msgid "Tram"
+msgstr "Section"

@@ -259,7 +259,7 @@ a:hover, a:focus {
 }
 
 .masthead .nav > li {
-	width: 20%;
+	width: 16.66%;
 }
 
 .masthead .nav > li > a, .masthead .nav > li > div > a {
@@ -1205,7 +1205,7 @@ a.tag:hover {
 	color: #fff;
 }
 
-.secondary .module:first-child + .module .module-heading, .secondary .module:first-child + .module + .module + .module .module-heading {
+.secondary .module:first-child + .module .module-heading, .secondary .module:first-child + .module + .module + .module .module-heading, .secondary .module:first-child + .module + .module + .module + .module + .module .module-heading {
 	background: #5342AE;	
 }
 
@@ -1896,4 +1896,9 @@ label[for="include_children"] {
 
 small {
 font-size: 1.2rem;
+}
+
+/**Ocultar el filtro superior en el DataExplorer**/
+.resource-view-filters {
+    display: none;
 }

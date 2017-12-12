@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ckan 2.6.0b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2016-10-18 10:37+0100\n"
-"PO-Revision-Date: 2017-09-26 14:57+0200\n"
+"PO-Revision-Date: 2017-11-20 08:51+0100\n"
 "Last-Translator: Isabel Ruiz <isaruizmellado@gmail.com>, 2016\n"
 "Language-Team: Spanish (https://www.transifex.com/okfn/teams/11162/es/)\n"
 "MIME-Version: 1.0\n"
@@ -383,12 +383,8 @@ msgstr "IBI"
 msgid "Higiene personal"
 msgstr "Higiene personal"
 
-msgid ""
-"Equipaments de mitjans de comunicació i serveis relacionats de la ciutat de "
-"Barcelona"
-msgstr ""
-"Equipamientos de medios de comunicación y servicios relacionados de la "
-"ciudad de Barcelona"
+msgid "Equipaments de mitjans de comunicació i serveis relacionats de la ciutat de Barcelona"
+msgstr "Equipamientos de medios de comunicación y servicios relacionados de la ciudad de Barcelona"
 
 msgid "Galeries d-art"
 msgstr "Galerías de arte"
@@ -1269,11 +1265,8 @@ msgstr "Rutas"
 msgid "Gossos"
 msgstr "Perros"
 
-msgid ""
-"Equipaments de medi ambient i serveis relacionats de la ciutat de Barcelona"
-msgstr ""
-"Equipamientos de medio ambiente y servicios relacionados de la ciudad de "
-"Barcelona"
+msgid "Equipaments de medi ambient i serveis relacionats de la ciutat de Barcelona"
+msgstr "Equipamientos de medio ambiente y servicios relacionados de la ciudad de Barcelona"
 
 msgid "Plànol urbanístic"
 msgstr "Plano urbanístico"
@@ -2036,8 +2029,7 @@ msgid "Checked"
 msgstr "Comprobado"
 
 msgid "Linked data - data URIs and linked to other data (e.g. RDF)"
-msgstr ""
-"Datos vinculados - URIs de datos y enlazados a otros datos (por ejemplo, RDF)"
+msgstr "Datos vinculados - URIs de datos y enlazados a otros datos (por ejemplo, RDF)"
 
 msgid "Linkable data - served at URIs (e.g. RDF)"
 msgstr "Datos enlazables - servidos en URIs (por ejemplo, RDF)"
@@ -2073,8 +2065,7 @@ msgid "to be reset"
 msgstr "sea reestablecida"
 
 msgid "Please click the following link to confirm this request"
-msgstr ""
-"Por favor, haga clic en el siguiente enlace para confirmar esta solicitud"
+msgstr "Por favor, haga clic en el siguiente enlace para confirmar esta solicitud"
 
 msgid "Have a nice day"
 msgstr "Que tenga un buen día"
@@ -2163,8 +2154,20 @@ msgstr "Sin mantenimiento"
 msgid "Frequency change"
 msgstr "Cambio de frecuencia"
 
-msgid "Map visualization"
-msgstr "Visualiza mapa"
+msgid "Geolocation"
+msgstr "Geolocalización"
+
+msgid "Yes, no map view"
+msgstr "Sí, sin visualización en mapa"
+
+msgid "Yes, with map view"
+msgstr "Sí, con visualización en mapa"
+
+msgid "Yes_no_map_view"
+msgstr "Sí, sin visualización en mapa"
+
+msgid "Yes_with_map_view"
+msgstr "Sí, con visualización en mapa"
 
 msgid "Cap"
 msgstr "Ninguno"
@@ -2276,3 +2279,330 @@ msgstr "¿Qué es el Reto?"
 
 msgid "Novetats Repte"
 msgstr "Novedades Reto"
+
+msgid "Centres Participants"
+msgstr "Centros Participantes"
+
+msgid "Map visualization"
+msgstr "Visualiza mapa"
+
+msgid "Absoluts"
+msgstr "Absolutos"
+
+msgid "Activitats econòmiques"
+msgstr "Actividades económicas"
+
+msgid "Administració"
+msgstr "Administración"
+
+msgid "Agenda diària"
+msgstr "Agenda diaria"
+
+msgid "Agraïments"
+msgstr "Agradecimientos"
+
+msgid "Agregats"
+msgstr "Agredados"
+
+msgid "Altes omissió"
+msgstr "Altas omisión"
+
+msgid "Antiguitat"
+msgstr "Antigüedad"
+
+msgid "Arbres"
+msgstr "Árboles"
+
+msgid "Àrea metropolitana de Barcelona"
+msgstr "Área metropolitana de Barcelona"
+
+msgid "Associacions"
+msgstr "Asociaciones"
+
+msgid "Ateneus"
+msgstr "Ateneos"
+
+msgid "Baixes"
+msgstr "Bajas"
+
+msgid "Barris"
+msgstr "Barrios"
+
+msgid "Base cartogràfica"
+msgstr "Base cartográfica"
+
+msgid "Benzineres"
+msgstr "Gasolineras"
+
+msgid "Canvis domicili"
+msgstr "Cambios domicilio"
+
+msgid "Càrrecs electes"
+msgstr "Cargos electos"
+
+msgid "Carrer 10"
+msgstr "Calle 10"
+
+msgid "Carrer 20"
+msgstr "Calle 20"
+
+msgid "Carrer 30"
+msgstr "Calle 30"
+
+msgid "Cementeris"
+msgstr "Cementerios"
+
+msgid "Centres comerciales"
+msgstr "Centros comerciales"
+
+msgid "Centres informació"
+msgstr "Centros información"
+
+msgid "Ciclomotors"
+msgstr "Ciclomotores"
+
+msgid "Ciutadania"
+msgstr "Ciudadanía"
+
+msgid "Codis"
+msgstr "Códigos"
+
+msgid "Comissionats"
+msgstr "Comisionados"
+
+msgid "Companyies serveis"
+msgstr "Compañías servicios"
+
+msgid "Conservació"
+msgstr "Conservación"
+
+msgid "Consultes"
+msgstr "Consultas"
+
+msgid "Contenidors reciclatge"
+msgstr "Contenedores reciclaje"
+
+msgid "Contractes compravenda"
+msgstr "Contratos compraventa"
+
+msgid "Contractes lloguer"
+msgstr "Contratos alquiler"
+
+msgid "Defuncions"
+msgstr "Defunciones"
+
+msgid "Densitat"
+msgstr "Densidad"
+
+msgid "Desagregats"
+msgstr "Desagregados"
+
+msgid "Difusió"
+msgstr "Difusión"
+
+msgid "Documents"
+msgstr "Documentos"
+
+msgid "Domicilis"
+msgstr "Domicilios"
+
+msgid "Dutxes"
+msgstr "Duchas"
+
+msgid "Edats"
+msgstr "Edades"
+
+msgid "Edats quinquennals"
+msgstr "Edades quinquenales"
+
+msgid "Eleccions autonòmiques"
+msgstr "Elecciones autonómicas"
+
+msgid "Eleccions europees"
+msgstr "Elecciones europeas"
+
+msgid "Eleccions generals"
+msgstr "Elecciones generales"
+
+msgid "Eleccions locals"
+msgstr "Elecciones locales"
+
+msgid "Electors"
+msgstr "Electores"
+
+msgid "En construcció"
+msgstr "En construcción"
+
+msgid "Energia"
+msgstr "Energía"
+
+msgid "Entitats usuàries"
+msgstr "Entidades usuarias"
+
+msgid "Escales mecàniques"
+msgstr "Escaleras mecánicas"
+
+msgid "Espais creació"
+msgstr "Espacios creación"
+
+msgid "Esperança vida"
+msgstr "Esperanza vida"
+
+msgid "Estacions autobusos"
+msgstr "Estaciones autobuses"
+
+msgid "Fàbriques creació"
+msgstr "Fábricas creación"
+
+msgid "Formació"
+msgstr "Formación"
+
+msgid "Geoservei"
+msgstr "Geoservicio"
+
+msgid "Gerents"
+msgstr "Gerentes"
+
+msgid "Grans grups"
+msgstr "Grandes grupos"
+
+msgid "Habitacions"
+msgstr "Habitaciones"
+
+msgid "Immigració"
+msgstr "Inmigración"
+
+msgid "Incidències"
+msgstr "Incidencias"
+
+msgid "Informació"
+msgstr "Información"
+
+msgid "Inscripcions"
+msgstr "Inscripciones"
+
+msgid "Interès local"
+msgstr "Interés local"
+
+msgid "Itineraris"
+msgstr "Itinerarios"
+
+msgid "Lloguer mensual"
+msgstr "Alquiler mensual"
+
+msgid "Locals"
+msgstr "Locales"
+
+msgid "Locals cadastrals"
+msgstr "Locales catastrales"
+
+msgid "Locals comercials"
+msgstr "Locales comerciales"
+
+msgid "Manteniment"
+msgstr "Mantenimiento"
+
+msgid "Mapa àmbits"
+msgstr "Mapa ámbitos"
+
+msgid "Mapa ciutat"
+msgstr "Mapa ciudad"
+
+msgid "Mapa retolació"
+msgstr "Mapa rotulación"
+
+msgid "Mapa temàtic"
+msgstr "Mapa temático"
+
+msgid "Mapa viabilitat"
+msgstr "Mapa viabilidad"
+
+msgid "Matriculacions"
+msgstr "Matriculaciones"
+
+msgid "Metres quadrats"
+msgstr "Metros cuadrados"
+
+msgid "Mitjana"
+msgstr "Media"
+
+msgid "Mitjans comunicació"
+msgstr "Medios comunicación"
+
+msgid "Mobilitat"
+msgstr "Movilidad"
+
+msgid "Nacionalitat"
+msgstr "Nacionalidad"
+
+msgid "Nivell acadèmic"
+msgstr "Nivel académico"
+
+msgid "Nombre immobles"
+msgstr "Número inmuebles"
+
+msgid "Número plantes sobre rasant"
+msgstr "Número plantas sobre rasante"
+
+msgid "Número plantes sota rasant"
+msgstr "Número plantas bajo rasante"
+
+msgid "Olis"
+msgstr "Aceites"
+
+msgid "Orografia"
+msgstr "Orografía"
+
+msgid "Padró"
+msgstr "Padrón"
+
+msgid "Parades bus"
+msgstr "Paradas bus"
+
+msgid "Parades transport públic"
+msgstr "Paradas transporte público"
+
+msgid "Patis escolars"
+msgstr "Patios escolares"
+
+msgid "Pensió jubilació"
+msgstr "Pensión jubilación"
+
+msgid "Pensions invalidesa"
+msgstr "Pensiones invalidez"
+
+msgid "Per barris"
+msgstr "Por barrios"
+
+msgid "Per lloc destí"
+msgstr "Por lugar destino"
+
+msgid "Per lloc naixement"
+msgstr "Por lugar nacimiento"
+
+msgid "Per lloc procedència"
+msgstr "Por lugar procedencia"
+
+msgid "Per nacionalitat"
+msgstr "Por nacionalidad"
+
+msgid "Per propietari"
+msgstr "Por propietario"
+
+msgid "Per sexe"
+msgstr "Por sexo"
+
+msgid "Plànol"
+msgstr "Plano"
+
+msgid "Relleu"
+msgstr "Relieve"
+
+msgid "Sanitat"
+msgstr "Sanidad"
+
+msgid "Servei geogràfic"
+msgstr "Servicio geográfico"
+
+msgid "Tram"
+msgstr "Tramo"
