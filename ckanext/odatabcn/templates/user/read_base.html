@@ -1,0 +1,60 @@
+{% ckan_extends %}
+
+{% block user_info %}
+      {% if c.is_myself %}
+		<div class="loading-modal" id="loading-download"></div>
+      <div class="info">
+          <h2 class="module-heading">{{ _('User menu') }}</h2>
+          <dl>
+            <dd>
+               {{ _('Datasets Cataleg') }} <a href="/data/cataleg.csv" class="label" data-format="csv" id="download-csv-catalogue">CSV</a>
+            </dd>
+            <dd>
+               {{ _('Manual Editor') }} <a href="/doc/ManualEditorOpenDataBCN.pdf" class="label" data-format="pdf">PDF</a>
+            </dd>
+            <dd>
+               {{ _('Consultes Usuaris BackOffice') }} <a href="http://www.bcn.cat/cgi-bin/consultesIRIS?id=980" target="_blank" ><span class="dataset-private label label-inverse">IRIS</span></a>
+            </dd>
+            <dd>
+               {{ _('Presentacio Formacio F3') }} <a href="/doc/OpenDataBCN–F3.pdf" class="label" data-format="pdf">PDF</a>
+            </dd>
+			<dd>
+               {{ _('Icona Dades Obertes') }} <a href="/doc/logo_opendata.png" class="label" data-format="png">PNG</a>
+            </dd>
+          </dl>
+      </div>
+     {% endif %}
+
+      <div class="info">
+          <h2 class="module-heading">{{ _('User info') }}</h2>	  
+        <dl>
+        {% if user.name.startswith('http://') or user.name.startswith('https://') %}
+            <dt>{{ _('Open ID') }}</dt>
+            <dd>{{ user.name|urlize(25) }}{# Be great if this just showed the domain #}</dd>
+          {% else %}
+            <dt>{{ _('Username') }}</dt>
+            <dd>{{ user.name }}</dd>
+          {% endif %}
+        </dl>
+        {% if c.is_myself %}
+          <dl>
+            <dt>{{ _('Email') }} <span class="label" title="{{ _('This means only you can see this') }}">{{ _('Private') }}</span></dt>
+            <dd>{{ user.email }}</dd>
+          </dl>
+        {% endif %}
+		
+        <dl>
+          <dt>{{ _('Member Since') }}</dt>
+          <dd>{{ h.render_datetime(user.created) }}</dd>
+        </dl>
+        <dl>
+          <dt>{{ _('State') }}</dt>
+          <dd>{{ _(user.state) }}</dd>
+        </dl>
+        {% if c.is_myself %}
+          <dl>
+            <dt class="key">{{ _('API Key') }} <span class="label" title="{{ _('This means only you can see this') }}">{{ _('Private') }}</span></dt>
+            <dd class="value"><code>{{ user.apikey }}</code></dd>
+          </dl>
+        {% endif %}
+{% endblock %}

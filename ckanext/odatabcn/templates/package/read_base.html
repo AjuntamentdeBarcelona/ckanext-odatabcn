@@ -1,0 +1,103 @@
+{% ckan_extends %}}
+
+{% block pre_primary %}
+
+	<div class="span12">
+      {% if h.check_access('package_update', {'id':pkg.id }) %}
+        {% link_for _('Manage'), controller='package', action='edit', id=pkg.name, class_='btn pull-right manage-button', icon='wrench' %}
+      {% endif %}
+
+      {#{ h.build_nav_icon('dataset_read', _('Dataset'), id=pkg.name) }#}
+      {#{ h.build_nav_icon('dataset_groups', _('Groups'), id=pkg.name) }#}
+      {#{ h.build_nav_icon('dataset_activity', _('Activity Stream'), id=pkg.name) }#}
+
+      {% if c.revision_date %}
+	  
+        <div class="module info alert alert-info">
+          <p class="module-content">
+            {% set timestamp = h.render_datetime(c.revision_date, with_hours=True) %}
+            {% set url = h.url_for(controller='package', action='read', id=pkg.name) %}
+
+            {% trans timestamp=timestamp, url=url %}This is an old revision of this dataset, as edited at {{ timestamp }}. It may differ significantly from the <a href="{{ url }}">current revision</a>.{% endtrans %}
+          </p>
+        </div>
+      {% endif %}
+		
+		
+    <h1 class="page-heading">
+        {{ h.dataset_display_name(pkg) }}
+        {% if pkg.state.startswith('draft') %}
+          [{{ _('Draft') }}]
+        {% endif %}
+        {% if pkg.state == 'deleted' %}
+          [{{ _('Deleted') }}]
+        {% endif %}
+		
+		{% if pkg.private %}
+		  <span class="dataset-private label label-inverse">
+			<i class="icon-lock"></i>
+			{{ _('Private') }}
+		  </span>
+		{% endif %}
+    </h1>
+
+	{% if pkg.organization %}
+    {% set parent = h.group_tree_parents(pkg.organization.name) %}
+	  <ul class="dataset-groups">
+      	{% if parent[0] %}
+			{% set href = h.url_for(controller='organization', action='read', id=parent[0].name) %}  
+		  	<li class="parent">
+				<a href="{{href}}">
+    				{% if parent[0].image_url %}
+        				<i class="{{parent[0].image_url}}"></i>
+    				{% endif %}
+					{{ h.get_translated(parent[0], 'title') }}
+				</a>
+		 	</li>
+      	{% endif %}
+		{% set href = h.url_for(controller='organization', action='read', id=pkg.organization.name) %}
+		{% set organization = h.get_organization(pkg.organization.name) %}
+		<li class="child">
+			<a href="{{href}}">
+				{% if organization.image_url %}
+        			<i class="{{ organization.image_url}}"></i>
+    			{% endif %}
+				{{ h.get_translated(organization, 'title') }}
+			</a>
+		  </li>
+	  </ul>
+	{% endif %}
+
+      {% if pkg.notes %}
+        <div class="notes embedded-content">
+          {{ h.render_markdown(h.get_translated(pkg, 'notes')) }}
+        </div>
+      {% endif %}
+
+    {% snippet "snippets/license.html", pkg_dict=pkg %}
+
+    {# FIXME why is this here? seems wrong #}
+    <span class="insert-comment-thread"></span>
+
+  {% block secondary_help_content %}{% endblock %}
+
+  {% block package_resources %}
+    {% snippet "package/snippets/resources_list.html", pkg=pkg, resources=pkg.resources %}
+  {% endblock %}
+
+  {% block package_tags %}
+    {% snippet "package/snippets/tags.html", tags=pkg.tags %}
+  {% endblock %}
+
+  {% block package_additional_info %}
+    {% snippet "package/snippets/additional_info.html", pkg_dict=pkg %}
+  {% endblock %}
+  
+	    </div>
+  </div>
+  </div>
+<div id="resource-additional-info">
+<div id="content" class="container">
+	<div class="dataset-comments" id="{{pkg.name}}" lang="{{h.lang()}}"></div>
+		
+{% endblock %}

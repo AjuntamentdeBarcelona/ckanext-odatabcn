@@ -1,0 +1,12 @@
+{% ckan_extends %}
+
+{% block social %}
+    {% block social_nav %}
+      <div class="share-dataset">
+		<span class="bcn-icon-comparteix share"></span>
+		<a class="bcn-icon-facebook facebook" href="https://www.facebook.com/sharer.php?u={{ current_url }}" target="_blank"><span>Facebook</span></a>
+		<a class="bcn-icon-twitter twitter" href="https://twitter.com/share?url={{ current_url }}" target="_blank"><span>Twitter</span></a>
+		<a class="bcn-icon-linkedin linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url={{ current_url }}&title=&summary=&source="><span>LinkedIn</span></a>
+      </div>
+    {% endblock %}
+{% endblock %}

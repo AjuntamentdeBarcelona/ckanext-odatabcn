@@ -1,0 +1,537 @@
+# Translations template for ckan.
+# Copyright (C) 2016 ORGANIZATION
+# This file is distributed under the same license as the ckan project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ckan 2.6.0b0\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2016-10-18 10:37+0100\n"
+"PO-Revision-Date: 2017-12-15 12:31+0100\n"
+"Last-Translator: Isabel Ruiz <isaruizmellado@gmail.com>, 2016\n"
+"Language-Team: Spanish (https://www.transifex.com/okfn/teams/11162/es/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.1\n"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "Maintainer Telephone"
+msgstr "Telèfon del Mantenidor"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "Observations"
+msgstr "Observacions"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "File Volum"
+msgstr "Volúm del fitxer"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "Update String"
+msgstr "Cadena actualització"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "little"
+msgstr "Petit"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "big"
+msgstr "Gran"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "middle"
+msgstr "Mitjà"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "IMMEDIATA"
+msgstr "Immediata"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "DIARIA"
+msgstr "Diària"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "SETMANAL"
+msgstr "Setmanal"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "MENSUAL"
+msgstr "Mensual"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "TRIMESTRAL"
+msgstr "Trimestral"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "SEMESTRAL"
+msgstr "Semestral"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "ANUAL"
+msgstr "Anual"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "BIENNAL"
+msgstr "Biennal"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "DECENAL"
+msgstr "Decennal"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "CINC_MINUTS"
+msgstr "Cinc minuts"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "TRENTA_MINUTS"
+msgstr "Trenta minuts"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "UNA_HORA"
+msgstr "Una hora"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "PETICIO_ALCALDIA"
+msgstr "A petició alcaldía"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "PETICIO_NEGOCI"
+msgstr "A petició de negoci"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "BIMESTRAL"
+msgstr "Bimestral"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "SERIE_INTERROMPUDA"
+msgstr "Sèrie interrompuda"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "Frequency"
+msgstr "Freqüència actualització"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "Department"
+msgstr "Departament"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "Management"
+msgstr "Gerència"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "Broadcasting Management"
+msgstr "Gerència de difusió"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "Broadcasting Department"
+msgstr "Departament de difusió"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "Data Origin"
+msgstr "Origen de Dades"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "Broadcast"
+msgstr "Difusió"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "Responsible"
+msgstr "Responsable"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "Responsible Telephone"
+msgstr "Telèfon del Responsable"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "Responsible Email"
+msgstr "Email del Responsable"
+
+#: TAGS FIN
+msgid "Parent"
+msgstr "Pare"
+
+msgid "Recent Views (last 2 weeks)"
+msgstr "Vistes Recents (últimes 2 setmanes)"
+
+msgid "Total Views"
+msgstr "Vistes Totals"
+
+msgid "JSON Catalog (API)"
+msgstr "Catàleg JSON (API)"
+
+msgid "RDF Catalog"
+msgstr "Catàleg RDF"
+
+msgid "Open the dataset catalog in JSON format (API)"
+msgstr "Obre el catàleg de datasets en format JSON (API)"
+
+msgid "Open the dataset catalog in RDF format (DCAT)"
+msgstr "Obre el catàleg de datasets en format RDF (DCAT)"
+
+msgid "Open the informatio of catalog API"
+msgstr "Obre l'información sobre el API del catàleg"
+
+msgid "API Catalog"
+msgstr "API catàleg"
+
+msgid "About this site"
+msgstr "Sobre aquest lloc"
+
+msgid "Dataset catalog"
+msgstr "Catàleg de datasets"
+
+msgid "Present"
+msgstr "Actualitat"
+
+msgid "Open Government access"
+msgstr "Accés a Govern Obert"
+
+msgid "Help"
+msgstr "Ajuda"
+
+msgid "Help us to improve"
+msgstr "Ajudeu-nos a millorar"
+
+msgid "Help Datasets"
+msgstr "Ajuda datasets"
+
+msgid "Interesting links"
+msgstr "Iniciatives relacionades"
+
+msgid "Portal Features"
+msgstr "Característiques del portal"
+
+msgid "Portal news"
+msgstr "Novetats"
+
+msgid "Interviews"
+msgstr "Entrevistes"
+
+msgid "Data visualitzacions"
+msgstr "Visualitzacions de dades"
+
+msgid "Newsletters"
+msgstr "Butlletins"
+
+msgid "Terms of use"
+msgstr "Condicions d'ús"
+
+msgid "Accessibility"
+msgstr "Accessibilitat"
+
+msgid "Site map"
+msgstr "Mapa web"
+
+msgid "Barcelona-s City Hall Open Data Service"
+msgstr "Servei de dades obertes de l'Ajuntament de Barcelona"
+
+msgid "Organizations"
+msgstr "Temes"
+
+msgid "Go to resource"
+msgstr "Descarregar"
+
+msgid "Organization"
+msgstr "Tema"
+
+msgid "Analytics"
+msgstr "Estadístiques"
+
+msgid "Reason"
+msgstr "Motiu"
+
+msgid "Checked"
+msgstr "Comprovat"
+
+msgid "Linked data - data URIs and linked to other data (e.g. RDF)"
+msgstr ""
+"Dades vinculades - URIs de dades i enllaçats a altres dades (per exemple, "
+"RDF)"
+
+msgid "Linkable data - served at URIs (e.g. RDF)"
+msgstr "Dades enllaçables - servits en URIs (per exemple, RDF)"
+
+msgid "Structured data in open format (e.g. CSV)"
+msgstr "Dades estructurades en format obert (per exemple, CSV)"
+
+msgid "Structured data but proprietry format (e.g. Excel)"
+msgstr "Dades estructurades però de format propietari (per exemple, Excel)"
+
+msgid "Unstructured data (e.g. PDF)"
+msgstr "Dades no estructurades (per exemple, PDF)"
+
+msgid "Openness"
+msgstr "Grau d'obertura"
+
+msgid "Data Created"
+msgstr "Data creació"
+
+msgid "Popular"
+msgstr "Popularitat"
+
+msgid "NOT_ESPECIFIED"
+msgstr "No especificat"
+
+msgid "Dear"
+msgstr "Benvolgut"
+
+msgid "You have requested your password on"
+msgstr "Vosté ha solicitat que la contrasenya a"
+
+msgid "to be reset"
+msgstr "sigui restablerta"
+
+msgid "Please click the following link to confirm this request"
+msgstr ""
+"Si us plau, feu clic al següent enllaç per confirmar aquesta sol·licitud"
+
+msgid "Have a nice day"
+msgstr "Que tingui un bon dia"
+
+msgid "Message sent by"
+msgstr "Missatge enviat per"
+
+msgid "Equipaments d-educació"
+msgstr "Equipaments d'educació"
+
+msgid "Arbres d-interès local"
+msgstr "Arbres d'interés local"
+
+msgid "l-Antiga Esquerra de l-Eixample"
+msgstr "l'Antiga Esquerra de l'Eixample"
+
+msgid "la Font d-en Fargues"
+msgstr "la Font d'en Fargues"
+
+msgid "la Vall d-Hebron"
+msgstr "la Vall d'Hebron"
+
+msgid "el Camp de l-Arpa del Clot"
+msgstr "el Camp de l'Arpa del Clot"
+
+msgid "el Camp d-en Grassot i Gràcia Nova"
+msgstr "el Camp d'en Grassot i Gràcia Nova"
+
+msgid "Equipaments de l-Administració"
+msgstr "Equipaments de l'administració"
+
+msgid "Sacrifici d-animals"
+msgstr "Sacrifici d'animals"
+
+msgid "Equipaments d-animals i plantes"
+msgstr "Equipaments d'animales i plantes"
+
+msgid "Deposicions d-animals"
+msgstr "Deposicions d'animals"
+
+msgid "Recollida d-animals"
+msgstr "Recollida d'animals"
+
+msgid "Registre censal d-animals de companyia"
+msgstr "Registre censal d'animals de companyia"
+
+msgid "Equipaments d-associacions"
+msgstr "Equipaments d'associacions"
+
+msgid "Equipaments de centres d-informació"
+msgstr "Equipaments de centres d'informació"
+
+msgid "Equipaments d-esports"
+msgstr "Equipaments d'esports"
+
+msgid "Nivell d-estudis"
+msgstr "Nivell d'estudis"
+
+msgid "Ventiladors d-extracció"
+msgstr "Ventiladors d'extracció"
+
+msgid "Llista d-equipaments de companyies de serveis"
+msgstr "Llista d'equipaments de companyies de serveis"
+
+msgid "Conservació i manteniment d-edificis"
+msgstr "Conservació i manteniment d'edificis"
+
+msgid "Galeries d-art"
+msgstr "Galeries d'art"
+
+msgid "Mapa d-àmbits"
+msgstr "Mapa d'àmbits"
+
+msgid "Densitat d-establiments"
+msgstr "Densitat d'establiments"
+
+msgid "Subdivisions d-habitatges"
+msgstr "Subdivisions d'habitatges"
+
+msgid "Districte d-Horta-Guinardó"
+msgstr "Districte d'Horta-Guinardó"
+
+msgid "Establiments de jocs d-atzar i recreatius"
+msgstr "Establiments de jocs d'atzar i recreatius"
+
+msgid "Rehabilitació d-edificis"
+msgstr "Rehabilitació d'edificis"
+
+msgid "Nombre d-habitacions"
+msgstr "Nombre d'habitacions"
+
+msgid "Peixos d-aquari"
+msgstr "Peixos d'aquari"
+
+msgid "Dipòsits d-aigua"
+msgstr "Dipòsits d'aigua"
+
+msgid "Interiors d-illa"
+msgstr "Interiors d'illa"
+
+msgid "la Nova Esquerra de l-Eixample"
+msgstr "la Nova Esquerra de l'Eixample"
+
+msgid "Conservació de l-edifici"
+msgstr "Conservació de l'edifici"
+
+msgid "Districte de l-Eixample"
+msgstr "Districte de l'Eixample"
+
+msgid "Comerç a l-engròs"
+msgstr "Comerç a l'engròs"
+
+msgid "Jocs a l-aire lliure"
+msgstr "Jocs a l'aire lliure"
+
+msgid "la Dreta de l-Eixample"
+msgstr "La Dreta de l'Eixample"
+
+msgid "Mapa parcel-lari"
+msgstr "Mapa parcel·lari"
+
+msgid "Instal-lacions"
+msgstr "Instal·lacions"
+
+msgid "Il-luminació"
+msgstr "Il·luminació"
+
+msgid "Instal-lacions a la via pública"
+msgstr "Instal·lacions a la via pública"
+
+msgid "Instal-lacions de serveis"
+msgstr "Instal·lacions de serveis"
+
+msgid "The resource has the format"
+msgstr "El recurs té el format"
+
+msgid "because of that receives"
+msgstr "és per això que rep"
+
+msgid "The Dataset contains a file with a format that is equivalent to"
+msgstr "El conjunt de dades conté un arxiu amb un format que és equivalent a"
+
+msgid "points"
+msgstr "punts"
+
+msgid "ascending"
+msgstr "ascendent"
+
+msgid "descending"
+msgstr "descendent"
+
+msgid "Legal notice"
+msgstr "Avís legal"
+
+msgid "Data last modified"
+msgstr "Data última modificació"
+
+msgid "None"
+msgstr "desconegut"
+
+msgid "Manual Editor"
+msgstr "Editor: Manual"
+
+msgid "Datasets Cataleg"
+msgstr "Catàleg: Els meus datasets"
+
+msgid "IRIS incidencias"
+msgstr "IRIS: Consultes a l'Oficina Tècnica"
+
+msgid "User menu"
+msgstr "Menú d'usuari"
+
+msgid "User info"
+msgstr "Informació d'usuari"
+
+msgid "Presentacio Formacio F3"
+msgstr "Presentació Formació F3"
+
+msgid "Downloads"
+msgstr "Descàrregues"
+
+msgid "Publication Date"
+msgstr "Data publicació"
+
+msgid "Withdraw Date"
+msgstr "Data desactivació"
+
+msgid "Withdraw Reason"
+msgstr "Motiu desactivació"
+
+msgid "Obsolete"
+msgstr "Obsolet"
+
+msgid "No maintenance"
+msgstr "Sense manteniment"
+
+msgid "Frequency change"
+msgstr "Canvi de freqüència"
+
+msgid "Geolocation"
+msgstr "Geolocalització"
+
+msgid "Yes, no map view"
+msgstr "Sí, sense visualització a plànol"
+
+msgid "Yes, with map view"
+msgstr "Sí, amb visualització a plànol"
+
+msgid "Yes_no_map_view"
+msgstr "Sí, sense visualització a plànol"
+
+msgid "Yes_with_map_view"
+msgstr "Sí, amb visualització a plànol"
+
+msgid "Cap"
+msgstr "Cap"
+
+msgid "Map viewer"
+msgstr "Map viewer"
+
+msgid "Data Explorer Map"
+msgstr "Mapa de l'Explorador de dades"
+
+msgid "Case stories"
+msgstr "Histories d'ús"
+
+msgid "Reusers"
+msgstr "Reutilitzadors"
+
+msgid "Developers"
+msgstr "Desenvolupadors"
+
+msgid "Data visualizations and applications"
+msgstr "Visualitzacions i aplicacions"
+
+msgid "QUINQUENNAL"
+msgstr "Quinquennal"
+
+msgid "Que es el Repte?"
+msgstr "Què és el Repte?"
+
+msgid "Map visualization"
+msgstr "Visualitza plànol"
+
+msgid "Custom Fields"
+msgstr "Camps Personalitzats"
