@@ -535,3 +535,6 @@ msgstr "Visualitza plànol"
 
 msgid "Custom Fields"
 msgstr "Camps Personalitzats"
+
+msgid "Update Type"
+msgstr "Tipus Actualització"

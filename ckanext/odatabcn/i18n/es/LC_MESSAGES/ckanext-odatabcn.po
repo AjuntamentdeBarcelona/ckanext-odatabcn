@@ -2609,3 +2609,6 @@ msgstr "Tramo"
 
 msgid "Custom Fields"
 msgstr "Campos Personalizados"
+
+msgid "Update Type"
+msgstr "Tipo Actualización"
