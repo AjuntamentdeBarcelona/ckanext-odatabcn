@@ -2388,3 +2388,9 @@ msgstr "Geographic service"
 
 msgid "Tram"
 msgstr "Section"
+
+msgid "Key"
+msgstr "Name"
+
+msgid "Value"
+msgstr "Description"

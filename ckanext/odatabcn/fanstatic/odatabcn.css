@@ -1532,6 +1532,19 @@ label[for="include_children"] {
     width: 100%;
 }
 
+.input-prepend .add-on {
+    height: 30px;
+}
+
+.control-custom .checkbox.btn:before {
+    top: -3px;
+    left: -5px;
+}
+
+.control-custom .checkbox.btn {
+    margin-top: 5px;
+}
+
 
 /** Demo **/
 .debug, #debug-toggle, #debug {

@@ -544,3 +544,12 @@ msgstr "Enllaç a URL"
 
 msgid "View dataset fields description"
 msgstr "Veure descripció dels camps del dataset"
+
+msgid "Dataset fields description"
+msgstr "Descripció dels camps del dataset"
+
+msgid "Key"
+msgstr "Nom"
+
+msgid "Value"
+msgstr "Descripció"

@@ -2618,3 +2618,12 @@ msgstr "Enlace a URL"
 
 msgid "View dataset fields description"
 msgstr "Ver descripción de los campos del dataset"
+
+msgid "Dataset fields description"
+msgstr "Descripción de los campos del dataset"
+
+msgid "Key"
+msgstr "Nombre"
+
+msgid "Value"
+msgstr "Descripción"
