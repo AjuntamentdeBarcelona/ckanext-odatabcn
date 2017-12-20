@@ -37,7 +37,7 @@
                 <a class="resource-url-analytics resource-type-{{ res.resource_type }}" href="{{ res.url }}">
                   {% if res.resource_type in ('listing', 'service') %}
                     <i class="icon icon-eye-open"></i> <span>{{ _('View') }}</span>
-                  {% elif res.format == 'WMS' %}
+                  {% elif res.format == 'WMS' or res.format == 'WMTS' %}
                     <i class="icon icon-link"></i> <span>{{ _('Link to URL') }}</span>
                   {% elif  res.resource_type == 'api' %}
                     <i class="icon icon-key"></i> {{ _('API Endpoint') }}
