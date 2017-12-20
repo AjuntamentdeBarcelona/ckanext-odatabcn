@@ -19,6 +19,9 @@
             {% if res.has_views %}
               <i class="icon-download"></i>
               {{ _('Download') }}
+            {% elif res.format == 'WMS' %}
+              <i class="icon-link"></i>
+              {{ _('Link to URL') }}
             {% else %}
               <i class="icon-download"></i>
               {{ _('Go to resource') }}

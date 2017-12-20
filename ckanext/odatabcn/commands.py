@@ -1,5 +1,7 @@
 import datetime
 import logging
+import mmap
+import os 
 import sys
 
 from ckan import model
@@ -142,5 +144,37 @@ class Odatabcn(CkanCommand):
 			model.Session.execute(sql_insert)
 			model.Session.commit()
 			print 'Dataset totals for last month have been saved to database'
+			
+	def get_new_tags(self):
+
+		first_day = datetime.date.today().replace(week=1)
 		
+		sql = '''SELECT MIN(pt.revision_timestamp), t.name 
+							FROM tag t
+							INNER JOIN package_tag_revision pt ON pt.tag_id =  t.id 
+								AND pt.revision_timestamp >= '{0}'
+							INNER JOIN package p ON p.id = pt.package_id 
+							LEFT JOIN package_tag_revision pt2 ON pt2.tag_id = t.id 
+								AND pt2.revision_timestamp < '{0}'
+							WHERE pt2.tag_id IS NULL
+							GROUP BY t.name
+							ORDER BY t.name ASC;'''
+		sql = sql.format(first_day)
+		results = model.Session.execute(sql).fetchall()
 		
+		if len(results) > 0:
+		
+			lang_dir = os.path.dirname(os.path.realpath(__file__)) + '/i18n'
+			lang_file = 
+			f = open('example.txt')
+			s = mmap.mmap(f.fileno(), 0, access=mmap.ACCESS_READ)
+			if s.find('blabla') != -1:
+			print('true')
+		
+			for row in results:
+			
+				
+		
+		else:
+		
+			print 'There are no new tags'

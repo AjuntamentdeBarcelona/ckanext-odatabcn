@@ -852,6 +852,25 @@ div.span9 .module-content {
 .share-dataset .facebook { background: #3b5998; }
 .share-dataset .linkedin { background: #0077b5; }
 
+
+.field-description {
+    margin-bottom: 20px;
+    margin-top: -10px;
+}
+.field-description .field-description-show {
+    margin-bottom: 3px;
+}
+.field-description a {
+    background: #e5e5e5;
+    color: #303030;
+    font-size: 1.6rem;
+    padding: 3px 10px;
+}
+
+.dataset-info p:first-child {
+    margin-bottom: 5px;
+}
+
 #dataset-resources .resource-list .resource-item {
 	background: #f2f2f2;
 	float: left;
@@ -1148,7 +1167,7 @@ a.tag:hover {
 .resource-view .data-viewer-empty {
 	background: #f2f2f2;
 	padding-top: 20px;
-	padding-bottom: 0px;
+	padding-bottom: 20px;
 	margin-bottom: 20px;
 }
 

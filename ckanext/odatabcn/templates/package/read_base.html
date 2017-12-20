@@ -68,13 +68,47 @@
 	  </ul>
 	{% endif %}
 
-      {% if pkg.notes %}
+    {% if pkg.notes %}
         <div class="notes embedded-content">
-          {{ h.render_markdown(h.get_translated(pkg, 'notes')) }}
+          {{ h.render_markdown(h.get_translated(pkg, 'notes')) }}    
         </div>
-      {% endif %}
+    {% endif %}
+      
+    {% if pkg.extras and pkg.extras|length > 0 %}
+      <div class="field-description">
+          <p class="field-description-show">
+            <a data-toggle="collapse" href="#fieldDescription" aria-expanded="false" aria-controls="fieldDescription">
+                <i class="icon-list"></i> 
+                {{ _('View dataset fields description') }} 
+            </a>
+          </p>
+          <div class="collapse" id="fieldDescription">
+            <div class="well">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col" width="25%">{{ _('Field') }}</th>
+                        <th scope="col">{{ _('Description') }}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    {% for extra in h.sorted_extras(pkg.extras) %}
+                      {% set key, value = extra %}
+                      <tr rel="dc:relation" resource="_:extra{{ i }}">
+                        <th scope="row" class="dataset-label" property="rdfs:label">{{ _(key) }}</th>
+                        <td class="dataset-details" property="rdf:value">{{ value }}</td>
+                      </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+          </div>
+      </div>
+    {% endif %}
 
-    {% snippet "snippets/license.html", pkg_dict=pkg %}
+    <div class="dataset-info">
+        {% snippet "snippets/license.html", pkg_dict=pkg %}
+    </div>
 
     {# FIXME why is this here? seems wrong #}
     <span class="insert-comment-thread"></span>

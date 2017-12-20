@@ -77,11 +77,15 @@ class CSVController(t.BaseController):
 		# obtenemos los formatos
 		formats = t.get_action('format_autocomplete')(context, {
 				'q': '',
-				'limit': 20
+				'limit': 50
 			})
 		# puede devolver formatos duplicados, lo convertimos a un set que eliminara los elementos 
 		# duplicados y de nuevo a una lista
 		formats = list(set(formats))
+		
+		for format in formats:
+			if format == ' ':
+				del formats[format]
 
 		# Incluimos la informacion que necesitamos mostrar para cada dataset
 		for package in packages:
@@ -141,6 +145,7 @@ class CSVController(t.BaseController):
 			
 			# Establecemos la tabla de formatos para cada dataset
 			package['formats'] = OrderedDict()
+
 			for format in formats:
 				format_value = 'N'
 				if ',' + format + ',' in flattened_formats:

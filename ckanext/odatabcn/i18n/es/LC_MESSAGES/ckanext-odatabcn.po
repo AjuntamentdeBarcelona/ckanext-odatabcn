@@ -2612,3 +2612,9 @@ msgstr "Campos Personalizados"
 
 msgid "Load Type"
 msgstr "Tipo de Carga"
+
+msgid "Link to URL"
+msgstr "Enlace a URL"
+
+msgid "View dataset fields description"
+msgstr "Ver descripción de los campos del dataset"

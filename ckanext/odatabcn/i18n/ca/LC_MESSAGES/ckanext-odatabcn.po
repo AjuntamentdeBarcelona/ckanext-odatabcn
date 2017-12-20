@@ -538,3 +538,9 @@ msgstr "Camps Personalitzats"
 
 msgid "Load Type"
 msgstr "Tipus de Càrrega"
+
+msgid "Link to URL"
+msgstr "Enllaç a URL"
+
+msgid "View dataset fields description"
+msgstr "Veure descripció dels camps del dataset"
