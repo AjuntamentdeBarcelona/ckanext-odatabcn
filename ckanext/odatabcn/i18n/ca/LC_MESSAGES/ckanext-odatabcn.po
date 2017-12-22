@@ -548,6 +548,12 @@ msgstr "Veure descripció dels camps del dataset"
 msgid "Dataset fields description"
 msgstr "Descripció dels camps del dataset"
 
+msgid "View additional description"
+msgstr "Veure descripció addicional"
+
+msgid "Additional description"
+msgstr "Descripció addicional"
+
 msgid "Key"
 msgstr "Nom"
 

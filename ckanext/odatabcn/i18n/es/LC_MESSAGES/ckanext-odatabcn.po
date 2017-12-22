@@ -2622,6 +2622,12 @@ msgstr "Ver descripción de los campos del dataset"
 msgid "Dataset fields description"
 msgstr "Descripción de los campos del dataset"
 
+msgid "View additional description"
+msgstr "Ver descripción adicional"
+
+msgid "Additional description"
+msgstr "Descripción adicional"
+
 msgid "Key"
 msgstr "Nombre"
 

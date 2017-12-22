@@ -860,11 +860,29 @@ div.span9 .module-content {
 .field-description .field-description-show {
     margin-bottom: 3px;
 }
+
+.field-description .well, .field-description .well p {
+	font-size: 1.4rem;
+}
+
 .field-description a {
     background: #e5e5e5;
     color: #303030;
     font-size: 1.6rem;
     padding: 3px 10px;
+}
+
+.field-description .title {
+	background: #666;
+	color: #fff;
+	padding: 8px;
+	line-height: 20px;
+	font-weight: bold;
+}
+
+.field-description .text-content {
+	padding-left: 8px;
+	padding-right: 8px;
 }
 
 .dataset-info p:first-child {
