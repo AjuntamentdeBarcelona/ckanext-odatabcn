@@ -1,12 +1,30 @@
+# -*- coding: utf-8 -*-
+
 import datetime
+import gettext
 import logging
 import mmap
 import os 
+import pickle
+import requests
 import sys
 
 from ckan import model
 from ckan.lib.cli import CkanCommand
+from ckan.lib.mailer import mail_recipient
+from pylons import config
 
+missed_translations = set()
+
+class MyFallback(gettext.NullTranslations):
+	def gettext(self, msg):
+		missed_translations.add(msg)
+		return msg
+
+class MyTranslations(gettext.GNUTranslations, object):
+	def __init__(self, *args, **kwargs):
+		super(MyTranslations, self).__init__(*args, **kwargs)
+		self.add_fallback(MyFallback())
 
 class Odatabcn(CkanCommand):
 	'''
@@ -27,6 +45,8 @@ class Odatabcn(CkanCommand):
 	max_args = 1
 
 	def __init__(self, name):
+		reload(sys)
+		sys.setdefaultencoding('utf-8')
 		super(Odatabcn, self).__init__(name)
 
 	def command(self):
@@ -47,6 +67,8 @@ class Odatabcn(CkanCommand):
 			self.update_tracking()
 		elif cmd == 'update-dataset-total':
 			self.update_dataset_total()
+		elif cmd == 'get-new-tags':
+			self.get_new_tags()
 		else:
 			self.log.error('Command %s not recognized' % (cmd,))
 
@@ -147,34 +169,47 @@ class Odatabcn(CkanCommand):
 			
 	def get_new_tags(self):
 
-		first_day = datetime.date.today().replace(week=1)
+		dt = datetime.date.today()
+		first_day = dt - datetime.timedelta(days=dt.weekday())
+		print 'Checking tags since %s' % (first_day)
 		
-		sql = '''SELECT MIN(pt.revision_timestamp), t.name 
-							FROM tag t
-							INNER JOIN package_tag_revision pt ON pt.tag_id =  t.id 
-								AND pt.revision_timestamp >= '{0}'
-							INNER JOIN package p ON p.id = pt.package_id 
-							LEFT JOIN package_tag_revision pt2 ON pt2.tag_id = t.id 
-								AND pt2.revision_timestamp < '{0}'
-							WHERE pt2.tag_id IS NULL
-							GROUP BY t.name
-							ORDER BY t.name ASC;'''
+		first_day = datetime.datetime.strptime('01/May/2017', '%d/%b/%Y')
+		
+		sql = '''SELECT DISTINCT t.name AS tag
+					FROM tag t
+					INNER JOIN package_tag_revision pt ON pt.tag_id =  t.id 
+					INNER JOIN package p ON p.id = pt.package_id 
+                    WHERE pt.state = 'active'
+                        AND p.state = 'active'
+						ORDER BY t.name ASC;'''
 		sql = sql.format(first_day)
 		results = model.Session.execute(sql).fetchall()
-		
+
 		if len(results) > 0:
 		
-			lang_dir = os.path.dirname(os.path.realpath(__file__)) + '/i18n'
-			lang_file = 
-			f = open('example.txt')
-			s = mmap.mmap(f.fileno(), 0, access=mmap.ACCESS_READ)
-			if s.find('blabla') != -1:
-			print('true')
-		
-			for row in results:
+			path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'i18n')
+
+			lang = gettext.translation(
+				"ckanext-" + self.command_name,
+				localedir=path,
+				languages=["es"],
+				class_=MyTranslations
+			)
+			lang.install()
 			
+			for row in results:
+				_(row['tag'])
+			
+			email_message = 'S\'han trobat les següents etiquetes sense traducció:\n'
+			for tag in missed_translations:
+				email_message = '%s\n%s' % (email_message, tag)
 				
-		
+			print(email_message)
+			tags_email = {'recipient_name': '',
+                      'recipient_email': config.get('email_to'),
+                      'subject': 'Open Data BCN: Comprovació etiquetes', 
+                      'body': email_message}
+			mail_recipient(**tags_email)
+
 		else:
-		
 			print 'There are no new tags'
