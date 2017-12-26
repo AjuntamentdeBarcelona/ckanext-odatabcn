@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import ckan.plugins as p
 import datetime
 import gettext
 import logging
@@ -42,7 +43,7 @@ class Odatabcn(CkanCommand):
 	summary = __doc__.split('\n')[0]
 	usage = __doc__
 	min_args = 0
-	max_args = 1
+	max_args = 2
 
 	def __init__(self, name):
 		reload(sys)
@@ -69,6 +70,8 @@ class Odatabcn(CkanCommand):
 			self.update_dataset_total()
 		elif cmd == 'get-new-tags':
 			self.get_new_tags()
+		elif cmd == 'submit-resource-to-datapusher':
+			self.submit_resource_to_datapusher(self.args[1])
 		else:
 			self.log.error('Command %s not recognized' % (cmd,))
 
@@ -206,3 +209,19 @@ class Odatabcn(CkanCommand):
 
 		else:
 			print 'There are no new tags'
+			
+	def submit_resource_to_datapusher(self, resource_id):
+	
+		user = p.toolkit.get_action('get_site_user')({'model': model, 'ignore_auth': True}, {})
+		datapusher_submit = p.toolkit.get_action('datapusher_submit')
+		
+		print ('Submitting %s...' % resource_id),
+		data_dict = {
+			'resource_id': resource_id,
+			'ignore_hash': True,
+		}
+
+		if datapusher_submit({'user': user['name']}, data_dict):
+			print 'OK'
+		else:
+			print 'Fail'
