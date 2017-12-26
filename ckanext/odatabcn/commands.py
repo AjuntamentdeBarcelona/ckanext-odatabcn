@@ -168,12 +168,6 @@ class Odatabcn(CkanCommand):
 			print 'Dataset totals for last month have been saved to database'
 			
 	def get_new_tags(self):
-
-		dt = datetime.date.today()
-		first_day = dt - datetime.timedelta(days=dt.weekday())
-		print 'Checking tags since %s' % (first_day)
-		
-		first_day = datetime.datetime.strptime('01/May/2017', '%d/%b/%Y')
 		
 		sql = '''SELECT DISTINCT t.name AS tag
 					FROM tag t
@@ -182,7 +176,6 @@ class Odatabcn(CkanCommand):
                     WHERE pt.state = 'active'
                         AND p.state = 'active'
 						ORDER BY t.name ASC;'''
-		sql = sql.format(first_day)
 		results = model.Session.execute(sql).fetchall()
 
 		if len(results) > 0:
