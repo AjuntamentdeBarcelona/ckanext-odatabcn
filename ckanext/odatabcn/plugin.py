@@ -143,6 +143,7 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 	# Override CKAN authorization functions
 	def get_auth_functions(self):
 		auth_functions = {
+				'package_activity_list': logged_in_users_only,
 				'user_show': logged_in_users_only,
 				'user_list': logged_in_users_only
 			}

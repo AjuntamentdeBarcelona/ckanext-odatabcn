@@ -770,8 +770,14 @@ div.span9 .module-content {
 	height: auto;
 }
 
-.module-resource .actions {
+.resource-actions {
 	top: 0px;
+	right: 10px;
+	position: relative;
+	float: right;
+}
+
+.module-resource .resource-actions, .resource-actions {
 	right: 0px;
 }
 
@@ -1831,7 +1837,6 @@ label[for="include_children"] {
 		animation-delay: .5s;
 		position: fixed;
 		left: 0;
-		top: 60px;
 		background-color: #1e529e;
 		color: #fff;	
 		padding: 12px 12.5px;
@@ -1847,7 +1852,6 @@ label[for="include_children"] {
 	}
 	
 	.masthead .navbar-toggle.collapsed {
-		left: calc(100vw - 45px);
 		color: #000;	
 		font-size: 16px;
 		border: 0;
@@ -1926,6 +1930,26 @@ label[for="include_children"] {
 		float: none;
 	}
 
+}
+
+@media screen and (max-width: 639px) {
+	.masthead .navbar-toggle {
+		top: 45px;
+	}
+	
+	.masthead .navbar-toggle.collapsed {
+		left: calc(100vw - 55px);
+	}
+}
+
+@media screen and (min-width: 640px) {
+	.masthead .navbar-toggle {
+		top: 60px;
+	}
+	
+	.masthead .navbar-toggle.collapsed {
+		left: calc(100vw - 60px);
+	}
 }
 
 @media (max-width: 480px) {

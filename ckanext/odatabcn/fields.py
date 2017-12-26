@@ -1,6 +1,7 @@
 import logging
 
 import ast
+import ckan.logic as logic
 import ckan.model as model
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
@@ -29,6 +30,11 @@ class EditfieldsPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 	plugins.implements(plugins.IPackageController, inherit=True)
 
 	def after_show(self, context, pkg_dict): 
+	
+		#Execute package_activity_list auth function
+		if toolkit.c.action == "activity":
+			logic.check_access('package_activity_list', context, pkg_dict)
+		
 		#Do not show private data if user is not logged in
 		if 'user' in context and not context['user']:
 			delete_private_data(pkg_dict)
