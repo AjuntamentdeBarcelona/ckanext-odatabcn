@@ -542,17 +542,14 @@ msgstr "Tipus de Càrrega"
 msgid "Link to URL"
 msgstr "Enllaç a URL"
 
-msgid "View dataset fields description"
-msgstr "Veure descripció dels camps del dataset"
+msgid "View complementary description and field definition"
+msgstr "Veure descripció complementària i definició de camps"
 
-msgid "Dataset fields description"
-msgstr "Descripció dels camps del dataset"
+msgid "Complementary description and field definition"
+msgstr "Descripció complementària i definició dels camps"
 
-msgid "View additional description"
-msgstr "Veure descripció addicional"
-
-msgid "Additional description"
-msgstr "Descripció addicional"
+msgid "Complementary description"
+msgstr "Descripció complementària"
 
 msgid "Key"
 msgstr "Nom"

@@ -2616,17 +2616,14 @@ msgstr "Tipo de Carga"
 msgid "Link to URL"
 msgstr "Enlace a URL"
 
-msgid "View dataset fields description"
-msgstr "Ver descripción de los campos del dataset"
+msgid "View complementary description and field definition"
+msgstr "Descripción complementaria y definición de campos"
 
-msgid "Dataset fields description"
-msgstr "Descripción de los campos del dataset"
+msgid "Complementary description and field definition"
+msgstr "Descripción complementaria y definición de campos"
 
-msgid "View additional description"
-msgstr "Ver descripción adicional"
-
-msgid "Additional description"
-msgstr "Descripción adicional"
+msgid "Complementary description"
+msgstr "Descripción complementaria"
 
 msgid "Key"
 msgstr "Nombre"

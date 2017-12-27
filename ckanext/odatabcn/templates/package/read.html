@@ -48,56 +48,45 @@
         </div>
     {% endif %}
       
-    {% if pkg.extras and pkg.extras|length > 0 %}
+    {% if (pkg.extras and pkg.extras|length > 0) or pkg.dataset_fields_description %}
       <div class="field-description">
           <p class="field-description-show">
             <a data-toggle="collapse" href="#fieldDescription" aria-expanded="false" aria-controls="fieldDescription">
-                <i class="icon-th"></i> 
-                {{ _('View dataset fields description') }} 
+                <i class="icon-th-list"></i> 
+                {{ _('View complementary description and field definition') }} 
             </a>
           </p>
           <div class="collapse" id="fieldDescription">
             <div class="well">
-                <table class="table">
-                    <thead>
-                      <tr>
-                        <th scope="col" width="25%">{{ _('Field') }}</th>
-                        <th scope="col">{{ _('Description') }}</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                    {% for extra in h.sorted_extras(pkg.extras) %}
-                      {% set key, value = extra %}
-                      <tr rel="dc:relation" resource="_:extra{{ i }}">
-                        <th scope="row" class="dataset-label" property="rdfs:label">{{ _(key) }}</th>
-                        <td class="dataset-details" property="rdf:value">{{ value }}</td>
-                      </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
+				{% if pkg.dataset_fields_description %}
+					<div class="text-content">
+						{{ h.render_markdown(pkg.dataset_fields_description) }}
+					</div>
+				{% endif %}
+			
+				{% if (pkg.extras and pkg.extras|length > 0) %}
+					<table class="table">
+						<thead>
+						  <tr>
+							<th scope="col" width="25%">{{ _('Field') }}</th>
+							<th scope="col">{{ _('Description') }}</th>
+						  </tr>
+						</thead>
+						<tbody>
+						{% for extra in h.sorted_extras(pkg.extras) %}
+						  {% set key, value = extra %}
+						  <tr rel="dc:relation" resource="_:extra{{ i }}">
+							<th scope="row" class="dataset-label" property="rdfs:label">{{ _(key) }}</th>
+							<td class="dataset-details" property="rdf:value">{{ value }}</td>
+						  </tr>
+						{% endfor %}
+						</tbody>
+					</table>
+				{% endif %}
             </div>
           </div>
       </div>
     {% endif %}
-
-	{% if pkg.dataset_fields_description %}
-		<div class="field-description">
-          <p class="field-description-show">
-            <a data-toggle="collapse" href="#ieldAdditionalDescription" aria-expanded="false" aria-controls="fieldAdditionalDescription">
-                <i class="icon-align-left"></i> 
-                {{ _('View additional description') }} 
-            </a>
-          </p>
-          <div class="collapse" id="ieldAdditionalDescription">
-            <div class="well">
-				<p class="title">{{ _('Additional description') }}</p>
-				<div class="text-content">
-					{{ h.render_markdown(pkg.dataset_fields_description) }}
-				</div>
-            </div>
-          </div>
-      </div>
-	{% endif %}
 
     <div class="dataset-info">
         {% snippet "snippets/license.html", pkg_dict=pkg %}
