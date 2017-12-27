@@ -32,12 +32,22 @@ class Odatabcn(CkanCommand):
 	Links download data stored on the tracking_summary table with its resources
 
 	Use:
-		paster odatabcn update-tracking
-			- Update resource ids on the tracking_summary table
+		paster odatabcn update-tracking -c /etc/ckan/default/production.ini
+			- Insert resource ids on the tracking_summary table.
 		
-		paster odatabcn update-dataset-total
-			- Update the number of datasets published and deactivated last month
-			  on the odb_dataset_total custom table
+		paster odatabcn update-dataset-total -c /etc/ckan/default/production.ini
+			- Insert the number of datasets published and deactivated last month
+			  on the odb_dataset_total custom table.
+		
+		paster odatabcn get-new-tags -c /etc/ckan/default/production.ini
+			- Check all active tags against the i18n "es" language file to check for missing translations
+			  and e-mail the list to the account added on the "email_to" configuration option.
+			
+		paster odatabcn submit-resource-to-datapusher resource_id -c /etc/ckan/default/production.ini
+			- Submits a resource identified by "resource_id" to the datastore through datapusher.
+			  Adapted from ckan/ckanext/datapusher/cli.py _submit method which only allows all resources
+			  from a dataset to be submitted instead of a single one.
+		
 	'''
 
 	summary = __doc__.split('\n')[0]
@@ -51,9 +61,7 @@ class Odatabcn(CkanCommand):
 		super(Odatabcn, self).__init__(name)
 
 	def command(self):
-		"""
-		Parse command line arguments and call appropriate method.
-		"""
+		#Parse command line arguments and call appropriate method
 		if not self.args or self.args[0] in ['--help', '-h', 'help']:
 			print self.usage
 			sys.exit(1)
@@ -61,7 +69,7 @@ class Odatabcn(CkanCommand):
 		cmd = self.args[0]
 		self._load_config()
 
-		# Initialise logger after the config is loaded, so it is not disabled.
+		# Initialise logger after the config is loaded, so it is not disabled
 		self.log = logging.getLogger(__name__)
 
 		if cmd == 'update-tracking':
@@ -185,6 +193,7 @@ class Odatabcn(CkanCommand):
 		
 			path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'i18n')
 
+			#Use gettext to be able to set a custom fallback class
 			lang = gettext.translation(
 				"ckanext-" + self.command_name,
 				localedir=path,
@@ -196,16 +205,21 @@ class Odatabcn(CkanCommand):
 			for row in results:
 				_(row['tag'])
 			
-			email_message = 'S\'han trobat les següents etiquetes sense traducció:\n'
+			email_message = 'The following tags have no translation:\n'
 			for tag in missed_translations:
-				email_message = '%s\n%s' % (email_message, tag)
+				email_message = '%s\n* %s' % (email_message, tag)
 				
 			print(email_message)
+			
+			#E-mail missing tag list to account configured on "email_to"
+			email_to = config.get('email_to')
 			tags_email = {'recipient_name': '',
-                      'recipient_email': config.get('email_to'),
-                      'subject': 'Open Data BCN: Comprovació etiquetes', 
+                      'recipient_email': email_to,
+                      'subject': self.command_name + ': dataset tags', 
                       'body': email_message}
 			mail_recipient(**tags_email)
+			
+			print '\nAn e-mail has been sent to %s' % (email_to)
 
 		else:
 			print 'There are no new tags'
