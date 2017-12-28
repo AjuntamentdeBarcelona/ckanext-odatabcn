@@ -52,6 +52,8 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 	def dataset_facets(self, facets_dict, package_type):
 		facets_dict['geolocation'] = toolkit._('Geolocation')
 		facets_dict['frequency'] = toolkit._('Frequency')
+		#if toolkit.c.userobj:
+		#	facets_dict['private'] = toolkit._('Private')
 		return facets_dict
 		
 	def organization_facets(self, facets_dict, organization_type, package_type):

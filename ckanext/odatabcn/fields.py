@@ -39,6 +39,14 @@ class EditfieldsPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 		if 'user' in context and not context['user']:
 			delete_private_data(pkg_dict)
 			
+	def before_search(self, search_params): 
+
+		#Change default search order
+		if not 'sort' in search_params:
+			search_params['sort'] = 'fecha_publicacion asc'
+		
+		return search_params
+			
 	def after_search(self, search_results, search_params):
 		
 		# We need to add organization extras, since we need the translated
