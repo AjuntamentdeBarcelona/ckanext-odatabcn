@@ -43,7 +43,7 @@ class EditfieldsPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 
 		#Change default search order
 		if not 'sort' in search_params:
-			search_params['sort'] = 'fecha_publicacion asc'
+			search_params['sort'] = 'fecha_publicacion desc'
 		
 		return search_params
 			
