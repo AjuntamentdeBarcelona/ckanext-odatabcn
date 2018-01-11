@@ -3,6 +3,7 @@ import ckan.lib.i18n as i18n
 import ckan.model as model
 import ckan.plugins.toolkit as t
 import datetime as d
+import ast
 import mimetypes as m
 from ckan.lib.render import TemplateNotFound
 from ckan.common import OrderedDict, request
@@ -94,13 +95,15 @@ class CSVController(t.BaseController):
 					package['notes_translated'][key] = package['notes_translated'][key].replace('\n', ' ').replace('\r', ' ')
 			
 			#Obtenemos las vistas y descargas
-			sql = '''SELECT SUM(count) AS total, package_id 
-						FROM tracking_summary 
-						WHERE package_id LIKE '%s' GROUP BY package_id;''' % (package['id'])
+			sql = '''SELECT running_total, recent_views FROM tracking_summary 
+						WHERE package_id LIKE '%s' 
+						ORDER BY tracking_date 
+						DESC LIMIT 1;''' % (package['id'])
 			results = model.Session.execute(sql)
 		
 			for m in results:
-				package['tracking_total'] = str(m.total)
+				package['tracking_total'] = str(m.running_total)
+				package['tracking_recent'] = str(m.recent_views)
 			
 			#Obtenemos un string con las etiquetas
 			tags = ''
@@ -109,11 +112,12 @@ class CSVController(t.BaseController):
 			package['flattened_tags'] = tags 
 
 			
-			# Obtenemos un string con los formatos de sus recursos, el total de descargas 
+			# Obtenemos un string con los formatos de sus recursos, el total de descargas y el valor de openness_score del dataset
 			# y si el dataset esta automatizado
 			flattened_formats = ','
 			downloads = 0
 			downloads_absolute = 0
+			qa = 0
 			automatic = 'N'
 			if 'update_string' in package and package['update_string']:
 				automatic = 'S'
@@ -136,12 +140,18 @@ class CSVController(t.BaseController):
 						not '/resource/' + resource['id'] + '/download/' in resource['url']
 						):
 							automatic = 'S'
+				
+				if 'qa' in resource:
+					resource_qa = ast.literal_eval(resource['qa'])
+					if (resource_qa['openness_score'] > qa):
+						qa = int(resource_qa['openness_score'])
 					
 					
 			package['flattened_formats'] = flattened_formats
 			package['downloads'] = downloads
 			package['downloads_absolute'] = downloads_absolute
 			package['automatic'] = automatic
+			package['qa'] = qa
 			
 			# Establecemos la tabla de formatos para cada dataset
 			package['formats'] = OrderedDict()
