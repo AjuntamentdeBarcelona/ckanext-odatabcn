@@ -85,8 +85,9 @@ class CSVController(t.BaseController):
 		formats = list(set(formats))
 		
 		for format in formats:
-			if not format or format == ' ':
-				del formats[format]
+			format_strip = format.strip()
+			if not format_strip:
+				formats.remove(format)
 
 		# Incluimos la informacion que necesitamos mostrar para cada dataset
 		for package in packages:
