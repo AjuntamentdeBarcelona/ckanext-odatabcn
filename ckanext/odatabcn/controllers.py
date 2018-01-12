@@ -85,7 +85,7 @@ class CSVController(t.BaseController):
 		formats = list(set(formats))
 		
 		for format in formats:
-			if format == ' ':
+			if not format or format == ' ':
 				del formats[format]
 
 		# Incluimos la informacion que necesitamos mostrar para cada dataset
