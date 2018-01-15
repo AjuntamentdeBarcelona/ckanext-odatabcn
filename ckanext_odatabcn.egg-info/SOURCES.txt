@@ -1,6 +1,5 @@
 LICENSE
 MANIFEST.in
-README.rst
 requirements.txt
 setup.cfg
 setup.py
@@ -10,6 +9,7 @@ ckanext/odatabcn/commands.py
 ckanext/odatabcn/controllers.py
 ckanext/odatabcn/fields.py
 ckanext/odatabcn/plugin.py
+ckanext/odatabcn/validators.py
 ckanext/odatabcn/fanstatic/corebcn.css
 ckanext/odatabcn/fanstatic/odatabcn.css
 ckanext/odatabcn/fanstatic/odatabcn_theme_hierarchy.js
@@ -27,7 +27,9 @@ ckanext/odatabcn/templates/brand/es.html
 ckanext/odatabcn/templates/home/index.html
 ckanext/odatabcn/templates/home/layout1.html
 ckanext/odatabcn/templates/home/snippets/news.html
+ckanext/odatabcn/templates/macros/form.html
 ckanext/odatabcn/templates/organization/read.html
+ckanext/odatabcn/templates/package/activity.html
 ckanext/odatabcn/templates/package/read.html
 ckanext/odatabcn/templates/package/read_base.html
 ckanext/odatabcn/templates/package/resource_read.html
@@ -38,6 +40,7 @@ ckanext/odatabcn/templates/package/snippets/resource_views_list.html
 ckanext/odatabcn/templates/package/snippets/resources.html
 ckanext/odatabcn/templates/package/snippets/resources_list.html
 ckanext/odatabcn/templates/package/snippets/tags.html
+ckanext/odatabcn/templates/snippets/custom_form_fields.html
 ckanext/odatabcn/templates/snippets/facet_list.html
 ckanext/odatabcn/templates/snippets/home_breadcrumb_item.html
 ckanext/odatabcn/templates/snippets/license.html

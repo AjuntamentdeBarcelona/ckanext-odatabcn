@@ -185,6 +185,7 @@ class Odatabcn(CkanCommand):
 					INNER JOIN package_tag_revision pt ON pt.tag_id =  t.id 
 					INNER JOIN package p ON p.id = pt.package_id 
                     WHERE pt.state = 'active'
+						AND pt.expired_timestamp > '9999-01-01'
                         AND p.state = 'active'
 						ORDER BY t.name ASC;'''
 		results = model.Session.execute(sql).fetchall()
