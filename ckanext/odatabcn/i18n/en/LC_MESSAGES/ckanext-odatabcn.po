@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ckan 2.6.0b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2016-10-18 10:37+0100\n"
-"PO-Revision-Date: 2018-01-15 14:15+0100\n"
+"PO-Revision-Date: 2018-01-15 14:21+0100\n"
 "Last-Translator: Isabel Ruiz <isaruizmellado@gmail.com>, 2016\n"
 "Language-Team: Spanish (https://www.transifex.com/okfn/teams/11162/es/)\n"
 "MIME-Version: 1.0\n"
@@ -21,15 +21,15 @@ msgstr ""
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "little"
-msgstr "Little"
+msgstr "Little (< 500KB)"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "big"
-msgstr "Big"
+msgstr "Big (> 10MB)"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "middle"
-msgstr "Middle"
+msgstr "Middle (>= 501 KB i <= 10 MB)"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "IMMEDIATA"
