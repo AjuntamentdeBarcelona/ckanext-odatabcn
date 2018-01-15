@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ckan 2.6.0b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2016-10-18 10:37+0100\n"
-"PO-Revision-Date: 2017-12-20 11:41+0100\n"
+"PO-Revision-Date: 2018-01-15 13:01+0100\n"
 "Last-Translator: Isabel Ruiz <isaruizmellado@gmail.com>, 2016\n"
 "Language-Team: Spanish (https://www.transifex.com/okfn/teams/11162/es/)\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Generated-By: Babel 2.3.4\n"
 "Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.1\n"
+"X-Generator: Poedit 1.8.11\n"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "Maintainer Telephone"
@@ -37,15 +37,15 @@ msgstr "Cadena de actualización"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "little"
-msgstr "Pequeño"
+msgstr "Pequeño (< 500KB)"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "big"
-msgstr "Grande"
+msgstr "Grande (> 10MB)"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "middle"
-msgstr "Mediano"
+msgstr "Mediano (>= 501 KB i <= 10 MB)"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "IMMEDIATA"
@@ -1936,10 +1936,10 @@ msgid "Parent"
 msgstr "Padre"
 
 msgid "Recent Views (last 2 weeks)"
-msgstr "Vistas Recientes (últimas 2 semanas)"
+msgstr "Visitas Recientes (últimas 2 semanas)"
 
 msgid "Total Views"
-msgstr "Vistas Totales"
+msgstr "Visitas Totales"
 
 msgid "JSON Catalog (API)"
 msgstr "Catálogo JSON (API)"
@@ -2630,3 +2630,315 @@ msgstr "Nombre"
 
 msgid "Value"
 msgstr "Descripción"
+
+msgid "Directrius"
+msgstr "Directrices"
+
+msgid "Decrets"
+msgstr "Decretos"
+
+msgid "Carta arqueológica"
+msgstr "Carta arqueològica"
+
+msgid "Qualitat"
+msgstr "Calidad"
+
+msgid "reglaments"
+msgstr "reglamentos"
+
+msgid "Plantes"
+msgstr "Plantas"
+
+msgid "Pressupostos"
+msgstr "Presupuestos"
+
+msgid "Règim tinença"
+msgstr "Régimen tenencia"
+
+msgid "Punts informació turística"
+msgstr "Puntos información turística"
+
+msgid "Vallvidrera- el Tibidabo i les Planes"
+msgstr "Vallvidrera- el Tibidabo i les Planes"
+
+msgid "Potencia fiscal"
+msgstr "Potencia fiscal"
+
+msgid "Turismes"
+msgstr "Turismos"
+
+msgid "Salut pública"
+msgstr "Salud pública"
+
+msgid "Àrea Metropolitana Barcelona"
+msgstr "Área Metropolitana Barcelona"
+
+msgid "Estat trànsit"
+msgstr "Estado tránsito"
+
+msgid "Any 2018"
+msgstr "Año 2018"
+
+msgid "Alta"
+msgstr "Alta"
+
+msgid "Entitats Municipals"
+msgstr "Entidades Municipales"
+
+msgid "Àrea blava"
+msgstr "Zona azul"
+
+msgid "Províncies"
+msgstr "Provincias"
+
+msgid "Estructura territorial"
+msgstr "Estructura territorial"
+
+msgid "Dossiers de premsa"
+msgstr "Dosieres de prensa"
+
+msgid "Espais públics"
+msgstr "Espacios públicos"
+
+msgid "Seveis socials"
+msgstr "Servicios sociales"
+
+msgid "Revistes"
+msgstr "Revistas"
+
+msgid "Canvis nacionalitat"
+msgstr "Cambios nacionalidad"
+
+msgid "Art públic"
+msgstr "Arte público"
+
+msgid "preus públics"
+msgstr "precios públicos"
+
+msgid "Premis"
+msgstr "Premios"
+
+msgid "Informes"
+msgstr "Informes"
+
+msgid "Propietaris"
+msgstr "Propietarios"
+
+msgid "Cartes de serveis"
+msgstr "Cartas de servicios"
+
+msgid "Mapa malla UTM"
+msgstr "Mapa malla UTM"
+
+msgid "Govern"
+msgstr "Gobierno"
+
+msgid "Documents tècnics"
+msgstr "Documentos técnicos"
+
+msgid "Platges públiques"
+msgstr "Playas públicas"
+
+msgid "barris"
+msgstr "barrios"
+
+msgid "Dictamens"
+msgstr "Dictámenes"
+
+msgid "Plans estratègics"
+msgstr "Planes estratégicos"
+
+msgid "Repositoris"
+msgstr "Repositorios"
+
+msgid "Notes de premsa"
+msgstr "Notas de prensa"
+
+msgid "Carril Bici"
+msgstr "Carril Bici"
+
+msgid "Ús turístic"
+msgstr "Uso turístico"
+
+msgid "Béns municipals"
+msgstr "Bienes municipales"
+
+msgid "Plans especials"
+msgstr "Planes especiales"
+
+msgid "Ajuts"
+msgstr "Ayudas"
+
+msgid "Trànsit"
+msgstr "Tráfico"
+
+msgid "Motos"
+msgstr "Motos"
+
+msgid "Transport metropolità"
+msgstr "Transporte metropolitano"
+
+msgid "Punts ancoratge"
+msgstr "Puntos anclaje"
+
+msgid "Places garatge"
+msgstr "Plazas garaje"
+
+msgid "Entitats"
+msgstr "Entidades"
+
+msgid "Sumatori"
+msgstr "Sumatorio"
+
+msgid "Urbanisme"
+msgstr "Urbanismo"
+
+msgid "Ronda Verda"
+msgstr "Ronda Verde"
+
+msgid "Zona descàrrega"
+msgstr "Zona descarga"
+
+msgid "Escultures"
+msgstr "Esculturas"
+
+msgid "Monuments"
+msgstr "Monumentos"
+
+msgid "Suggerències"
+msgstr "Sugerencias"
+
+msgid "Enquestes"
+msgstr "Encuestas"
+
+msgid "Mesures de govern"
+msgstr "Medidas de gobierno"
+
+msgid "Comptes"
+msgstr "Cuentas"
+
+msgid "Votants"
+msgstr "Votantes"
+
+msgid "Sant Pere- Santa Caterina i la Ribera"
+msgstr "Sant Pere- Santa Caterina i la Ribera"
+
+msgid "NDVI"
+msgstr "NDVI"
+
+msgid "Espai públic"
+msgstr "Espacio público"
+
+msgid "Cementiris de Barcelona"
+msgstr "Cementerios de Barcelona"
+
+msgid "Queixes"
+msgstr "Quejas"
+
+msgid "Comptabilitat"
+msgstr "Contabilidad"
+
+msgid "Protocols"
+msgstr "Protocolos"
+
+msgid "Població femenina"
+msgstr "Población femenina"
+
+msgid "Circulars"
+msgstr "Circulares"
+
+msgid "Carsharing"
+msgstr "Carsharing"
+
+msgid "Zona càrrega"
+msgstr "Zona carga"
+
+msgid "Xifres oficials"
+msgstr "Cifras oficiales"
+
+msgid "Laudes"
+msgstr "Laudes"
+
+msgid "Àrea DUM"
+msgstr "Área DUM"
+
+msgid "Cementiris"
+msgstr "Cementerios"
+
+msgid "Estatuts"
+msgstr "Estatutos"
+
+msgid "Projectes"
+msgstr "Proyectos"
+
+msgid "Telecomunicacions"
+msgstr "Telecomunicaciones"
+
+msgid "Àrea verda"
+msgstr "Área verde"
+
+msgid "ordenances fiscals"
+msgstr "ordenanzas fiscales"
+
+msgid "Infraestructura Verda"
+msgstr "Infraestructura Verde"
+
+msgid "Cilindrada"
+msgstr "Cilindrada"
+
+msgid "Serveis religiosos"
+msgstr "Servicios religiosos"
+
+msgid "Població masculina"
+msgstr "Población masculina"
+
+msgid "activitats"
+msgstr "actividades"
+
+msgid "Piles"
+msgstr "Pilas"
+
+msgid "Renda familiar"
+msgstr "Renta familiar"
+
+msgid "Parada taxi"
+msgstr "Parada taxi"
+
+msgid "Beure"
+msgstr "Beber"
+
+msgid "Taxes"
+msgstr "Tasas"
+
+msgid "Fotografies"
+msgstr "Fotografías"
+
+msgid "Construccions poblament"
+msgstr "Construcciones poblamiento"
+
+msgid "Premsa"
+msgstr "Prensa"
+
+msgid "Pròrrogues"
+msgstr "Prórrogas"
+
+msgid "Sectors econòmics"
+msgstr "Sectores económicos"
+
+msgid "Agenda cultural"
+msgstr "Agenda cultural"
+
+msgid "Peticions"
+msgstr "Peticiones"
+
+msgid "Memòries"
+msgstr "Memorias"
+
+msgid "agenda"
+msgstr "agenda"
+
+msgid "Institut Català del Sòl -INCASOL-"
+msgstr "Instituto Catalan del Suelo -INCASOL-"
+
+msgid "Instruccions"
+msgstr "Instrucciones"
