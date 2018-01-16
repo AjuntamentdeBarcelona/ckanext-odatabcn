@@ -2637,8 +2637,8 @@ msgstr "Directrices"
 msgid "Decrets"
 msgstr "Decretos"
 
-msgid "Carta arqueológica"
-msgstr "Carta arqueològica"
+msgid "Carta arqueològica"
+msgstr "Carta arqueológica"
 
 msgid "Qualitat"
 msgstr "Calidad"
@@ -2942,3 +2942,12 @@ msgstr "Instituto Catalan del Suelo -INCASOL-"
 
 msgid "Instruccions"
 msgstr "Instrucciones"
+
+msgid "Internacional"
+msgstr "Internacional"
+
+msgid "Cobertura Vegetal"
+msgstr "Cobertura Vegetal"
+
+msgid "Publicaciones"
+msgstr "Publicaciones"
