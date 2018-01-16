@@ -71,7 +71,7 @@ within_tertiary
                     {% set count = count_label(item['count']) if count_label else ('(%d)' % item['count']) %}
 					{% set parentname = '' %}
 
-					{% if name == "organization" %}
+					{% if name == "organization" and "organization" in item %}
 						{% set url_base = h.url_for(controller='package', action='search') if c.group_dict.name == item.name  else h.url_for(controller='organization', action='read', id=item.name) %}  
 						{% set href = url_base + '?' + request.query_string if request.query_string else url_base %}
 						{% set label_truncated = h.get_translated(item.organization, 'title') %}
