@@ -559,3 +559,6 @@ msgstr "Descripció"
 
 msgid "Publicaciones"
 msgstr "Publicacions"
+
+msgid "View private datasets"
+msgstr "Veure datasets privats"

@@ -2951,3 +2951,6 @@ msgstr "Cobertura Vegetal"
 
 msgid "Publicaciones"
 msgstr "Publicaciones"
+
+msgid "View private datasets"
+msgstr "Ver datasets privados"

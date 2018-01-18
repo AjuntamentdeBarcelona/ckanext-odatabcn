@@ -16,9 +16,9 @@
 
 
   {% if h.check_access('package_create') %}
-
     <div class="page_primary_action">
       {% link_for _('Add Dataset'), controller='package', action='new', class_='btn btn-primary', icon='plus-sign-alt' %}
+	   {% link_for _('View private datasets'), controller='package', action='search', private='true', class_='btn', icon='lock' %}
     </div>
   {% endif %}
 {% endblock %}
@@ -41,7 +41,7 @@
      (_('Popular') + " (DESC)", 'views_recent desc') if g.tracking_enabled else (false, false),
      (_('Popular') + " (ASC)", 'views_recent asc') if g.tracking_enabled else (false, false) ]
    %}
-   {% if c.userobj %}
+   {% if c.user %}
 		{% set aux = sorting.append((_('Data last modified') + " (DESC)", 'metadata_modified desc')) %}
 		{% set aux = sorting.append((_('Data last modified') + " (ASC)", 'metadata_modified asc')) %}
    {% endif %}

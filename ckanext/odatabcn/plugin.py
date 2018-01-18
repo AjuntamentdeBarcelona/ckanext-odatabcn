@@ -3,6 +3,7 @@ import logging
 import psycopg2
 import json
 import sys
+import pprint
 
 from ckan.lib.cli import parse_db_config
 from ckan import plugins
@@ -17,12 +18,18 @@ from collections import OrderedDict
 log = logging.getLogger(__name__)
 
 ## Custom authorization functions
-def logged_in_users_only(context, data_dict=None):	
-	if context.get('user'):
+@plugins.toolkit.auth_allow_anonymous_access
+def logged_in_users_only(context, data_dict=None):
+
+	for_view = 'for_view' in context
+	using_api = 'api_version' in context
+	
+	if context.get('user') or (not for_view and not using_api):
 		return {'success': True}
 	else:
 		return {'success': False,
 				'msg': 'Only users are allowed to access user profiles'}
+				
 
 class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.DefaultDatasetForm):
 	plugins.implements(plugins.IConfigurer)
