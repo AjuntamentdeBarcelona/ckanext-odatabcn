@@ -4,6 +4,7 @@ import psycopg2
 import json
 import sys
 import pprint
+import ckan.authz as authz
 
 from ckan.lib.cli import parse_db_config
 from ckan import plugins
@@ -19,14 +20,12 @@ log = logging.getLogger(__name__)
 
 ## Custom authorization functions
 def sysadmin_only(context, data_dict=None):
-
-	user = context.get('user')
-	
-	if context.get('user') and user.sysadmin:
-		return {'success': True}
+	if context.get('user'):
+		return {'success': authz.is_sysadmin(context.get('user')),
+				'msg': 'Only sysadmin are allowed to access this resource'}
 	else:
 		return {'success': False,
-				'msg': 'Only admins are allowed to access this resource'}
+				'msg': 'Only users are allowed to access user profiles'}
 
 @plugins.toolkit.auth_allow_anonymous_access
 def logged_in_users_only(context, data_dict=None):
