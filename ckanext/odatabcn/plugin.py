@@ -18,6 +18,16 @@ from collections import OrderedDict
 log = logging.getLogger(__name__)
 
 ## Custom authorization functions
+def sysadmin_only(context, data_dict=None):
+
+	user = context.get('user')
+	
+	if context.get('user') and user.sysadmin:
+		return {'success': True}
+	else:
+		return {'success': False,
+				'msg': 'Only admins are allowed to access this resource'}
+
 @plugins.toolkit.auth_allow_anonymous_access
 def logged_in_users_only(context, data_dict=None):
 
@@ -154,6 +164,7 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 	def get_auth_functions(self):
 		auth_functions = {
 				'package_activity_list': update_auth.package_update,
+				'package_delete': sysadmin_only,
 				'user_show': logged_in_users_only,
 				'user_list': logged_in_users_only
 			}
