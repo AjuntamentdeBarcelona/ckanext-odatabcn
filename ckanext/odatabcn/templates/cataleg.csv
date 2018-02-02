@@ -2,7 +2,7 @@
 {%- if logged_in -%}
 ,"code","id"
 {%- endif -%}
-,"title_ca","title_es","title_en","openness_score"
+,"title_ca","title_es","title_en","complementary description","field_definition","openness_score"
 {%- if logged_in -%}
 	,"state","private","automatic","load_type","update_string"
 {%- endif -%}
@@ -32,6 +32,16 @@
 ,"{{ package.code }}","{{ package.id }}"
 {%- endif -%}
 ,"{{ package.title_translated.ca | safe }}","{{ package.title_translated.es | safe }}","{{ package.title_translated.en | safe }}"
+{%- if package.dataset_fields_description -%}
+	,"S"
+{%- else -%}
+	,"N"
+{%- endif -%}
+{%- if package.extras -%}
+	,"S"
+{%- else -%}
+	,"N"
+{%- endif -%}
 {%- if package.qa -%}
 	,"{{ package.qa }}"
 {%- else -%}

@@ -1,10 +1,13 @@
 import logging
 
 import ast
+import ckan.authz as authz
 import ckan.logic as logic
 import ckan.model as model
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
+
+from pylons import config
 
 log = logging.getLogger(__name__)
 
@@ -25,6 +28,11 @@ def delete_private_data(pkg_dict):
 	for key in keys:
 		if key in pkg_dict:
 			del pkg_dict[key]
+			
+def change_resource_download_urls(pkg_dict, site_url):
+	for resource in pkg_dict['resources']:
+		resource['url'] = '{site_url}dataset/{id}/resource/{resource_id}/download'.format(site_url=site_url, id=resource['package_id'], resource_id=resource['id']).encode('utf-8')
+	
 
 class EditfieldsPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 	plugins.implements(plugins.IPackageController, inherit=True)
@@ -48,7 +56,7 @@ class EditfieldsPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 		return search_params
 			
 	def after_search(self, search_results, search_params):
-		
+	
 		# We need to add organization extras, since we need the translated
 		# title and its parent organization
 		if len(search_results['results']):
@@ -82,12 +90,14 @@ class EditfieldsPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 					item['organization'] = organizations[item['name']]
 					
 		#Do not include private data if user is not logged in
-		if not toolkit.c.user:
-			for pkg in search_results['results']:
+		#Change resource download URL to track downloads
+		site_url = config.get('ckan.site_url') + config.get('ckan.root_path').replace('{{LANG}}', '')
+		
+		for pkg in search_results['results']:
+			if not toolkit.c.user:
 				delete_private_data(pkg)
-			
-			for pkg in search_results:
-				delete_private_data(pkg)
+			elif not (toolkit.c.user and authz.is_sysadmin(toolkit.c.user) and toolkit.c.controller == 'api'):
+				change_resource_download_urls(pkg, site_url)
 
 		return search_results
 

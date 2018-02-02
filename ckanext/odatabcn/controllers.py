@@ -1,13 +1,23 @@
 import ckan.lib.app_globals as app_globals
+import ckan.lib.helpers as h
 import ckan.lib.i18n as i18n
+import ckan.lib.uploader as uploader
+import ckan.logic as logic
 import ckan.model as model
 import ckan.plugins.toolkit as t
 import datetime as d
+import hashlib
 import ast
 import mimetypes as m
+import paste.fileapp
+import psycopg2
+import requests
+import sys
 from ckan.lib.render import TemplateNotFound
-from ckan.common import OrderedDict, request
+from ckan.common import OrderedDict, request, response
+from ckan.lib.cli import parse_db_config
 from pylons import config
+from pylons.controllers.util import redirect
 
 log = __import__('logging').getLogger(__name__)
 namespace = 'ckanext.odatabcn'
@@ -225,3 +235,56 @@ class CSVController(t.BaseController):
 			for locale in i18n.get_locales():
 				if key + '_translated' in pkg_dict:
 					pkg_dict[key + '_translated'][locale] = pkg_dict[key + '_translated'][locale].replace('"', '""')
+					
+class ResourceDownloadController(t.BaseController):
+
+	def resource_download(self, environ, id, resource_id, filename=None):
+
+		context = {'model': model, 'session': model.Session,
+				'user': c.user, 'auth_user_obj': c.userobj}
+
+		try:
+			rsc = t.get_action('resource_show')(context, {'id': resource_id})
+		except (NotFound, NotAuthorized):
+			abort(404, _('Resource not found'))
+			
+		#Save download to tracking_raw
+		site_url = config.get('ckan.site_url') + config.get('ckan.root_path').replace('{{LANG}}', '')
+		data = {
+				'url': rsc['url'], 
+				'type': 'resource'
+			}
+			
+		headers = {
+				'X-Forwarded-For': environ['REMOTE_ADDR'], 
+				'User-Agent': environ['HTTP_USER_AGENT'],
+				'Accept-Language': environ.get('HTTP_ACCEPT_LANGUAGE', ''),
+				'Accept-Encoding': environ.get('HTTP_ACCEPT_ENCODING', '')
+			}
+		
+		requests.post(site_url + '_tracking',
+								data=data,
+								headers=headers)
+
+		if rsc.get('url_type') == 'upload':
+			#Internal redirect
+			upload = uploader.get_resource_uploader(rsc)
+			filepath = upload.get_path(rsc['id'])
+			fileapp = paste.fileapp.FileApp(filepath)
+			try:
+				status, headers, app_iter = request.call_application(fileapp)
+			except OSError:
+				abort(404, _('Resource data not found'))
+			response.headers.update(dict(headers))
+			content_type, content_enc = m.guess_type(rsc.get('url', ''))
+			if content_type:
+				response.headers['Content-Type'] = content_type
+			response.status = status
+			return app_iter
+			
+			h.redirect_to(rsc['url'].encode('utf-8'))
+		elif 'url' not in rsc:
+			abort(404, _('No download is available'))
+		else:
+			#External redirect
+			return redirect(rsc['url'].encode('utf-8'))

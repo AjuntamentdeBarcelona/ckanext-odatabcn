@@ -15,6 +15,7 @@ from ckan.model import domain_object
 from ckan.lib.plugins import DefaultTranslation
 from ckanext.odatabcn import validators
 from collections import OrderedDict
+from pylons import config
 
 log = logging.getLogger(__name__)
 
@@ -61,6 +62,16 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 			'cataleg', '/cataleg.csv',
 			controller='ckanext.odatabcn.controllers:CSVController',
 			action='view'
+		)
+		map.connect(
+			'/dataset/{id}/resource/{resource_id}/download',
+			controller='ckanext.odatabcn.controllers:ResourceDownloadController',
+			action='resource_download'
+		)
+		map.connect(
+			'/dataset/{id}/resource/{resource_id}/download/{filename}',
+			controller='ckanext.odatabcn.controllers:ResourceDownloadController',
+			action='resource_download'
 		)
 		return map
 
@@ -140,24 +151,45 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 	
 	# Add resource downloads to resource_show
 	def before_show(context, resource_dict):
-		reload(sys)
-		sys.setdefaultencoding('utf-8')
-		dbc = parse_db_config('sqlalchemy.url')
-		ckan_conn_string = "host='%s' dbname='%s' user='%s' password='%s'" % (dbc['db_host'], dbc['db_name'], dbc['db_user'], dbc['db_pass'])
-		ckan_conn = psycopg2.connect(ckan_conn_string)
-		ckan_cursor = ckan_conn.cursor()
-		ckan_cursor.execute("""select sum(count), sum(count_absolute) from tracking_summary t inner join resource r on t.resource_id=r.id where tracking_type='resource' AND r.id=%s""", (resource_dict['id'],))
-		row = ckan_cursor.fetchone()
+		
+		# Add download info and change resource url only if not downloading a resource, editing or indexing
+		if not toolkit.c.action == 'resource_download':
+			reload(sys)
+			sys.setdefaultencoding('utf-8')
+			dbc = parse_db_config('sqlalchemy.url')
+			ckan_conn_string = "host='%s' dbname='%s' user='%s' password='%s'" % (dbc['db_host'], dbc['db_name'], dbc['db_user'], dbc['db_pass'])
+			ckan_conn = psycopg2.connect(ckan_conn_string)
+			ckan_cursor = ckan_conn.cursor()
+			ckan_cursor.execute("""select sum(count), sum(count_absolute) from tracking_summary t inner join resource r on t.resource_id=r.id where tracking_type='resource' AND r.id=%s""", (resource_dict['id'],))
+			row = ckan_cursor.fetchone()
 
-		if len(row) != 0:
-			resource_dict['downloads'] = row[0]
-			resource_dict['downloads_absolute'] = row[1]
-		else:
-			resource_dict['downloads'] = '0'
-			resource_dict['downloads_absolute'] = '0'
+			if len(row) != 0:
+				resource_dict['downloads'] = row[0]
+				resource_dict['downloads_absolute'] = row[1]
+			else:
+				resource_dict['downloads'] = '0'
+				resource_dict['downloads_absolute'] = '0'
 
-		ckan_cursor.close()
-		ckan_conn.close()
+			ckan_cursor.close()
+			ckan_conn.close()
+			
+			if not toolkit.c.action == 'resource_edit' and not toolkit.c.action == '':
+				# Change resource download URLs in order to track downloads
+				# Show original URLs for sysadmin when accessing through API
+				if not resource_dict.get('url_type') == 'upload' and not (toolkit.c.user and authz.is_sysadmin(toolkit.c.user) and toolkit.c.controller == 'api'):
+					site_url = config.get('ckan.site_url') + config.get('ckan.root_path').replace('{{LANG}}', '')
+					resource_dict['url'] = '{site_url}dataset/{id}/resource/{resource_id}/download'.format(site_url=site_url, id=resource_dict['package_id'], resource_id=resource_dict['id']).encode('utf-8')
+
+	# Add resource downloads to resource_show
+	def after_search(context, search_results):
+
+		if not (toolkit.c.user and authz.is_sysadmin(toolkit.c.user) and toolkit.c.controller == 'api'):
+			site_url = config.get('ckan.site_url') + config.get('ckan.root_path').replace('{{LANG}}', '')
+			for resource in search_results['results']:
+				resource['url'] = '{site_url}dataset/{id}/resource/{resource_id}/download'.format(site_url=site_url, id=resource['package_id'], resource_id=resource['id']).encode('utf-8')
+			
+		return search_results
+		
 	
 	# Override CKAN authorization functions
 	def get_auth_functions(self):

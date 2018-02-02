@@ -52,8 +52,14 @@
       <div class="field-description">
           <p class="field-description-show">
             <a data-toggle="collapse" href="#fieldDescription" aria-expanded="false" aria-controls="fieldDescription">
-                <i class="icon-th-list"></i> 
-                {{ _('View complementary description and field definition') }} 
+                <i class="icon-th-list"></i>
+				{% if (pkg.extras and pkg.extras|length > 0) and pkg.dataset_fields_description %}
+					{{ _('View complementary description and field definition') }}
+				{% elif pkg.extras|length == 0 %}
+					{{ _('View complementary description') }}
+				{% else %}
+					{{ _('View field definition') }}
+				{% endif %}
             </a>
           </p>
           <div class="collapse" id="fieldDescription">
