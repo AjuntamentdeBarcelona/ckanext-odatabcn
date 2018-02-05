@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ckan 2.6.0b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2016-10-18 10:37+0100\n"
-"PO-Revision-Date: 2018-01-23 17:24+0100\n"
+"PO-Revision-Date: 2018-02-05 08:21+0100\n"
 "Last-Translator: Isabel Ruiz <isaruizmellado@gmail.com>, 2016\n"
 "Language-Team: Spanish (https://www.transifex.com/okfn/teams/11162/es/)\n"
 "MIME-Version: 1.0\n"
@@ -2954,3 +2954,9 @@ msgstr "Publicaciones"
 
 msgid "View private datasets"
 msgstr "Ver datasets privados"
+
+msgid "View field definition"
+msgstr "Ver definición de campos"
+
+msgid "View complementary description"
+msgstr "Ver descripción complementaria"
