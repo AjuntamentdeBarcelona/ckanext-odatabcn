@@ -6,6 +6,7 @@ import ckan.logic as logic
 import ckan.model as model
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
+import pprint
 
 from pylons import config
 
@@ -96,7 +97,11 @@ class EditfieldsPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 		for pkg in search_results['results']:
 			if not toolkit.c.user:
 				delete_private_data(pkg)
-			elif not (toolkit.c.user and authz.is_sysadmin(toolkit.c.user) and toolkit.c.controller == 'api'):
+			elif (not toolkit.c.action == 'resource_download'
+					and not toolkit.c.action == 'resource_edit'
+					and not toolkit.c.action == 'new_resource'
+					and not toolkit.c.action == 'package_edit'
+					and not (toolkit.c.user and authz.is_sysadmin(toolkit.c.user) and toolkit.c.controller == 'api')):
 				change_resource_download_urls(pkg, site_url)
 
 		return search_results

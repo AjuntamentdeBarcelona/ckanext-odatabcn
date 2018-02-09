@@ -12,6 +12,7 @@ from ckan import model
 from ckan.plugins import toolkit
 from ckan.plugins import interfaces
 from ckan.model import domain_object
+from ckan.model import package as _package
 from ckan.lib.plugins import DefaultTranslation
 from ckanext.odatabcn import validators
 from collections import OrderedDict
@@ -90,7 +91,8 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 
 	# Add created datasets to Drupal table to enable comments
 	def notify(self, entity, operation=None):
-		if operation == model.domain_object.DomainObjectOperation.new:
+	
+		if operation == model.domain_object.DomainObjectOperation.new and isinstance(entity, (_package.Package)):
 			
 			reload(sys)
 			sys.setdefaultencoding('utf-8')
@@ -105,11 +107,6 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 			drupal_conn = psycopg2.connect(drupal_conn_string)
 			ckan_cursor = ckan_conn.cursor()
 			drupal_cursor = drupal_conn.cursor()
-			
-			log.debug('entity title_translated: %s', entity.title_translated)
-			log.debug('entity notes_translated: %s', entity.notes_translated)
-			log.debug('entity id: %s', entity.id)
-			log.debug('entity name: %s', entity.name)
 
 			titles = json.loads(entity.title_translated)
 			descriptions = json.loads(entity.notes_translated)
@@ -131,12 +128,14 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 			desc_ca = ''
 			if 'ca' in descriptions:
 				desc_ca = descriptions['ca']
-			print "Inserting package %s: %s %s %s: %s %s %s %s" % (entity.id, entity.name, title_en, title_es, title_ca, desc_en, desc_es, desc_ca)
+				
+			log.debug("Inserting package %s: %s %s %s: %s %s %s %s" % (entity.id, entity.name, title_en, title_es, title_ca, desc_en, desc_es, desc_ca))
+			
 			try:
 				drupal_cursor.execute("""insert into opendata_package (pkg_id,pkg_name,pkg_title_en,pkg_title_es,pkg_title_ca,pkg_description_en,pkg_description_es,pkg_description_ca) values (%s, %s, %s, %s, %s, %s, %s, %s)""", (entity.id, self.format_drupal_string(entity.name), self.format_drupal_string(title_en), self.format_drupal_string(title_es), self.format_drupal_string(title_ca), self.format_drupal_string(desc_en), self.format_drupal_string(desc_es), self.format_drupal_string(desc_ca)))
 				drupal_conn.commit()
 			except psycopg2.DataError, e:
-				self.logger.warn('Postgresql Database Exception %s', e.message)
+				log.warn('Postgresql Database Exception %s', e.message)
 
 			drupal_conn.commit()
 			drupal_cursor.close()
@@ -173,14 +172,18 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 			ckan_cursor.close()
 			ckan_conn.close()
 			
-			if not toolkit.c.action == 'resource_edit' and not toolkit.c.action == '':
+			if (not toolkit.c.action == 'resource_edit' 
+					and not toolkit.c.action == 'new_resource'
+					and not toolkit.c.action == ''):
+				print 'change resource url'
 				# Change resource download URLs in order to track downloads
 				# Show original URLs for sysadmin when accessing through API
 				if not resource_dict.get('url_type') == 'upload' and not (toolkit.c.user and authz.is_sysadmin(toolkit.c.user) and toolkit.c.controller == 'api'):
 					site_url = config.get('ckan.site_url') + config.get('ckan.root_path').replace('{{LANG}}', '')
 					resource_dict['url'] = '{site_url}dataset/{id}/resource/{resource_id}/download'.format(site_url=site_url, id=resource_dict['package_id'], resource_id=resource_dict['id']).encode('utf-8')
+		
 
-	# Add resource downloads to resource_show
+	# Add resource downloads to resource_search
 	def after_search(context, search_results):
 
 		if not (toolkit.c.user and authz.is_sysadmin(toolkit.c.user) and toolkit.c.controller == 'api'):

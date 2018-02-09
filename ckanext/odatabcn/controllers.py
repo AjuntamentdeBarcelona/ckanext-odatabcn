@@ -277,7 +277,9 @@ class ResourceDownloadController(t.BaseController):
 				abort(404, _('Resource data not found'))
 			response.headers.update(dict(headers))
 			content_type, content_enc = m.guess_type(rsc.get('url', ''))
-			if content_type:
+			if content_type and content_type == 'application/xml':
+				response.headers['Content-Type'] = 'application/octet-stream'
+			elif content_type:
 				response.headers['Content-Type'] = content_type
 			response.status = status
 			return app_iter
