@@ -34,7 +34,7 @@
             
             {% if res.url and h.is_url(res.url) %}
               <li>
-                <a class="resource-url-analytics resource-type-{{ res.resource_type }}" href="{{ res.url }}">
+                <a class="resource-type-{{ res.resource_type }}" href="{{ res.url }}">
                   {% if res.resource_type in ('listing', 'service') %}
                     <i class="icon icon-eye-open"></i> <span>{{ _('View') }}</span>
                   {% elif res.format == 'WMS' or res.format == 'WMTS' %}
