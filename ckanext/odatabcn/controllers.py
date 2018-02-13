@@ -13,8 +13,9 @@ import paste.fileapp
 import psycopg2
 import requests
 import sys
+import ckan.lib.base as base
 from ckan.lib.render import TemplateNotFound
-from ckan.common import OrderedDict, request, response
+from ckan.common import _, OrderedDict, request, response
 from ckan.lib.cli import parse_db_config
 from pylons import config
 from pylons.controllers.util import redirect
@@ -274,19 +275,21 @@ class ResourceDownloadController(t.BaseController):
 			try:
 				status, headers, app_iter = request.call_application(fileapp)
 			except OSError:
-				abort(404, _('Resource data not found'))
+				base.abort(404, _('Resource data not found'))
 			response.headers.update(dict(headers))
 			content_type, content_enc = m.guess_type(rsc.get('url', ''))
+			
 			if content_type and content_type == 'application/xml':
 				response.headers['Content-Type'] = 'application/octet-stream'
 			elif content_type:
 				response.headers['Content-Type'] = content_type
+				
 			response.status = status
 			return app_iter
 			
 			h.redirect_to(rsc['url'].encode('utf-8'))
 		elif 'url' not in rsc:
-			abort(404, _('No download is available'))
+			base.abort(404, _('No download is available'))
 		else:
 			#External redirect
 			return redirect(rsc['url'].encode('utf-8'))
