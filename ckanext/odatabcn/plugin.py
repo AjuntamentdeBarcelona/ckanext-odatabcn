@@ -150,6 +150,8 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 	
 	# Add resource downloads to resource_show
 	def before_show(context, resource_dict):
+	
+		log.warn('before_show: ' + toolkit.c.action)
 		
 		# Add download info and change resource url only if not downloading a resource, editing or indexing
 		if not toolkit.c.action == 'resource_download':
@@ -174,7 +176,7 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 			
 			if (not toolkit.c.action == 'resource_edit' 
 					and not toolkit.c.action == 'new_resource'
-					and not toolkit.c.action == ''):
+					and not toolkit.c.action == 'edit'):
 				print 'change resource url'
 				# Change resource download URLs in order to track downloads
 				# Show original URLs for sysadmin when accessing through API

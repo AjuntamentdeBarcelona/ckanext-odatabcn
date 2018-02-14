@@ -258,7 +258,7 @@ class ResourceDownloadController(t.BaseController):
 			
 		headers = {
 				'X-Forwarded-For': environ.get('REMOTE_ADDR'), 
-				'User-Agent': environ.get('HTTP_USER_AGENT'),
+				'User-Agent': environ.get('HTTP_USER_AGENT'), 
 				'Accept-Language': environ.get('HTTP_ACCEPT_LANGUAGE', ''),
 				'Accept-Encoding': environ.get('HTTP_ACCEPT_ENCODING', '')
 			}
