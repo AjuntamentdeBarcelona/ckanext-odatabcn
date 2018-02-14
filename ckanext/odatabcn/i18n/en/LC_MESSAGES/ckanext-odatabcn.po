@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ckan 2.6.0b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2016-10-18 10:37+0100\n"
-"PO-Revision-Date: 2017-11-20 08:50+0100\n"
+"PO-Revision-Date: 2018-01-23 17:24+0100\n"
 "Last-Translator: Isabel Ruiz <isaruizmellado@gmail.com>, 2016\n"
 "Language-Team: Spanish (https://www.transifex.com/okfn/teams/11162/es/)\n"
 "MIME-Version: 1.0\n"
@@ -17,19 +17,19 @@ msgstr ""
 "Generated-By: Babel 2.3.4\n"
 "Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.0.1\n"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "little"
-msgstr "Little"
+msgstr "Little (< 500KB)"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "big"
-msgstr "Big"
+msgstr "Big (> 10MB)"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "middle"
-msgstr "Middle"
+msgstr "Middle (>= 501 KB i <= 10 MB)"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "IMMEDIATA"
@@ -85,7 +85,7 @@ msgstr "Mayor request"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "PETICIO_NEGOCI"
-msgstr "Business request"
+msgstr "According to availability"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "BIMESTRAL"
@@ -99,9 +99,7 @@ msgstr "Series interrupted"
 msgid "Any 2009"
 msgstr "Year 2009"
 
-msgid ""
-"Equipaments de mitjans de comunicació i serveis relacionats de la ciutat de "
-"Barcelona"
+msgid "Equipaments de mitjans de comunicació i serveis relacionats de la ciutat de Barcelona"
 msgstr "List of media amenities and related services in Barcelona"
 
 msgid "Causa"
@@ -902,8 +900,7 @@ msgstr "Fines"
 msgid "la Maternitat i Sant Ramon"
 msgstr "La Maternitat i Sant Ramon"
 
-msgid ""
-"Equipaments de medi ambient i serveis relacionats de la ciutat de Barcelona"
+msgid "Equipaments de medi ambient i serveis relacionats de la ciutat de Barcelona"
 msgstr "List of environmental amenities and related services in Barcelona"
 
 msgid "Vallbona"
@@ -1013,9 +1010,6 @@ msgstr "Depth of buildings"
 
 msgid "Activitats musicals"
 msgstr "Music activities"
-
-msgid "Entitats"
-msgstr "Entities"
 
 msgid "Ocupació dels espais i les vies públiques"
 msgstr "Occupation of public spaces and roads"
@@ -1355,9 +1349,6 @@ msgstr "Port Olímpic"
 
 msgid "Bancs públics"
 msgstr "Public benches"
-
-msgid "agenda"
-msgstr "agenda"
 
 msgid "Sant Gervasi - Galvany"
 msgstr "Sant Gervasi - Galvany"
@@ -2388,3 +2379,321 @@ msgstr "Geographic service"
 
 msgid "Tram"
 msgstr "Section"
+
+msgid "Key"
+msgstr "Name"
+
+msgid "Value"
+msgstr "Description"
+
+msgid "Cobertura Vegetal"
+msgstr "Vegetable Coverage"
+
+msgid "Directrius"
+msgstr "Guidelines"
+
+msgid "Decrets"
+msgstr "Decrees"
+
+msgid "Internacional"
+msgstr "International"
+
+msgid "Carta arqueològica"
+msgstr "Archaeological chart"
+
+msgid "Qualitat"
+msgstr "Quality"
+
+msgid "reglaments"
+msgstr "regulations"
+
+msgid "Plantes"
+msgstr "Plants"
+
+msgid "Pressupostos"
+msgstr "Budgets"
+
+msgid "Règim tinença"
+msgstr "Tenure regime"
+
+msgid "Punts informació turística"
+msgstr "Tourist information points"
+
+msgid "Vallvidrera- el Tibidabo i les Planes"
+msgstr "Vallvidrera- el Tibidabo i les Planes"
+
+msgid "Potencia fiscal"
+msgstr "Fiscal power"
+
+msgid "Turismes"
+msgstr "Tourism"
+
+msgid "Salut pública"
+msgstr "Public health"
+
+msgid "Àrea Metropolitana Barcelona"
+msgstr "Metropolitan Area Barcelona"
+
+msgid "Estat trànsit"
+msgstr "Traffic status"
+
+msgid "Any 2018"
+msgstr "Year 2018"
+
+msgid "Alta"
+msgstr "High"
+
+msgid "Entitats Municipals"
+msgstr "Municipal Entities"
+
+msgid "Àrea blava"
+msgstr "Blue area"
+
+msgid "Províncies"
+msgstr "Provinces"
+
+msgid "Estructura territorial"
+msgstr "Territorial structure"
+
+msgid "Publicaciones"
+msgstr "Publications"
+
+msgid "Dossiers de premsa"
+msgstr "Press dossiers"
+
+msgid "Espais públics"
+msgstr "Public spaces"
+
+msgid "Seveis socials"
+msgstr "Social services"
+
+msgid "Revistes"
+msgstr "Magazines"
+
+msgid "Canvis nacionalitat"
+msgstr "Changes in nationality"
+
+msgid "Art públic"
+msgstr "Public art"
+
+msgid "preus públics"
+msgstr "public prices"
+
+msgid "Premis"
+msgstr "Awards"
+
+msgid "Propietaris"
+msgstr "Owners"
+
+msgid "Cartes de serveis"
+msgstr "Services letters"
+
+msgid "Mapa malla UTM"
+msgstr "UTM mesh map"
+
+msgid "Govern"
+msgstr "Government"
+
+msgid "Documents tècnics"
+msgstr "Technical documents"
+
+msgid "Platges públiques"
+msgstr "Public beaches"
+
+msgid "barris"
+msgstr "neighborhoods"
+
+msgid "Dictamens"
+msgstr "Dummy"
+
+msgid "Plans estratègics"
+msgstr "Strategic plans"
+
+msgid "Repositoris"
+msgstr "Repositories"
+
+msgid "Notes de premsa"
+msgstr "Press releases"
+
+msgid "Ús turístic"
+msgstr "Tourist use"
+
+msgid "Béns municipals"
+msgstr "Municipal property"
+
+msgid "Plans especials"
+msgstr "Special plans"
+
+msgid "Ajuts"
+msgstr "Aids"
+
+msgid "Trànsit"
+msgstr "Traffic"
+
+msgid "Motos"
+msgstr "Motorcycles"
+
+msgid "Transport metropolità"
+msgstr "Metropolitan transport"
+
+msgid "Punts ancoratge"
+msgstr "Anchor points"
+
+msgid "Places garatge"
+msgstr "Garage spaces"
+
+msgid "Entitats"
+msgstr "Entities"
+
+msgid "Sumatori"
+msgstr "Summation"
+
+msgid "Urbanisme"
+msgstr "Town planning"
+
+msgid "Ronda Verda"
+msgstr "Green Round"
+
+msgid "Zona descàrrega"
+msgstr "Download area"
+
+msgid "Escultures"
+msgstr "Sculptures"
+
+msgid "Monuments"
+msgstr "Monuments"
+
+msgid "Suggerències"
+msgstr "Suggestions"
+
+msgid "Enquestes"
+msgstr "Surveys"
+
+msgid "Mesures de govern"
+msgstr "Government measures"
+
+msgid "Comptes"
+msgstr "Accounts"
+
+msgid "Votants"
+msgstr "Voters"
+
+msgid "Sant Pere- Santa Caterina i la Ribera"
+msgstr "Sant Pere- Santa Caterina i la Ribera"
+
+msgid "NDVI"
+msgstr "NDVI"
+
+msgid "Espai públic"
+msgstr "Public space"
+
+msgid "Cementiris de Barcelona"
+msgstr "Cemeteries of Barcelona"
+
+msgid "Queixes"
+msgstr "Complaints"
+
+msgid "Comptabilitat"
+msgstr "Accounting"
+
+msgid "Protocols"
+msgstr "Protocols"
+
+msgid "Població femenina"
+msgstr "Female population"
+
+msgid "Carsharing"
+msgstr "Carsharing"
+
+msgid "Zona càrrega"
+msgstr "Cargo area"
+
+msgid "Xifres oficials"
+msgstr "Official figures"
+
+msgid "Laudes"
+msgstr "Rulings"
+
+msgid "Àrea DUM"
+msgstr "DUM area"
+
+msgid "Cementiris"
+msgstr "Cemeteries"
+
+msgid "Estatuts"
+msgstr "Statutes"
+
+msgid "Projectes"
+msgstr "Projects"
+
+msgid "Telecomunicacions"
+msgstr "Telecommunications"
+
+msgid "Àrea verda"
+msgstr "Green area"
+
+msgid "ordenances fiscals"
+msgstr "tax ordinances"
+
+msgid "Infraestructura Verda"
+msgstr "Green Infrastructure"
+
+msgid "Cilindrada"
+msgstr "Cylinder"
+
+msgid "Serveis religiosos"
+msgstr "Religious services"
+
+msgid "Població masculina"
+msgstr "Male population"
+
+msgid "activitats"
+msgstr "activities"
+
+msgid "Piles"
+msgstr "Batteries"
+
+msgid "Renda familiar"
+msgstr "Family income"
+
+msgid "Parada taxi"
+msgstr "Taxi stop"
+
+msgid "Beure"
+msgstr "Drink"
+
+msgid "Taxes"
+msgstr "Rates"
+
+msgid "Fotografies"
+msgstr "Pictures"
+
+msgid "Construccions poblament"
+msgstr "Constructions settlement"
+
+msgid "Premsa"
+msgstr "Press"
+
+msgid "Pròrrogues"
+msgstr "Extensions"
+
+msgid "Sectors econòmics"
+msgstr "Economic sectors"
+
+msgid "Agenda cultural"
+msgstr "Cultural agenda"
+
+msgid "Peticions"
+msgstr "Requests"
+
+msgid "Memòries"
+msgstr "Reports"
+
+msgid "agenda"
+msgstr "agenda"
+
+msgid "Institut Català del Sòl -INCASOL-"
+msgstr "Catalan Land Institute -INCASOL-"
+
+msgid "Instruccions"
+msgstr "Instructions"

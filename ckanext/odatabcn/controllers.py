@@ -1,12 +1,24 @@
 import ckan.lib.app_globals as app_globals
+import ckan.lib.helpers as h
 import ckan.lib.i18n as i18n
+import ckan.lib.uploader as uploader
+import ckan.logic as logic
 import ckan.model as model
 import ckan.plugins.toolkit as t
 import datetime as d
+import hashlib
+import ast
 import mimetypes as m
+import paste.fileapp
+import psycopg2
+import requests
+import sys
+import ckan.lib.base as base
 from ckan.lib.render import TemplateNotFound
-from ckan.common import OrderedDict, request
+from ckan.common import _, OrderedDict, request, response
+from ckan.lib.cli import parse_db_config
 from pylons import config
+from pylons.controllers.util import redirect
 
 log = __import__('logging').getLogger(__name__)
 namespace = 'ckanext.odatabcn'
@@ -77,11 +89,16 @@ class CSVController(t.BaseController):
 		# obtenemos los formatos
 		formats = t.get_action('format_autocomplete')(context, {
 				'q': '',
-				'limit': 20
+				'limit': 50
 			})
 		# puede devolver formatos duplicados, lo convertimos a un set que eliminara los elementos 
 		# duplicados y de nuevo a una lista
 		formats = list(set(formats))
+		
+		for format in formats:
+			format_strip = format.strip()
+			if not format_strip:
+				formats.remove(format)
 
 		# Incluimos la informacion que necesitamos mostrar para cada dataset
 		for package in packages:
@@ -90,13 +107,15 @@ class CSVController(t.BaseController):
 					package['notes_translated'][key] = package['notes_translated'][key].replace('\n', ' ').replace('\r', ' ')
 			
 			#Obtenemos las vistas y descargas
-			sql = '''SELECT SUM(count) AS total, package_id 
-						FROM tracking_summary 
-						WHERE package_id LIKE '%s' GROUP BY package_id;''' % (package['id'])
+			sql = '''SELECT running_total, recent_views FROM tracking_summary 
+						WHERE package_id LIKE '%s' 
+						ORDER BY tracking_date 
+						DESC LIMIT 1;''' % (package['id'])
 			results = model.Session.execute(sql)
 		
 			for m in results:
-				package['tracking_total'] = str(m.total)
+				package['tracking_total'] = str(m.running_total)
+				package['tracking_recent'] = str(m.recent_views)
 			
 			#Obtenemos un string con las etiquetas
 			tags = ''
@@ -105,11 +124,12 @@ class CSVController(t.BaseController):
 			package['flattened_tags'] = tags 
 
 			
-			# Obtenemos un string con los formatos de sus recursos, el total de descargas 
+			# Obtenemos un string con los formatos de sus recursos, el total de descargas y el valor de openness_score del dataset
 			# y si el dataset esta automatizado
 			flattened_formats = ','
 			downloads = 0
 			downloads_absolute = 0
+			qa = 0
 			automatic = 'N'
 			if 'update_string' in package and package['update_string']:
 				automatic = 'S'
@@ -132,15 +152,22 @@ class CSVController(t.BaseController):
 						not '/resource/' + resource['id'] + '/download/' in resource['url']
 						):
 							automatic = 'S'
+				
+				if 'qa' in resource:
+					resource_qa = ast.literal_eval(resource['qa'])
+					if (resource_qa['openness_score'] > qa):
+						qa = int(resource_qa['openness_score'])
 					
 					
 			package['flattened_formats'] = flattened_formats
 			package['downloads'] = downloads
 			package['downloads_absolute'] = downloads_absolute
 			package['automatic'] = automatic
+			package['qa'] = qa
 			
 			# Establecemos la tabla de formatos para cada dataset
 			package['formats'] = OrderedDict()
+
 			for format in formats:
 				format_value = 'N'
 				if ',' + format + ',' in flattened_formats:
@@ -209,3 +236,60 @@ class CSVController(t.BaseController):
 			for locale in i18n.get_locales():
 				if key + '_translated' in pkg_dict:
 					pkg_dict[key + '_translated'][locale] = pkg_dict[key + '_translated'][locale].replace('"', '""')
+					
+class ResourceDownloadController(t.BaseController):
+
+	def resource_download(self, environ, id, resource_id, filename=None):
+
+		context = {'model': model, 'session': model.Session,
+				'user': c.user, 'auth_user_obj': c.userobj}
+
+		try:
+			rsc = t.get_action('resource_show')(context, {'id': resource_id})
+		except (NotFound, NotAuthorized):
+			abort(404, _('Resource not found'))
+			
+		#Save download to tracking_raw
+		site_url = config.get('ckan.site_url') + config.get('ckan.root_path').replace('{{LANG}}', '')
+		data = {
+				'url': rsc['url'], 
+				'type': 'resource'
+			}
+			
+		headers = {
+				'X-Forwarded-For': environ.get('REMOTE_ADDR'), 
+				'User-Agent': environ.get('HTTP_USER_AGENT'), 
+				'Accept-Language': environ.get('HTTP_ACCEPT_LANGUAGE', ''),
+				'Accept-Encoding': environ.get('HTTP_ACCEPT_ENCODING', '')
+			}
+		
+		requests.post(site_url + '_tracking',
+								data=data,
+								headers=headers)
+
+		if rsc.get('url_type') == 'upload':
+			#Internal redirect
+			upload = uploader.get_resource_uploader(rsc)
+			filepath = upload.get_path(rsc['id'])
+			fileapp = paste.fileapp.FileApp(filepath)
+			try:
+				status, headers, app_iter = request.call_application(fileapp)
+			except OSError:
+				base.abort(404, _('Resource data not found'))
+			response.headers.update(dict(headers))
+			content_type, content_enc = m.guess_type(rsc.get('url', ''))
+			
+			if content_type and content_type == 'application/xml':
+				response.headers['Content-Type'] = 'application/octet-stream'
+			elif content_type:
+				response.headers['Content-Type'] = content_type
+				
+			response.status = status
+			return app_iter
+			
+			h.redirect_to(rsc['url'].encode('utf-8'))
+		elif 'url' not in rsc:
+			base.abort(404, _('No download is available'))
+		else:
+			#External redirect
+			return redirect(rsc['url'].encode('utf-8'))

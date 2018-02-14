@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ckan 2.6.0b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2016-10-18 10:37+0100\n"
-"PO-Revision-Date: 2017-11-20 09:06+0100\n"
+"PO-Revision-Date: 2018-02-05 08:20+0100\n"
 "Last-Translator: Isabel Ruiz <isaruizmellado@gmail.com>, 2016\n"
 "Language-Team: Spanish (https://www.transifex.com/okfn/teams/11162/es/)\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Generated-By: Babel 2.3.4\n"
 "Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.0.1\n"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "Maintainer Telephone"
@@ -37,15 +37,15 @@ msgstr "Cadena actualització"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "little"
-msgstr "Petit"
+msgstr "Petit (< 500KB)"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "big"
-msgstr "Gran"
+msgstr "Gran (> 10MB)"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "middle"
-msgstr "Mitjà"
+msgstr "Mitjà (>= 501 KB i <= 10 MB)"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "IMMEDIATA"
@@ -101,7 +101,7 @@ msgstr "A petició alcaldía"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "PETICIO_NEGOCI"
-msgstr "A petició de negoci"
+msgstr "Segons disponibilitat"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "BIMESTRAL"
@@ -156,10 +156,10 @@ msgid "Parent"
 msgstr "Pare"
 
 msgid "Recent Views (last 2 weeks)"
-msgstr "Vistes Recents (últimes 2 setmanes)"
+msgstr "Visites recents (últimes 2 setmanes)"
 
 msgid "Total Views"
-msgstr "Vistes Totals"
+msgstr "Visites totals"
 
 msgid "JSON Catalog (API)"
 msgstr "Catàleg JSON (API)"
@@ -532,3 +532,39 @@ msgstr "Què és el Repte?"
 
 msgid "Map visualization"
 msgstr "Visualitza plànol"
+
+msgid "Custom Fields"
+msgstr "Camps Personalitzats"
+
+msgid "Load Type"
+msgstr "Tipus de Càrrega"
+
+msgid "Link to URL"
+msgstr "Enllaç a URL"
+
+msgid "View complementary description and field definition"
+msgstr "Veure descripció complementària i definició de camps"
+
+msgid "Complementary description and field definition"
+msgstr "Descripció complementària i definició dels camps"
+
+msgid "Complementary description"
+msgstr "Descripció complementària"
+
+msgid "Key"
+msgstr "Nom"
+
+msgid "Value"
+msgstr "Descripció"
+
+msgid "Publicaciones"
+msgstr "Publicacions"
+
+msgid "View private datasets"
+msgstr "Veure datasets privats"
+
+msgid "View field definition"
+msgstr "Veure definició de camps"
+
+msgid "View complementary description"
+msgstr "Veure descripció complementària"

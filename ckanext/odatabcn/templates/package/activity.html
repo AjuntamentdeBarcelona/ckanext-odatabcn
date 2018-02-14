@@ -1,0 +1,24 @@
+{% extends "package/read_base.html" %}
+
+
+{% block pre_primary %}
+	{{ super() }}
+
+	<div class="actions resource-actions">
+          <ul>
+			<li>
+				{% set url = h.url_for(controller='package', action='read', id=pkg.name) %}
+				<a href="{{ url }}"><i class="icon bcn-icon-dades-obertes"></i> <span>{{ _('Dataset') }}</span></a>
+              </li>
+          </ul>
+    </div>
+	
+	<h2>{{ _('Activity Stream') }}</h2>
+	
+	{% block activity_stream %}
+		{{ c.package_activity_stream | safe }}
+	{% endblock %}
+	
+	</div>
+	
+{% endblock %}

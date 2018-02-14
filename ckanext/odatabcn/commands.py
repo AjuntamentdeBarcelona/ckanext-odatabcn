@@ -1,36 +1,67 @@
+# -*- coding: utf-8 -*-
+
+import ckan.plugins as p
 import datetime
+import gettext
 import logging
+import mmap
+import os 
+import pickle
+import requests
 import sys
 
 from ckan import model
 from ckan.lib.cli import CkanCommand
+from ckan.lib.mailer import mail_recipient
+from pylons import config
 
+missed_translations = set()
+
+class MyFallback(gettext.NullTranslations):
+	def gettext(self, msg):
+		missed_translations.add(msg)
+		return msg
+
+class MyTranslations(gettext.GNUTranslations, object):
+	def __init__(self, *args, **kwargs):
+		super(MyTranslations, self).__init__(*args, **kwargs)
+		self.add_fallback(MyFallback())
 
 class Odatabcn(CkanCommand):
 	'''
 	Links download data stored on the tracking_summary table with its resources
 
 	Use:
-		paster odatabcn update-tracking
-			- Update resource ids on the tracking_summary table
+		paster odatabcn update-tracking -c /etc/ckan/default/production.ini
+			- Insert resource ids on the tracking_summary table.
 		
-		paster odatabcn update-dataset-total
-			- Update the number of datasets published and deactivated last month
-			  on the odb_dataset_total custom table
+		paster odatabcn update-dataset-total -c /etc/ckan/default/production.ini
+			- Insert the number of datasets published and deactivated last month
+			  on the odb_dataset_total custom table.
+		
+		paster odatabcn get-new-tags -c /etc/ckan/default/production.ini
+			- Check all active tags against the i18n "es" language file to check for missing translations
+			  and e-mail the list to the account added on the "email_to" configuration option.
+			
+		paster odatabcn submit-resource-to-datapusher resource_id -c /etc/ckan/default/production.ini
+			- Submits a resource identified by "resource_id" to the datastore through datapusher.
+			  Adapted from ckan/ckanext/datapusher/cli.py _submit method which only allows all resources
+			  from a dataset to be submitted instead of a single one.
+		
 	'''
 
 	summary = __doc__.split('\n')[0]
 	usage = __doc__
 	min_args = 0
-	max_args = 1
+	max_args = 2
 
 	def __init__(self, name):
+		reload(sys)
+		sys.setdefaultencoding('utf-8')
 		super(Odatabcn, self).__init__(name)
 
 	def command(self):
-		"""
-		Parse command line arguments and call appropriate method.
-		"""
+		#Parse command line arguments and call appropriate method
 		if not self.args or self.args[0] in ['--help', '-h', 'help']:
 			print self.usage
 			sys.exit(1)
@@ -38,13 +69,17 @@ class Odatabcn(CkanCommand):
 		cmd = self.args[0]
 		self._load_config()
 
-		# Initialise logger after the config is loaded, so it is not disabled.
+		# Initialise logger after the config is loaded, so it is not disabled
 		self.log = logging.getLogger(__name__)
 
 		if cmd == 'update-tracking':
 			self.update_tracking()
 		elif cmd == 'update-dataset-total':
 			self.update_dataset_total()
+		elif cmd == 'get-new-tags':
+			self.get_new_tags()
+		elif cmd == 'submit-resource-to-datapusher':
+			self.submit_resource_to_datapusher(self.args[1])
 		else:
 			self.log.error('Command %s not recognized' % (cmd,))
 
@@ -132,7 +167,11 @@ class Odatabcn(CkanCommand):
 			print 'Number of datasets published between %s and %s: %s' % (last_month, last_month_last, published_total)
 			
 			# Number of unpublished or deleted datasets
-			deleted_total = current_total - previous_total - published_total
+			deleted_total = 0
+			if current_total > previous_total:
+				deleted_total = abs(current_total - previous_total - published_total)
+			else:
+				deleted_total = abs(previous_total - current_total - published_total)
 			print 'Number of datasets deleted between %s and %s: %s' % (last_month, last_month_last, deleted_total)
 			
 			# Insert row in DDBB
@@ -142,5 +181,66 @@ class Odatabcn(CkanCommand):
 			model.Session.execute(sql_insert)
 			model.Session.commit()
 			print 'Dataset totals for last month have been saved to database'
+			
+	def get_new_tags(self):
 		
+		sql = '''SELECT DISTINCT t.name AS tag
+					FROM tag t
+					INNER JOIN package_tag_revision pt ON pt.tag_id =  t.id 
+					INNER JOIN package p ON p.id = pt.package_id 
+                    WHERE pt.state = 'active'
+						AND pt.expired_timestamp > '9999-01-01'
+                        AND p.state = 'active'
+						ORDER BY t.name ASC;'''
+		results = model.Session.execute(sql).fetchall()
+
+		if len(results) > 0:
 		
+			path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'i18n')
+
+			#Use gettext to be able to set a custom fallback class
+			lang = gettext.translation(
+				"ckanext-" + self.command_name,
+				localedir=path,
+				languages=["es"],
+				class_=MyTranslations
+			)
+			lang.install()
+			
+			for row in results:
+				_(row['tag'])
+			
+			email_message = 'The following tags have no translation:\n'
+			for tag in missed_translations:
+				email_message = '%s\n* %s' % (email_message, tag)
+				
+			print(email_message)
+			
+			#E-mail missing tag list to account configured on "email_to"
+			email_to = config.get('email_to')
+			tags_email = {'recipient_name': '',
+                      'recipient_email': email_to,
+                      'subject': self.command_name + ': dataset tags', 
+                      'body': email_message}
+			mail_recipient(**tags_email)
+			
+			print '\nAn e-mail has been sent to %s' % (email_to)
+
+		else:
+			print 'There are no new tags'
+			
+	def submit_resource_to_datapusher(self, resource_id):
+	
+		user = p.toolkit.get_action('get_site_user')({'model': model, 'ignore_auth': True}, {})
+		datapusher_submit = p.toolkit.get_action('datapusher_submit')
+		
+		print ('Submitting %s...' % resource_id),
+		data_dict = {
+			'resource_id': resource_id,
+			'ignore_hash': True,
+		}
+
+		if datapusher_submit({'user': user['name']}, data_dict):
+			print 'OK'
+		else:
+			print 'Fail'

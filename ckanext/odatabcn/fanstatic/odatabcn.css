@@ -770,8 +770,14 @@ div.span9 .module-content {
 	height: auto;
 }
 
-.module-resource .actions {
+.resource-actions {
 	top: 0px;
+	right: 10px;
+	position: relative;
+	float: right;
+}
+
+.module-resource .resource-actions, .resource-actions {
 	right: 0px;
 }
 
@@ -851,6 +857,38 @@ div.span9 .module-content {
 .share-dataset .twitter { background: #1da1f2; }
 .share-dataset .facebook { background: #3b5998; }
 .share-dataset .linkedin { background: #0077b5; }
+
+
+.field-description {
+    margin-bottom: 20px;
+    margin-top: -10px;
+}
+.field-description .field-description-show {
+    margin-bottom: 3px;
+}
+
+.field-description .well, .field-description .well p {
+	font-size: 1.4rem;
+}
+
+.field-description a {
+    background: #e5e5e5;
+    color: #303030;
+    font-size: 1.6rem;
+    padding: 3px 10px;
+}
+
+.field-description .title {
+	background: #666;
+	color: #fff;
+	padding: 8px;
+	line-height: 20px;
+	font-weight: bold;
+}
+
+.dataset-info p:first-child {
+    margin-bottom: 5px;
+}
 
 #dataset-resources .resource-list .resource-item {
 	background: #f2f2f2;
@@ -941,6 +979,10 @@ div.span9 .module-content {
 
 #show-more-tags.shown #view-less {
 	display: block;
+}
+
+.dropdown-menu > li > a {
+	white-space: normal;
 }
 
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-submenu:hover > a, .dropdown-submenu:focus > a {
@@ -1148,7 +1190,7 @@ a.tag:hover {
 .resource-view .data-viewer-empty {
 	background: #f2f2f2;
 	padding-top: 20px;
-	padding-bottom: 0px;
+	padding-bottom: 20px;
 	margin-bottom: 20px;
 }
 
@@ -1513,6 +1555,19 @@ label[for="include_children"] {
     width: 100%;
 }
 
+.input-prepend .add-on {
+    height: 30px;
+}
+
+.control-custom .checkbox.btn:before {
+    top: -3px;
+    left: -5px;
+}
+
+.control-custom .checkbox.btn {
+    margin-top: 5px;
+}
+
 
 /** Demo **/
 .debug, #debug-toggle, #debug {
@@ -1520,7 +1575,7 @@ label[for="include_children"] {
 	font-size: 1.6rem;
 }
 
-/** Sólo para versión de escritorio **/
+/** Desktop version only **/
 @media (min-width:769px) {
 
 	.masthead .nav > li > a, .masthead .nav > li > div > a {
@@ -1546,6 +1601,10 @@ label[for="include_children"] {
 	
 	.submenu-header {
 		display: none;
+	}
+	
+	ul.nav li.dropdown:hover > .dropdown-menu {
+		display: block;
 	}
 	
 }
@@ -1579,6 +1638,7 @@ label[for="include_children"] {
 		position: absolute;
 		margin: 0;
 		background: #fff;
+		width: calc(180px);
 	}
 	
 	.masthead .nav-collapse .dropdown-menu li {
@@ -1593,7 +1653,7 @@ label[for="include_children"] {
 }
 
 
-/** Versión móvil **/
+/** Mobile version **/
 @media (max-width: 768px) {
 	
 	body {
@@ -1781,7 +1841,6 @@ label[for="include_children"] {
 		animation-delay: .5s;
 		position: fixed;
 		left: 0;
-		top: 60px;
 		background-color: #1e529e;
 		color: #fff;	
 		padding: 12px 12.5px;
@@ -1797,7 +1856,6 @@ label[for="include_children"] {
 	}
 	
 	.masthead .navbar-toggle.collapsed {
-		left: calc(100vw - 45px);
 		color: #000;	
 		font-size: 16px;
 		border: 0;
@@ -1876,6 +1934,26 @@ label[for="include_children"] {
 		float: none;
 	}
 
+}
+
+@media screen and (max-width: 639px) {
+	.masthead .navbar-toggle {
+		top: 45px;
+	}
+	
+	.masthead .navbar-toggle.collapsed {
+		left: calc(100vw - 55px);
+	}
+}
+
+@media screen and (min-width: 640px) {
+	.masthead .navbar-toggle {
+		top: 60px;
+	}
+	
+	.masthead .navbar-toggle.collapsed {
+		left: calc(100vw - 60px);
+	}
 }
 
 @media (max-width: 480px) {
