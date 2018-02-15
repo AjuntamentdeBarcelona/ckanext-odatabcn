@@ -175,7 +175,8 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 			if (not toolkit.c.action == 'resource_edit' 
 					and not toolkit.c.action == 'resource_delete'
 					and not toolkit.c.action == 'new_resource'
-					and not toolkit.c.action == 'edit'):
+					and not toolkit.c.action == 'edit'
+					and not toolkit.c.action == ''):
 				print 'change resource url'
 				# Change resource download URLs in order to track downloads
 				# Show original URLs for sysadmin when accessing through API
