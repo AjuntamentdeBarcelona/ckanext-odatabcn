@@ -1,0 +1,64 @@
+{% set views_created = views or resource_preview %}
+{% set has_recline_view = [] %}
+{% if views_created %}
+  <ul class="nav nav-tabs {{ extra_class }}" {{ extra_attributes }}>
+{% if not is_edit %}
+    {% if resource_preview %}
+      <li{% if not view_id %} class="active"{% endif %}>
+        <a href="{{ h.url_for(controller='package', action='resource_read', id=pkg.name, resource_id=resource.id) }}" >
+          <i class="icon icon-eye-open"></i>
+          {{ _("Resource Preview") }}
+        </a>
+      </li>
+  {% else %}
+      <li class="tab-info active">
+        <i class="icon icon-eye-open"></i>
+          {{ _("Resource Preview") }}
+      </li>
+      <li class="tab-info">
+        <a href="#additional-info">
+	  <i class="icon icon-info-sign"></i>
+          {{ _("Additional Information") }}
+        </a>
+      </li>
+  {% endif %}
+  {% endif %}
+
+  {% set current_filters = request.str_GET.get('filters') %}
+  {% for view in views %}
+
+  	{% set is_selected = true if view_id == view.id else false %}
+    	{% snippet "package/snippets/resource_views_list_item.html",
+       		view=view,
+       		pkg=pkg,
+       		is_edit=is_edit,
+       		is_selected=is_selected,
+       		current_filters=current_filters
+    %}
+
+	{% if view.view_type == "recline_view" and is_selected %}
+	  {% do has_recline_view.append(1) %}
+	{% endif %}
+
+  {% endfor %}
+</ul>
+
+{% if has_recline_view %}
+<!-- 
+
+<div class="resource-actions recline-views">
+  <ul>
+    <li>
+        <a class="" href="{{url_view}}#grid" target="data-viewer"><i class="icon icon-table"></i> <span>{{ _('Grid') }}</span></a>
+    <li>
+    <li>
+        <a class="" href="{{url_view}}#graph" target="data-viewer"><i class="icon icon-bar-chart"></i> <span>{{ _('Graph') }}</span></a>
+    <li>
+    <li>
+        <a class="" href="{{url_view}}#map" tar><i class="icon icon-globe"></i> <span>{{ _('Map') }}</span></a>
+    <li>
+  </ul>
+</div> -->
+{% endif %}
+
+{% endif %}

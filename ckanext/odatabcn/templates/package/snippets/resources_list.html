@@ -1,0 +1,60 @@
+{# 
+Renders a list of resources with icons and view links.
+
+resources - A list of resources to render
+pkg - A package object that the resources belong to.
+
+Example:
+
+  {% snippet "package/snippets/resources_list.html", pkg=pkg, resources=pkg.resources %}
+
+#}
+<section id="dataset-resources" class="resources">
+  <h2>{{ _('Data and Resources') }}</h2>
+  <div class="accordion" id="historic-series">
+
+  {% set series_number = 0 %}
+  {% set aux_year = 0 %}
+  {% block resource_list %}
+    {% if resources %}
+      <ul class="{% block resource_list_class %}resource-list{% endblock %}">
+        {% block resource_list_inner %}
+          {% for resource in resources %}
+            {% set resource_year = resource.name[:4]|int %}
+            {% if resource_year > 0 %}
+              {% if aux_year != resource_year %}
+                {% if series_number != 0 %}
+                  </div></div></div>
+                {% endif %}
+                      <div class="accordion-group">
+                        <div class="accordion-heading">
+                          <a class="accordion-toggle" data-toggle="collapse" data-parent="#historic-series" href="#series-{{series_number}}">
+                            <i class="bcn-icon-baix-medium"></i> {{ resource_year }}
+                          </a>
+                        </div>
+                       <div id="series-{{series_number}}" class="accordion-body collapse {% if series_number == 0 %}in{% endif %}">
+                         <div class="accordion-inner">
+                      {% set series_number = series_number+1 %}
+                    {% endif %}
+              {% endif %}
+                  {% set aux_year = resource_year %}
+                  {% snippet 'package/snippets/resource_item.html', pkg=pkg, res=resource %}
+                {% endfor %}
+              {% endblock %}
+            </ul>
+            {% else %}
+              {% if h.check_access('resource_create', {'package_id': pkg['id']}) %}
+                {% trans url=h.url_for(controller='package', action='new_resource', id=pkg.name) %}
+                  <p class="empty">This dataset has no data, <a href="{{ url }}">why not add some?</a></p>
+                {% endtrans %}
+              {% else %}
+            <p class="empty">{{ _('This dataset has no data') }}</p>
+            {% endif %}
+          {% endif %}
+    {% endblock %}
+
+    {% if series_number != 0 %}
+      </div></div></div>
+    {% endif %}
+  </div>
+</section>

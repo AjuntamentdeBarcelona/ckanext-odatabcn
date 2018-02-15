@@ -1,0 +1,2962 @@
+# Translations template for ckan.
+# Copyright (C) 2016 ORGANIZATION
+# This file is distributed under the same license as the ckan project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ckan 2.6.0b0\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2016-10-18 10:37+0100\n"
+"PO-Revision-Date: 2018-02-05 08:21+0100\n"
+"Last-Translator: Isabel Ruiz <isaruizmellado@gmail.com>, 2016\n"
+"Language-Team: Spanish (https://www.transifex.com/okfn/teams/11162/es/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.1\n"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "Maintainer Telephone"
+msgstr "Teléfono del Mantenedor"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "Observations"
+msgstr "Observaciones"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "File Volum"
+msgstr "Volumen del fichero"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "Update String"
+msgstr "Cadena de actualización"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "little"
+msgstr "Pequeño (< 500KB)"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "big"
+msgstr "Grande (> 10MB)"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "middle"
+msgstr "Mediano (>= 501 KB i <= 10 MB)"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "IMMEDIATA"
+msgstr "Inmediata"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "DIARIA"
+msgstr "Diaria"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "SETMANAL"
+msgstr "Semanal"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "MENSUAL"
+msgstr "Mensual"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "TRIMESTRAL"
+msgstr "Trimestral"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "SEMESTRAL"
+msgstr "Semestral"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "ANUAL"
+msgstr "Anual"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "BIENNAL"
+msgstr "Bienal"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "DECENAL"
+msgstr "Decenal"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "CINC_MINUTS"
+msgstr "Cinco minutos"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "TRENTA_MINUTS"
+msgstr "Treinta minutos"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "UNA_HORA"
+msgstr "Una hora"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "PETICIO_ALCALDIA"
+msgstr "A petición de alcaldía"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "PETICIO_NEGOCI"
+msgstr "Según disponibilidad"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "BIMESTRAL"
+msgstr "Bimestral"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "SERIE_INTERROMPUDA"
+msgstr "Serie interrumpida"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "Frequency"
+msgstr "Frecuencia actualización"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "Department"
+msgstr "Departamento"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "Management"
+msgstr "Gerencia"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "Broadcasting Management"
+msgstr "Gerencia de difusión"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "Broadcasting Department"
+msgstr "Departamento de difusión"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "Data Origin"
+msgstr "Origen de Datos"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "Broadcast"
+msgstr "Difusión"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "Responsible"
+msgstr "Responsable"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "Responsible Telephone"
+msgstr "Teléfono del Responsable"
+
+#: ckan/templates/package/snippets/package_metadata_fields.html
+msgid "Responsible Email"
+msgstr "Email del Responsable"
+
+#: TAGS
+msgid "Modificacions i pròrrogues de contractes"
+msgstr "Modificaciones y prórrogas de contratos"
+
+msgid "Perfil"
+msgstr "Perfil"
+
+msgid "IAE"
+msgstr "IAE"
+
+msgid "Patrimoni"
+msgstr "Patrimonio"
+
+msgid "Piràmide edats"
+msgstr "Pirámide edades"
+
+msgid "Establiments de jocs d-atzar i recreatius"
+msgstr "Establecimientos de juegos de azar y recreativos"
+
+msgid "Abocadors"
+msgstr "Vertederos"
+
+msgid "Aquaris"
+msgstr "Acuarios"
+
+msgid "el Camp de l-Arpa del Clot"
+msgstr "el Camp de l'Arpa del Clot"
+
+msgid "Medieval"
+msgstr "Medieval"
+
+msgid "eleccions"
+msgstr "eleccions"
+
+msgid "Residus"
+msgstr "Residuos"
+
+msgid "Platges"
+msgstr "Playas"
+
+msgid "Centres comercials"
+msgstr "Centros comerciales"
+
+msgid "Districte d-Horta-Guinardó"
+msgstr "Distrito Horta-Guinardó"
+
+msgid "Districte de Ciutat Vella"
+msgstr "Distrito Ciutat Vella"
+
+msgid "Equipaments de l-Administració"
+msgstr "Equipamientos administración"
+
+msgid "Port olímpic"
+msgstr "Puerto olímpico"
+
+msgid "platja"
+msgstr "playa"
+
+msgid "Plànol de la ciutat"
+msgstr "Plano de la ciudad"
+
+msgid "Venda habitatges"
+msgstr "Venta viviendas"
+
+msgid "Taula direle"
+msgstr "Tabla direle"
+
+msgid "Religió"
+msgstr "Religión"
+
+msgid "Animals"
+msgstr "Animales"
+
+msgid "les Corts"
+msgstr "les Corts"
+
+msgid "bicicleta"
+msgstr "bicicleta"
+
+msgid "Necessitats fisiològiques"
+msgstr "Necesidades fisiológicas"
+
+msgid "Muralla"
+msgstr "Muralla"
+
+msgid "Soterranis"
+msgstr "Sótanos"
+
+msgid "Habitatges familiars"
+msgstr "Viviendas familiares"
+
+msgid "Mensual"
+msgstr "Mensual"
+
+msgid "Contractació pública"
+msgstr "Contratación pública"
+
+msgid "Mapa parcel-lari"
+msgstr "Mapa parcelario"
+
+msgid "Usos predominants del sòl"
+msgstr "Usos predominantes del suelo"
+
+msgid "Numeració postal"
+msgstr "Numeración postal"
+
+msgid "Can Peguera"
+msgstr "Can Peguera"
+
+msgid "Prostitució al carrer"
+msgstr "Prostitución callejera"
+
+msgid "Ventiladors d-extracció"
+msgstr "Ventiladores de extracción"
+
+msgid "Establiments de canvi de moneda"
+msgstr "Establecimientos de cambio de moneda"
+
+msgid "Any 2013"
+msgstr "Año 2013"
+
+msgid "zona càrrega"
+msgstr "zona carga"
+
+msgid "Tram trànsit"
+msgstr "Tramo tráfico"
+
+msgid "Diagonal Mar i el Front Marítim del Poblenou"
+msgstr "Diagonal Mar i el Front Marítim del Poblenou"
+
+msgid "Indigents"
+msgstr "Indigentes"
+
+msgid "Fondària dels edificis"
+msgstr "Profundidad de los edificios"
+
+msgid "Participació"
+msgstr "Participación"
+
+msgid "Rèptils"
+msgstr "Reptiles"
+
+msgid "Frigorífics"
+msgstr "Frigoríficos"
+
+msgid "Divisions administratives"
+msgstr "Divisiones administrativas"
+
+msgid "Hipermercats"
+msgstr "Hipermercados"
+
+msgid "PDF"
+msgstr "PDF"
+
+msgid "Naixement"
+msgstr "Nacimiento"
+
+msgid "Catàleg metadades"
+msgstr "Catálogo metadatos"
+
+msgid "Assetjament"
+msgstr "Acoso"
+
+msgid "Activitats innòcues"
+msgstr "Actividades inocuas"
+
+msgid "Distribució de la població en el municipi de Viladecans"
+msgstr "Distribución de la población en Viladecans"
+
+msgid "Adreces"
+msgstr "Direcciones"
+
+msgid "suport"
+msgstr "soporte"
+
+msgid "Cultura"
+msgstr "Cultura"
+
+msgid "Pedralbes"
+msgstr "Pedralbes"
+
+msgid "Ocupació dels espais i les vies públiques"
+msgstr "Ocupación de los espacios y vías públicas"
+
+msgid "Servei geogràfic (Geoservei)"
+msgstr "Servicio geográfico"
+
+msgid "Ocupació"
+msgstr "Ocupacion"
+
+msgid "la Vila de Gràcia"
+msgstr "la Vila de Gràcia"
+
+msgid "Comerç de proximitat"
+msgstr "Comercio de proximidad"
+
+msgid "Semisòtans"
+msgstr "Semisótanos"
+
+msgid "Terrasses al carrer"
+msgstr "Terrazas en la calle"
+
+msgid "Aliments"
+msgstr "Alimentos"
+
+msgid "Baixes per defunció"
+msgstr "Bajas por defunción"
+
+msgid "Mapa base guia"
+msgstr "Mapa base guía"
+
+msgid "Pancartes"
+msgstr "Pancartas"
+
+msgid "Nom de carrer"
+msgstr "Nombre de calle"
+
+msgid "Navas"
+msgstr "Navas"
+
+msgid "Exposicions"
+msgstr "Exposiciones"
+
+msgid "Instal-lacions"
+msgstr "Instalaciones"
+
+msgid "IBI"
+msgstr "IBI"
+
+msgid "Higiene personal"
+msgstr "Higiene personal"
+
+msgid "Equipaments de mitjans de comunicació i serveis relacionats de la ciutat de Barcelona"
+msgstr "Equipamientos de medios de comunicación y servicios relacionados de la ciudad de Barcelona"
+
+msgid "Galeries d-art"
+msgstr "Galerías de arte"
+
+msgid "Districte de l-Eixample"
+msgstr "Distrito L'Eixample"
+
+msgid "Activitats esportives"
+msgstr "Actividades deportivas"
+
+msgid "Grau discapacitat"
+msgstr "Grado discapacidad"
+
+msgid "Recollida d-animals"
+msgstr "Recogida de animales"
+
+msgid "Trinitat Vella"
+msgstr "la Trinitat Vella"
+
+msgid "Bars musicals"
+msgstr "Bares musicales"
+
+msgid "Comerç a l-engròs"
+msgstr "Comercio al por mayor"
+
+msgid "Via pública"
+msgstr "Vía pública"
+
+msgid "Perfil professional"
+msgstr "Perfil profesional"
+
+msgid "centres cívics"
+msgstr "centros civicos"
+
+msgid "Centres cívics"
+msgstr "Centros cívicos"
+
+msgid "Districte de Sarrià - Sant Gervasi"
+msgstr "Distrito Sarrià-Sant Gervasi"
+
+msgid "Monopatins"
+msgstr "Monopatines"
+
+msgid "Deposicions d-animals"
+msgstr "Deposiciones de animales"
+
+msgid "Graf viari carrers"
+msgstr "Grafo viario calles"
+
+msgid "Campanyes publicitat institucional"
+msgstr "Campañas publicidad institucional"
+
+msgid "Mapa base de vialitat"
+msgstr "Mapa base de vialidad"
+
+msgid "Ordenança consolidada"
+msgstr "Ordenanza consolidada"
+
+msgid "OMD"
+msgstr "OMD"
+
+msgid "ancoratge"
+msgstr "anclaje"
+
+msgid "Subdivisions d-habitatges"
+msgstr "Subdivisiones de viviendas"
+
+msgid "Equipaments de sanitat"
+msgstr "Equipamientos sanidad"
+
+msgid "Ordenança bàsica"
+msgstr "Ordenanza básica"
+
+msgid "la Vall d-Hebron"
+msgstr "la Vall d'Hebron"
+
+msgid "Any 2016"
+msgstr "Año 2016"
+
+msgid "Any 2017"
+msgstr "Año 2017"
+
+msgid "olis"
+msgstr "aceites"
+
+msgid "Gimnasos"
+msgstr "Gimnasios"
+
+msgid "Antenes"
+msgstr "Antenas"
+
+msgid "el Coll"
+msgstr "el Coll"
+
+msgid "Equipaments d-esports"
+msgstr "Equipamientos deportivos"
+
+msgid "Animals salvatges"
+msgstr "Animales salvajes"
+
+msgid "Establiments de telecomunicacions"
+msgstr "Establecimientos de telecomunicaciones"
+
+msgid "Mapa d-àmbits"
+msgstr "Mapa de ámbitos"
+
+msgid "Sants"
+msgstr "Sants"
+
+msgid "Elements urbans"
+msgstr "Elementos urbanos"
+
+msgid "Estudi demogràfic"
+msgstr "Estudio demografico"
+
+msgid "el Raval"
+msgstr "el Raval"
+
+msgid "Equipaments d-associacions"
+msgstr "Equipamientos de associaciones"
+
+msgid "Donar menjar als animals"
+msgstr "Dar de comer a los animales"
+
+msgid "la Prosperitat"
+msgstr "la Prosperitat"
+
+msgid "Compra habitatges"
+msgstr "Compra viviendas"
+
+msgid "Magatzems"
+msgstr "Almacenes"
+
+msgid "zona descàrrega"
+msgstr "zona descarga"
+
+msgid "punts informació turistica"
+msgstr "puntos información turistica"
+
+msgid "el Poblenou"
+msgstr "Poblenou"
+
+msgid "carrers"
+msgstr "calles"
+
+msgid "Ordenances municipals"
+msgstr "Ordenanzas municipales"
+
+msgid "Centres docents"
+msgstr "Centros docentes"
+
+msgid "Patis"
+msgstr "Patios"
+
+msgid "Nombre de persones"
+msgstr "Numero de personas"
+
+msgid "Festivals"
+msgstr "Festivales"
+
+msgid "Pirotècnia"
+msgstr "Pirotecnia"
+
+msgid "transports"
+msgstr "transportes"
+
+msgid "parada taxi"
+msgstr "parada taxi"
+
+msgid "Bicicletes"
+msgstr "Bicicletas"
+
+msgid "Carrerer"
+msgstr "Callejero"
+
+msgid "Begudes alcohòliques"
+msgstr "Bebidas alcohólicas"
+
+msgid "Animals perillosos"
+msgstr "Animales peligrosos"
+
+msgid "Equipaments d-educació"
+msgstr "Equipamientos educación"
+
+msgid "Bancs públics"
+msgstr "Bancos públicos"
+
+msgid "Transport públic"
+msgstr "Transporte público"
+
+msgid "Nivell d-estudis"
+msgstr "Nivel de estudios"
+
+msgid "Any 2007"
+msgstr "Año 2007"
+
+msgid "el Baix Guinardó"
+msgstr "el Baix Guinardó"
+
+msgid "Terraris"
+msgstr "Terrarios"
+
+msgid "Establiments comercials turístics"
+msgstr "Establecimientos comerciales turísticos"
+
+msgid "Obres"
+msgstr "Obras"
+
+msgid "Música"
+msgstr "Música"
+
+msgid "Prostitució"
+msgstr "Prostitución"
+
+msgid "Jocs a l-aire lliure"
+msgstr "Juegos al aire libre"
+
+msgid "Hostafrancs"
+msgstr "Hostafrancs"
+
+msgid "Rampes"
+msgstr "Rampas"
+
+msgid "ÚS TURÍSTIC"
+msgstr "USO TURÍSTICO"
+
+msgid "Mapa"
+msgstr "Mapa"
+
+msgid "Meublés"
+msgstr "Meublés"
+
+msgid "el Putget i el Farró"
+msgstr "el Putxet i el Farró"
+
+msgid "Sant Andreu"
+msgstr "Sant Andreu"
+
+msgid "Comerç al detall"
+msgstr "Comercio al detalle"
+
+msgid "Arbres d-interès local"
+msgstr "Árboles de interés local"
+
+msgid "Sarrià"
+msgstr "Sarrià"
+
+msgid "Activitats musicals"
+msgstr "Actividades musicales"
+
+msgid "Equipaments de cementiris"
+msgstr "Equipamientos de cementerios"
+
+msgid "Neteja de vehicles"
+msgstr "Limpieza de vehículos"
+
+msgid "Llistat webs municipals"
+msgstr "Listado webs municipales"
+
+msgid "Equipaments de serveis religiosos"
+msgstr "Equipamientos servicios religiosos"
+
+msgid "la Bordeta"
+msgstr "la Bordeta"
+
+msgid "Energia i telecomunicacions"
+msgstr "Energía y telecomunicaciones"
+
+msgid "Contractació menor"
+msgstr "Contratación menor"
+
+msgid "Dades gràfiques de població en el municipi de Viladecans"
+msgstr "Datos gráficos de población en Viladecans"
+
+msgid "Demografía"
+msgstr "Demografía"
+
+msgid "Eleccions"
+msgstr "Elecciones"
+
+msgid "Il-luminació"
+msgstr "Iluminación"
+
+msgid "Canvis de domicili"
+msgstr "Cambios de domicilio"
+
+msgid "Acústic"
+msgstr "Acústico"
+
+msgid "Planol"
+msgstr "Plano"
+
+msgid "Superfície mitjana"
+msgstr "Superficie media"
+
+msgid "la Dreta de l-Eixample"
+msgstr "la Dreta de l'Eixample"
+
+msgid "Barri"
+msgstr "Barrio"
+
+msgid "la Vila Olímpica del Poblenou"
+msgstr "la Vila Olímpica del Poblenou"
+
+msgid "Activitats mineres"
+msgstr "Actividades mineras"
+
+msgid "Illes"
+msgstr "Manzanas"
+
+msgid "Any 2012"
+msgstr "Año 2012"
+
+msgid "LGEP i LOEPSF"
+msgstr "LGEP y LOEPSF"
+
+msgid "Mapa base topogràfic"
+msgstr "Mapa base topográfico"
+
+msgid "Emigració"
+msgstr "Emigración"
+
+msgid "Establiments de concurrència pública"
+msgstr "Establecimientos de concurrencia pública"
+
+msgid "Treball"
+msgstr "Trabajo"
+
+msgid "Circs"
+msgstr "Circos"
+
+msgid "Violència"
+msgstr "Violencia"
+
+msgid "Wifi"
+msgstr "Wifi"
+
+msgid "Nombre d-habitacions"
+msgstr "Numero de habitaciones"
+
+msgid "Transport i serveis relacionats"
+msgstr "Transporte y servicios relacionados"
+
+msgid "Sagrada Família"
+msgstr "la Sagrada Família"
+
+msgid "Trinitat Nova"
+msgstr "la Trinitat Nova"
+
+msgid "Persones"
+msgstr "Personas"
+
+msgid "Aparcaments"
+msgstr "Aparcamientos"
+
+msgid "Nacionalitats"
+msgstr "Nacionalidades"
+
+msgid "Biblioteca"
+msgstr "biblioteca"
+
+msgid "Porta"
+msgstr "Porta"
+
+msgid "Sant Martí de Provençals"
+msgstr "Sant Martí de Provençals"
+
+msgid "Subsòl"
+msgstr "Subsuelo"
+
+msgid "comissionats"
+msgstr "comisionados"
+
+msgid "fàbriques creació"
+msgstr "fábricas creación"
+
+msgid "Establiments hotelers"
+msgstr "Establecimientos hoteleros"
+
+msgid "Museus"
+msgstr "Museos"
+
+msgid "Edat"
+msgstr "Edad"
+
+msgid "Gossos de seguretat"
+msgstr "Perros de seguridad"
+
+msgid "Mapa de retolació de carrers"
+msgstr "Mapa de la rotulación de calles"
+
+msgid "Grans magatzems"
+msgstr "Grandes almacenes"
+
+msgid "Equipaments de centres d-informació"
+msgstr "Equipamientos de centros de información"
+
+msgid "Sant Genís dels Agudells"
+msgstr "Sant Genís dels Agudells"
+
+msgid "Immobles"
+msgstr "Inmuebles"
+
+msgid "Internet"
+msgstr "Internet"
+
+msgid "webs"
+msgstr "webs"
+
+msgid "la Teixonera"
+msgstr "la Teixonera"
+
+msgid "Activitats"
+msgstr "Actividades"
+
+msgid "Equipaments d-animals i plantes"
+msgstr "Equipamientos de animales y plantas"
+
+msgid "Coronaments"
+msgstr "Coronamientos"
+
+msgid "Centres de culte"
+msgstr "Centros de culto"
+
+msgid "Rehabilitació d-edificis"
+msgstr "Rehabilitación de edificios"
+
+msgid "el Camp d-en Grassot i Gràcia Nova"
+msgstr "el Camp d'en Grassot i Gràcia Nova"
+
+msgid "Sindicats"
+msgstr "Sindicatos"
+
+msgid "Albergs de joventut"
+msgstr "Albergues de juventud"
+
+msgid "Rètols"
+msgstr "Letreros, Rótulos"
+
+msgid "Establiments esportius"
+msgstr "Establecimientos deportivos"
+
+msgid "Relació contractistes Ajuntament"
+msgstr "Relación contratistas Ayuntamiento"
+
+msgid "la Sagrera"
+msgstr "la Sagrera"
+
+msgid "Preu"
+msgstr "Precio"
+
+msgid "Sant Pere, Santa Caterina i la Ribera"
+msgstr "Sant Pere, Santa Caterina i la Ribera"
+
+msgid "Càrrega i descàrrega"
+msgstr "Carga y descarga"
+
+msgid "Garatges i aparcaments"
+msgstr "Garajes y aparcamientos"
+
+msgid "Any 2015"
+msgstr "Año 2015"
+
+msgid "Botigues de conveniència"
+msgstr "Tiendas de conveniencia"
+
+msgid "servei bicicleta"
+msgstr "servicio bicicleta"
+
+msgid "Orografia i relleu"
+msgstr "Orografía y relieve"
+
+msgid "Contaminació atmosfèrica"
+msgstr "Contaminación atmosférica"
+
+msgid "Deute"
+msgstr "Deuda"
+
+msgid "Equipaments de transports"
+msgstr "Equipamientos transportes"
+
+msgid "ESCALA 5000"
+msgstr "ESCALA 5000"
+
+msgid "Oferta pública"
+msgstr "Oferta pública"
+
+msgid "Atraccions"
+msgstr "Atracciones"
+
+msgid "Addició de pisos"
+msgstr "Adición de pisos"
+
+msgid "Àmbits urbanístics"
+msgstr "Ámbitos urbanísticos"
+
+msgid "Edificis"
+msgstr "Edificios"
+
+msgid "la Clota"
+msgstr "la Clota"
+
+msgid "Numero plantes sobre rasant"
+msgstr "Numero plantas sobre rasante"
+
+msgid "Circulació"
+msgstr "Circulación"
+
+msgid "Baranes"
+msgstr "Barandillas"
+
+msgid "Numero immobles"
+msgstr "Numero inmuebles"
+
+msgid "Mapa de la malla de fulls UTM"
+msgstr "Mapa de la malla de hojas UTM"
+
+msgid "Voladissos"
+msgstr "Voladizos"
+
+msgid "Mendicitat"
+msgstr "Mendicidad"
+
+msgid "Fires"
+msgstr "Ferias"
+
+msgid "la Barceloneta"
+msgstr "la Barceloneta"
+
+msgid "Sexe"
+msgstr "Sexo"
+
+msgid "Districte de les Corts"
+msgstr "Distrito Les Corts"
+
+msgid "Places"
+msgstr "Plazas"
+
+msgid "Equipaments de serveis socials"
+msgstr "Equipamientos servicios sociales"
+
+msgid "Topogràfic"
+msgstr "Topográfico"
+
+msgid "Establiments de degustació"
+msgstr "Establecimientos de degustación"
+
+msgid "Pressupost"
+msgstr "Presupuesto"
+
+msgid "Mercats"
+msgstr "Mercados"
+
+msgid "Amfibis"
+msgstr "Anfibios"
+
+msgid "el Besòs i el Maresme"
+msgstr "el Besòs i el Maresme"
+
+msgid "activitats formació"
+msgstr "actividades formación"
+
+msgid "Enderrocs"
+msgstr "Derribos"
+
+msgid "Gossos pigall"
+msgstr "Perros lazarillo"
+
+msgid "Establiments de menjar ràpid"
+msgstr "Establecimientos de comida rápida"
+
+msgid "Músics del carrer"
+msgstr "Músicos callejeros"
+
+msgid "Adreça"
+msgstr "Dirección"
+
+msgid "la Maternitat i Sant Ramon"
+msgstr "la Maternitat i Sant Ramon"
+
+msgid "Equipaments de cultura i lleure"
+msgstr "Equipamientos cultura y ocio"
+
+msgid "reciclatge"
+msgstr "reciclaje"
+
+msgid "Vallbona"
+msgstr "Vallbona"
+
+msgid "les Tres Torres"
+msgstr "les Tres Torres"
+
+msgid "Roquetes"
+msgstr "Roquetes"
+
+msgid "Llocs culte"
+msgstr "Lugares culto"
+
+msgid "Activitats industrials"
+msgstr "Actividades industriales"
+
+msgid "Contaminació acústica"
+msgstr "Contaminación acústica"
+
+msgid "Aforament de locals"
+msgstr "Aforo de locales"
+
+msgid "l-Antiga Esquerra de l-Eixample"
+msgstr "l'Antiga Esquerra de l'Eixample"
+
+msgid "Canyelles"
+msgstr "Canyelles"
+
+msgid "Animals abandonats"
+msgstr "Animales abandonados"
+
+msgid "el Barri Gòtic"
+msgstr "el Gòtic"
+
+msgid "Resum trimestral contractació"
+msgstr "Resumen trimestral contratación"
+
+msgid "Establiments comercials"
+msgstr "Establecimientos comerciales"
+
+msgid "Sant Antoni"
+msgstr "Sant Antoni"
+
+msgid "Animals morts"
+msgstr "Animales muertos"
+
+msgid "el Clot"
+msgstr "el Clot"
+
+msgid "Mapa temàtic de divisions administratives"
+msgstr "Mapa temático de divisiones administrativas"
+
+msgid "Civisme"
+msgstr "Civismo"
+
+msgid "Nacionalitat propietari"
+msgstr "Nacionalidad propietario"
+
+msgid "Can Baró"
+msgstr "Can Baró"
+
+msgid "Provisió"
+msgstr "Provisión"
+
+msgid "Interiors d-illa"
+msgstr "Interiores de manzana"
+
+msgid "Barris de Barcelona"
+msgstr "Barrios de Barcelona"
+
+msgid "intervenció"
+msgstr "intervención"
+
+msgid "Moviments padronals"
+msgstr "Movimientos padronales"
+
+msgid "el Bon Pastor"
+msgstr "Bon Pastor"
+
+msgid "Espais i vies públiques"
+msgstr "Espacios y vías públicas"
+
+msgid "Districtes"
+msgstr "Distritos"
+
+msgid "Pressupost Liquidat"
+msgstr "Presupuesto Liquidado"
+
+msgid "Espais de creació"
+msgstr "Espacios de creación"
+
+msgid "contenidor"
+msgstr "contenedor"
+
+msgid "Lloguer"
+msgstr "Alquiler"
+
+msgid "Discoteques"
+msgstr "Discotecas"
+
+msgid "Registre convenis"
+msgstr "Registro convenios"
+
+msgid "Concerts"
+msgstr "Conciertos"
+
+msgid "Altes per omissió"
+msgstr "Altas por omisión"
+
+msgid "Ingressos"
+msgstr "Ingresos"
+
+msgid "companyies autocars"
+msgstr "compañias autocares"
+
+msgid "Dipòsits d-aigua"
+msgstr "Depósitos de agua"
+
+msgid "la Marina de Port"
+msgstr "la Marina de Port"
+
+msgid "Establiments culturals i de lleure"
+msgstr "Establecimientos culturales y de ocio"
+
+msgid "Evolució dels extrangers en el municipi de Viladecans"
+msgstr "Distritos municipales de Viladecans"
+
+msgid "Multes"
+msgstr "Multas"
+
+msgid "Agenda diaria"
+msgstr "Agenda diaria"
+
+msgid "Font de la Guatlla"
+msgstr "la Font de la Guatlla"
+
+msgid "Transferències"
+msgstr "Transferencias"
+
+msgid "Mercats i centres comercials"
+msgstr "Equipamientos mercados y centros comerciales"
+
+msgid "Incendis"
+msgstr "Incendios"
+
+msgid "Addició de plantes"
+msgstr "Adición de plantas"
+
+msgid "Modificacions crèdit"
+msgstr "Modificaciones crédito"
+
+msgid "Calderes"
+msgstr "Calderas"
+
+msgid "Avís de trànsit"
+msgstr "Aviso tráfico"
+
+msgid "Any 2009"
+msgstr "Año 2009"
+
+msgid "Catàleg Open Data"
+msgstr "Catálogo Open Data"
+
+msgid "Claraboies"
+msgstr "Claraboyas, Tragaluz"
+
+msgid "Autoserveis"
+msgstr "Autoservicios"
+
+msgid "Lavabos"
+msgstr "Lavabos"
+
+msgid "mobilitat"
+msgstr "movilidad"
+
+msgid "Districte de Gràcia"
+msgstr "Distrito Gràcia"
+
+msgid "Construccions poblamen"
+msgstr "Construcciones poblamient"
+
+msgid "Grups edat"
+msgstr "Grupos edad"
+
+msgid "Parets mitgeres"
+msgstr "Paredes medianeras"
+
+msgid "Meteorologia"
+msgstr "Meteorología"
+
+msgid "Any 2010"
+msgstr "Año 2010"
+
+msgid "Arts escèniques"
+msgstr "Artes escénicas"
+
+msgid "Tribunes (edificis)"
+msgstr "Tribunas (edificios)"
+
+msgid "Horta"
+msgstr "Horta"
+
+msgid "Passeigs"
+msgstr "Paseos"
+
+msgid "Comunitats autònomes"
+msgstr "Comunidades autónomas"
+
+msgid "Test"
+msgstr "Test"
+
+msgid "Instal-lacions a la via pública"
+msgstr "Instalaciones en la vía pública"
+
+msgid "Places de garatge"
+msgstr "Plazas de garage"
+
+msgid "Places de toros"
+msgstr "Plazas de toros"
+
+msgid "Barris i seccions censals"
+msgstr "Barrios y secciones censales"
+
+msgid "Arqueologia"
+msgstr "Arqueología"
+
+msgid "Pallols"
+msgstr "Graneros"
+
+msgid "Estacionament"
+msgstr "Estacionamiento"
+
+msgid "Usos sòl"
+msgstr "Usos suelo"
+
+msgid "Compliment objectius"
+msgstr "Cumplimiento objetivos"
+
+msgid "Xarxa topogràfica municipal"
+msgstr "Red topográfica municipal"
+
+msgid "Horaris comercials"
+msgstr "Horarios comerciales"
+
+msgid "Declaració de ruïna"
+msgstr "Declaración de ruina"
+
+msgid "Servei"
+msgstr "Servicio"
+
+msgid "Mercats municipals"
+msgstr "Mercados municipales"
+
+msgid "Sants-Badal"
+msgstr "Sants-Badal"
+
+msgid "Densitat d-establiments"
+msgstr "Densidad de establecimientos"
+
+msgid "Fleques"
+msgstr "Panaderías"
+
+msgid "afectació"
+msgstr "afectación"
+
+msgid "Fulls UTM històric"
+msgstr "Hojas UTM histórico"
+
+msgid "Escampar publicitat"
+msgstr "Repartir publicidad"
+
+msgid "Transparència"
+msgstr "Transparencia"
+
+msgid "Carta arqueològic"
+msgstr "Carta arqueológic"
+
+msgid "història"
+msgstr "historia"
+
+msgid "benzinera"
+msgstr "gasolinera"
+
+msgid "Clavegueram"
+msgstr "Alcantarillado"
+
+msgid "Plantilla"
+msgstr "Plantilla"
+
+msgid "Rutes"
+msgstr "Rutas"
+
+msgid "Gossos"
+msgstr "Perros"
+
+msgid "Equipaments de medi ambient i serveis relacionats de la ciutat de Barcelona"
+msgstr "Equipamientos de medio ambiente y servicios relacionados de la ciudad de Barcelona"
+
+msgid "Plànol urbanístic"
+msgstr "Plano urbanístico"
+
+msgid "Any 2014"
+msgstr "Año 2014"
+
+msgid "entitats"
+msgstr "entidades"
+
+msgid "Carta Arqueològica"
+msgstr "Carta Arqueológica"
+
+msgid "Bany"
+msgstr "Baño"
+
+msgid "Animals companyia"
+msgstr "Animales compañía"
+
+msgid "pacte"
+msgstr "pacto"
+
+msgid "Incidents gestionats"
+msgstr "Incidentes gestionados"
+
+msgid "Tipologia"
+msgstr "Tipologia"
+
+msgid "Encomanes"
+msgstr "Encomiendas"
+
+msgid "Venda ambulant"
+msgstr "Venta ambulante"
+
+msgid "la Guineueta"
+msgstr "la Guineueta"
+
+msgid "Toponímia"
+msgstr "Toponimia"
+
+msgid "Calefacció"
+msgstr "Calefacción"
+
+msgid "Conservació i manteniment d-edificis"
+msgstr "Conservación y mantenimiento de edificios"
+
+msgid "Establiments de restauració"
+msgstr "Establecimientos de restauración"
+
+msgid "Informació sobre els codis dels itineraris i dels trams de trànsit"
+msgstr "Información sobre los códigos de los itinerarios y tramos de tráfico"
+
+msgid "Administració electrònica"
+msgstr "Administración electrónica"
+
+msgid "Persones discapacitades"
+msgstr "Personas discapacitadas"
+
+msgid "Districte"
+msgstr "Distrito"
+
+msgid "Agenda esportiva"
+msgstr "Agenda deportiva"
+
+msgid "Sant Gervasi - la Bonanova"
+msgstr "Sant Gervasi-la Bonanova"
+
+msgid "Restaurants"
+msgstr "Equipamientos restaurantes"
+
+msgid "Acampades"
+msgstr "Acampadas"
+
+msgid "Aparadors"
+msgstr "Escaparates"
+
+msgid "Numero plantes sota rasant"
+msgstr "Numero plantas bajo rasante"
+
+msgid "Any 2008"
+msgstr "Año 2008"
+
+msgid "Adreces postals"
+msgstr "Direcciones postales"
+
+msgid "Aliments per a animals"
+msgstr "Alimentos para animales"
+
+msgid "Establiments residencials"
+msgstr "Establecimientos residenciales"
+
+msgid "Torre Baró"
+msgstr "Torre Baró"
+
+msgid "càrrecs electes"
+msgstr "cargos electos"
+
+msgid "Punts recàrrega vehicle elèctric"
+msgstr "Puntos recarga vehículo eléctrico"
+
+msgid "Animals domèstics"
+msgstr "Animales domésticos"
+
+msgid "Fonts"
+msgstr "Fuentes"
+
+msgid "Ventilació"
+msgstr "Ventilación"
+
+msgid "Agenda"
+msgstr "Agenda"
+
+msgid "Règim de tinença"
+msgstr "Regimen de tenencia"
+
+msgid "gerents"
+msgstr "gerentes"
+
+msgid "Tipus"
+msgstr "Tipos"
+
+msgid "Recursos humans"
+msgstr "Recursos humanos"
+
+msgid "Meteo"
+msgstr "Meteo"
+
+msgid "Base guia"
+msgstr "Base guía"
+
+msgid "Festes"
+msgstr "City festivals"
+
+msgid "Gats"
+msgstr "Gatos"
+
+msgid "Sacrifici d-animals"
+msgstr "Sacrificio de animales"
+
+msgid "Tipus propietari"
+msgstr "Tipo propietario"
+
+msgid "Habitants per trams en el municipi de Viladecans"
+msgstr "Habitantes por tramos en el municipio en Viladecans"
+
+msgid "Esterilització"
+msgstr "Esterilización"
+
+msgid "Agències de transport"
+msgstr "Agencias de transporte"
+
+msgid "Ludoteques"
+msgstr "Ludotecas"
+
+msgid "BASE CARTOGRÀFICA"
+msgstr "BASE CARTOGRÁFICA"
+
+msgid "Evolució"
+msgstr "Evolución"
+
+msgid "Serveis públics"
+msgstr "Servicios públicos"
+
+msgid "Bingos"
+msgstr "Bingos"
+
+msgid "Conservació de l-edifici"
+msgstr "Conservación del edificio"
+
+msgid "Aigua"
+msgstr "Agua"
+
+msgid "Convenis vigents"
+msgstr "Convenios vigentes"
+
+msgid "Envasos no retornables"
+msgstr "Envases no retornables"
+
+msgid "Activitats culturals i socials"
+msgstr "Actividades culturales y sociales"
+
+msgid "Predicció"
+msgstr "Predicción"
+
+msgid "ACTIVITATS ECONOMIQUES"
+msgstr "ACTIVIDADES ECONOMICAS"
+
+msgid "Publicitat"
+msgstr "Publicidad"
+
+msgid "Districte de Sant Andreu"
+msgstr "Distrito Sant Andreu"
+
+msgid "el Guinardó"
+msgstr "el Guinardó"
+
+msgid "Nom de vial"
+msgstr "Nombre de vial"
+
+msgid "Percentatges"
+msgstr "Porcentaje"
+
+msgid "refugi"
+msgstr "refugio"
+
+msgid "escolar"
+msgstr "escolar"
+
+msgid "Vegetació"
+msgstr "Vegetación"
+
+msgid "Discriminació"
+msgstr "Discriminación"
+
+msgid "Estudis"
+msgstr "Estudios"
+
+msgid "Any 2011"
+msgstr "Año 2011"
+
+msgid "Superserveis"
+msgstr "Superservicios"
+
+msgid "Registre censal d-animals de companyia"
+msgstr "Registro censal de animales de compañía"
+
+msgid "Institut Català del Sòl (INCASOL)"
+msgstr "Institut Català del Sòl (INCASOL)"
+
+msgid "Durada"
+msgstr "Duración"
+
+msgid "Festes i fires"
+msgstr "Fiestas y ferias"
+
+msgid "projectes"
+msgstr "proyectos"
+
+msgid "Vallvidrera, el Tibidabo i les Planes"
+msgstr "Vallvidrera, el Tibidabo i les Planes"
+
+msgid "Despeses"
+msgstr "Gastos"
+
+msgid "Pesos i mesures"
+msgstr "Pesos y medidas"
+
+msgid "Neteja"
+msgstr "Limpieza"
+
+msgid "Medi ambient"
+msgstr "Medio ambiente"
+
+msgid "Escales"
+msgstr "Escaleras"
+
+msgid "Esports"
+msgstr "Deportes"
+
+msgid "Ciutat Meridiana"
+msgstr "Ciutat Meridiana"
+
+msgid "Teulades"
+msgstr "Tejados"
+
+msgid "carsharing"
+msgstr "carsharing"
+
+msgid "Sant Gervasi - Galvany"
+msgstr "Sant Gervasi-Galvany"
+
+msgid "Biblioteques"
+msgstr "Bibliotecas"
+
+msgid "Transport"
+msgstr "Transporte"
+
+msgid "Topogràfic històric"
+msgstr "Topográfico histórico"
+
+msgid "Districte de Sant Martí"
+msgstr "Distrito Sant Martí"
+
+msgid "Temps"
+msgstr "Tiempo"
+
+msgid "la Marina del Prat Vermell"
+msgstr "la Marina del Prat Vermell"
+
+msgid "Distància entre establiments"
+msgstr "Distancia entre establecimientos"
+
+msgid "cultural"
+msgstr "cultural"
+
+msgid "Vilapicina i Torre Llobeta"
+msgstr "Vilapicina i la Torre Llobeta"
+
+msgid "Amarradors"
+msgstr "Amarres"
+
+msgid "Entresòls"
+msgstr "Entresuelos"
+
+msgid "Horts"
+msgstr "Huertos"
+
+msgid "Accidentalitat"
+msgstr "Accidentalidad"
+
+msgid "Façanes"
+msgstr "Fachadas"
+
+msgid "Actes públics"
+msgstr "Actos públicos"
+
+msgid "Ordenança annexa"
+msgstr "Ordenanza anexo"
+
+msgid "Equipament"
+msgstr "Equipamiento"
+
+msgid "Pressupost Consolidat inicial"
+msgstr "Presupuesto Consolidado inicial"
+
+msgid "Defunció"
+msgstr "Defunción"
+
+msgid "Supermercats"
+msgstr "Supermercados"
+
+msgid "Estat del trànsit"
+msgstr "Estado del tráfico"
+
+msgid "Obres hidrografia"
+msgstr "Obras hidrografía"
+
+msgid "Vallcarca i els Penitents"
+msgstr "Vallcarca i els Penitents"
+
+msgid "Establiments de serveis eròtics"
+msgstr "Establecimientos de servicios eróticos"
+
+msgid "Ocells"
+msgstr "Pájaros"
+
+msgid "Aire condicionat i calefacció"
+msgstr "Aire acondicionado y calefacción"
+
+msgid "Subvencions"
+msgstr "Subvenciones"
+
+msgid "dutxa"
+msgstr "ducha "
+
+msgid "Guia urbana"
+msgstr "Guía urbana"
+
+msgid "Publicitat directa a les bústies"
+msgstr "Publicidad directa en los buzones"
+
+msgid "la Verneda i la Pau"
+msgstr "la Verneda i la Pau"
+
+msgid "Montbau"
+msgstr "Montbau"
+
+msgid "Gàbies"
+msgstr "Jaulas"
+
+msgid "Divisions"
+msgstr "Divisiones"
+
+msgid "Mapa urbanístic"
+msgstr "Mapa urbanístico"
+
+msgid "el Parc i la Llacuna del Poblenou"
+msgstr "el Parc i la Llacuna del Poblenou"
+
+msgid "Informació sobre els codis dels trams de trànsit"
+msgstr "Información sobre los códigos de tramos de tráfico"
+
+msgid "Baró de Viver"
+msgstr "Baró de Viver"
+
+msgid "Arxius"
+msgstr "Archivos"
+
+msgid "Educació"
+msgstr "Educación"
+
+msgid "Galeries comercials"
+msgstr "Galerías comerciales"
+
+msgid "Servei web"
+msgstr "Servicio web"
+
+msgid "Indicadors"
+msgstr "Indicadores"
+
+msgid "Mobilitat elèctrica"
+msgstr "Movilidad eléctrica"
+
+msgid "la Salut"
+msgstr "la Salut"
+
+msgid "Jaciment"
+msgstr "Yacimiento"
+
+msgid "Estabilitat pressupostària"
+msgstr "Estabilidad presupuestaria"
+
+msgid "mesura"
+msgstr "medida"
+
+msgid "Instal-lacions de serveis"
+msgstr "Instalaciones de servicios"
+
+msgid "el Poble-sec"
+msgstr "Poble-sec"
+
+msgid "Verdum"
+msgstr "Verdum"
+
+msgid "Telèfon"
+msgstr "Telefono"
+
+msgid "Locals habitatge"
+msgstr "Locales vivienda"
+
+msgid "Espai Públic"
+msgstr "Espacio Público"
+
+msgid "Taules i cadires"
+msgstr "Mesas y sillas"
+
+msgid "Toponímia millorada"
+msgstr "Toponimia mejorada"
+
+msgid "Taula direle sec cens"
+msgstr "Tabla direle sección censal"
+
+msgid "metres"
+msgstr "metros"
+
+msgid "Botigues annexes a gasolineres"
+msgstr "Tiendas anexas a gasolineras"
+
+msgid "Sales de conferències i de congressos"
+msgstr "Salas de conferencias"
+
+msgid "la Nova Esquerra de l-Eixample"
+msgstr "la Nova Esquerra de l'Eixample"
+
+msgid "el Carmel"
+msgstr "el Carmel"
+
+msgid "Arbrat viari"
+msgstr "Arbolado viario"
+
+msgid "Balcons"
+msgstr "Balcones"
+
+msgid "Causa"
+msgstr "Causas"
+
+msgid "Sanitat i salut pública"
+msgstr "Sanidad y salud pública"
+
+msgid "Parcs zoològics"
+msgstr "Parques zoológicos"
+
+msgid "Activitats ramaderes"
+msgstr "Actividades ganaderas"
+
+msgid "Activitats a la via pública"
+msgstr "Actividades en la vía pública"
+
+msgid "Tipus discapacitat"
+msgstr "Tipo discapacidad"
+
+msgid "Voreres"
+msgstr "Aceras"
+
+msgid "Transport de mercaderies"
+msgstr "Transporte de mercancías"
+
+msgid "Establiments de prostitució"
+msgstr "Establecimientos de prostitución"
+
+msgid "Piscines"
+msgstr "Piscinas"
+
+msgid "Ascensors"
+msgstr "Ascensores"
+
+msgid "ateneus"
+msgstr "ateneos"
+
+msgid "el Turó de la Peira"
+msgstr "el Turó de la Peira"
+
+msgid "Contractació"
+msgstr "Contratación"
+
+msgid "Contractacio"
+msgstr "Contratacion"
+
+msgid "Marquesines"
+msgstr "Marquesinas"
+
+msgid "difusió"
+msgstr "difusión"
+
+msgid "Gestió econòmica  administrativa"
+msgstr "Gestión económica  administrativa"
+
+msgid "Fort Pienc"
+msgstr "Fort Pienc"
+
+msgid "projectes  internacionals"
+msgstr "proyectos internacionales"
+
+msgid "Seccions censals"
+msgstr "Secciones censales"
+
+msgid "Catàleg cartografia"
+msgstr "Catálogo cartografia"
+
+msgid "Apartaments turístics"
+msgstr "Apartamentos turísticos"
+
+msgid "Agenda mensual"
+msgstr "Agenda mensual"
+
+msgid "Aigües residuals"
+msgstr "Aguas residuales"
+
+msgid "Parades de transport públic"
+msgstr "Paradas de transporte público"
+
+msgid "el Congrés i els Indians"
+msgstr "el Congrés i els Indians"
+
+msgid "Para-sols"
+msgstr "Parasoles"
+
+msgid "Provençals del Poblenou"
+msgstr "Provençals del Poblenou"
+
+msgid "Compatibilitats"
+msgstr "Compatibilidades"
+
+msgid "INFORMES"
+msgstr "INFORMES"
+
+msgid "escala mecànica"
+msgstr "escalera mecánica"
+
+msgid "Equipaments"
+msgstr "Instalaciones"
+
+msgid "EMPRESES"
+msgstr "EMPRESAS"
+
+msgid "Activitats nuclears i radioactives"
+msgstr "Actividades nucleares y radioactivas"
+
+msgid "Transports i serveis relacionats"
+msgstr "Transportes y servicios relacionados"
+
+msgid "Superfície útil"
+msgstr "Superfície útil"
+
+msgid "Llista d-equipaments de companyies de serveis"
+msgstr "Lista de equipamientos de compañías de servicios"
+
+msgid "Barcino"
+msgstr "Barcino"
+
+msgid "Cobertes"
+msgstr "Cubiertas"
+
+msgid "Vehicles"
+msgstr "Vehículos"
+
+msgid "pública"
+msgstr "pública"
+
+msgid "Publicitat en els vehicles"
+msgstr "Publicidad en los vehículos"
+
+msgid "Cinemes"
+msgstr "Cines"
+
+msgid "Seccions"
+msgstr "Secciones"
+
+msgid "Peixos d-aquari"
+msgstr "Peces de acuario"
+
+msgid "Xemeneies"
+msgstr "Chimeneas"
+
+msgid "transport metropolità"
+msgstr "transporte metropolitano"
+
+msgid "Activitats classificades"
+msgstr "Actividades clasificadas"
+
+msgid "Atur"
+msgstr "Paro "
+
+msgid "Centres sanitaris"
+msgstr "Centros sanitarios"
+
+msgid "Contracte"
+msgstr "Contrato"
+
+msgid "Superfície"
+msgstr "Superficie"
+
+msgid "Terrats i terrasses"
+msgstr "Terrados y terrazas"
+
+msgid "Habitatge"
+msgstr "Vivienda"
+
+msgid "Alineació de carrers"
+msgstr "Alineación de calles"
+
+msgid "HABITATGES"
+msgstr "VIVIENDAS"
+
+msgid "Plantes baixes (arquitectura)"
+msgstr "Plantas bajas (Arquitectura)"
+
+msgid "Planejament urbanístic"
+msgstr "Planeamiento urbanístico"
+
+msgid "Baixes per inclusió indeguda"
+msgstr "Bajas por inclusión indebida"
+
+msgid "la Font d-en Fargues"
+msgstr "la Font d'en Fargues"
+
+msgid "Guàrdia Urbana"
+msgstr "Guardia Urbana"
+
+msgid "pila"
+msgstr "pila"
+
+msgid "Població"
+msgstr "Población"
+
+msgid "Coberts"
+msgstr "Cobertizo"
+
+msgid "Any construcció"
+msgstr "Año construcción"
+
+msgid "Històric"
+msgstr "Histórico"
+
+#: FIN TAGS
+msgid "Parent"
+msgstr "Padre"
+
+msgid "Recent Views (last 2 weeks)"
+msgstr "Visitas Recientes (últimas 2 semanas)"
+
+msgid "Total Views"
+msgstr "Visitas Totales"
+
+msgid "JSON Catalog (API)"
+msgstr "Catálogo JSON (API)"
+
+msgid "RDF Catalog"
+msgstr "Catálogo RDF"
+
+msgid "Open the dataset catalog in JSON format (API)"
+msgstr "Abre el catálogo de datasets en formato JSON (API)"
+
+msgid "Open the dataset catalog in RDF format (DCAT)"
+msgstr "Abre el catálogo de datasets en formato RDF (DCAT)"
+
+msgid "Open the informatio of catalog API"
+msgstr "Abre la información sobre el API del catálogo"
+
+msgid "API Catalog"
+msgstr "API catálogo"
+
+msgid "About this site"
+msgstr "Sobre este sitio"
+
+msgid "Dataset catalog"
+msgstr "Catálogo de datasets"
+
+msgid "Present"
+msgstr "Actualidad"
+
+msgid "Open Government access"
+msgstr "Acceso a Gobierno Abierto"
+
+msgid "Help"
+msgstr "Ayuda"
+
+msgid "Help us to improve"
+msgstr "Ayúdenos a mejorar"
+
+msgid "Help Datasets"
+msgstr "Ayuda datasets"
+
+msgid "Interesting links"
+msgstr "Iniciativas relacionadas"
+
+msgid "Portal Features"
+msgstr "Características del portal"
+
+msgid "Portal news"
+msgstr "Novedades"
+
+msgid "Interviews"
+msgstr "Entrevistas"
+
+msgid "Data visualitzacions"
+msgstr "Visualizaciones de datos"
+
+msgid "Newsletters"
+msgstr "Boletines"
+
+msgid "Terms of use"
+msgstr "Condiciones de uso"
+
+msgid "Accessibility"
+msgstr "Accesibilidad"
+
+msgid "Site map"
+msgstr "Mapa web"
+
+msgid "Barcelona-s City Hall Open Data Service"
+msgstr "Servicio de datos abiertos del Ayuntamiento de Barcelona"
+
+msgid "Organizations"
+msgstr "Temas"
+
+msgid "Go to resource"
+msgstr "Descargar"
+
+msgid "Organization"
+msgstr "Tema"
+
+msgid "Analytics"
+msgstr "Estadísticas"
+
+msgid "Reason"
+msgstr "Motivo"
+
+msgid "Checked"
+msgstr "Comprobado"
+
+msgid "Linked data - data URIs and linked to other data (e.g. RDF)"
+msgstr "Datos vinculados - URIs de datos y enlazados a otros datos (por ejemplo, RDF)"
+
+msgid "Linkable data - served at URIs (e.g. RDF)"
+msgstr "Datos enlazables - servidos en URIs (por ejemplo, RDF)"
+
+msgid "Structured data in open format (e.g. CSV)"
+msgstr "Datos estructurados en formato abierto (por ejemplo, CSV)"
+
+msgid "Structured data but proprietry format (e.g. Excel)"
+msgstr "Datos estructurados pero de formato propietario (por ejemplo, Excel)"
+
+msgid "Unstructured data (e.g. PDF)"
+msgstr "Datos no estructurados (por ejemplo, PDF)"
+
+msgid "Openness"
+msgstr "Grado de apertura"
+
+msgid "Data Created"
+msgstr "Fecha creación"
+
+msgid "Popular"
+msgstr "Popularidad"
+
+msgid "NOT_ESPECIFIED"
+msgstr "No especificado"
+
+msgid "Dear"
+msgstr "Querido"
+
+msgid "You have requested your password on"
+msgstr "Usted ha solicitado que la contraseña en"
+
+msgid "to be reset"
+msgstr "sea reestablecida"
+
+msgid "Please click the following link to confirm this request"
+msgstr "Por favor, haga clic en el siguiente enlace para confirmar esta solicitud"
+
+msgid "Have a nice day"
+msgstr "Que tenga un buen día"
+
+msgid "Message sent by"
+msgstr "Mensaje enviado por"
+
+msgid "compravenda"
+msgstr "compraventa"
+
+msgid "contractes"
+msgstr "contratos"
+
+msgid "lloguer"
+msgstr "alquiler"
+
+msgid "The resource has the format"
+msgstr "El recurso tiene el formato"
+
+msgid "because of that receives"
+msgstr "es por eso que recibe"
+
+msgid "The Dataset contains a file with a format that is equivalent to"
+msgstr "El conjunto de datos contiene un archivo con un formato equivalente a"
+
+msgid "points"
+msgstr "puntos"
+
+msgid "ascending"
+msgstr "ascendente"
+
+msgid "descending"
+msgstr "descendente"
+
+msgid "Legal notice"
+msgstr "Aviso legal"
+
+msgid "Data last modified"
+msgstr "Fecha última modificación"
+
+msgid "None"
+msgstr "desconocido"
+
+msgid "Lloc de procedència de les dades o origen de les dades"
+msgstr "Lugar de procedencia de los datos u origen de los datos"
+
+msgid "Manual Editor"
+msgstr "Editor: Manual"
+
+msgid "Datasets Cataleg"
+msgstr "Catálogo: Mis datasets"
+
+msgid "IRIS incidencias"
+msgstr "IRIS: Consultas a la Oficina Técnica"
+
+msgid "User menu"
+msgstr "Menú de usuario"
+
+msgid "User info"
+msgstr "Información de usuario"
+
+msgid "Presentacio Formacio F3"
+msgstr "Presentación Formación F3"
+
+msgid "Downloads"
+msgstr "Descargas"
+
+msgid "Icona Dades Obertes"
+msgstr "Icono Datos Abiertos"
+
+msgid "Publication Date"
+msgstr "Fecha publicación"
+
+msgid "Withdraw Date"
+msgstr "Fecha desactivación"
+
+msgid "Withdraw Reason"
+msgstr "Motivo desactivación"
+
+msgid "Obsolete"
+msgstr "Obsoleto"
+
+msgid "No maintenance"
+msgstr "Sin mantenimiento"
+
+msgid "Frequency change"
+msgstr "Cambio de frecuencia"
+
+msgid "Geolocation"
+msgstr "Geolocalización"
+
+msgid "Yes, no map view"
+msgstr "Sí, sin visualización en mapa"
+
+msgid "Yes, with map view"
+msgstr "Sí, con visualización en mapa"
+
+msgid "Yes_no_map_view"
+msgstr "Sí, sin visualización en mapa"
+
+msgid "Yes_with_map_view"
+msgstr "Sí, con visualización en mapa"
+
+msgid "Cap"
+msgstr "Ninguno"
+
+msgid "Data Explorer Map"
+msgstr "Mapa del Explorador de datos"
+
+msgid "Case stories"
+msgstr "Historias de uso"
+
+msgid "Reusers"
+msgstr "Reutilizadores"
+
+msgid "Developers"
+msgstr "Desarrolladores"
+
+msgid "Data visualizations and applications"
+msgstr "Visualizaciones y aplicaciones"
+
+msgid "QUINQUENNAL"
+msgstr "Quinquenal"
+
+msgid "Vies Ciclables"
+msgstr "Vías Ciclables"
+
+msgid "carrer bici"
+msgstr "calle bici"
+
+msgid "vies pedalables"
+msgstr "vías ciclables"
+
+msgid "carrer 10"
+msgstr "calle 10"
+
+msgid "carrer 20"
+msgstr "calle 20"
+
+msgid "carrer 30"
+msgstr "calle 30"
+
+msgid "Zones 30"
+msgstr "Zonas 30"
+
+msgid "aparcament"
+msgstr "aparcamiento"
+
+msgid "bicicletes"
+msgstr "bicicletas"
+
+msgid "puntancoratge"
+msgstr "puntoanclaje"
+
+msgid "Any 1996"
+msgstr "Año 1996"
+
+msgid "Any 1997"
+msgstr "Año 1997"
+
+msgid "Any 1998"
+msgstr "Año 1998"
+
+msgid "Any 1999"
+msgstr "Año 1999"
+
+msgid "Any 2000"
+msgstr "Año 2000"
+
+msgid "Any 2001"
+msgstr "Año 2001"
+
+msgid "Any 2002"
+msgstr "Año 2002"
+
+msgid "Any 2003"
+msgstr "Año 2003"
+
+msgid "Any 2004"
+msgstr "Año 2004"
+
+msgid "Any 2005"
+msgstr "Año 2005"
+
+msgid "Any 2006"
+msgstr "Año 2006"
+
+msgid "Nadons"
+msgstr "Bebés"
+
+msgid "Naixements"
+msgstr "Nacimientos"
+
+msgid "Noms"
+msgstr "Nombres"
+
+msgid "Habitants"
+msgstr "Habitantes"
+
+msgid "districtes"
+msgstr "distritos"
+
+msgid "salut pública"
+msgstr "salud pública"
+
+msgid "Repte Barcelona Dades Obertes"
+msgstr "Reto Barcelona Dades Obertes"
+
+msgid "Que es el Repte?"
+msgstr "¿Qué es el Reto?"
+
+msgid "Novetats Repte"
+msgstr "Novedades Reto"
+
+msgid "Centres Participants"
+msgstr "Centros Participantes"
+
+msgid "Map visualization"
+msgstr "Visualiza mapa"
+
+msgid "Absoluts"
+msgstr "Absolutos"
+
+msgid "Activitats econòmiques"
+msgstr "Actividades económicas"
+
+msgid "Administració"
+msgstr "Administración"
+
+msgid "Agenda diària"
+msgstr "Agenda diaria"
+
+msgid "Agraïments"
+msgstr "Agradecimientos"
+
+msgid "Agregats"
+msgstr "Agredados"
+
+msgid "Altes omissió"
+msgstr "Altas omisión"
+
+msgid "Antiguitat"
+msgstr "Antigüedad"
+
+msgid "Arbres"
+msgstr "Árboles"
+
+msgid "Àrea metropolitana de Barcelona"
+msgstr "Área metropolitana de Barcelona"
+
+msgid "Associacions"
+msgstr "Asociaciones"
+
+msgid "Ateneus"
+msgstr "Ateneos"
+
+msgid "Baixes"
+msgstr "Bajas"
+
+msgid "Barris"
+msgstr "Barrios"
+
+msgid "Base cartogràfica"
+msgstr "Base cartográfica"
+
+msgid "Benzineres"
+msgstr "Gasolineras"
+
+msgid "Canvis domicili"
+msgstr "Cambios domicilio"
+
+msgid "Càrrecs electes"
+msgstr "Cargos electos"
+
+msgid "Carrer 10"
+msgstr "Calle 10"
+
+msgid "Carrer 20"
+msgstr "Calle 20"
+
+msgid "Carrer 30"
+msgstr "Calle 30"
+
+msgid "Cementeris"
+msgstr "Cementerios"
+
+msgid "Centres comerciales"
+msgstr "Centros comerciales"
+
+msgid "Centres informació"
+msgstr "Centros información"
+
+msgid "Ciclomotors"
+msgstr "Ciclomotores"
+
+msgid "Ciutadania"
+msgstr "Ciudadanía"
+
+msgid "Codis"
+msgstr "Códigos"
+
+msgid "Comissionats"
+msgstr "Comisionados"
+
+msgid "Companyies serveis"
+msgstr "Compañías servicios"
+
+msgid "Conservació"
+msgstr "Conservación"
+
+msgid "Consultes"
+msgstr "Consultas"
+
+msgid "Contenidors reciclatge"
+msgstr "Contenedores reciclaje"
+
+msgid "Contractes compravenda"
+msgstr "Contratos compraventa"
+
+msgid "Contractes lloguer"
+msgstr "Contratos alquiler"
+
+msgid "Defuncions"
+msgstr "Defunciones"
+
+msgid "Densitat"
+msgstr "Densidad"
+
+msgid "Desagregats"
+msgstr "Desagregados"
+
+msgid "Difusió"
+msgstr "Difusión"
+
+msgid "Documents"
+msgstr "Documentos"
+
+msgid "Domicilis"
+msgstr "Domicilios"
+
+msgid "Dutxes"
+msgstr "Duchas"
+
+msgid "Edats"
+msgstr "Edades"
+
+msgid "Edats quinquennals"
+msgstr "Edades quinquenales"
+
+msgid "Eleccions autonòmiques"
+msgstr "Elecciones autonómicas"
+
+msgid "Eleccions europees"
+msgstr "Elecciones europeas"
+
+msgid "Eleccions generals"
+msgstr "Elecciones generales"
+
+msgid "Eleccions locals"
+msgstr "Elecciones locales"
+
+msgid "Electors"
+msgstr "Electores"
+
+msgid "En construcció"
+msgstr "En construcción"
+
+msgid "Energia"
+msgstr "Energía"
+
+msgid "Entitats usuàries"
+msgstr "Entidades usuarias"
+
+msgid "Escales mecàniques"
+msgstr "Escaleras mecánicas"
+
+msgid "Espais creació"
+msgstr "Espacios creación"
+
+msgid "Esperança vida"
+msgstr "Esperanza vida"
+
+msgid "Estacions autobusos"
+msgstr "Estaciones autobuses"
+
+msgid "Fàbriques creació"
+msgstr "Fábricas creación"
+
+msgid "Formació"
+msgstr "Formación"
+
+msgid "Geoservei"
+msgstr "Geoservicio"
+
+msgid "Gerents"
+msgstr "Gerentes"
+
+msgid "Grans grups"
+msgstr "Grandes grupos"
+
+msgid "Habitacions"
+msgstr "Habitaciones"
+
+msgid "Immigració"
+msgstr "Inmigración"
+
+msgid "Incidències"
+msgstr "Incidencias"
+
+msgid "Informació"
+msgstr "Información"
+
+msgid "Inscripcions"
+msgstr "Inscripciones"
+
+msgid "Interès local"
+msgstr "Interés local"
+
+msgid "Itineraris"
+msgstr "Itinerarios"
+
+msgid "Lloguer mensual"
+msgstr "Alquiler mensual"
+
+msgid "Locals"
+msgstr "Locales"
+
+msgid "Locals cadastrals"
+msgstr "Locales catastrales"
+
+msgid "Locals comercials"
+msgstr "Locales comerciales"
+
+msgid "Manteniment"
+msgstr "Mantenimiento"
+
+msgid "Mapa àmbits"
+msgstr "Mapa ámbitos"
+
+msgid "Mapa ciutat"
+msgstr "Mapa ciudad"
+
+msgid "Mapa retolació"
+msgstr "Mapa rotulación"
+
+msgid "Mapa temàtic"
+msgstr "Mapa temático"
+
+msgid "Mapa viabilitat"
+msgstr "Mapa viabilidad"
+
+msgid "Matriculacions"
+msgstr "Matriculaciones"
+
+msgid "Metres quadrats"
+msgstr "Metros cuadrados"
+
+msgid "Mitjana"
+msgstr "Media"
+
+msgid "Mitjans comunicació"
+msgstr "Medios comunicación"
+
+msgid "Mobilitat"
+msgstr "Movilidad"
+
+msgid "Nacionalitat"
+msgstr "Nacionalidad"
+
+msgid "Nivell acadèmic"
+msgstr "Nivel académico"
+
+msgid "Nombre immobles"
+msgstr "Número inmuebles"
+
+msgid "Número plantes sobre rasant"
+msgstr "Número plantas sobre rasante"
+
+msgid "Número plantes sota rasant"
+msgstr "Número plantas bajo rasante"
+
+msgid "Olis"
+msgstr "Aceites"
+
+msgid "Orografia"
+msgstr "Orografía"
+
+msgid "Padró"
+msgstr "Padrón"
+
+msgid "Parades bus"
+msgstr "Paradas bus"
+
+msgid "Parades transport públic"
+msgstr "Paradas transporte público"
+
+msgid "Patis escolars"
+msgstr "Patios escolares"
+
+msgid "Pensió jubilació"
+msgstr "Pensión jubilación"
+
+msgid "Pensions invalidesa"
+msgstr "Pensiones invalidez"
+
+msgid "Per barris"
+msgstr "Por barrios"
+
+msgid "Per lloc destí"
+msgstr "Por lugar destino"
+
+msgid "Per lloc naixement"
+msgstr "Por lugar nacimiento"
+
+msgid "Per lloc procedència"
+msgstr "Por lugar procedencia"
+
+msgid "Per nacionalitat"
+msgstr "Por nacionalidad"
+
+msgid "Per propietari"
+msgstr "Por propietario"
+
+msgid "Per sexe"
+msgstr "Por sexo"
+
+msgid "Plànol"
+msgstr "Plano"
+
+msgid "Relleu"
+msgstr "Relieve"
+
+msgid "Sanitat"
+msgstr "Sanidad"
+
+msgid "Servei geogràfic"
+msgstr "Servicio geográfico"
+
+msgid "Tram"
+msgstr "Tramo"
+
+msgid "Custom Fields"
+msgstr "Campos Personalizados"
+
+msgid "Load Type"
+msgstr "Tipo de Carga"
+
+msgid "Link to URL"
+msgstr "Enlace a URL"
+
+msgid "View complementary description and field definition"
+msgstr "Descripción complementaria y definición de campos"
+
+msgid "Complementary description and field definition"
+msgstr "Descripción complementaria y definición de campos"
+
+msgid "Complementary description"
+msgstr "Descripción complementaria"
+
+msgid "Key"
+msgstr "Nombre"
+
+msgid "Value"
+msgstr "Descripción"
+
+msgid "Directrius"
+msgstr "Directrices"
+
+msgid "Decrets"
+msgstr "Decretos"
+
+msgid "Carta arqueològica"
+msgstr "Carta arqueológica"
+
+msgid "Qualitat"
+msgstr "Calidad"
+
+msgid "reglaments"
+msgstr "reglamentos"
+
+msgid "Plantes"
+msgstr "Plantas"
+
+msgid "Pressupostos"
+msgstr "Presupuestos"
+
+msgid "Règim tinença"
+msgstr "Régimen tenencia"
+
+msgid "Punts informació turística"
+msgstr "Puntos información turística"
+
+msgid "Vallvidrera- el Tibidabo i les Planes"
+msgstr "Vallvidrera- el Tibidabo i les Planes"
+
+msgid "Potencia fiscal"
+msgstr "Potencia fiscal"
+
+msgid "Turismes"
+msgstr "Turismos"
+
+msgid "Salut pública"
+msgstr "Salud pública"
+
+msgid "Àrea Metropolitana Barcelona"
+msgstr "Área Metropolitana Barcelona"
+
+msgid "Estat trànsit"
+msgstr "Estado tránsito"
+
+msgid "Any 2018"
+msgstr "Año 2018"
+
+msgid "Alta"
+msgstr "Alta"
+
+msgid "Entitats Municipals"
+msgstr "Entidades Municipales"
+
+msgid "Àrea blava"
+msgstr "Zona azul"
+
+msgid "Províncies"
+msgstr "Provincias"
+
+msgid "Estructura territorial"
+msgstr "Estructura territorial"
+
+msgid "Dossiers de premsa"
+msgstr "Dosieres de prensa"
+
+msgid "Espais públics"
+msgstr "Espacios públicos"
+
+msgid "Seveis socials"
+msgstr "Servicios sociales"
+
+msgid "Revistes"
+msgstr "Revistas"
+
+msgid "Canvis nacionalitat"
+msgstr "Cambios nacionalidad"
+
+msgid "Art públic"
+msgstr "Arte público"
+
+msgid "preus públics"
+msgstr "precios públicos"
+
+msgid "Premis"
+msgstr "Premios"
+
+msgid "Informes"
+msgstr "Informes"
+
+msgid "Propietaris"
+msgstr "Propietarios"
+
+msgid "Cartes de serveis"
+msgstr "Cartas de servicios"
+
+msgid "Mapa malla UTM"
+msgstr "Mapa malla UTM"
+
+msgid "Govern"
+msgstr "Gobierno"
+
+msgid "Documents tècnics"
+msgstr "Documentos técnicos"
+
+msgid "Platges públiques"
+msgstr "Playas públicas"
+
+msgid "barris"
+msgstr "barrios"
+
+msgid "Dictamens"
+msgstr "Dictámenes"
+
+msgid "Plans estratègics"
+msgstr "Planes estratégicos"
+
+msgid "Repositoris"
+msgstr "Repositorios"
+
+msgid "Notes de premsa"
+msgstr "Notas de prensa"
+
+msgid "Carril Bici"
+msgstr "Carril Bici"
+
+msgid "Ús turístic"
+msgstr "Uso turístico"
+
+msgid "Béns municipals"
+msgstr "Bienes municipales"
+
+msgid "Plans especials"
+msgstr "Planes especiales"
+
+msgid "Ajuts"
+msgstr "Ayudas"
+
+msgid "Trànsit"
+msgstr "Tráfico"
+
+msgid "Motos"
+msgstr "Motos"
+
+msgid "Transport metropolità"
+msgstr "Transporte metropolitano"
+
+msgid "Punts ancoratge"
+msgstr "Puntos anclaje"
+
+msgid "Places garatge"
+msgstr "Plazas garaje"
+
+msgid "Entitats"
+msgstr "Entidades"
+
+msgid "Sumatori"
+msgstr "Sumatorio"
+
+msgid "Urbanisme"
+msgstr "Urbanismo"
+
+msgid "Ronda Verda"
+msgstr "Ronda Verde"
+
+msgid "Zona descàrrega"
+msgstr "Zona descarga"
+
+msgid "Escultures"
+msgstr "Esculturas"
+
+msgid "Monuments"
+msgstr "Monumentos"
+
+msgid "Suggerències"
+msgstr "Sugerencias"
+
+msgid "Enquestes"
+msgstr "Encuestas"
+
+msgid "Mesures de govern"
+msgstr "Medidas de gobierno"
+
+msgid "Comptes"
+msgstr "Cuentas"
+
+msgid "Votants"
+msgstr "Votantes"
+
+msgid "Sant Pere- Santa Caterina i la Ribera"
+msgstr "Sant Pere- Santa Caterina i la Ribera"
+
+msgid "NDVI"
+msgstr "NDVI"
+
+msgid "Espai públic"
+msgstr "Espacio público"
+
+msgid "Cementiris de Barcelona"
+msgstr "Cementerios de Barcelona"
+
+msgid "Queixes"
+msgstr "Quejas"
+
+msgid "Comptabilitat"
+msgstr "Contabilidad"
+
+msgid "Protocols"
+msgstr "Protocolos"
+
+msgid "Població femenina"
+msgstr "Población femenina"
+
+msgid "Circulars"
+msgstr "Circulares"
+
+msgid "Carsharing"
+msgstr "Carsharing"
+
+msgid "Zona càrrega"
+msgstr "Zona carga"
+
+msgid "Xifres oficials"
+msgstr "Cifras oficiales"
+
+msgid "Laudes"
+msgstr "Laudes"
+
+msgid "Àrea DUM"
+msgstr "Área DUM"
+
+msgid "Cementiris"
+msgstr "Cementerios"
+
+msgid "Estatuts"
+msgstr "Estatutos"
+
+msgid "Projectes"
+msgstr "Proyectos"
+
+msgid "Telecomunicacions"
+msgstr "Telecomunicaciones"
+
+msgid "Àrea verda"
+msgstr "Área verde"
+
+msgid "ordenances fiscals"
+msgstr "ordenanzas fiscales"
+
+msgid "Infraestructura Verda"
+msgstr "Infraestructura Verde"
+
+msgid "Cilindrada"
+msgstr "Cilindrada"
+
+msgid "Serveis religiosos"
+msgstr "Servicios religiosos"
+
+msgid "Població masculina"
+msgstr "Población masculina"
+
+msgid "activitats"
+msgstr "actividades"
+
+msgid "Piles"
+msgstr "Pilas"
+
+msgid "Renda familiar"
+msgstr "Renta familiar"
+
+msgid "Parada taxi"
+msgstr "Parada taxi"
+
+msgid "Beure"
+msgstr "Beber"
+
+msgid "Taxes"
+msgstr "Tasas"
+
+msgid "Fotografies"
+msgstr "Fotografías"
+
+msgid "Construccions poblament"
+msgstr "Construcciones poblamiento"
+
+msgid "Premsa"
+msgstr "Prensa"
+
+msgid "Pròrrogues"
+msgstr "Prórrogas"
+
+msgid "Sectors econòmics"
+msgstr "Sectores económicos"
+
+msgid "Agenda cultural"
+msgstr "Agenda cultural"
+
+msgid "Peticions"
+msgstr "Peticiones"
+
+msgid "Memòries"
+msgstr "Memorias"
+
+msgid "agenda"
+msgstr "agenda"
+
+msgid "Institut Català del Sòl -INCASOL-"
+msgstr "Instituto Catalan del Suelo -INCASOL-"
+
+msgid "Instruccions"
+msgstr "Instrucciones"
+
+msgid "Internacional"
+msgstr "Internacional"
+
+msgid "Cobertura Vegetal"
+msgstr "Cobertura Vegetal"
+
+msgid "Publicaciones"
+msgstr "Publicaciones"
+
+msgid "View private datasets"
+msgstr "Ver datasets privados"
+
+msgid "View field definition"
+msgstr "Ver definición de campos"
+
+msgid "View complementary description"
+msgstr "Ver descripción complementaria"

@@ -1,0 +1,15 @@
+{% ckan_extends %}
+
+
+{% block resources_list %}
+  <ul class="unstyled nav nav-simple">
+	{% for resource in resources %}
+	  <li class="nav-item{{ ' active' if active == resource.id }}">
+		<a href="{{ h.url_for(controller='package', action=action or 'resource_read', id=pkg.name, resource_id=resource.id, inner_span=true ) }}">
+			<span  class="label pull-right">{{ resource.format }}</span>
+			<span>{{ h.resource_display_name(resource)|truncate(25) }}</span>
+		</a>
+	  </li>
+	{% endfor %}
+  </ul>
+{% endblock %}

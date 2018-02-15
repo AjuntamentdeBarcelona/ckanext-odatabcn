@@ -1,0 +1,33 @@
+{% ckan_extends %}
+
+        {% block main_content %}
+          {% block flash %}
+            {{ super() }}
+          {% endblock %}
+
+          {% block toolbar %}
+            {{ super() }}
+          {% endblock %}
+
+          <div class="row wrapper{% block wrapper_class %}{% endblock %}">
+
+            {#
+            The pre_primary block can be used to add content to before the
+            rendering of the main content columns of the page.
+            #}
+            {% block pre_primary %}
+            {% endblock %}
+
+            {% block primary %}
+              {% if c.action != "read" or c.controller != "package" %}
+                {{ super() }}
+              {% endif %}
+            {% endblock %}
+
+            {% block secondary %}
+              {% if c.action != "read" or c.controller != "package"%}
+                {{ super() }}
+              {% endif %}
+            {% endblock %}
+          </div>
+        {% endblock %}

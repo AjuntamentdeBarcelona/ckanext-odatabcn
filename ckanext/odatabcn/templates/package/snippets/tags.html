@@ -1,0 +1,9 @@
+{% if tags %}
+  <section class="tags" id="tags">
+	<h2>{{ _('Tags') }}</h2>
+    <div class="tag-content">
+      {% snippet 'snippets/tag_list.html', tags=tags, _class='tag-list' %}
+    </div>
+    <div id="show-more-tags"><span id="view-more"><i class="bcn-icon-mes-bold"></i> {{ _('Show more') }}</span> <span id="view-less"><i class="bcn-icon-menys-bold"></i> {{ _('Hide') }}</span></div>
+  </section>
+{% endif %}

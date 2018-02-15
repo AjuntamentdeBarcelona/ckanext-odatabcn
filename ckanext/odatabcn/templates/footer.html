@@ -1,0 +1,119 @@
+{% ckan_extends %}
+
+{% block footer_content %}
+
+	{% if c.userobj %}
+		<header class="account-masthead">
+		<div class="container">
+		  {% block header_account_container_content %}
+			{% if c.userobj %}
+			  <div class="account avatar authed" data-module="me" data-me="{{ c.userobj.id }}">
+				<ul class="unstyled">
+				  {% block header_account_logged %}
+				  {% if c.userobj.sysadmin %}
+					<li>
+					  <a href="{{ h.url_for(controller='admin', action='index') }}" title="{{ _('Sysadmin settings') }}">
+						<i class="icon-legal" aria-hidden="true"></i>
+						<span class="text">{{ _('Admin') }}</span>
+					  </a>
+					</li>
+				  {% endif %}
+				  <li>
+					<a href="{{ h.url_for(controller='user', action='read', id=c.userobj.name) }}" class="image" title="{{ _('View profile') }}">
+					  {{ h.gravatar((c.userobj.email_hash if c and c.userobj else ''), size=22) }}
+					  <span class="username">{{ c.userobj.display_name }}</span>
+					</a>
+				  </li>
+				  {% set new_activities = h.new_activities() %}
+				  <li class="notifications {% if new_activities > 0 %}notifications-important{% endif %}">
+					{% set notifications_tooltip = ngettext('Dashboard (%(num)d new item)', 'Dashboard (%(num)d new items)', new_activities) %}
+					<a href="{{ h.url_for(controller='user', action='dashboard') }}" title="{{ notifications_tooltip }}">
+					  <i class="icon-dashboard" aria-hidden="true"></i>
+					  <span class="text">{{ _('Dashboard') }}</span>
+					  <span class="badge">{{ new_activities }}</span>
+					</a>
+				  </li>
+				  {% block header_account_settings_link %}
+					<li>
+					  <a href="{{ h.url_for(controller='user', action='edit', id=c.userobj.name) }}" title="{{ _('Edit settings') }}">
+						<i class="icon-cog" aria-hidden="true"></i>
+						<span class="text">{{ _('Settings') }}</span>
+					  </a>
+					</li>
+				  {% endblock %}
+				  {% block header_account_log_out_link %}
+					<li>
+					  <a href="{{ h.url_for('/user/_logout') }}" title="{{ _('Log out') }}">
+						<i class="icon-signout" aria-hidden="true"></i>
+						<span class="text">{{ _('Log out') }}</span>
+					  </a>
+					</li>
+				  {% endblock %}
+				  {% endblock %}
+				</ul>
+			  </div>
+			{% else %}
+			  <nav class="account not-authed">
+				<ul class="unstyled">
+				  {% block header_account_notlogged %}
+				  <li>{% link_for _('Log in'), controller='user', action='login' %}</li>
+				  {% if h.check_access('user_create') %}
+					<li>{% link_for _('Register'), controller='user', action='register', class_='sub' %}</li>
+				  {% endif %}
+				  {% endblock %}
+				</ul>
+			  </nav>
+			{% endif %}
+		  {% endblock %}
+		</div>
+	  </header>
+  {% endif %}
+
+
+    <div class="row">
+      <div class="span12 footer-links">
+        <span class="footer-logo"></span>
+        {% block footer_nav %}
+          <ul class="unstyled">
+            {% block footer_links %}
+			  {% set lang = h.lang() %}
+              <li>Ajuntament de Barcelona</li>
+			  {% if lang=='ca' %}
+              <li><a href="http://www.bcn.cat/cgi-bin/consultesIRIS?id=239">{{ _('Help us to improve') }}</a></li>
+			  {% endif %}
+			  {% if lang=='es' %}
+			  <li><a href="http://www.bcn.cat/cgi-bin/consultesIRIS?id=240">{{ _('Help us to improve') }}</a></li>
+			  {% endif %}
+			  {% if lang=='en' %}
+			  <li><a href="http://www.bcn.cat/cgi-bin/consultesIRIS?id=241">{{ _('Help us to improve') }}</a></li>
+			  {% endif %}
+			  {% if lang=='ca' %}
+			  <li><a href="http://ajuntament.barcelona.cat/accessibilitat/ca/">Accessibilitat</a></li>
+			  {% endif %}
+			  {% if lang=='es' %}
+			  <li><a href="http://ajuntament.barcelona.cat/accessibilitat/es/">Accesibilidad</a></li>
+			  {% endif %}
+			  {% if lang=='en' %}
+			  <li><a href="http://ajuntament.barcelona.cat/accessibilitat/en/">Accessibility</a></li>
+			  {% endif %}
+			  <li><a href="/{{lang}}/avis-legal">{{ _('Legal notice') }}</a></li>
+			  <li><a href="/{{lang}}/condicions-us">{{ _('Terms of use') }}<img src="/sites/all/themes/bcn_bootstrap/img/common/cc-by.png" alt="" style="height: 30px;" /></a></li>
+            {% endblock %}
+          </ul>
+        {% endblock %}
+      </div>
+    </div>
+</div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36589170-15', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+{% endblock %}

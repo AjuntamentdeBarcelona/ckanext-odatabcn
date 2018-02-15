@@ -1,0 +1,50 @@
+{% ckan_extends %}
+
+  
+{% block page_primary_action %}
+
+	<div class="actions resource-actions dataset-search-actions">
+        <ul>
+            <li>
+              <a class="resource-url-analytics resource-type-None" href="/{{h.lang()}}/api-cataleg" title="{{ _('Open the informatio of catalog API') }}">
+                  <i class="icon icon-code"></i> <span>{{ _('API Catalog') }}</span>
+              </a>
+            </li>
+        </ul>
+    </div>
+
+
+
+  {% if h.check_access('package_create') %}
+    <div class="page_primary_action">
+      {% link_for _('Add Dataset'), controller='package', action='new', class_='btn btn-primary', icon='plus-sign-alt' %}
+	   {% link_for _('View private datasets'), controller='package', action='search', private='true', class_='btn', icon='lock' %}
+    </div>
+  {% endif %}
+{% endblock %}
+
+{% block package_search_results_api %}
+{% endblock %}
+
+
+{% block form %}
+   {% set facets = {
+     'fields': c.fields_grouped,
+     'search': c.search_facets,
+     'titles': c.facet_titles,
+     'translated_fields': c.translated_fields,
+     'remove_field': c.remove_field }
+   %}
+   {% set sorting = [
+	 (_('Publication Date') + " (DESC)", 'fecha_publicacion desc'),
+	 (_('Publication Date') + " (ASC)", 'fecha_publicacion asc'),
+     (_('Popular') + " (DESC)", 'views_recent desc') if g.tracking_enabled else (false, false),
+     (_('Popular') + " (ASC)", 'views_recent asc') if g.tracking_enabled else (false, false) ]
+   %}
+   {% if c.user %}
+		{% set aux = sorting.append((_('Data last modified') + " (DESC)", 'metadata_modified desc')) %}
+		{% set aux = sorting.append((_('Data last modified') + " (ASC)", 'metadata_modified asc')) %}
+   {% endif %}
+   {% snippet 'snippets/search_form.html', form_id='dataset-search-form', type='dataset', query=c.q, sorting=sorting, sorting_selected=c.sort_by_selected, count=c.page.item_count, facets=facets, show_empty=request.params, error=c.query_error, fields=c.fields %}
+{% endblock %}
+

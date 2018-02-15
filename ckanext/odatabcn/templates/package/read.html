@@ -1,0 +1,126 @@
+{% extends "package/read_base.html" %}
+
+{% block pre_primary %}
+	
+	{{ super() }}
+	
+	{% if h.check_access('package_update', {'id':pkg.id }) %}
+		<div class="actions resource-actions">
+			  <ul>
+				<li>
+					{% set url = h.url_for(controller='package', action='activity', id=pkg.name) %}
+					<a href="{{ url }}"><i class="icon icon-time"></i> <span>{{ _('Activity Stream') }}</span></a>
+				  </li>
+			  </ul>
+		</div>
+	{% endif %}
+	
+	{% if pkg.organization %}
+    {% set parent = h.group_tree_parents(pkg.organization.name) %}
+	  <ul class="dataset-groups">
+      	{% if parent[0] %}
+			{% set href = h.url_for(controller='organization', action='read', id=parent[0].name) %}  
+		  	<li class="parent">
+				<a href="{{href}}">
+    				{% if parent[0].image_url %}
+        				<i class="{{parent[0].image_url}}"></i>
+    				{% endif %}
+					{{ h.get_translated(parent[0], 'title') }}
+				</a>
+		 	</li>
+      	{% endif %}
+		{% set href = h.url_for(controller='organization', action='read', id=pkg.organization.name) %}
+		{% set organization = h.get_organization(pkg.organization.name) %}
+		<li class="child">
+			<a href="{{href}}">
+				{% if organization.image_url %}
+        			<i class="{{ organization.image_url}}"></i>
+    			{% endif %}
+				{{ h.get_translated(organization, 'title') }}
+			</a>
+		  </li>
+	  </ul>
+	{% endif %}
+
+    {% if pkg.notes %}
+        <div class="notes embedded-content">
+          {{ h.render_markdown(h.get_translated(pkg, 'notes')) }}    
+        </div>
+    {% endif %}
+      
+    {% if (pkg.extras and pkg.extras|length > 0) or pkg.dataset_fields_description %}
+      <div class="field-description">
+          <p class="field-description-show">
+            <a data-toggle="collapse" href="#fieldDescription" aria-expanded="false" aria-controls="fieldDescription">
+                <i class="icon-th-list"></i>
+				{% if (pkg.extras and pkg.extras|length > 0) and pkg.dataset_fields_description %}
+					{{ _('View complementary description and field definition') }}
+				{% elif pkg.extras|length == 0 %}
+					{{ _('View complementary description') }}
+				{% else %}
+					{{ _('View field definition') }}
+				{% endif %}
+            </a>
+          </p>
+          <div class="collapse" id="fieldDescription">
+            <div class="well">
+				{% if pkg.dataset_fields_description %}
+					<div class="text-content">
+						{{ h.render_markdown(pkg.dataset_fields_description) }}
+					</div>
+				{% endif %}
+			
+				{% if (pkg.extras and pkg.extras|length > 0) %}
+					<table class="table">
+						<thead>
+						  <tr>
+							<th scope="col" width="25%">{{ _('Field') }}</th>
+							<th scope="col">{{ _('Description') }}</th>
+						  </tr>
+						</thead>
+						<tbody>
+						{% for extra in h.sorted_extras(pkg.extras) %}
+						  {% set key, value = extra %}
+						  <tr rel="dc:relation" resource="_:extra{{ i }}">
+							<th scope="row" class="dataset-label" property="rdfs:label">{{ _(key) }}</th>
+							<td class="dataset-details" property="rdf:value">{{ value }}</td>
+						  </tr>
+						{% endfor %}
+						</tbody>
+					</table>
+				{% endif %}
+            </div>
+          </div>
+      </div>
+    {% endif %}
+
+    <div class="dataset-info">
+        {% snippet "snippets/license.html", pkg_dict=pkg %}
+    </div>
+
+    {# FIXME why is this here? seems wrong #}
+    <span class="insert-comment-thread"></span>
+
+  {% block secondary_help_content %}{% endblock %}
+
+  {% block package_resources %}
+    {% snippet "package/snippets/resources_list.html", pkg=pkg, resources=pkg.resources %}
+  {% endblock %}
+
+  {% block package_tags %}
+    {% snippet "package/snippets/tags.html", tags=pkg.tags %}
+  {% endblock %}
+
+  {% block package_additional_info %}
+    {% snippet "package/snippets/additional_info.html", pkg_dict=pkg %}
+  {% endblock %}
+  
+			</div>
+		</div>
+	</div>
+	
+	<div id="resource-additional-info">
+		<div id="content" class="container">
+			<div class="dataset-comments" id="{{pkg.name}}" lang="{{h.lang()}}"></div>
+
+{% endblock %}

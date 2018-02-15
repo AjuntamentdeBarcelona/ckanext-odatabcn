@@ -1,0 +1,130 @@
+{% ckan_extends %}
+
+{% block primary_content %}
+<div role="main" class="home-header">
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+	{#
+        <p>
+        {% trans %}This is a nice introductory paragraph about CKAN or the site
+        in general. We don't have any copy to go here yet but soon we will
+        {% endtrans %}
+      	</p>
+	#}
+      </div>
+    </div>
+  </div>
+</div>
+<div role="main" class="home-search">
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+        {% block search %}
+          {% snippet 'home/snippets/search.html' %}
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+</div>
+<div role="main" class="home-themes">
+  <div class="container">
+    <div class="row">
+      <div class="span2 theme">
+	<a href="#">
+	  <span class="image territori"></span>
+          Territori
+        </a>
+      </div>
+      <div class="span2 theme">
+	<a href="#">
+	  <span class="image poblacio"></span>
+          Població</a>
+      </div>
+      <div class="span2 theme">
+	<a href="#">
+	  <span class="image ciutat"></span>
+          Ciutat i serveis</a>
+      </div>
+      <div class="span2 theme">
+	<a href="#">
+	  <span class="image administracio"></span>
+          Administració</a>
+      </div>
+      <div class="span2 theme">
+	<a href="#">
+	  <span class="image economia"></span>
+          Economia i Empresa</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% block news %}
+	{% snippet 'home/snippets/news.html' %}
+{% endblock %}
+
+<div role="main" class="home-info">
+  <div class="container">
+    <div class="row">
+      <div class="span6 contact-info">
+	<ul class="unstyled">
+	  <li>
+	    <span class="bcn-icon-govern-obert club-usuaris"></span>
+	    <a href="#">Club d'usuaris</a>
+	    <span class="description">Forma part del club d'usuaris Open Data Barcelona i rebràs informació al teu correu electrònic</span></li>
+	</ul>
+	<h2>Ajuda'ns a millorar</h2>
+	<ul class="unstyled">
+	  <li>
+	    <span class="bcn-icon-gestions-municipals circle"></span>
+	    <a href="#">Noves dades</a>
+            <span class="description">Quines dades creus que haurien d'obrir-se?</span>
+          </li>
+	  <li>
+	    <span class="bcn-icon-salt-contingut circle"></span>
+	    <a href="#">He trobat un error</a>
+            <span class="description">Si creus que n'hi ha errors en les dades ens ho pots comunicar</span>
+	  </li>
+	  <li>
+	    <span class="bcn-icon-fabriques-creacio circle"></span>
+	    <a href="#">Tinc una idea</a>
+            <span class="description">Vols fer o ja has fet una aplicació que utilitza les dades obertes?</span>
+	  </li>
+	</ul>
+      </div>
+      <div class="span6 dataset-info">
+	<div class="total">
+	  <span class="icon bcn-icon-mes-descarregat"></span>
+	  <span class="dataset-number">
+	    <span class="number">355</span> 
+	    <span class="title">datasets</span>
+	  </span>
+	</div>
+
+	<h2>Datasets més visitats</h2>
+	<ul class="unstyled">
+	  <li>
+	    <span class="bcn-icon-mes-medium"></span>
+	    <a href="#">Accidents gestionats per la Guàrdia Urbana a la ciutat de Barcelona</a>
+	  </li>
+	  <li>
+	    <span class="bcn-icon-mes-medium"></span>
+	    <a href="#">Aparcaments amb servei per bicis a la ciutat de Barcelona</a></li>
+	  <li>
+	    <span class="bcn-icon-mes-medium"></span>
+	    <a href="#">Assistents a les activitats de difusió dels centres cívics de la ciutat de Barcelona</a></li>
+	  <li>
+	    <span class="bcn-icon-mes-medium"></span>
+	    <a href="#">Edat any a any. De la població per barris. Xifres oficials</a></li>
+	  <li>
+	    <span class="bcn-icon-mes-medium"></span>
+	    <a href="#">Dades dels càrrecs electes, comissionats i gerents del Govern Municipal de la ciutat de Barcelona</a></li>
+	</ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+{% endblock %}

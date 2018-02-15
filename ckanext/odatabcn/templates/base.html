@@ -1,0 +1,12 @@
+{% ckan_extends %}
+
+{% block styles %}
+  {{ super() }}
+
+  {# Import odatabcn.css using Fanstatic #}
+  {% resource 'odatabcn/odatabcn.css' %}
+  <script type="text/javascript" src="https://w9.barcelona.cat/assets/core/javascripts/core.js"></script>
+  {% resource 'odatabcn/odatabcn_theme_hierarchy.js' %}
+  <meta name="theme-color" content="#1e529e" />
+
+{% endblock %}

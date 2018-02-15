@@ -1,0 +1,11 @@
+
+        [ckan.plugins]
+        odatabcn=ckanext.odatabcn.plugin:OdatabcnPlugin
+		editfields=ckanext.odatabcn.fields:EditfieldsPlugin
+		
+		[paste.paster_command]
+		odatabcn=ckanext.odatabcn.commands:Odatabcn
+
+        [babel.extractors]
+        ckan = ckan.lib.extract:extract_ckan
+    

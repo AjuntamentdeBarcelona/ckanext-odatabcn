@@ -1,0 +1,47 @@
+{% ckan_extends %}
+
+{% block resource_item_explore %}
+  {% if not url_is_edit %}
+  <div class="resource-actions-small">
+    <ul>
+      {% block resource_item_explore_links %}
+        {% if can_edit %}
+        <li>
+          <a href="{{ h.url_for(controller='package', action='resource_edit', id=pkg.name, resource_id=res.id) }}">
+            <i class="icon-edit"></i>
+            {{ _('Edit') }}
+          </a>
+        </li>
+        {% endif %}
+        {% if res.url and h.is_url(res.url) %}
+        <li>
+          <a href="{{ res.url }}" target="_blank">
+            {% if res.has_views %}
+              <i class="icon-download"></i>
+              {{ _('Download') }}
+            {% elif res.format == 'WMS' or res.format == 'WMTS' %}
+              <i class="icon-link"></i>
+              {{ _('Link to URL') }}
+            {% else %}
+              <i class="icon-download"></i>
+              {{ _('Go to resource') }}
+            {% endif %}
+          </a>
+        </li>
+        <li>
+          <a href="{{ url }}">
+            {% if res.has_views %}
+              <i class="icon-bar-chart"></i>
+              {{ _('Preview') }}
+            {% else %}
+              <i class="icon-info-sign"></i>
+              {{ _('More information') }}
+            {% endif %}
+          </a>
+        </li>
+        {% endif %}
+      {% endblock %}
+    </ul>
+  </div>
+  {% endif %}
+{% endblock %}
