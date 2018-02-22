@@ -32,6 +32,15 @@ def sysadmin_only(context, data_dict=None):
 @plugins.toolkit.auth_allow_anonymous_access
 def logged_in_users_only(context, data_dict=None):
 
+	if context.get('user'):
+		return {'success': True}
+	else:
+		return {'success': False,
+				'msg': 'Only users are allowed to access user profiles'}
+				
+@plugins.toolkit.auth_allow_anonymous_access
+def logged_in_internal_use(context, data_dict=None):
+
 	for_view = 'for_view' in context
 	using_api = 'api_version' in context
 	
@@ -63,6 +72,11 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 			'cataleg', '/cataleg.csv',
 			controller='ckanext.odatabcn.controllers:CSVController',
 			action='view'
+		)
+		map.connect(
+			'tags_csv', '/tags.csv',
+			controller='ckanext.odatabcn.controllers:CSVController',
+			action='view_tags'
 		)
 		map.connect(
 			'/dataset/{id}/resource/{resource_id}/download',
@@ -206,8 +220,10 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 		auth_functions = {
 				'package_activity_list': update_auth.package_update,
 				'package_delete': sysadmin_only,
-				'user_show': logged_in_users_only,
-				'user_list': logged_in_users_only
+				'user_show': logged_in_internal_use,
+				'user_list': logged_in_users_only,
+				'revision_list': logged_in_users_only,
+				'group_revision_list': logged_in_users_only
 			}
 		
 		return auth_functions
