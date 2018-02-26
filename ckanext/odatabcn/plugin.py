@@ -79,6 +79,11 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 			action='view_tags'
 		)
 		map.connect(
+			'tags_html', '/tags',
+			controller='ckanext.odatabcn.controllers:CSVController',
+			action='view_tags_html'
+		)
+		map.connect(
 			'/dataset/{id}/resource/{resource_id}/download',
 			controller='ckanext.odatabcn.controllers:ResourceDownloadController',
 			action='resource_download'

@@ -1,0 +1,4 @@
+"tags_list"
+{%- for t in tags %}
+"{{ t['name'] }}"
+{%- endfor -%}

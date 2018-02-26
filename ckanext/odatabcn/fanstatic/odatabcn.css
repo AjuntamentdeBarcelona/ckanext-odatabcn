@@ -920,6 +920,11 @@ div.span9 .module-content {
 	padding: 10px 0 10px 0;
 }
 
+.tag-full-list  li{
+	width: 33%;
+	float: left;
+}
+
 .tag-list .tag {
 	background: #e5e5e5;
 	color: #303030;
