@@ -108,7 +108,11 @@ within_tertiary
 
              {% if h.get_param_int('_%s_limit' % name) %}
                {% if h.has_more_facets(name) %}
-                  <p class="module-footer"><a href="{{ h.remove_url_param('_%s_limit' % name, replace=0, extras=extras, alternative_url=alternative_url) }}" class="read-more">{{ _('Show More {facet_type}').format(facet_type=title) }}</a></p>
+				{% if name == "tags" %}
+					<p class="module-footer"><a href="{{ h.url_for('home')}}tags" class="read-more">{{ _('Show All Tags') }}</a></p>
+				{% else %}
+					<p class="module-footer"><a href="{{ h.remove_url_param('_%s_limit' % name, replace=0, extras=extras, alternative_url=alternative_url) }}" class="read-more">{{ _('Show More {facet_type}').format(facet_type=title) }}</a></p>
+				{% endif %}
                {% endif %}
             {% else %}
               <p class="module-footer"><a href="{{ h.remove_url_param('_%s_limit' % name, extras=extras, alternative_url=alternative_url) }}" class="read-more">{{ _('Show Only Popular {facet_type}').format(facet_type=title) }}</a></p>

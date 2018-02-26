@@ -17,7 +17,8 @@
 {% block primary_content_inner %}
   <ul class="tag-full-list">
     {% for t in tags %}
-      <li><a href="{% url_for controller='package', action='search', tags=t['name'] %}">{{ t['name'] }}</a></li>
+	{% set testing = t['name'] %}
+      <li><a href="{% url_for controller='package', action='search', tags=t['name'] %}">{{ _(testing) }}</a></li>
     {% endfor %}
   </ul>
 {% endblock %}
