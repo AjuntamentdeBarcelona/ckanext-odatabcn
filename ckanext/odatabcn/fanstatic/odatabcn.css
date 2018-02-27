@@ -1657,6 +1657,23 @@ label[for="include_children"] {
 	
 }
 
+/** Navegacion **/
+.depth-3 {
+color: #1e529e !important; 
+list-style-type: none !important;
+font-size: 13px !important;
+padding-left: 0px !important;
+border-top: none !important;
+padding-top: 0px !important;
+}
+.depth-3 a {
+text-transform: none !important;
+}
+.depth-3 span .arrow {
+font-size: 10px;
+color: #000;
+}
+
 
 /** Mobile version **/
 @media (max-width: 768px) {
