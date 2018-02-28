@@ -179,7 +179,7 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 				ckan_conn_string = "host='%s' dbname='%s' user='%s' password='%s'" % (dbc['db_host'], dbc['db_name'], dbc['db_user'], dbc['db_pass'])
 				ckan_conn = psycopg2.connect(ckan_conn_string)
 				ckan_cursor = ckan_conn.cursor()
-				ckan_cursor.execute("""select sum(count), sum(count_absolute) from tracking_summary t inner join resource r on t.resource_id=r.id where tracking_type='resource' AND r.id=%s""", (resource_dict['id'],))
+				ckan_cursor.execute("""select sum(count), sum(count_absolute) from tracking_summary t inner join resource r on t.resource_id=r.id where tracking_type='resource' AND r.id=%s AND count IS NOT NULL AND count_absolute IS NOT NULL""", (resource_dict['id'],))
 				row = ckan_cursor.fetchone()
 
 				if len(row) != 0:
