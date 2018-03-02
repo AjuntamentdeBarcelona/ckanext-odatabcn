@@ -93,8 +93,16 @@
                                    <li class="first" aria-controls="main-menu-ul" aria-checked="false">
 						<a href="/{{ lang }}/desenvolupadors"><span>{{ _('Developers') }}</span></a>
 					</li>
-                                   <li aria-controls="main-menu-ul" aria-checked="false">
-						<a href="/{{ lang }}/visualitzacions-i-aplicacions"><span>{{ _('Data visualizations and applications') }}</span></a>
+                                   <li class="dropdown">
+						<a href="/{{ lang }}/visualitzacions-i-aplicacions" class="dropdown-toggle" data-toggle="dropdown"><span>{{ _('Data visualizations and applications') }}</span></a>
+					<ul class="dropdown-menu">
+						<li class="submenu-header">
+						<a data-toggle="dropdown" href="/{{ lang }}/visualitzacions-i-aplicacions"><i class="arrow bcn-icon-esquerra-medium"></i>{{ _('Data visualizations and applications') }}</a>
+						</li>
+                                   	<li class="first, depth-3" aria-controls="main-menu-ul" aria-checked="false">
+							<a href="/{{ lang }}/api-cataleg"><span><i class="arrow hidden-xs bcn-icon-dreta-medium"></i>Especial visualitzacions</span></a>
+						</li>
+					</ul>
 					</li>
                              </ul> 
 			</li>
@@ -108,13 +116,16 @@
 						<a data-toggle="dropdown" href="#"><i class="arrow bcn-icon-esquerra-medium"></i> {{ _('Repte Barcelona Dades Obertes') }}</a>
 					</li>
                                    <li class="first" aria-controls="main-menu-ul" aria-checked="false">
-						<a href="/{{ lang }}/repte"><span>{{ _('Que es el Repte?') }}</span></a>
+						<a href="/{{ lang }}/repte"><span>{{ _('Que es?') }}</span></a>
 					</li>
                                    <li aria-controls="main-menu-ul" aria-checked="false">
-						<a href="/{{ lang }}/novetats-repte"><span>{{ _('Novetats Repte') }}</span></a>
+						<a href="/{{ lang }}/novetats-repte"><span>{{ _('Novetats') }}</span></a>
 					</li>
                                    <li aria-controls="main-menu-ul" aria-checked="false">
 						<a href="/{{ lang }}/centres-participants"><span>{{ _('Centres Participants') }}</span></a>
+					</li>
+                                   <li aria-controls="main-menu-ul" aria-checked="false">
+						<a href="/{{ lang }}/jurat-repte"><span>{{ _('Jurat') }}</span></a>
 					</li>
                              </ul> 
 			</li>
