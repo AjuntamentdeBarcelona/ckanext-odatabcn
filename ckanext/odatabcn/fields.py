@@ -98,9 +98,11 @@ class EditfieldsPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 			if not toolkit.c.user:
 				delete_private_data(pkg)
 			elif (not toolkit.c.action == 'resource_download'
+					and not toolkit.c.action == 'resource_delete'
 					and not toolkit.c.action == 'resource_edit'
 					and not toolkit.c.action == 'new_resource'
 					and not toolkit.c.action == 'edit'
+					and not toolkit.c.action == ''
 					and not (toolkit.c.user and authz.is_sysadmin(toolkit.c.user) and toolkit.c.controller == 'api')):
 				change_resource_download_urls(pkg, site_url)
 

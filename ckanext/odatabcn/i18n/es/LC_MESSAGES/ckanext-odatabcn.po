@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ckan 2.6.0b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2016-10-18 10:37+0100\n"
-"PO-Revision-Date: 2018-02-05 08:21+0100\n"
+"PO-Revision-Date: 2018-03-05 09:08+0100\n"
 "Last-Translator: Isabel Ruiz <isaruizmellado@gmail.com>, 2016\n"
 "Language-Team: Spanish (https://www.transifex.com/okfn/teams/11162/es/)\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Generated-By: Babel 2.3.4\n"
 "Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.1\n"
+"X-Generator: Poedit 1.8.11\n"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "Maintainer Telephone"
@@ -2274,11 +2274,14 @@ msgstr "salud pública"
 msgid "Repte Barcelona Dades Obertes"
 msgstr "Reto Barcelona Dades Obertes"
 
-msgid "Que es el Repte?"
-msgstr "¿Qué es el Reto?"
+msgid "Que es el?"
+msgstr "¿Qué es?"
 
-msgid "Novetats Repte"
-msgstr "Novedades Reto"
+msgid "Novetats"
+msgstr "Novedades"
+
+msgid "Jurat"
+msgstr "Jurado"
 
 msgid "Centres Participants"
 msgstr "Centros Participantes"
@@ -2960,3 +2963,33 @@ msgstr "Ver definición de campos"
 
 msgid "View complementary description"
 msgstr "Ver descripción complementaria"
+
+msgid "Públic escolar"
+msgstr "Público escolar"
+
+msgid "Eventuals"
+msgstr "Eventuales"
+
+msgid "Assessors"
+msgstr "Asesores"
+
+msgid "Datasets Tags"
+msgstr "Catálogo: Etiquetas"
+
+msgid "Tag List"
+msgstr "Listado de etiquetas"
+
+msgid "Show All Tags"
+msgstr "Mostrar todas las etiquetas"
+
+msgid "Ciutadella"
+msgstr "Ciudadela"
+
+msgid "Història"
+msgstr "Historia"
+
+msgid "Rec Comtal"
+msgstr "Rec Condal"
+
+msgid "Roma"
+msgstr "Roma"

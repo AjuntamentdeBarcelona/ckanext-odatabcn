@@ -920,6 +920,11 @@ div.span9 .module-content {
 	padding: 10px 0 10px 0;
 }
 
+.tag-full-list  li{
+	width: 33%;
+	float: left;
+}
+
 .tag-list .tag {
 	background: #e5e5e5;
 	color: #303030;
@@ -1650,6 +1655,23 @@ label[for="include_children"] {
 		padding-right: 0;
 	}
 	
+}
+
+/** Navegacion **/
+.depth-3 {
+color: #1e529e !important; 
+list-style-type: none !important;
+font-size: 13px !important;
+padding-left: 0px !important;
+border-top: none !important;
+padding-top: 0px !important;
+}
+.depth-3 a {
+text-transform: none !important;
+}
+.depth-3 span .arrow {
+font-size: 10px;
+color: #000;
 }
 
 

@@ -204,6 +204,30 @@ class CSVController(t.BaseController):
 				'request': request
 			})
 			
+	def view_tags(self):
+			
+		#Obtenemos los tags
+		sql = '''SELECT DISTINCT name FROM tag ORDER BY name;'''
+		results = model.Session.execute(sql)
+		
+		curdate = d.datetime.now().strftime('%Y-%m-%d_%H-%M')
+		t.response.headers['Content-Type'] = 'application/csv; charset=utf-8'
+		t.response.headers['Content-Disposition'] = 'attachment; filename=tagsBCN_' + curdate + '.csv'
+		return t.render('tags.csv', extra_vars={
+				'tags': results
+			})
+			
+	def view_tags_html(self):
+			
+		#Obtenemos los tags
+		sql = '''SELECT DISTINCT name FROM tag ORDER BY name;'''
+		results = model.Session.execute(sql)
+		
+		t.response.headers['Content-Type'] = 'text/html; charset=utf-8'
+		return t.render('tags.html', extra_vars={
+				'tags': results
+			})
+			
 	def escape_text(self, pkg_dict):
 		keys = (
 			'author',
