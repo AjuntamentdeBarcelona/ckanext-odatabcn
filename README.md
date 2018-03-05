@@ -18,6 +18,8 @@ It also provides additional functionalities:
 This plugin also enables console commands that are executed through cron jobs:
  - `paster odatabcn update-tracking`: update resource ids on the tracking_summary table
  - `paster odatabcn update-dataset-total`: update the number of datasets published and deactivated last month on the odb_dataset_total custom table
+ - `paster odatabcn get-new-tags`: check all active tags against the i18n "es" language file to check for missing translations and e-mail the list to the account added on the "email_to" configuration option.
+ - `paster odatabcn submit-resource-to-datapusher`: submits a resource identified by "resource_id" to the datastore through datapusher. Adapted from ckan/ckanext/datapusher/cli.py `_submit` method which only allows all resources from a dataset to be submitted instead of a single one.
  
 The shell scripts that are included on crontab can be found inside the `scripts` folder.
 
