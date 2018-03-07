@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ckan 2.6.0b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2016-10-18 10:37+0100\n"
-"PO-Revision-Date: 2018-03-05 09:08+0100\n"
+"PO-Revision-Date: 2018-03-07 17:49+0100\n"
 "Last-Translator: Isabel Ruiz <isaruizmellado@gmail.com>, 2016\n"
 "Language-Team: Spanish (https://www.transifex.com/okfn/teams/11162/es/)\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Generated-By: Babel 2.3.4\n"
 "Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.0.1\n"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "little"
@@ -363,7 +363,7 @@ msgstr "Electric vehicle charging stations"
 msgid "Discriminació"
 msgstr "Discrimination"
 
-msgid "Trinitat Vella"
+msgid "la Trinitat Vella"
 msgstr "La Trinitat Vella"
 
 msgid "Centres sanitaris"
@@ -564,7 +564,7 @@ msgstr "Participation"
 msgid "Hostafrancs"
 msgstr "Hostafrancs"
 
-msgid "el Putget i el Farró"
+msgid "el Putxet i el Farró"
 msgstr "El Putxet i el Farró"
 
 msgid "Sant Andreu"
@@ -585,7 +585,7 @@ msgstr "cycling"
 msgid "Escampar publicitat"
 msgstr "Advertising distribution"
 
-msgid "Sants-Badal"
+msgid "Sants - Badal"
 msgstr "Sants - Badal"
 
 msgid "la Bordeta"
@@ -603,7 +603,7 @@ msgstr "Traffic situation"
 msgid "Instal-lacions"
 msgstr "Facilities"
 
-msgid "el Poble-sec"
+msgid "el Poble Sec"
 msgstr "El Poble Sec"
 
 msgid "la Dreta de l-Eixample"
@@ -630,10 +630,10 @@ msgstr "Year 2008"
 msgid "Immobles"
 msgstr "Properties"
 
-msgid "Sagrada Família"
+msgid "la Sagrada Família"
 msgstr "La Sagrada Família"
 
-msgid "Trinitat Nova"
+msgid "la Trinitat Nova"
 msgstr "La Trinitat Nova"
 
 msgid "Pressupost"
@@ -756,7 +756,7 @@ msgstr "Vehicle advertising"
 msgid "Plantes baixes (arquitectura)"
 msgstr "Ground floors (Architecture)"
 
-msgid "Verdum"
+msgid "Verdun"
 msgstr "Verdun"
 
 msgid "Frigorífics"
@@ -1053,7 +1053,7 @@ msgstr "container"
 msgid "Façanes"
 msgstr "Facades"
 
-msgid "Font de la Guatlla"
+msgid "la Font de la Guatlla"
 msgstr "La Font de la Guatlla"
 
 msgid "Adreça"
@@ -1335,7 +1335,7 @@ msgstr "Creation spaces"
 msgid "Oferta pública"
 msgstr "Recruitment"
 
-msgid "Roquetes"
+msgid "les Roquetes"
 msgstr "Les Roquetes"
 
 msgid "Equipaments"
@@ -1437,7 +1437,7 @@ msgstr "Year 2007"
 msgid "Servei"
 msgstr "Service"
 
-msgid "Fort Pienc"
+msgid "el Fort Pienc"
 msgstr "El Fort Pienc"
 
 msgid "Vallvidrera, el Tibidabo i les Planes"
@@ -1500,7 +1500,7 @@ msgstr "cultural"
 msgid "Instal-lacions de serveis"
 msgstr "Service installations"
 
-msgid "Vilapicina i Torre Llobeta"
+msgid "Vilapicina i la Torre Llobeta"
 msgstr "Vilapicina i la Torre Llobeta"
 
 msgid "Exposicions"
@@ -2580,9 +2580,6 @@ msgstr "Accounts"
 
 msgid "Votants"
 msgstr "Voters"
-
-msgid "Sant Pere- Santa Caterina i la Ribera"
-msgstr "Sant Pere- Santa Caterina i la Ribera"
 
 msgid "NDVI"
 msgstr "NDVI"

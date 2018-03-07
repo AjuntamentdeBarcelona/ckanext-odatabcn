@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ckan 2.6.0b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2016-10-18 10:37+0100\n"
-"PO-Revision-Date: 2018-03-05 09:08+0100\n"
+"PO-Revision-Date: 2018-03-07 17:48+0100\n"
 "Last-Translator: Isabel Ruiz <isaruizmellado@gmail.com>, 2016\n"
 "Language-Team: Spanish (https://www.transifex.com/okfn/teams/11162/es/)\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Generated-By: Babel 2.3.4\n"
 "Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.0.1\n"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "Maintainer Telephone"
@@ -401,7 +401,7 @@ msgstr "Grado discapacidad"
 msgid "Recollida d-animals"
 msgstr "Recogida de animales"
 
-msgid "Trinitat Vella"
+msgid "la Trinitat Vella"
 msgstr "la Trinitat Vella"
 
 msgid "Bars musicals"
@@ -617,7 +617,7 @@ msgstr "Mapa"
 msgid "Meublés"
 msgstr "Meublés"
 
-msgid "el Putget i el Farró"
+msgid "el Putxet i el Farró"
 msgstr "el Putxet i el Farró"
 
 msgid "Sant Andreu"
@@ -728,10 +728,10 @@ msgstr "Numero de habitaciones"
 msgid "Transport i serveis relacionats"
 msgstr "Transporte y servicios relacionados"
 
-msgid "Sagrada Família"
+msgid "la Sagrada Família"
 msgstr "la Sagrada Família"
 
-msgid "Trinitat Nova"
+msgid "la Trinitat Nova"
 msgstr "la Trinitat Nova"
 
 msgid "Persones"
@@ -977,8 +977,8 @@ msgstr "Vallbona"
 msgid "les Tres Torres"
 msgstr "les Tres Torres"
 
-msgid "Roquetes"
-msgstr "Roquetes"
+msgid "les Roquetes"
+msgstr "Les Roquetes"
 
 msgid "Llocs culte"
 msgstr "Lugares culto"
@@ -1103,7 +1103,7 @@ msgstr "Multas"
 msgid "Agenda diaria"
 msgstr "Agenda diaria"
 
-msgid "Font de la Guatlla"
+msgid "la Font de la Guatlla"
 msgstr "la Font de la Guatlla"
 
 msgid "Transferències"
@@ -1223,8 +1223,8 @@ msgstr "Servicio"
 msgid "Mercats municipals"
 msgstr "Mercados municipales"
 
-msgid "Sants-Badal"
-msgstr "Sants-Badal"
+msgid "Sants - Badal"
+msgstr "Sants - Badal"
 
 msgid "Densitat d-establiments"
 msgstr "Densidad de establecimientos"
@@ -1562,7 +1562,7 @@ msgstr "Distancia entre establecimientos"
 msgid "cultural"
 msgstr "cultural"
 
-msgid "Vilapicina i Torre Llobeta"
+msgid "Vilapicina i la Torre Llobeta"
 msgstr "Vilapicina i la Torre Llobeta"
 
 msgid "Amarradors"
@@ -1685,11 +1685,11 @@ msgstr "medida"
 msgid "Instal-lacions de serveis"
 msgstr "Instalaciones de servicios"
 
-msgid "el Poble-sec"
+msgid "el Poble Sec"
 msgstr "Poble-sec"
 
-msgid "Verdum"
-msgstr "Verdum"
+msgid "Verdun"
+msgstr "Verdun"
 
 msgid "Telèfon"
 msgstr "Telefono"
@@ -1784,7 +1784,7 @@ msgstr "difusión"
 msgid "Gestió econòmica  administrativa"
 msgstr "Gestión económica  administrativa"
 
-msgid "Fort Pienc"
+msgid "el Fort Pienc"
 msgstr "Fort Pienc"
 
 msgid "projectes  internacionals"
@@ -2822,9 +2822,6 @@ msgstr "Cuentas"
 
 msgid "Votants"
 msgstr "Votantes"
-
-msgid "Sant Pere- Santa Caterina i la Ribera"
-msgstr "Sant Pere- Santa Caterina i la Ribera"
 
 msgid "NDVI"
 msgstr "NDVI"
