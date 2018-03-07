@@ -19,7 +19,7 @@
     {% for t in tags %}
 	{% set nameTag = t['name_tag'] %}
 	{% set totalTag = t['total_tag'] %}
-      <li><a href="{% url_for controller='package', action='search', tags=t['name'] %}">{{ _(nameTag) }} ({{ _(totalTag) }})</a></li>
+      <li><a href="{% url_for controller='package', action='search', tags=t['name_tag'] %}">{{ _(nameTag) }} ({{ _(totalTag) }})</a></li>
     {% endfor %}
   </ul>
 {% endblock %}
