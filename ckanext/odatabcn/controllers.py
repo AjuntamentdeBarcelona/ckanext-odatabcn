@@ -207,7 +207,11 @@ class CSVController(t.BaseController):
 	def view_tags(self):
 			
 		#Obtenemos los tags
-		sql = '''SELECT DISTINCT name FROM tag ORDER BY name;'''
+		sql = '''SELECT T.name as name_tag, COUNT(*) as total_tag FROM tag T
+					INNER JOIN package_tag PT ON PT.tag_id = T.id
+					WHERE PT.state LIKE 'active'
+					GROUP BY T.name
+					ORDER BY T.name;'''
 		results = model.Session.execute(sql)
 		
 		curdate = d.datetime.now().strftime('%Y-%m-%d_%H-%M')
