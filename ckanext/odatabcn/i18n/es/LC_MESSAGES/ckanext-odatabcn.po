@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ckan 2.6.0b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2016-10-18 10:37+0100\n"
-"PO-Revision-Date: 2018-03-07 17:48+0100\n"
+"PO-Revision-Date: 2018-03-12 12:57+0100\n"
 "Last-Translator: Isabel Ruiz <isaruizmellado@gmail.com>, 2016\n"
 "Language-Team: Spanish (https://www.transifex.com/okfn/teams/11162/es/)\n"
 "MIME-Version: 1.0\n"
@@ -227,8 +227,8 @@ msgstr "Animales"
 msgid "les Corts"
 msgstr "les Corts"
 
-msgid "bicicleta"
-msgstr "bicicleta"
+msgid "Bicicleta"
+msgstr "Bicicleta"
 
 msgid "Necessitats fisiològiques"
 msgstr "Necesidades fisiológicas"
@@ -851,8 +851,8 @@ msgstr "Año 2015"
 msgid "Botigues de conveniència"
 msgstr "Tiendas de conveniencia"
 
-msgid "servei bicicleta"
-msgstr "servicio bicicleta"
+msgid "Servei Bicicleta"
+msgstr "Servicio Bicicleta"
 
 msgid "Orografia i relleu"
 msgstr "Orografía y relieve"
@@ -926,6 +926,9 @@ msgstr "Plazas"
 msgid "Equipaments de serveis socials"
 msgstr "Equipamientos servicios sociales"
 
+msgid "Serveis socials"
+msgstr "Servicios sociales"
+
 msgid "Topogràfic"
 msgstr "Topográfico"
 
@@ -944,8 +947,8 @@ msgstr "Anfibios"
 msgid "el Besòs i el Maresme"
 msgstr "el Besòs i el Maresme"
 
-msgid "activitats formació"
-msgstr "actividades formación"
+msgid "Activitats formació"
+msgstr "Actividades formación"
 
 msgid "Enderrocs"
 msgstr "Derribos"
@@ -991,6 +994,9 @@ msgstr "Contaminación acústica"
 
 msgid "Aforament de locals"
 msgstr "Aforo de locales"
+
+msgid "Aforament"
+msgstr "Aforo"
 
 msgid "l-Antiga Esquerra de l-Eixample"
 msgstr "l'Antiga Esquerra de l'Eixample"
@@ -1175,8 +1181,8 @@ msgstr "Horta"
 msgid "Passeigs"
 msgstr "Paseos"
 
-msgid "Comunitats autònomes"
-msgstr "Comunidades autónomas"
+msgid "Comunitats Autònomes"
+msgstr "Comunidades Autónomas"
 
 msgid "Test"
 msgstr "Test"
@@ -1559,8 +1565,8 @@ msgstr "la Marina del Prat Vermell"
 msgid "Distància entre establiments"
 msgstr "Distancia entre establecimientos"
 
-msgid "cultural"
-msgstr "cultural"
+msgid "Cultural"
+msgstr "Cultural"
 
 msgid "Vilapicina i la Torre Llobeta"
 msgstr "Vilapicina i la Torre Llobeta"
@@ -1898,8 +1904,8 @@ msgstr "Vivienda"
 msgid "Alineació de carrers"
 msgstr "Alineación de calles"
 
-msgid "HABITATGES"
-msgstr "VIVIENDAS"
+msgid "Habitatges"
+msgstr "Viviendas"
 
 msgid "Plantes baixes (arquitectura)"
 msgstr "Plantas bajas (Arquitectura)"
@@ -2646,8 +2652,8 @@ msgstr "Carta arqueológica"
 msgid "Qualitat"
 msgstr "Calidad"
 
-msgid "reglaments"
-msgstr "reglamentos"
+msgid "Reglaments"
+msgstr "Reglamentos"
 
 msgid "Plantes"
 msgstr "Plantas"
@@ -2715,8 +2721,8 @@ msgstr "Cambios nacionalidad"
 msgid "Art públic"
 msgstr "Arte público"
 
-msgid "preus públics"
-msgstr "precios públicos"
+msgid "Preus públics"
+msgstr "Precios públicos"
 
 msgid "Premis"
 msgstr "Premios"
@@ -2877,8 +2883,8 @@ msgstr "Telecomunicaciones"
 msgid "Àrea verda"
 msgstr "Área verde"
 
-msgid "ordenances fiscals"
-msgstr "ordenanzas fiscales"
+msgid "Ordenances fiscals"
+msgstr "Ordenanzas fiscales"
 
 msgid "Infraestructura Verda"
 msgstr "Infraestructura Verde"
@@ -2990,3 +2996,9 @@ msgstr "Rec Condal"
 
 msgid "Roma"
 msgstr "Roma"
+
+msgid "Catàleg Open Data BCN"
+msgstr "Catálogo Open Data BCN"
+
+msgid "INCASOL. Institut Català del Sòl"
+msgstr "INCASOL. Instituto Catalán del Suelo"

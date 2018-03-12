@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ckan 2.6.0b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2016-10-18 10:37+0100\n"
-"PO-Revision-Date: 2018-03-07 17:49+0100\n"
+"PO-Revision-Date: 2018-03-12 12:57+0100\n"
 "Last-Translator: Isabel Ruiz <isaruizmellado@gmail.com>, 2016\n"
 "Language-Team: Spanish (https://www.transifex.com/okfn/teams/11162/es/)\n"
 "MIME-Version: 1.0\n"
@@ -492,6 +492,9 @@ msgstr "Number of rooms"
 msgid "Aforament de locals"
 msgstr "Seating capacity of premises"
 
+msgid "Aforament"
+msgstr "Seating capacity"
+
 msgid "Wifi"
 msgstr "Hotspot"
 
@@ -579,8 +582,8 @@ msgstr "Sarrià"
 msgid "Tipus"
 msgstr "Types"
 
-msgid "bicicleta"
-msgstr "cycling"
+msgid "Bicicleta"
+msgstr "Cycling"
 
 msgid "Escampar publicitat"
 msgstr "Advertising distribution"
@@ -1002,6 +1005,9 @@ msgstr "Improved toponymy"
 msgid "HABITATGES"
 msgstr "HOUSING"
 
+msgid "Habitatges"
+msgstr "Housing"
+
 msgid "Cobertes"
 msgstr "Roofs"
 
@@ -1080,8 +1086,8 @@ msgstr "Parties"
 msgid "Autoserveis"
 msgstr "Self-service shops"
 
-msgid "activitats formació"
-msgstr "training activities"
+msgid "Activitats formació"
+msgstr "Training activities"
 
 msgid "Estacionament"
 msgstr "Parking"
@@ -1494,8 +1500,8 @@ msgstr "La Marina del Prat Vermell"
 msgid "Distribució de la població en el municipi de Viladecans"
 msgstr "Population distribution in Viladecans"
 
-msgid "cultural"
-msgstr "cultural"
+msgid "Cultural"
+msgstr "Cultural"
 
 msgid "Instal-lacions de serveis"
 msgstr "Service installations"
@@ -1517,6 +1523,9 @@ msgstr "Children's play centres"
 
 msgid "Equipaments de serveis socials"
 msgstr "Social service amenities"
+
+msgid "Serveis socials"
+msgstr "Social service"
 
 msgid "Sant Gervasi - la Bonanova"
 msgstr "Sant Gervasi - la Bonanova"
@@ -1566,7 +1575,7 @@ msgstr "Adding flats"
 msgid "Garatges i aparcaments"
 msgstr "Garages and car parks"
 
-msgid "Comunitats autònomes"
+msgid "Comunitats Autònomes"
 msgstr "Autonomous Community"
 
 msgid "Any 2012"
@@ -1833,8 +1842,8 @@ msgstr "Cartographic catalogue"
 msgid "Tipologia"
 msgstr "Tipology"
 
-msgid "servei bicicleta"
-msgstr "service ciclyng"
+msgid "Servei Bicicleta"
+msgstr "Service Ciclyng"
 
 msgid "Centres docents"
 msgstr "Educational centres"
@@ -2407,8 +2416,8 @@ msgstr "Archaeological chart"
 msgid "Qualitat"
 msgstr "Quality"
 
-msgid "reglaments"
-msgstr "regulations"
+msgid "Reglaments"
+msgstr "Regulations"
 
 msgid "Plantes"
 msgstr "Plants"
@@ -2479,8 +2488,8 @@ msgstr "Changes in nationality"
 msgid "Art públic"
 msgstr "Public art"
 
-msgid "preus públics"
-msgstr "public prices"
+msgid "Preus públics"
+msgstr "Public prices"
 
 msgid "Premis"
 msgstr "Awards"
@@ -2632,8 +2641,8 @@ msgstr "Telecommunications"
 msgid "Àrea verda"
 msgstr "Green area"
 
-msgid "ordenances fiscals"
-msgstr "tax ordinances"
+msgid "Ordenances fiscals"
+msgstr "Tax ordinances"
 
 msgid "Infraestructura Verda"
 msgstr "Green Infrastructure"
@@ -2724,3 +2733,9 @@ msgstr "Rec Count"
 
 msgid "Roma"
 msgstr "Roma"
+
+msgid "Catàleg Open Data BCN"
+msgstr "Catalogue Open Data BCN"
+
+msgid "INCASOL. Institut Català del Sòl"
+msgstr "INCASOL. Catalan Land Institute"
