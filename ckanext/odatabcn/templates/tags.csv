@@ -1,4 +1,5 @@
 "name_tag","total_tag"
 {%- for t in tags %}
-"{{ t['name_tag'] }}","{{ t['total_tag'] }}"
+{%- set nameTag = t['name_tag'] %}
+"{{ _(nameTag) | safe }}","{{ t['total_tag'] }}"
 {%- endfor -%}
