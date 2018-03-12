@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ckan 2.6.0b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2016-10-18 10:37+0100\n"
-"PO-Revision-Date: 2018-03-12 15:11+0100\n"
+"PO-Revision-Date: 2018-03-12 16:20+0100\n"
 "Last-Translator: Isabel Ruiz <isaruizmellado@gmail.com>, 2016\n"
 "Language-Team: Spanish (https://www.transifex.com/okfn/teams/11162/es/)\n"
 "MIME-Version: 1.0\n"
@@ -202,6 +202,9 @@ msgstr "Distrito Ciutat Vella"
 
 msgid "Equipaments de l-Administració"
 msgstr "Equipamientos administración"
+
+msgid "Equipaments Administració"
+msgstr "Equipamientos Administración"
 
 msgid "Port olímpic"
 msgstr "Puerto olímpico"
@@ -482,6 +485,9 @@ msgstr "el Coll"
 msgid "Equipaments d-esports"
 msgstr "Equipamientos deportivos"
 
+msgid "Equipaments esports"
+msgstr "Equipamientos deportivos"
+
 msgid "Animals salvatges"
 msgstr "Animales salvajes"
 
@@ -569,6 +575,9 @@ msgstr "Animales peligrosos"
 msgid "Equipaments d-educació"
 msgstr "Equipamientos educación"
 
+msgid "Equipaments educació"
+msgstr "Equipamientos educación"
+
 msgid "Bancs públics"
 msgstr "Bancos públicos"
 
@@ -628,6 +637,9 @@ msgstr "Comercio al detalle"
 
 msgid "Arbres d-interès local"
 msgstr "Árboles de interés local"
+
+msgid "Arbres interès local"
+msgstr "Árboles interés local"
 
 msgid "Sarrià"
 msgstr "Sarrià"
@@ -725,6 +737,9 @@ msgstr "Wifi"
 msgid "Nombre d-habitacions"
 msgstr "Numero de habitaciones"
 
+msgid "Nombre habitacions"
+msgstr "Numero habitaciones"
+
 msgid "Transport i serveis relacionats"
 msgstr "Transporte y servicios relacionados"
 
@@ -782,6 +797,9 @@ msgstr "Grandes almacenes"
 msgid "Equipaments de centres d-informació"
 msgstr "Equipamientos de centros de información"
 
+msgid "Equipaments centres informació"
+msgstr "Equipamientos centros información"
+
 msgid "Sant Genís dels Agudells"
 msgstr "Sant Genís dels Agudells"
 
@@ -800,8 +818,8 @@ msgstr "la Teixonera"
 msgid "Activitats"
 msgstr "Actividades"
 
-msgid "Equipaments d-animals i plantes"
-msgstr "Equipamientos de animales y plantas"
+msgid "Equipaments animals plantes"
+msgstr "Equipamientos animales plantas"
 
 msgid "Coronaments"
 msgstr "Coronamientos"
@@ -1442,6 +1460,9 @@ msgstr "Bingos"
 msgid "Conservació de l-edifici"
 msgstr "Conservación del edificio"
 
+msgid "Conservació edifici"
+msgstr "Conservación edificio"
+
 msgid "Aigua"
 msgstr "Agua"
 
@@ -1849,6 +1870,9 @@ msgstr "Superfície útil"
 
 msgid "Llista d-equipaments de companyies de serveis"
 msgstr "Lista de equipamientos de compañías de servicios"
+
+msgid "Llista equipaments companyies serveis"
+msgstr "Lista equipamientos compañías servicios"
 
 msgid "Barcino"
 msgstr "Barcino"
@@ -2735,6 +2759,9 @@ msgstr "Propietarios"
 
 msgid "Cartes de serveis"
 msgstr "Cartas de servicios"
+
+msgid "Carta serveis"
+msgstr "Carta servicios"
 
 msgid "Mapa malla UTM"
 msgstr "Mapa malla UTM"

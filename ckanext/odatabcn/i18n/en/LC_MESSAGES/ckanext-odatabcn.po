@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ckan 2.6.0b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2016-10-18 10:37+0100\n"
-"PO-Revision-Date: 2018-03-12 15:10+0100\n"
+"PO-Revision-Date: 2018-03-12 16:20+0100\n"
 "Last-Translator: Isabel Ruiz <isaruizmellado@gmail.com>, 2016\n"
 "Language-Team: Spanish (https://www.transifex.com/okfn/teams/11162/es/)\n"
 "MIME-Version: 1.0\n"
@@ -489,6 +489,9 @@ msgstr "Guide base"
 msgid "Nombre d-habitacions"
 msgstr "Number of rooms"
 
+msgid "Nombre habitacions"
+msgstr "Number rooms"
+
 msgid "Aforament de locals"
 msgstr "Seating capacity of premises"
 
@@ -715,6 +718,9 @@ msgid "webs"
 msgstr "webs"
 
 msgid "Arbres d-interès local"
+msgstr "Local interest trees"
+
+msgid "Arbres interès local"
 msgstr "Local interest trees"
 
 msgid "Transport públic"
@@ -1182,6 +1188,9 @@ msgstr "Flat roofs and terraces"
 msgid "Conservació de l-edifici"
 msgstr "Conservation of the building"
 
+msgid "Conservació edifici"
+msgstr "Conservation building"
+
 msgid "Estabilitat pressupostària"
 msgstr "Budget stability"
 
@@ -1398,6 +1407,9 @@ msgstr "Street terraces"
 msgid "Equipaments d-animals i plantes"
 msgstr "List of animal and plant amenities"
 
+msgid "Equipaments animals plantes"
+msgstr "Animal plant amenities"
+
 msgid "Transparència"
 msgstr "Transparency"
 
@@ -1458,6 +1470,9 @@ msgstr "Wall"
 msgid "Equipaments d-educació"
 msgstr "Educational amenities"
 
+msgid "Equipaments educació"
+msgstr "Educational amenities"
+
 msgid "Carrerer"
 msgstr "Streets"
 
@@ -1514,6 +1529,9 @@ msgstr "Exhibitions"
 
 msgid "Equipaments de centres d-informació"
 msgstr "List of information centre amenities"
+
+msgid "Equipaments centres informació"
+msgstr "Information centre amenities"
 
 msgid "Gestió econòmica  administrativa"
 msgstr "Economic administrative management"
@@ -1628,6 +1646,9 @@ msgstr "Percentages"
 
 msgid "Llista d-equipaments de companyies de serveis"
 msgstr "List of service company amenities"
+
+msgid "Llista equipaments companyies serveis"
+msgstr "List service company amenities"
 
 msgid "mobilitat"
 msgstr "mobility"
@@ -1882,6 +1903,9 @@ msgid "Contracte"
 msgstr "Contract"
 
 msgid "Equipaments d-esports"
+msgstr "Sports amenities"
+
+msgid "Equipaments esports"
 msgstr "Sports amenities"
 
 msgid "LGEP i LOEPSF"
@@ -2499,6 +2523,9 @@ msgstr "Owners"
 
 msgid "Cartes de serveis"
 msgstr "Services letters"
+
+msgid "Carta serveis"
+msgstr "Service letter"
 
 msgid "Mapa malla UTM"
 msgstr "UTM mesh map"

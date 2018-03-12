@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ckan 2.6.0b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2016-10-18 10:37+0100\n"
-"PO-Revision-Date: 2018-03-12 12:57+0100\n"
+"PO-Revision-Date: 2018-03-12 16:21+0100\n"
 "Last-Translator: Isabel Ruiz <isaruizmellado@gmail.com>, 2016\n"
 "Language-Team: Spanish (https://www.transifex.com/okfn/teams/11162/es/)\n"
 "MIME-Version: 1.0\n"
@@ -320,6 +320,9 @@ msgstr "el Camp d'en Grassot i Gràcia Nova"
 msgid "Equipaments de l-Administració"
 msgstr "Equipaments de l'administració"
 
+msgid "Equipaments Administració"
+msgstr "Equipaments Administració"
+
 msgid "Sacrifici d-animals"
 msgstr "Sacrifici d'animals"
 
@@ -352,6 +355,9 @@ msgstr "Ventiladors d'extracció"
 
 msgid "Llista d-equipaments de companyies de serveis"
 msgstr "Llista d'equipaments de companyies de serveis"
+
+msgid "Llista equipaments companyies serveis"
+msgstr "Llista equipaments companyies serveis"
 
 msgid "Conservació i manteniment d-edificis"
 msgstr "Conservació i manteniment d'edificis"
