@@ -17,7 +17,9 @@
 {% block primary_content_inner %}
 	{% set tag_array = [] %}
     {% for t in tags %}
-		{% do tag_array.append([_(nameTag),t['total_tag'],t['name_tag']]) %}
+		{% set nameTag = t['name_tag'] %}
+		{% set nameTagTranslated = _(nameTag) %}
+		{% do tag_array.append([nameTagTranslated,t['total_tag'],nameTag]) %}
 	{% endfor %}
   <ul class="tag-full-list">
     {% for z in tag_array | sort(0)%}
