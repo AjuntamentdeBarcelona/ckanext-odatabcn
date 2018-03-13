@@ -67,7 +67,7 @@ within_tertiary
                 {% for item in items %}
                     {% set href = h.remove_url_param(name, item.name, extras=extras, alternative_url=alternative_url) if item.active else h.add_url_param(new_params={name: item.name}, extras=extras, alternative_url=alternative_url) %}
                     {% set label = label_function(item) if label_function else item.display_name %}
-                    {% set label_truncated = h.truncate(label, 22) if not label_function else label %}
+                    {% set label_truncated = h.truncate(_(label), 22) if not label_function else _(label) %}
                     {% set count = count_label(item['count']) if count_label else ('(%d)' % item['count']) %}
 					{% set parentname = '' %}
 
@@ -85,7 +85,7 @@ within_tertiary
 					
                     <li class="{{ nav_item_class or 'nav-item' }}{% if item.active or c.group_dict.name == item.name  %} active{% endif %}" id="{{ item.name }}"  parent="{{ parentname }}">
                         <a href="{{ href }}" title="{{ label if label != label_truncated else '' }}">
-                          <span>{{ _(label_truncated) }} {{ count }}</span>
+                          <span>{{ label_truncated }} {{ count }}</span>
                         </a>
                     </li>
                 {% endfor %}

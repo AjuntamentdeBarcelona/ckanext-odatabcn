@@ -15,12 +15,14 @@
 	<h1>{{ _('Tag List') }}</h1>
 	
 {% block primary_content_inner %}
-  <ul class="tag-full-list">
+	{% set tag_array = [] %}
     {% for t in tags %}
-	{% set nameTag = t['name_tag'] %}
-	{% set totalTag = t['total_tag'] %}
-      <li><a href="{% url_for controller='package', action='search', tags=t['name_tag'] %}">{{ _(nameTag) }} ({{ _(totalTag) }})</a></li>
-    {% endfor %}
+		{% do tag_array.append([_(nameTag),t['total_tag'],t['name_tag']]) %}
+	{% endfor %}
+  <ul class="tag-full-list">
+    {% for z in tag_array | sort(0)%}
+      <li><a href="{% url_for controller='package', action='search', tags=z[2] %}">{{ z[0] }} ({{ z[1] }})</a></li>
+	{% endfor %}
   </ul>
 {% endblock %}
 	
