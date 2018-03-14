@@ -19,11 +19,12 @@
     {% for t in tags %}
 		{% set nameTag = t['name_tag'] %}
 		{% set nameTagTranslated = _(nameTag) %}
-		{% do tag_array.append([nameTagTranslated,t['total_tag'],nameTag]) %}
+		{% set nameTagTranslatedMinAce = unicodedata.normalize('NFD', nameTagTranslated.lower()).encode('ascii', 'ignore') %}
+		{% do tag_array.append([nameTagTranslatedMinAce, nameTagTranslated, t['total_tag'], nameTag]) %}
 	{% endfor %}
   <ul class="tag-full-list">
     {% for z in tag_array | sort(0)%}
-      <li><a href="{% url_for controller='package', action='search', tags=z[2] %}">{{ z[0] }} ({{ z[1] }})</a></li>
+      <li><a href="{% url_for controller='package', action='search', tags=z[3] %}">{{ z[1] }} ({{ z[2] }})</a></li>
 	{% endfor %}
   </ul>
 {% endblock %}

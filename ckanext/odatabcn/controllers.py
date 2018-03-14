@@ -13,6 +13,7 @@ import paste.fileapp
 import psycopg2
 import requests
 import sys
+import unicodedata
 import ckan.lib.base as base
 from ckan.lib.render import TemplateNotFound
 from ckan.common import _, OrderedDict, request, response
@@ -233,7 +234,8 @@ class CSVController(t.BaseController):
 		
 		t.response.headers['Content-Type'] = 'text/html; charset=utf-8'
 		return t.render('tags.html', extra_vars={
-				'tags': results
+				'tags': results,
+				'unicodedata': unicodedata
 			})
 			
 	def escape_text(self, pkg_dict):
