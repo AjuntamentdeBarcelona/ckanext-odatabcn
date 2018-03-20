@@ -86,14 +86,13 @@ class Odatabcn(CkanCommand):
 	def update_tracking(self):
 		
 		# Insert resource ids
-		sql = '''UPDATE tracking_summary ts
+		sql = '''UPDATE tracking_summary t
 				SET resource_id = (SELECT CASE WHEN r.id IS NOT NULL THEN r.id
-					WHEN split_part(t.url, '/', 8) LIKE 'resource' THEN  split_part(t.url, '/', 9)
-					ELSE split_part(t.url, '/', 8)
+					WHEN split_part(r.url, '/', 8) LIKE 'resource' THEN  split_part(r.url, '/', 9)
+					ELSE split_part(r.url, '/', 8)
 					END AS resource_id
-					FROM tracking_summary t 
-					LEFT JOIN resource r ON r.url = t.url AND r.state = 'active' 
-					WHERE t.tracking_type='resource' AND t.url = ts.url AND t.tracking_date = ts.tracking_date
+					FROM resource r 
+					WHERE r.url = t.url AND r.state = 'active'
 					ORDER BY created ASC LIMIT 1)
 				WHERE resource_id IS NULL
 				AND tracking_type = 'resource';'''
