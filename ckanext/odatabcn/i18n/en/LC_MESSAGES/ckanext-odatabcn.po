@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ckan 2.6.0b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2016-10-18 10:37+0100\n"
-"PO-Revision-Date: 2018-03-14 08:09+0100\n"
+"PO-Revision-Date: 2018-03-28 11:27+0200\n"
 "Last-Translator: Isabel Ruiz <isaruizmellado@gmail.com>, 2016\n"
 "Language-Team: Spanish (https://www.transifex.com/okfn/teams/11162/es/)\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Generated-By: Babel 2.3.4\n"
 "Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.1\n"
+"X-Generator: Poedit 1.8.11\n"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "little"
@@ -1967,10 +1967,13 @@ msgid "Lloc de procedència de les dades o origen de les dades"
 msgstr "Place of origin of the data or data source"
 
 msgid "Manual Editor"
-msgstr "Editor: Handbook"
+msgstr "How to Operate in the BackOffice"
 
 msgid "Datasets Cataleg"
-msgstr "Catalogue: My datasets"
+msgstr "Catalogue"
+
+msgid "My Datasets"
+msgstr "My Datasets"
 
 msgid "IRIS incidencias"
 msgstr "IRIS: Requests with the Technical Office"
@@ -1982,13 +1985,22 @@ msgid "User info"
 msgstr "User information"
 
 msgid "Presentacio Formacio F3"
-msgstr "Presentation Training F3"
+msgstr "Presentation of the F3 Training session"
 
 msgid "Downloads"
 msgstr "Downloads"
 
 msgid "Icona Dades Obertes"
 msgstr "Open Data Icon"
+
+msgid "Protocol Publicacio"
+msgstr "Publication Protocol"
+
+msgid "Guia Publicacio"
+msgstr "Guide to Publish new Datasets in Open Data BCN"
+
+msgid "Documentació"
+msgstr "Documentation"
 
 msgid "QUINQUENNAL"
 msgstr "Quinquennial"
@@ -2187,6 +2199,12 @@ msgstr "Conservation"
 
 msgid "Consultes"
 msgstr "Queries"
+
+msgid "Consultes Usuaris BackOffice"
+msgstr "BackOffice Users"
+
+msgid "Formulari Peticio Alta"
+msgstr "Semi-automated registration request form"
 
 msgid "Contenidors reciclatge"
 msgstr "Recycling container"
@@ -2744,7 +2762,7 @@ msgid "Assessors"
 msgstr "Advisors"
 
 msgid "Datasets Tags"
-msgstr "Catalogue: Tags"
+msgstr "Tags"
 
 msgid "Tag List"
 msgstr "Tag List"
