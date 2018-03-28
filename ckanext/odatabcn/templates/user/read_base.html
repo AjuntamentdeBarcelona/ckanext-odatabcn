@@ -10,7 +10,7 @@
                {{ _('Datasets Cataleg') }}
 			   <ul>
 			       <li>
-				       Els meus datasets <a href="/data/cataleg.csv" class="label" data-format="csv" id="download-csv-catalogue">CSV</a>
+				      {{ _('My Datasets') }} <a href="/data/cataleg.csv" class="label" data-format="csv" id="download-csv-catalogue">CSV</a>
 				   </li>
 				   <li>
 				       {{ _('Datasets Tags') }} <a href="/data/{{h.lang()}}/tags.csv" class="label" data-format="csv" id="download-csv-catalogue">CSV</a>
@@ -18,16 +18,16 @@
 			   </ul>
             </li>
 			<li>
-				Com Operar en el Backoffice <a href="/doc/doc/ManualEditorOpenDataBCN.pdf" class="label" data-format="pdf">PDF</a>
+				{{ _('Manual Editor') }} <a href="/doc/doc/ManualEditorOpenDataBCN.pdf" class="label" data-format="pdf">PDF</a>
 			</li>
             <li>
-               Consultes
+               {{ _('Consultes') }} <
 			   <ul>
 					<li>
 					   {{ _('Consultes Usuaris BackOffice') }} <a href="http://www.bcn.cat/cgi-bin/consultesIRIS?id=980" target="_blank" ><span class="dataset-private label label-inverse">IRIS</span></a>
 					</li>
 				    <li>
-					   Formulari petició d'alta semi-automatitzada <a href="http://www.bcn.cat/cgi-bin/consultesIRIS?id=980" target="_blank" ><span class="dataset-private label label-inverse">IRIS</span></a>
+					  {{ _('Formulari Peticio Alta') }} <a href="http://www.bcn.cat/cgi-bin/consultesIRIS?id=980" target="_blank" ><span class="dataset-private label label-inverse">IRIS</span></a>
 				    </li>
 			   </ul>
             </li>
@@ -35,15 +35,15 @@
                {{ _('Icona Dades Obertes') }} <a href="/doc/logo_opendata.png" class="label" data-format="png">PNG</a>
             </li>
             <li>
-               Protocol de publicació
+               {{ _('Protocol Publicacio') }}
 			   <ul>
 					<li>
-					   Guia de Publicació de nous Datasets a Open Data BCN <a href="/doc/doc/GuiaPublicacióDatasetsAOpenDataBCN_v4.5.pdf" class="label" data-format="pdf">PDF</a>
+					   {{ _('Guia Publicacio') }} <a href="/doc/doc/GuiaPublicacióDatasetsAOpenDataBCN_v4.5.pdf" class="label" data-format="pdf">PDF</a>
 					</li>
 			   </ul>
             </li>
 			<li>
-               Documentació
+               {{ _('Documentacio') }} 
 			   <ul>
 					<li>
 					   {{ _('Presentacio Formacio F3') }} <a href="/doc/doc/OpenDataBCN–F3.pdf" class="label" data-format="pdf">PDF</a>
