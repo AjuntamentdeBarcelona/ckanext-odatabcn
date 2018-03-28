@@ -5,8 +5,8 @@
 		<div class="loading-modal" id="loading-download"></div>
       <div class="info">
           <h2 class="module-heading">{{ _('User menu') }}</h2>
-          <dl>
-            <dd>
+          <ul>
+            <li>
                {{ _('Datasets Cataleg') }}
 			   <ul>
 			       <li>
@@ -16,41 +16,41 @@
 				       {{ _('Datasets Tags') }} <a href="/data/{{h.lang()}}/tags.csv" class="label" data-format="csv" id="download-csv-catalogue">CSV</a>
 				   </li>
 			   </ul>
-            </dd>
-			<dd>
+            </li>
+			<li>
 				Com Operar en el Backoffice <a href="/doc/doc/ManualEditorOpenDataBCN.pdf" class="label" data-format="pdf">PDF</a>
-			</dd>
-            <dd>
+			</li>
+            <li>
                Consultes
-			   <dl>
-					<dd>
+			   <ul>
+					<li>
 					   {{ _('Consultes Usuaris BackOffice') }} <a href="http://www.bcn.cat/cgi-bin/consultesIRIS?id=980" target="_blank" ><span class="dataset-private label label-inverse">IRIS</span></a>
-					</dd>
-				    <dd>
+					</li>
+				    <li>
 					   Formulari petició d'alta semi-automatitzada <a href="http://www.bcn.cat/cgi-bin/consultesIRIS?id=980" target="_blank" ><span class="dataset-private label label-inverse">IRIS</span></a>
-				    </dd>
-			   </dl>
-            </dd>
-			<dd>
+				    </li>
+			   </ul>
+            </li>
+			<li>
                {{ _('Icona Dades Obertes') }} <a href="/doc/logo_opendata.png" class="label" data-format="png">PNG</a>
-            </dd>
-            <dd>
+            </li>
+            <li>
                Protocol de publicació
-			   <dl>
-					<dd>
+			   <ul>
+					<li>
 					   Guia de Publicació de nous Datasets a Open Data BCN <a href="/doc/doc/GuiaPublicacióDatasetsAOpenDataBCN_v4.5.pdf" class="label" data-format="pdf">PDF</a>
-					</dd>
-			   </dl>
-            </dd>
-			<dd>
+					</li>
+			   </ul>
+            </li>
+			<li>
                Documentació
-			   <dl>
-					<dd>
+			   <ul>
+					<li>
 					   {{ _('Presentacio Formacio F3') }} <a href="/doc/doc/OpenDataBCN–F3.pdf" class="label" data-format="pdf">PDF</a>
-					</dd>
-			   </dl>
-            </dd>
-          </dl>
+					</li>
+			   </ul>
+            </li>
+          </ul>
       </div>
      {% endif %}
 
