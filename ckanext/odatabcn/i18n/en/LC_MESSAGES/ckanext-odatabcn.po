@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ckan 2.6.0b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2016-10-18 10:37+0100\n"
-"PO-Revision-Date: 2018-03-05 09:08+0100\n"
+"PO-Revision-Date: 2018-03-28 13:16+0200\n"
 "Last-Translator: Isabel Ruiz <isaruizmellado@gmail.com>, 2016\n"
 "Language-Team: Spanish (https://www.transifex.com/okfn/teams/11162/es/)\n"
 "MIME-Version: 1.0\n"
@@ -157,7 +157,7 @@ msgid "Canvis de domicili"
 msgstr "Changes of residence"
 
 msgid "Biblioteca"
-msgstr "library"
+msgstr "Library"
 
 msgid "Religió"
 msgstr "Religion"
@@ -363,7 +363,7 @@ msgstr "Electric vehicle charging stations"
 msgid "Discriminació"
 msgstr "Discrimination"
 
-msgid "Trinitat Vella"
+msgid "la Trinitat Vella"
 msgstr "La Trinitat Vella"
 
 msgid "Centres sanitaris"
@@ -489,8 +489,14 @@ msgstr "Guide base"
 msgid "Nombre d-habitacions"
 msgstr "Number of rooms"
 
+msgid "Nombre habitacions"
+msgstr "Number rooms"
+
 msgid "Aforament de locals"
 msgstr "Seating capacity of premises"
+
+msgid "Aforament"
+msgstr "Seating capacity"
 
 msgid "Wifi"
 msgstr "Hotspot"
@@ -498,8 +504,8 @@ msgstr "Hotspot"
 msgid "pila"
 msgstr "battery"
 
-msgid "Barris de Barcelona"
-msgstr "Neighborhoods of Barcelona"
+msgid "Barris Barcelona"
+msgstr "Neighborhoods Barcelona"
 
 msgid "companyies autocars"
 msgstr "bus companies"
@@ -564,7 +570,7 @@ msgstr "Participation"
 msgid "Hostafrancs"
 msgstr "Hostafrancs"
 
-msgid "el Putget i el Farró"
+msgid "el Putxet i el Farró"
 msgstr "El Putxet i el Farró"
 
 msgid "Sant Andreu"
@@ -579,13 +585,13 @@ msgstr "Sarrià"
 msgid "Tipus"
 msgstr "Types"
 
-msgid "bicicleta"
-msgstr "cycling"
+msgid "Bicicleta"
+msgstr "Cycling"
 
 msgid "Escampar publicitat"
 msgstr "Advertising distribution"
 
-msgid "Sants-Badal"
+msgid "Sants - Badal"
 msgstr "Sants - Badal"
 
 msgid "la Bordeta"
@@ -603,7 +609,7 @@ msgstr "Traffic situation"
 msgid "Instal-lacions"
 msgstr "Facilities"
 
-msgid "el Poble-sec"
+msgid "el Poble Sec"
 msgstr "El Poble Sec"
 
 msgid "la Dreta de l-Eixample"
@@ -630,10 +636,10 @@ msgstr "Year 2008"
 msgid "Immobles"
 msgstr "Properties"
 
-msgid "Sagrada Família"
+msgid "la Sagrada Família"
 msgstr "La Sagrada Família"
 
-msgid "Trinitat Nova"
+msgid "la Trinitat Nova"
 msgstr "La Trinitat Nova"
 
 msgid "Pressupost"
@@ -714,6 +720,9 @@ msgstr "webs"
 msgid "Arbres d-interès local"
 msgstr "Local interest trees"
 
+msgid "Arbres interès local"
+msgstr "Local interest trees"
+
 msgid "Transport públic"
 msgstr "Public transport"
 
@@ -756,7 +765,7 @@ msgstr "Vehicle advertising"
 msgid "Plantes baixes (arquitectura)"
 msgstr "Ground floors (Architecture)"
 
-msgid "Verdum"
+msgid "Verdun"
 msgstr "Verdun"
 
 msgid "Frigorífics"
@@ -1002,6 +1011,9 @@ msgstr "Improved toponymy"
 msgid "HABITATGES"
 msgstr "HOUSING"
 
+msgid "Habitatges"
+msgstr "Housing"
+
 msgid "Cobertes"
 msgstr "Roofs"
 
@@ -1053,7 +1065,7 @@ msgstr "container"
 msgid "Façanes"
 msgstr "Facades"
 
-msgid "Font de la Guatlla"
+msgid "la Font de la Guatlla"
 msgstr "La Font de la Guatlla"
 
 msgid "Adreça"
@@ -1080,8 +1092,8 @@ msgstr "Parties"
 msgid "Autoserveis"
 msgstr "Self-service shops"
 
-msgid "activitats formació"
-msgstr "training activities"
+msgid "Activitats formació"
+msgstr "Training activities"
 
 msgid "Estacionament"
 msgstr "Parking"
@@ -1175,6 +1187,9 @@ msgstr "Flat roofs and terraces"
 
 msgid "Conservació de l-edifici"
 msgstr "Conservation of the building"
+
+msgid "Conservació edifici"
+msgstr "Conservation building"
 
 msgid "Estabilitat pressupostària"
 msgstr "Budget stability"
@@ -1335,7 +1350,7 @@ msgstr "Creation spaces"
 msgid "Oferta pública"
 msgstr "Recruitment"
 
-msgid "Roquetes"
+msgid "les Roquetes"
 msgstr "Les Roquetes"
 
 msgid "Equipaments"
@@ -1392,6 +1407,9 @@ msgstr "Street terraces"
 msgid "Equipaments d-animals i plantes"
 msgstr "List of animal and plant amenities"
 
+msgid "Equipaments animals plantes"
+msgstr "Animal plant amenities"
+
 msgid "Transparència"
 msgstr "Transparency"
 
@@ -1437,7 +1455,7 @@ msgstr "Year 2007"
 msgid "Servei"
 msgstr "Service"
 
-msgid "Fort Pienc"
+msgid "el Fort Pienc"
 msgstr "El Fort Pienc"
 
 msgid "Vallvidrera, el Tibidabo i les Planes"
@@ -1450,6 +1468,9 @@ msgid "Muralla"
 msgstr "Wall"
 
 msgid "Equipaments d-educació"
+msgstr "Educational amenities"
+
+msgid "Equipaments educació"
 msgstr "Educational amenities"
 
 msgid "Carrerer"
@@ -1494,13 +1515,13 @@ msgstr "La Marina del Prat Vermell"
 msgid "Distribució de la població en el municipi de Viladecans"
 msgstr "Population distribution in Viladecans"
 
-msgid "cultural"
-msgstr "cultural"
+msgid "Cultural"
+msgstr "Cultural"
 
 msgid "Instal-lacions de serveis"
 msgstr "Service installations"
 
-msgid "Vilapicina i Torre Llobeta"
+msgid "Vilapicina i la Torre Llobeta"
 msgstr "Vilapicina i la Torre Llobeta"
 
 msgid "Exposicions"
@@ -1508,6 +1529,9 @@ msgstr "Exhibitions"
 
 msgid "Equipaments de centres d-informació"
 msgstr "List of information centre amenities"
+
+msgid "Equipaments centres informació"
+msgstr "Information centre amenities"
 
 msgid "Gestió econòmica  administrativa"
 msgstr "Economic administrative management"
@@ -1517,6 +1541,9 @@ msgstr "Children's play centres"
 
 msgid "Equipaments de serveis socials"
 msgstr "Social service amenities"
+
+msgid "Serveis socials"
+msgstr "Social service"
 
 msgid "Sant Gervasi - la Bonanova"
 msgstr "Sant Gervasi - la Bonanova"
@@ -1566,7 +1593,7 @@ msgstr "Adding flats"
 msgid "Garatges i aparcaments"
 msgstr "Garages and car parks"
 
-msgid "Comunitats autònomes"
+msgid "Comunitats Autònomes"
 msgstr "Autonomous Community"
 
 msgid "Any 2012"
@@ -1619,6 +1646,9 @@ msgstr "Percentages"
 
 msgid "Llista d-equipaments de companyies de serveis"
 msgstr "List of service company amenities"
+
+msgid "Llista equipaments companyies serveis"
+msgstr "List service company amenities"
 
 msgid "mobilitat"
 msgstr "mobility"
@@ -1833,8 +1863,8 @@ msgstr "Cartographic catalogue"
 msgid "Tipologia"
 msgstr "Tipology"
 
-msgid "servei bicicleta"
-msgstr "service ciclyng"
+msgid "Servei Bicicleta"
+msgstr "Service Ciclyng"
 
 msgid "Centres docents"
 msgstr "Educational centres"
@@ -1873,6 +1903,9 @@ msgid "Contracte"
 msgstr "Contract"
 
 msgid "Equipaments d-esports"
+msgstr "Sports amenities"
+
+msgid "Equipaments esports"
 msgstr "Sports amenities"
 
 msgid "LGEP i LOEPSF"
@@ -1934,10 +1967,13 @@ msgid "Lloc de procedència de les dades o origen de les dades"
 msgstr "Place of origin of the data or data source"
 
 msgid "Manual Editor"
-msgstr "Editor: Handbook"
+msgstr "How to operate in the BackOffice"
 
 msgid "Datasets Cataleg"
-msgstr "Catalogue: My datasets"
+msgstr "Catalogue"
+
+msgid "My Datasets"
+msgstr "My Datasets"
 
 msgid "IRIS incidencias"
 msgstr "IRIS: Requests with the Technical Office"
@@ -1949,13 +1985,22 @@ msgid "User info"
 msgstr "User information"
 
 msgid "Presentacio Formacio F3"
-msgstr "Presentation Training F3"
+msgstr "Training session group F3 (Responsible for datasets)"
 
 msgid "Downloads"
 msgstr "Downloads"
 
 msgid "Icona Dades Obertes"
 msgstr "Open Data Icon"
+
+msgid "Protocol Publicacio"
+msgstr "Publication Protocol"
+
+msgid "Guia Publicacio"
+msgstr "Guide to Publish new Datasets in Open Data BCN"
+
+msgid "Documentacio"
+msgstr "Documentation"
 
 msgid "QUINQUENNAL"
 msgstr "Quinquennial"
@@ -2154,6 +2199,12 @@ msgstr "Conservation"
 
 msgid "Consultes"
 msgstr "Queries"
+
+msgid "Consultes Usuaris BackOffice"
+msgstr "BackOffice Users"
+
+msgid "Formulari Peticio Alta"
+msgstr "Semi-automated registration request form"
 
 msgid "Contenidors reciclatge"
 msgstr "Recycling container"
@@ -2407,8 +2458,8 @@ msgstr "Archaeological chart"
 msgid "Qualitat"
 msgstr "Quality"
 
-msgid "reglaments"
-msgstr "regulations"
+msgid "Reglaments"
+msgstr "Regulations"
 
 msgid "Plantes"
 msgstr "Plants"
@@ -2479,8 +2530,8 @@ msgstr "Changes in nationality"
 msgid "Art públic"
 msgstr "Public art"
 
-msgid "preus públics"
-msgstr "public prices"
+msgid "Preus públics"
+msgstr "Public prices"
 
 msgid "Premis"
 msgstr "Awards"
@@ -2490,6 +2541,9 @@ msgstr "Owners"
 
 msgid "Cartes de serveis"
 msgstr "Services letters"
+
+msgid "Carta serveis"
+msgstr "Service letter"
 
 msgid "Mapa malla UTM"
 msgstr "UTM mesh map"
@@ -2581,9 +2635,6 @@ msgstr "Accounts"
 msgid "Votants"
 msgstr "Voters"
 
-msgid "Sant Pere- Santa Caterina i la Ribera"
-msgstr "Sant Pere- Santa Caterina i la Ribera"
-
 msgid "NDVI"
 msgstr "NDVI"
 
@@ -2635,8 +2686,8 @@ msgstr "Telecommunications"
 msgid "Àrea verda"
 msgstr "Green area"
 
-msgid "ordenances fiscals"
-msgstr "tax ordinances"
+msgid "Ordenances fiscals"
+msgstr "Tax ordinances"
 
 msgid "Infraestructura Verda"
 msgstr "Green Infrastructure"
@@ -2711,7 +2762,7 @@ msgid "Assessors"
 msgstr "Advisors"
 
 msgid "Datasets Tags"
-msgstr "Catalogue: Tags"
+msgstr "Tags"
 
 msgid "Tag List"
 msgstr "Tag List"
@@ -2727,3 +2778,9 @@ msgstr "Rec Count"
 
 msgid "Roma"
 msgstr "Roma"
+
+msgid "Catàleg Open Data BCN"
+msgstr "Catalogue Open Data BCN"
+
+msgid "INCASOL. Institut Català del Sòl"
+msgstr "INCASOL. Catalan Land Institute"

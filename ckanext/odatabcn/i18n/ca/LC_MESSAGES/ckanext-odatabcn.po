@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ckan 2.6.0b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2016-10-18 10:37+0100\n"
-"PO-Revision-Date: 2018-03-05 09:01+0100\n"
+"PO-Revision-Date: 2018-03-28 13:12+0200\n"
 "Last-Translator: Isabel Ruiz <isaruizmellado@gmail.com>, 2016\n"
 "Language-Team: Spanish (https://www.transifex.com/okfn/teams/11162/es/)\n"
 "MIME-Version: 1.0\n"
@@ -320,6 +320,9 @@ msgstr "el Camp d'en Grassot i Gràcia Nova"
 msgid "Equipaments de l-Administració"
 msgstr "Equipaments de l'administració"
 
+msgid "Equipaments Administració"
+msgstr "Equipaments Administració"
+
 msgid "Sacrifici d-animals"
 msgstr "Sacrifici d'animals"
 
@@ -352,6 +355,9 @@ msgstr "Ventiladors d'extracció"
 
 msgid "Llista d-equipaments de companyies de serveis"
 msgstr "Llista d'equipaments de companyies de serveis"
+
+msgid "Llista equipaments companyies serveis"
+msgstr "Llista equipaments companyies serveis"
 
 msgid "Conservació i manteniment d-edificis"
 msgstr "Conservació i manteniment d'edificis"
@@ -450,10 +456,13 @@ msgid "None"
 msgstr "desconegut"
 
 msgid "Manual Editor"
-msgstr "Editor: Manual"
+msgstr "Com operar en el BackOffice"
 
 msgid "Datasets Cataleg"
-msgstr "Catàleg: Els meus datasets"
+msgstr "Catàleg"
+
+msgid "My Datasets"
+msgstr "Els meus datasets"
 
 msgid "IRIS incidencias"
 msgstr "IRIS: Consultes a l'Oficina Tècnica"
@@ -461,11 +470,29 @@ msgstr "IRIS: Consultes a l'Oficina Tècnica"
 msgid "User menu"
 msgstr "Menú d'usuari"
 
+msgid "Consultes"
+msgstr "Consultes"
+
+msgid "Consultes Usuaris BackOffice"
+msgstr "Usuaris BackOffice"
+
+msgid "Formulari Peticio Alta"
+msgstr "Formulari petició d’alta semi-automatizada"
+
+msgid "Protocol Publicacio"
+msgstr "Protocol de publicació"
+
+msgid "Guia Publicacio"
+msgstr "Guia de Publicació de nous Datasets a Open Data BCN"
+
+msgid "Documentacio"
+msgstr "Documentació"
+
 msgid "User info"
 msgstr "Informació d'usuari"
 
 msgid "Presentacio Formacio F3"
-msgstr "Presentació Formació F3"
+msgstr "Sessió de Formació grup F3 (Responsables de datasets)"
 
 msgid "Downloads"
 msgstr "Descàrregues"
@@ -579,7 +606,7 @@ msgid "Assessors"
 msgstr "Assessors"
 
 msgid "Datasets Tags"
-msgstr "Catàleg: Etiquetes"
+msgstr "Etiquetes"
 
 msgid "Tag List"
 msgstr "Llistat d'etiquetes"
@@ -598,3 +625,9 @@ msgstr "Rec Comtal"
 
 msgid "Roma"
 msgstr "Roma"
+
+msgid "Catàleg Open Data BCN"
+msgstr "Catàleg Open Data BCN"
+
+msgid "INCASOL. Institut Català del Sòl"
+msgstr "INCASOL. Institut Català del Sòl"

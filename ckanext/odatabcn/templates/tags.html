@@ -15,11 +15,17 @@
 	<h1>{{ _('Tag List') }}</h1>
 	
 {% block primary_content_inner %}
-  <ul class="tag-full-list">
+	{% set tag_array = [] %}
     {% for t in tags %}
-	{% set testing = t['name'] %}
-      <li><a href="{% url_for controller='package', action='search', tags=t['name'] %}">{{ _(testing) }}</a></li>
-    {% endfor %}
+		{% set nameTag = t['name_tag'] %}
+		{% set nameTagTranslated = _(nameTag) %}
+		{% set nameTagTranslatedMinAce = unicodedata.normalize('NFD', nameTagTranslated.lower()).encode('ascii', 'ignore') %}
+		{% do tag_array.append([nameTagTranslatedMinAce, nameTagTranslated, t['total_tag'], nameTag]) %}
+	{% endfor %}
+  <ul class="tag-full-list">
+    {% for z in tag_array | sort(0)%}
+      <li><a href="{% url_for controller='package', action='search', tags=z[3] %}">{{ z[1] }} ({{ z[2] }})</a></li>
+	{% endfor %}
   </ul>
 {% endblock %}
 	

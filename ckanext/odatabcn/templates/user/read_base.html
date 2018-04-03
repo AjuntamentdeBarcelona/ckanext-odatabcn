@@ -5,26 +5,52 @@
 		<div class="loading-modal" id="loading-download"></div>
       <div class="info">
           <h2 class="module-heading">{{ _('User menu') }}</h2>
-          <dl>
-            <dd>
-               {{ _('Datasets Cataleg') }} <a href="/data/cataleg.csv" class="label" data-format="csv" id="download-csv-catalogue">CSV</a>
-            </dd>
-            <dd>
-               {{ _('Manual Editor') }} <a href="/doc/ManualEditorOpenDataBCN.pdf" class="label" data-format="pdf">PDF</a>
-            </dd>
-            <dd>
-               {{ _('Consultes Usuaris BackOffice') }} <a href="http://www.bcn.cat/cgi-bin/consultesIRIS?id=980" target="_blank" ><span class="dataset-private label label-inverse">IRIS</span></a>
-            </dd>
-            <dd>
-               {{ _('Presentacio Formacio F3') }} <a href="/doc/OpenDataBCN–F3.pdf" class="label" data-format="pdf">PDF</a>
-            </dd>
-			<dd>
-               {{ _('Icona Dades Obertes') }} <a href="/doc/logo_opendata.png" class="label" data-format="png">PNG</a>
-            </dd>
-            <dd>
-               {{ _('Datasets Tags') }} <a href="/data/tags.csv" class="label" data-format="csv" id="download-csv-tags">CSV</a>
-            </dd>
-          </dl>
+          <ul>
+            <li>
+               <span  style="font-weight: bold;">{{ _('Datasets Cataleg') }}</span>
+			   <ul>
+			       <li>
+				      {{ _('My Datasets') }} <a href="/data/cataleg.csv" target="_blank" class="label" data-format="csv" id="download-csv-catalogue">CSV</a>
+				   </li>
+				   <li>
+				       {{ _('Datasets Tags') }} <a href="/data/{{h.lang()}}/tags.csv" target="_blank" class="label" data-format="csv" id="download-csv-catalogue">CSV</a>
+				   </li>
+			   </ul>
+            </li>
+			<li>
+				<span  style="font-weight: bold;">{{ _('Manual Editor') }}</span><a href="/doc/ManualEditorOpenDataBCN.pdf" target="_blank" class="label" data-format="pdf">PDF</a>
+			</li>
+            <li>
+               <span  style="font-weight: bold;">{{ _('Consultes') }}</span>
+			   <ul>
+					<li>
+					   {{ _('Consultes Usuaris BackOffice') }} <a href="http://www.bcn.cat/cgi-bin/consultesIRIS?id=980" target="_blank" ><span class="dataset-private label label-inverse">IRIS</span></a>
+					</li>
+				    <li>
+					  {{ _('Formulari Peticio Alta') }} <a href="/doc/Formulari_peticio_alta_semiautomatitzada_recursos.ods" target="_blank" class="label" data-format="csv" id="download-csv-catalogue">CSV</a>
+				    </li>
+			   </ul>
+            </li>
+			<li>
+               <span  style="font-weight: bold;">{{ _('Icona Dades Obertes') }}</span><a href="/doc/logo_opendata.png" target="_blank" class="label" data-format="png">PNG</a>
+            </li>
+            <li>
+               <span  style="font-weight: bold;">{{ _('Protocol Publicacio') }}</span>
+			   <ul>
+					<li>
+					   {{ _('Guia Publicacio') }} <a href="/doc/GuiaPublicacioDatasetsAOpenDataBCN_v4.5.pdf" target="_blank" class="label" data-format="pdf">PDF</a>
+					</li>
+			   </ul>
+            </li>
+			<li>
+               <span  style="font-weight: bold;">{{ _('Documentacio') }}</span>
+			   <ul>
+					<li>
+					   {{ _('Presentacio Formacio F3') }} <a href="/doc/OpenDataBCN–F3.pdf" target="_blank" class="label" data-format="pdf">PDF</a>
+					</li>
+			   </ul>
+            </li>
+          </ul>
       </div>
      {% endif %}
 

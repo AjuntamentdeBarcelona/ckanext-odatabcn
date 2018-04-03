@@ -13,6 +13,7 @@ import paste.fileapp
 import psycopg2
 import requests
 import sys
+import unicodedata
 import ckan.lib.base as base
 from ckan.lib.render import TemplateNotFound
 from ckan.common import _, OrderedDict, request, response
@@ -207,7 +208,11 @@ class CSVController(t.BaseController):
 	def view_tags(self):
 			
 		#Obtenemos los tags
-		sql = '''SELECT DISTINCT name FROM tag ORDER BY name;'''
+		sql = '''SELECT T.name as name_tag, COUNT(*) as total_tag FROM tag T
+					INNER JOIN package_tag PT ON PT.tag_id = T.id
+					WHERE PT.state LIKE 'active'
+					GROUP BY T.name
+					ORDER BY T.name;'''
 		results = model.Session.execute(sql)
 		
 		curdate = d.datetime.now().strftime('%Y-%m-%d_%H-%M')
@@ -220,12 +225,17 @@ class CSVController(t.BaseController):
 	def view_tags_html(self):
 			
 		#Obtenemos los tags
-		sql = '''SELECT DISTINCT name FROM tag ORDER BY name;'''
+		sql = '''SELECT T.name as name_tag, COUNT(*) as total_tag FROM tag T
+					INNER JOIN package_tag PT ON PT.tag_id = T.id
+					WHERE PT.state LIKE 'active'
+					GROUP BY T.name
+					ORDER BY T.name;'''
 		results = model.Session.execute(sql)
 		
 		t.response.headers['Content-Type'] = 'text/html; charset=utf-8'
 		return t.render('tags.html', extra_vars={
-				'tags': results
+				'tags': results,
+				'unicodedata': unicodedata
 			})
 			
 	def escape_text(self, pkg_dict):

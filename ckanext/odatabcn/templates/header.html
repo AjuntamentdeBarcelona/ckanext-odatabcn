@@ -79,47 +79,53 @@
 					<li aria-controls="main-menu-ul" aria-checked="false">
 						<a href="/{{ lang }}/entrevistes"><span>{{ _('Interviews') }}</span></a>
 					</li>
-                                   <li aria-controls="main-menu-ul" aria-checked="false">
+                    <li aria-controls="main-menu-ul" aria-checked="false">
 						<a href="/{{ lang }}/histories-us"><span>{{ _('Case stories') }}</span></a>
 					</li>
 				</ul> 
 			</li>
               <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>{{ _('Reusers') }} <i class="arrow bcn-icon-baix-medium"></i></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                   <li class="submenu-header">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>{{ _('Reusers') }} <i class="arrow bcn-icon-baix-medium"></i></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li class="submenu-header">
 						<a data-toggle="dropdown" href="#"><i class="arrow bcn-icon-esquerra-medium"></i> {{ _('Reusers') }}</a>
 					</li>
-                                   <li class="first" aria-controls="main-menu-ul" aria-checked="false">
+                    <li class="first" aria-controls="main-menu-ul" aria-checked="false">
 						<a href="/{{ lang }}/desenvolupadors"><span>{{ _('Developers') }}</span></a>
 					</li>
-								   <li aria-controls="main-menu-ul" aria-checked="false">
+					<li aria-controls="main-menu-ul" aria-checked="false">
 						<a href="/{{ lang }}/visualitzacions-i-aplicacions"><span>{{ _('Data visualizations and applications') }}</span></a>
+						<!--<ul class="depth-3">
+							<li>
+								<i class="arrow hidden-xs bcn-icon-dreta-medium"></i>
+								<a href="">Especial visualitzacions</a>
+							</li>
+						</ul>-->
 					</li>
-                             </ul> 
+                </ul> 
 			</li>
 			<li>
 				<a href="/{{ lang }}/analytics"><span>{{ _('Analytics') }}</span></a>
 			</li>
 			<li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>{{ _('Repte Barcelona Dades Obertes') }} <i class="arrow bcn-icon-baix-medium"></i></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                   <li class="submenu-header">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>{{ _('Repte Barcelona Dades Obertes') }} <i class="arrow bcn-icon-baix-medium"></i></span></a>
+				<ul class="dropdown-menu" role="menu">
+					<li class="submenu-header">
 						<a data-toggle="dropdown" href="#"><i class="arrow bcn-icon-esquerra-medium"></i> {{ _('Repte Barcelona Dades Obertes') }}</a>
 					</li>
-                                   <li class="first" aria-controls="main-menu-ul" aria-checked="false">
+                    <li class="first" aria-controls="main-menu-ul" aria-checked="false">
 						<a href="/{{ lang }}/repte"><span>{{ _('Que es?') }}</span></a>
 					</li>
-                                   <li aria-controls="main-menu-ul" aria-checked="false">
+                    <li aria-controls="main-menu-ul" aria-checked="false">
 						<a href="/{{ lang }}/novetats-repte"><span>{{ _('Novetats') }}</span></a>
 					</li>
-                                   <li aria-controls="main-menu-ul" aria-checked="false">
+                    <li aria-controls="main-menu-ul" aria-checked="false">
 						<a href="/{{ lang }}/centres-participants"><span>{{ _('Centres Participants') }}</span></a>
 					</li>
-                                   <li aria-controls="main-menu-ul" aria-checked="false">
+                    <li aria-controls="main-menu-ul" aria-checked="false">
 						<a href="/{{ lang }}/jurat-repte"><span>{{ _('Jurat') }}</span></a>
 					</li>
-                             </ul> 
+                </ul> 
 			</li>
 			{% set lang_abrev = 'c' %}
 			{% if lang=='es' %}
