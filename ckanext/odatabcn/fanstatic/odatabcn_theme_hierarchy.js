@@ -6,6 +6,7 @@
 
 (function (jQuery) {
 	
+	/** Show organizations hierarchically **/
 	var parentLi = $('#organization').children('.parent');
 	parentLi.sort(function(a, b) {
 		var compA = $(a).text().toUpperCase();
@@ -53,7 +54,7 @@
     
   }
   
-  /** Comentaris **/
+  /** Load user comments **/
   $(document).ready(checkSize);
   $(window).resize(checkSize);
   
@@ -71,6 +72,12 @@
 				}
 			}
 		});
+	});
+	
+	/** Site menu: do not keep dropdown open on click **/
+	$('.mega-dropdown .dropdown-toggle').click(function(e) {
+		e.stopPropagation();
+		e.preventDefault();
 	});
 
 })(this.jQuery);
