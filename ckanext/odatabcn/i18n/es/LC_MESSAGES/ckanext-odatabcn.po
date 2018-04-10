@@ -2158,7 +2158,7 @@ msgid "User info"
 msgstr "Información de usuario"
 
 msgid "Presentacio Formacio F3"
-msgstr "Sesión de Formación grupo F3(Abril'17)(Resp.de datasets)"
+msgstr "Sesión de Formación grupo F3 (Abril'17)(Resp.de datasets)"
 
 msgid "Downloads"
 msgstr "Descargas"
