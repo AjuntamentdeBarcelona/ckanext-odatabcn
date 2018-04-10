@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ckan 2.6.0b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2016-10-18 10:37+0100\n"
-"PO-Revision-Date: 2018-04-06 14:01+0200\n"
+"PO-Revision-Date: 2018-04-10 09:43+0200\n"
 "Last-Translator: Isabel Ruiz <isaruizmellado@gmail.com>, 2016\n"
 "Language-Team: Spanish (https://www.transifex.com/okfn/teams/11162/es/)\n"
 "MIME-Version: 1.0\n"
@@ -854,7 +854,7 @@ msgstr "la Sagrera"
 msgid "Preu"
 msgstr "Precio"
 
-msgid "Sant Pere, Santa Caterina i la Ribera"
+msgid "Sant Pere- Santa Caterina i la Ribera"
 msgstr "Sant Pere, Santa Caterina i la Ribera"
 
 msgid "Càrrega i descàrrega"
@@ -1531,9 +1531,6 @@ msgstr "Fiestas y ferias"
 
 msgid "projectes"
 msgstr "proyectos"
-
-msgid "Vallvidrera, el Tibidabo i les Planes"
-msgstr "Vallvidrera, el Tibidabo i les Planes"
 
 msgid "Despeses"
 msgstr "Gastos"
@@ -2713,7 +2710,7 @@ msgid "Punts informació turística"
 msgstr "Puntos información turística"
 
 msgid "Vallvidrera- el Tibidabo i les Planes"
-msgstr "Vallvidrera- el Tibidabo i les Planes"
+msgstr "Vallvidrera, el Tibidabo i les Planes"
 
 msgid "Potencia fiscal"
 msgstr "Potencia fiscal"
