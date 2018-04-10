@@ -495,7 +495,7 @@ msgid "User info"
 msgstr "Informació d'usuari"
 
 msgid "Presentacio Formacio F3"
-msgstr "Sessió de Formació grup F3 (Responsables de datasets)"
+msgstr "Sessió de Formació grup F3(Abril'17)(Resp. de datasets)"
 
 msgid "Downloads"
 msgstr "Descàrregues"
