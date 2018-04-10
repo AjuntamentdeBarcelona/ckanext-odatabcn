@@ -75,7 +75,7 @@
 	});
 	
 	/** Site menu: do not keep dropdown open on click **/
-	$('.mega-dropdown .dropdown-toggle').click(function(e) {
+	$('.masthead .dropdown-toggle').click(function(e) {
 		e.stopPropagation();
 		e.preventDefault();
 	});
