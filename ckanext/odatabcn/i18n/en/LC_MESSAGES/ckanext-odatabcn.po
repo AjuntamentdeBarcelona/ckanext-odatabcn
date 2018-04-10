@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ckan 2.6.0b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2016-10-18 10:37+0100\n"
-"PO-Revision-Date: 2018-03-28 13:16+0200\n"
+"PO-Revision-Date: 2018-04-10 09:51+0200\n"
 "Last-Translator: Isabel Ruiz <isaruizmellado@gmail.com>, 2016\n"
 "Language-Team: Spanish (https://www.transifex.com/okfn/teams/11162/es/)\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Generated-By: Babel 2.3.4\n"
 "Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.0.1\n"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "little"
@@ -255,8 +255,8 @@ msgstr "Skylights"
 msgid "Districte de l-Eixample"
 msgstr "Eixample district"
 
-msgid "Sant Pere, Santa Caterina i la Ribera"
-msgstr "Sant Pere, Santa Caterina and La Ribera"
+msgid "Sant Pere- Santa Caterina i la Ribera"
+msgstr "Sant Pere, Santa Caterina i La Ribera"
 
 msgid "Gats"
 msgstr "Cats"
@@ -1458,9 +1458,6 @@ msgstr "Service"
 msgid "el Fort Pienc"
 msgstr "El Fort Pienc"
 
-msgid "Vallvidrera, el Tibidabo i les Planes"
-msgstr "Vallvidrera, el Tibidabo i les Planes"
-
 msgid "Xarxa topogràfica municipal"
 msgstr "Municipal topographical network"
 
@@ -2204,7 +2201,7 @@ msgid "Consultes Usuaris BackOffice"
 msgstr "BackOffice Users"
 
 msgid "Formulari Peticio Alta"
-msgstr "Semi-automated registration request form"
+msgstr "Semiautomated registration request form"
 
 msgid "Contenidors reciclatge"
 msgstr "Recycling container"
@@ -2474,7 +2471,7 @@ msgid "Punts informació turística"
 msgstr "Tourist information points"
 
 msgid "Vallvidrera- el Tibidabo i les Planes"
-msgstr "Vallvidrera- el Tibidabo i les Planes"
+msgstr "Vallvidrera, el Tibidabo i les Planes"
 
 msgid "Potencia fiscal"
 msgstr "Fiscal power"
@@ -2784,3 +2781,78 @@ msgstr "Catalogue Open Data BCN"
 
 msgid "INCASOL. Institut Català del Sòl"
 msgstr "INCASOL. Catalan Land Institute"
+
+msgid "File Volum"
+msgstr "Measure"
+
+msgid "Equipaments Educació"
+msgstr "Education Equipment"
+
+msgid "Bombetes"
+msgstr "Light bulbs"
+
+msgid "Càpsules café"
+msgstr "Coffe capsules"
+
+msgid "Oli cuina"
+msgstr "Cooking oil"
+
+msgid "Roba"
+msgstr "Clothes"
+
+msgid "Parlament Catalunya"
+msgstr "Parlament Catalonia"
+
+msgid "Electrodomèstic"
+msgstr "Home appliances"
+
+msgid "Calçat"
+msgstr "Footwear"
+
+msgid "Pneumàtics"
+msgstr "Tires"
+
+msgid "personal"
+msgstr "personal"
+
+msgid "Dossiers premsa"
+msgstr "Press reports"
+
+msgid "Aerosols"
+msgstr "Aeros sprays"
+
+msgid "Pintures"
+msgstr "Paintings"
+
+msgid "Oli motor"
+msgstr "Engine oil"
+
+msgid "Equipaments Esports"
+msgstr "Sports Equipment"
+
+msgid "Runa"
+msgstr "Rubbish"
+
+msgid "Mobles"
+msgstr "Furniture"
+
+msgid "Bateries"
+msgstr "Batteries"
+
+msgid "Conservació manteniment edifici"
+msgstr "Maintenance building"
+
+msgid "Fluorescents"
+msgstr "Fluorescents"
+
+msgid "Tòners"
+msgstr "Toners"
+
+msgid "Notes premsa"
+msgstr "Press releases"
+
+msgid "Arbrat"
+msgstr "Wooded"
+
+msgid "Vidre"
+msgstr "Glass"

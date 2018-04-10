@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ckan 2.6.0b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2016-10-18 10:37+0100\n"
-"PO-Revision-Date: 2018-03-28 13:21+0200\n"
+"PO-Revision-Date: 2018-04-10 09:43+0200\n"
 "Last-Translator: Isabel Ruiz <isaruizmellado@gmail.com>, 2016\n"
 "Language-Team: Spanish (https://www.transifex.com/okfn/teams/11162/es/)\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Generated-By: Babel 2.3.4\n"
 "Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.0.1\n"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "Maintainer Telephone"
@@ -29,7 +29,7 @@ msgstr "Observaciones"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "File Volum"
-msgstr "Volumen del fichero"
+msgstr "Volumen"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "Update String"
@@ -854,7 +854,7 @@ msgstr "la Sagrera"
 msgid "Preu"
 msgstr "Precio"
 
-msgid "Sant Pere, Santa Caterina i la Ribera"
+msgid "Sant Pere- Santa Caterina i la Ribera"
 msgstr "Sant Pere, Santa Caterina i la Ribera"
 
 msgid "Càrrega i descàrrega"
@@ -1531,9 +1531,6 @@ msgstr "Fiestas y ferias"
 
 msgid "projectes"
 msgstr "proyectos"
-
-msgid "Vallvidrera, el Tibidabo i les Planes"
-msgstr "Vallvidrera, el Tibidabo i les Planes"
 
 msgid "Despeses"
 msgstr "Gastos"
@@ -2229,6 +2226,9 @@ msgstr "Desarrolladores"
 msgid "Data visualizations and applications"
 msgstr "Visualizaciones y aplicaciones"
 
+msgid "Special visualizations"
+msgstr "Especial visualizaciones"
+
 msgid "QUINQUENNAL"
 msgstr "Quinquenal"
 
@@ -2428,7 +2428,7 @@ msgid "Consultes Usuaris BackOffice"
 msgstr "Usuarios BackOffice"
 
 msgid "Formulari Peticio Alta"
-msgstr "Formulario petición de alta semi-automatizada"
+msgstr "Formulario petición de alta semiautomatizada"
 
 msgid "Contenidors reciclatge"
 msgstr "Contenedores reciclaje"
@@ -2710,7 +2710,7 @@ msgid "Punts informació turística"
 msgstr "Puntos información turística"
 
 msgid "Vallvidrera- el Tibidabo i les Planes"
-msgstr "Vallvidrera- el Tibidabo i les Planes"
+msgstr "Vallvidrera, el Tibidabo i les Planes"
 
 msgid "Potencia fiscal"
 msgstr "Potencia fiscal"
@@ -3047,3 +3047,75 @@ msgstr "Catálogo Open Data BCN"
 
 msgid "INCASOL. Institut Català del Sòl"
 msgstr "INCASOL. Instituto Catalán del Suelo"
+
+msgid "Equipaments Educació"
+msgstr "Equipamientos Educación"
+
+msgid "Bombetes"
+msgstr "Bombillas"
+
+msgid "Càpsules café"
+msgstr "Cápsulas café"
+
+msgid "Oli cuina"
+msgstr "Aceite cocina"
+
+msgid "Roba"
+msgstr "Ropa"
+
+msgid "Parlament Catalunya"
+msgstr "Parlament Cataluña"
+
+msgid "Electrodomèstic"
+msgstr "Electrodoméstico"
+
+msgid "Calçat"
+msgstr "Calzado"
+
+msgid "Pneumàtics"
+msgstr "Neumáticos"
+
+msgid "personal"
+msgstr "personal"
+
+msgid "Dossiers premsa"
+msgstr "Informes prensa"
+
+msgid "Aerosols"
+msgstr "Aerosoles"
+
+msgid "Pintures"
+msgstr "Pinturas"
+
+msgid "Oli motor"
+msgstr "Aceite motor"
+
+msgid "Equipaments Esports"
+msgstr "Equipamientos Deportes"
+
+msgid "Runa"
+msgstr "Escombro"
+
+msgid "Mobles"
+msgstr "Muebles"
+
+msgid "Bateries"
+msgstr "Baterias"
+
+msgid "Conservació manteniment edifici"
+msgstr "Conservación mantenimiento edificio"
+
+msgid "Fluorescents"
+msgstr "Fluorescentes"
+
+msgid "Tòners"
+msgstr "Tóners"
+
+msgid "Notes premsa"
+msgstr "Notas prensa"
+
+msgid "Arbrat"
+msgstr "Arbolado"
+
+msgid "Vidre"
+msgstr "Vidrio"
