@@ -1985,7 +1985,7 @@ msgid "User info"
 msgstr "User information"
 
 msgid "Presentacio Formacio F3"
-msgstr "Training session group F3(April'17)(Dataset resp.)"
+msgstr "Training session group F3 (April'17)(Dataset resp.)"
 
 msgid "Downloads"
 msgstr "Downloads"
