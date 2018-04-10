@@ -76,8 +76,12 @@
 	
 	/** Site menu: do not keep dropdown open on click **/
 	$('.masthead .dropdown-toggle').click(function(e) {
-		e.stopPropagation();
-		e.preventDefault();
+		var width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+		
+		if (width >= 767) {
+			e.stopPropagation();
+			e.preventDefault();
+		}
 	});
 
 })(this.jQuery);
