@@ -210,7 +210,8 @@ class CSVController(t.BaseController):
 		#Obtenemos los tags
 		sql = '''SELECT T.name as name_tag, COUNT(*) as total_tag FROM tag T
 					INNER JOIN package_tag PT ON PT.tag_id = T.id
-					WHERE PT.state LIKE 'active'
+					INNER JOIN package P ON P.id = PT.package_id
+					WHERE PT.state LIKE 'active' AND PT.package_id IS NOT NULL AND PT.package_id NOT LIKE '' AND P.private = FALSE
 					GROUP BY T.name
 					ORDER BY T.name;'''
 		results = model.Session.execute(sql)
@@ -227,7 +228,8 @@ class CSVController(t.BaseController):
 		#Obtenemos los tags
 		sql = '''SELECT T.name as name_tag, COUNT(*) as total_tag FROM tag T
 					INNER JOIN package_tag PT ON PT.tag_id = T.id
-					WHERE PT.state LIKE 'active'
+					INNER JOIN package P ON P.id = PT.package_id
+					WHERE PT.state LIKE 'active' AND PT.package_id IS NOT NULL AND PT.package_id NOT LIKE '' AND P.private = FALSE
 					GROUP BY T.name
 					ORDER BY T.name;'''
 		results = model.Session.execute(sql)

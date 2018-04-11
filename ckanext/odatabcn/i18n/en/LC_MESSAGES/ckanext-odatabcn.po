@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ckan 2.6.0b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2016-10-18 10:37+0100\n"
-"PO-Revision-Date: 2018-04-10 09:51+0200\n"
+"PO-Revision-Date: 2018-04-06 14:07+0200\n"
 "Last-Translator: Isabel Ruiz <isaruizmellado@gmail.com>, 2016\n"
 "Language-Team: Spanish (https://www.transifex.com/okfn/teams/11162/es/)\n"
 "MIME-Version: 1.0\n"
@@ -255,8 +255,8 @@ msgstr "Skylights"
 msgid "Districte de l-Eixample"
 msgstr "Eixample district"
 
-msgid "Sant Pere- Santa Caterina i la Ribera"
-msgstr "Sant Pere, Santa Caterina i La Ribera"
+msgid "Sant Pere, Santa Caterina i la Ribera"
+msgstr "Sant Pere, Santa Caterina and La Ribera"
 
 msgid "Gats"
 msgstr "Cats"
@@ -1458,6 +1458,9 @@ msgstr "Service"
 msgid "el Fort Pienc"
 msgstr "El Fort Pienc"
 
+msgid "Vallvidrera, el Tibidabo i les Planes"
+msgstr "Vallvidrera, el Tibidabo i les Planes"
+
 msgid "Xarxa topogràfica municipal"
 msgstr "Municipal topographical network"
 
@@ -1982,7 +1985,7 @@ msgid "User info"
 msgstr "User information"
 
 msgid "Presentacio Formacio F3"
-msgstr "Training session group F3 (Responsible for datasets)"
+msgstr "Training session group F3 (April'17)(Dataset resp.)"
 
 msgid "Downloads"
 msgstr "Downloads"
@@ -2471,7 +2474,7 @@ msgid "Punts informació turística"
 msgstr "Tourist information points"
 
 msgid "Vallvidrera- el Tibidabo i les Planes"
-msgstr "Vallvidrera, el Tibidabo i les Planes"
+msgstr "Vallvidrera- el Tibidabo i les Planes"
 
 msgid "Potencia fiscal"
 msgstr "Fiscal power"

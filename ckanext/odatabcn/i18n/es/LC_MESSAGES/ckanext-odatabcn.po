@@ -2158,7 +2158,7 @@ msgid "User info"
 msgstr "Información de usuario"
 
 msgid "Presentacio Formacio F3"
-msgstr "Sesión de Formación grupo F3 (Responsables de datasets)"
+msgstr "Sesión de Formación grupo F3 (Abril'17)(Resp.de datasets)"
 
 msgid "Downloads"
 msgstr "Descargas"
@@ -2226,8 +2226,8 @@ msgstr "Desarrolladores"
 msgid "Data visualizations and applications"
 msgstr "Visualizaciones y aplicaciones"
 
-msgid "Special visualizations"
-msgstr "Especial visualizaciones"
+msgid "Visualizations by themes"
+msgstr "Visualizaciones por temas"
 
 msgid "QUINQUENNAL"
 msgstr "Quinquenal"
