@@ -2226,8 +2226,8 @@ msgstr "Desarrolladores"
 msgid "Data visualizations and applications"
 msgstr "Visualizaciones y aplicaciones"
 
-msgid "Special visualizations"
-msgstr "Especial visualizaciones"
+msgid "Visualizations by themes"
+msgstr "Visualizaciones por temas"
 
 msgid "QUINQUENNAL"
 msgstr "Quinquenal"

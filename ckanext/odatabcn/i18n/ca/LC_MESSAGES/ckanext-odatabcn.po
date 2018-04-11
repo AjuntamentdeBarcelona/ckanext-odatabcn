@@ -215,8 +215,8 @@ msgstr "Entrevistes"
 msgid "Data visualitzacions"
 msgstr "Visualitzacions de dades"
 
-msgid "Special visualizations"
-msgstr "Especial visualitzacions"
+msgid "Visualizations by themes"
+msgstr "Visualitzacions per temes"
 
 msgid "Newsletters"
 msgstr "Butlletins"
