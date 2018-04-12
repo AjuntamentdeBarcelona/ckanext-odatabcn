@@ -10,6 +10,7 @@ import hashlib
 import ast
 import mimetypes as m
 import paste.fileapp
+import pprint
 import psycopg2
 import requests
 import sys
@@ -17,6 +18,7 @@ import unicodedata
 import ckan.lib.base as base
 from ckan.lib.render import TemplateNotFound
 from ckan.common import _, OrderedDict, request, response
+from ckan.controllers.api import ApiController
 from ckan.lib.cli import parse_db_config
 from pylons import config
 from pylons.controllers.util import redirect
@@ -329,3 +331,27 @@ class ResourceDownloadController(t.BaseController):
 		else:
 			#External redirect
 			return redirect(rsc['url'].encode('utf-8'))
+			
+class StatsApiController(ApiController):
+
+	def __call__(self, environ, start_response):
+
+		#Save access to tracking_raw
+		site_url = config.get('ckan.site_url') + config.get('ckan.root_path').replace('{{LANG}}', '')
+		data = {
+				'url': environ['REQUEST_URI'], 
+				'type': 'api'
+			}
+			
+		headers = {
+				'X-Forwarded-For': environ.get('REMOTE_ADDR'), 
+				'User-Agent': environ.get('HTTP_USER_AGENT'), 
+				'Accept-Language': environ.get('HTTP_ACCEPT_LANGUAGE', ''),
+				'Accept-Encoding': environ.get('HTTP_ACCEPT_ENCODING', '')
+			}
+		
+		requests.post(site_url + '_tracking',
+								data=data,
+								headers=headers)
+					
+		return ApiController.__call__(self, environ, start_response)
