@@ -20,6 +20,7 @@ from pylons import config
 from routes.mapper import SubMapper
 
 log = logging.getLogger(__name__)
+apiController = 'ckanext.odatabcn.controllers:StatsApiController'
 
 ## Custom authorization functions
 def sysadmin_only(context, data_dict=None):
@@ -116,26 +117,26 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 		]
 		register_list_str = '|'.join(register_list)
 		
-		with SubMapper(map, controller='ckanext.odatabcn.controllers:StatsApiController', path_prefix='/api{ver:/3|}',
+		with SubMapper(map, controller=apiController, path_prefix='/api{ver:/3|}',
 				ver='/3') as m:
 			m.connect('/action/{logic_function}', action='action',
 				conditions=GET_POST)
 
 		# /api ver 1, 2, 3 or none
-		with SubMapper(map, controller='ckanext.odatabcn.controllers:StatsApiController', path_prefix='/api{ver:/1|/2|/3|}',
+		with SubMapper(map, controller=apiController, path_prefix='/api{ver:/1|/2|/3|}',
 				ver='/1') as m:
 			m.connect('', action='get_api')
 			m.connect('/search/{register}', action='search')
 
 		# /api ver 1, 2 or none
-		with SubMapper(map, controller='ckanext.odatabcn.controllers:StatsApiController', path_prefix='/api{ver:/1|/2|}',
+		with SubMapper(map, controller=apiController, path_prefix='/api{ver:/1|/2|}',
 				ver='/1') as m:
 			m.connect('/tag_counts', action='tag_counts')
 			m.connect('/rest', action='index')
 			m.connect('/qos/throughput/', action='throughput', conditions=GET)
 
 		# /api/rest ver 1, 2 or none
-		with SubMapper(map, controller='ckanext.odatabcn.controllers:StatsApiController', path_prefix='/api{ver:/1|/2|}',
+		with SubMapper(map, controller=apiController, path_prefix='/api{ver:/1|/2|}',
 				ver='/1', requirements=dict(register=register_list_str)
 			) as m:
 
@@ -158,33 +159,6 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 			m.connect('/rest/{register}/{id}/:subregister/{id2}', action='delete',
 				conditions=DELETE)
 
-		# /api/util ver 1, 2 or none
-		with SubMapper(map, controller='ckanext.odatabcn.controllers:StatsApiController', path_prefix='/api{ver:/1|/2|}',
-				ver='/1') as m:
-			m.connect('/util/user/autocomplete', action='user_autocomplete')
-			m.connect('/util/is_slug_valid', action='is_slug_valid',
-				conditions=GET)
-			m.connect('/util/dataset/autocomplete', action='dataset_autocomplete',
-				conditions=GET)
-			m.connect('/util/tag/autocomplete', action='tag_autocomplete',
-				conditions=GET)
-			m.connect('/util/resource/format_autocomplete',
-				action='format_autocomplete', conditions=GET)
-			m.connect('/util/resource/format_icon',
-				action='format_icon', conditions=GET)
-			m.connect('/util/group/autocomplete', action='group_autocomplete')
-			m.connect('/util/organization/autocomplete', action='organization_autocomplete',
-				conditions=GET)
-			m.connect('/util/markdown', action='markdown')
-			m.connect('/util/dataset/munge_name', action='munge_package_name')
-			m.connect('/util/dataset/munge_title_to_name',
-				action='munge_title_to_package_name')
-			m.connect('/util/tag/munge', action='munge_tag')
-			m.connect('/util/status', action='status')
-			m.connect('/util/snippet/{snippet_path:.*}', action='snippet')
-			m.connect('/i18n/{lang}', action='i18n_js_translations')
-
-		
 		return map
 
 	# Add custom facets
@@ -264,7 +238,7 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 		
 		try:
 			# Add download info and change resource url only if not downloading a resource, editing or indexing
-			if not toolkit.c.action == 'resource_download':
+			if not toolkit.c.action == 'resource_download' and not toolkit.c.action == 'datapusher_submit':
 				reload(sys)
 				sys.setdefaultencoding('utf-8')
 				dbc = parse_db_config('sqlalchemy.url')
@@ -283,15 +257,16 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 
 				ckan_cursor.close()
 				ckan_conn.close()
-				
+
 				if (not toolkit.c.action == 'resource_edit' 
 					and not toolkit.c.action == 'resource_delete'
+					and not toolkit.c.action == 'resource_data'
 					and not toolkit.c.action == 'new_resource'
 					and not toolkit.c.action == 'edit'
 					and not toolkit.c.action == ''):
 					# Change resource download URLs in order to track downloads
 					# Show original URLs for sysadmin when accessing through API
-					if not resource_dict.get('url_type') == 'upload' and not (toolkit.c.user and authz.is_sysadmin(toolkit.c.user) and toolkit.c.controller == 'api'):
+					if not resource_dict.get('url_type') == 'upload' and not (toolkit.c.user and authz.is_sysadmin(toolkit.c.user) and toolkit.c.controller == apiController):
 						site_url = config.get('ckan.site_url') + config.get('ckan.root_path').replace('{{LANG}}', '')
 						resource_dict['url'] = '{site_url}dataset/{id}/resource/{resource_id}/download'.format(site_url=site_url, id=resource_dict['package_id'], resource_id=resource_dict['id']).encode('utf-8')
 		except:
@@ -302,7 +277,7 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 	def after_search(context, search_results):
 
 		try:
-			if not (toolkit.c.user and authz.is_sysadmin(toolkit.c.user) and toolkit.c.controller == 'api'):
+			if not (toolkit.c.user and authz.is_sysadmin(toolkit.c.user) and toolkit.c.controller == apiController):
 				site_url = config.get('ckan.site_url') + config.get('ckan.root_path').replace('{{LANG}}', '')
 				for resource in search_results['results']:
 					resource['url'] = '{site_url}dataset/{id}/resource/{resource_id}/download'.format(site_url=site_url, id=resource['package_id'], resource_id=resource['id']).encode('utf-8')
