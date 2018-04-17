@@ -22,7 +22,7 @@
 {%- for format in formats -%}
 	,"{{ format }}"
 {%- endfor -%}
-{%- for year in range (year_from, year_to) -%}
+{%- for year in range (year_from, year_to+1) -%}
 	,"{{ year }}"
 {%- endfor -%}
 

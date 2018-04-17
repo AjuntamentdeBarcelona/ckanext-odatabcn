@@ -180,7 +180,7 @@ class CSVController(t.BaseController):
 					
 			# Establecemos la tabla de anyos para cada dataset
 			package['years'] = OrderedDict()
-			for year in range (year_from, year_to):
+			for year in range (year_from, year_to+1):
 				year_value = 'N'
 				if 'Any ' + str(year) in package['flattened_tags']:
 					year_value = 'S'
