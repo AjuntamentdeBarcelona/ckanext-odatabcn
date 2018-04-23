@@ -225,16 +225,19 @@ Examples:
   {%- set label_id = (id or names[0]) ~ "-key" -%}
   {%- set extra_html = caller() if caller -%}
   {%- do classes.append('control-custom') -%}
+  {% set markdown_tooltip = "<pre><p>__Bold text__ or _italic text_</p><p># title<br>## secondary title<br>### etc</p><p>* list<br>* of<br>* items</p><p>http://auto.link.ed/</p></pre><p><b><a href='http://daringfireball.net/projects/markdown/syntax' target='_blank'>Full markdown syntax</a></b></p><p class='muted'><b>Please note:</b> HTML tags are stripped out for security reasons</p>" %} 
 
+  {%- set extra_html = caller() if caller -%}
   {% call input_block(label_id, label or name, error, classes, control_classes=["editor"], extra_html=extra_html, is_required=is_required) %}
     <div class="input-prepend" {{ attributes(attrs) }}>
       <label for="{{ label_id }}" class="add-on">{{ _('Key') }}</label><input id="{{ id or names[0] }}-key" type="text" name="{{ names[0] }}" value="{{ values[0] | empty_and_escape }}" placeholder="{{ placeholders[0] }}" />
       <label for="{{ id or names[1] }}-value" class="add-on">{{ _('Value') }}</label><input id="{{ id or names[1] }}-value" type="text" name="{{ names[1] }}" value="{{ values[1] | empty_and_escape }}" placeholder="{{ placeholders[1] }}" />
-      {% if values[0] or values[1] or error %}
+	  {% if values[0] or values[1] or error %}
         <label class="checkbox" for="{{ id or names[2] }}-remove">
           <input type="checkbox" id="{{ id or names[2] }}-remove" name="{{ names[2] }}"{% if values[2] %} checked{% endif %} /> <span>{{ _('Remove') }}</span>
         </label>
       {% endif %}
+      <span class="editor-info-block">{% trans %}You can use <a href="#markdown" title="Markdown quick reference" data-target="popover" data-content="{{ markdown_tooltip }}" data-html="true">Markdown formatting</a> here{% endtrans %}</span>
     </div>
   {% endcall %}
 {% endmacro %}
