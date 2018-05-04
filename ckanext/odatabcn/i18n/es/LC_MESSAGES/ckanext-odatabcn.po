@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.0.1\n"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "Maintainer Telephone"
@@ -3131,7 +3131,7 @@ msgid "Yes"
 msgstr "Sí"
 
 msgid "Guanyador"
-msgstr "El Evento. El Ganador"
+msgstr "El Evento. Los proyectos"
 
 msgid "Arbrat zona"
 msgstr "Arbolado zona"
