@@ -51,7 +51,6 @@ def logged_in_internal_use(context, data_dict=None):
 	else:
 		return {'success': False,
 				'msg': 'Only users are allowed to access user profiles'}
-				
 
 class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.DefaultDatasetForm):
 	plugins.implements(plugins.IConfigurer)
@@ -62,7 +61,7 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 	plugins.implements(plugins.IResourceController, inherit=True)
 	plugins.implements(plugins.IAuthFunctions, inherit=True)
 	plugins.implements(plugins.IValidators)
-
+	
 	# IConfigurer
 	def update_config(self, config_):
 		toolkit.add_template_directory(config_, 'templates')
@@ -165,6 +164,7 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 	def dataset_facets(self, facets_dict, package_type):
 		facets_dict['geolocation'] = toolkit._('Geolocation')
 		facets_dict['frequency'] = toolkit._('Frequency')
+		facets_dict['historical'] = toolkit._('Historical information')
 		#if toolkit.c.userobj:
 		#	facets_dict['private'] = toolkit._('Private')
 		return facets_dict
@@ -172,6 +172,7 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 	def organization_facets(self, facets_dict, organization_type, package_type):
 		facets_dict['geolocation'] = toolkit._('Geolocation')	
 		facets_dict['frequency'] = toolkit._('Frequency')
+		facets_dict['historical'] = toolkit._('Historical information')
 		return facets_dict
 
 	# Add created datasets to Drupal table to enable comments
@@ -305,5 +306,6 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 	def get_validators(self):
 		return {
 			'required_if_public': validators.required_if_public,
+			'historical_yes_no': validators.historical_yes_no,
 		}
 	

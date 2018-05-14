@@ -112,3 +112,23 @@ class EditfieldsPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 	def before_index(self, pkg_dict):
 		delete_private_data(pkg_dict)
 		return pkg_dict
+		
+	def after_create(self, context, pkg_dict):
+		if (pkg_dict['tag']) and ('Any' in pkg_dict['tag']):
+			pkg_dict['historical'] = 'Yes'
+		else:
+			pkg_dict['historical'] = 'No'
+		return pkg_dict
+		
+	def after_update(self, context, pkg_dict):
+		log.warn('edit')
+		
+		pprint.pprint(pkg_dict)
+		
+		if (pkg_dict['tag']) and ('Any' in pkg_dict['tag']):
+			pkg_dict['historical'] = 'Yes'
+			log.warn(pkg_dict['historical'])
+		else:
+			pkg_dict['historical'] = 'No'
+			
+		return pkg_dict

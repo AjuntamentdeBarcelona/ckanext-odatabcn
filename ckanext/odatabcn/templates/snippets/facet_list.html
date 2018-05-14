@@ -126,4 +126,26 @@ within_tertiary
       {% endblock %}
     {% endif %}
   {% endwith %}
+  
+  {#<section class="module module-narrow module-shallow">
+	<h2 class="module-heading">
+		<i class="icon-medium icon-filter"></i>
+		Historical information
+	</h2>
+	<nav>
+		<ul class="unstyled nav nav-simple nav-facet " id="geolocation">
+			<li class="nav-item" id="No" parent="">
+				<a href={{ h.remove_url_param('q', 'tags:Any*', extras=extras, alternative_url=alternative_url) if false else h.add_url_param(new_params={'q': 'tags:Any*'}, extras=extras, alternative_url=alternative_url) }}>
+					<span>Yes ({{ h.historical_information() }})</span>
+				</a>
+			</li>
+			<li class="nav-item" id="Yes_no_map_view" parent="">
+				<a href="/data/ca/dataset?q=-tags:Any*">
+					<span>No ({{ h.not_historical_information() }})</span>
+				</a>
+			</li>
+		</ul>
+	</nav>
+</section>#}
+  
 {% endblock %}
