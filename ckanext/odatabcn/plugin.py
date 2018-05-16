@@ -248,20 +248,20 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 				ckan_conn_string = "host='%s' dbname='%s' user='%s' password='%s'" % (dbc['db_host'], dbc['db_name'], dbc['db_user'], dbc['db_pass'])
 				ckan_conn = psycopg2.connect(ckan_conn_string)
 				ckan_cursor = ckan_conn.cursor()
-				ckan_cursor.execute("""select sum(count), sum(count_absolute), t.tracking_type from tracking_summary t inner join resource r on t.resource_id=r.id where r.id=%s AND count IS NOT NULL AND count_absolute IS NOT NULL GROUP BY t.tracking_type""", (resource_dict['id'],))
+				ckan_cursor.execute("""select sum(count), sum(count_absolute), t.tracking_type from tracking_summary t where t.resource_id=%s AND count IS NOT NULL AND count_absolute IS NOT NULL GROUP BY t.tracking_type""", (resource_dict['id'],))
 				
-				resource_dict['downloads'] = '0'
-				resource_dict['downloads_absolute'] = '0'
-				resource_dict['api_access_number'] = '0'
-				resource_dict['api_access_number_absolute'] = '0'
+				resource_dict['downloads'] = 0
+				resource_dict['downloads_absolute'] = 0
+				resource_dict['api_access_number'] = 0
+				resource_dict['api_access_number_absolute'] = 0
 
 				for row in ckan_cursor:
 					if row[2] == 'api':
-						resource_dict['api_access_number'] = row[0]
-						resource_dict['api_access_number_absolute'] = row[1]
+						resource_dict['api_access_number'] = int(row[0])
+						resource_dict['api_access_number_absolute'] = int(row[1])
 					elif row[2] == 'resource':
-						resource_dict['downloads'] = row[0]
-						resource_dict['downloads_absolute'] = row[1]
+						resource_dict['downloads'] = int(row[0])
+						resource_dict['downloads_absolute'] = int(row[1])
 
 				ckan_cursor.close()
 				ckan_conn.close()
