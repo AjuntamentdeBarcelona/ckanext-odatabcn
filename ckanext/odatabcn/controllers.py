@@ -132,6 +132,8 @@ class CSVController(t.BaseController):
 			flattened_formats = ','
 			downloads = 0
 			downloads_absolute = 0
+			api_access_number = 0
+			api_access_number_absolute = 0
 			qa = 0
 			automatic = 'N'
 			if 'update_string' in package and package['update_string']:
@@ -147,6 +149,12 @@ class CSVController(t.BaseController):
 					
 				if 'downloads_absolute' in resource and not (resource['downloads_absolute'] == 'None'):
 					downloads_absolute += int(resource['downloads_absolute'])
+					
+				if 'api_access_number' in resource and not (resource['api_access_number'] == 'None'):
+					api_access_number += int(resource['api_access_number'])
+				
+				if 'api_access_number_absolute' in resource and not (resource['api_access_number_absolute'] == 'None'):
+					api_access_number_absolute += int(resource['api_access_number_absolute'])
 				
 				if automatic == 'N':
 					if (
@@ -165,6 +173,8 @@ class CSVController(t.BaseController):
 			package['flattened_formats'] = flattened_formats
 			package['downloads'] = downloads
 			package['downloads_absolute'] = downloads_absolute
+			package['api_access_number'] = api_access_number
+			package['api_access_number_absolute'] = api_access_number_absolute
 			package['automatic'] = automatic
 			package['qa'] = qa
 			

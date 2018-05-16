@@ -655,3 +655,6 @@ msgstr "Sí"
 
 msgid "Guanyador"
 msgstr "L'esdeveniment. Els projectes"
+
+msgid "API available"
+msgstr "API disponible"

@@ -48,6 +48,12 @@ class EditfieldsPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 		if 'user' in context and not context['user']:
 			delete_private_data(pkg_dict)
 			
+		#Actualiza valor de API en package	
+		pkg_dict['api'] = 'No'	
+		for resource in pkg_dict['resources']:
+			if (resource['datastore_active']):
+				pkg_dict['api'] = 'Yes'
+			
 	def before_search(self, search_params): 
 
 		#Change default search order

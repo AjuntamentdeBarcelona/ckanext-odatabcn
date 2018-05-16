@@ -3137,3 +3137,6 @@ msgstr "Arbolado zona"
 
 msgid "Guanyador"
 msgstr "El evento. Los proyectos"
+
+msgid "API available"
+msgstr "API disponible"

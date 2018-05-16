@@ -164,7 +164,8 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 	def dataset_facets(self, facets_dict, package_type):
 		facets_dict['geolocation'] = toolkit._('Geolocation')
 		facets_dict['frequency'] = toolkit._('Frequency')
-		facets_dict['historical'] = toolkit._('Historical information')
+		facets_dict['historical'] = toolkit._('Historical information available')
+		facets_dict['api'] = toolkit._('API available')
 		#if toolkit.c.userobj:
 		#	facets_dict['private'] = toolkit._('Private')
 		return facets_dict
@@ -172,7 +173,8 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 	def organization_facets(self, facets_dict, organization_type, package_type):
 		facets_dict['geolocation'] = toolkit._('Geolocation')	
 		facets_dict['frequency'] = toolkit._('Frequency')
-		facets_dict['historical'] = toolkit._('Historical information')
+		facets_dict['historical'] = toolkit._('Historical information available')
+		facets_dict['api'] = toolkit._('API available')
 		return facets_dict
 
 	# Add created datasets to Drupal table to enable comments
@@ -246,15 +248,20 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 				ckan_conn_string = "host='%s' dbname='%s' user='%s' password='%s'" % (dbc['db_host'], dbc['db_name'], dbc['db_user'], dbc['db_pass'])
 				ckan_conn = psycopg2.connect(ckan_conn_string)
 				ckan_cursor = ckan_conn.cursor()
-				ckan_cursor.execute("""select sum(count), sum(count_absolute) from tracking_summary t inner join resource r on t.resource_id=r.id where tracking_type='resource' AND r.id=%s AND count IS NOT NULL AND count_absolute IS NOT NULL""", (resource_dict['id'],))
-				row = ckan_cursor.fetchone()
+				ckan_cursor.execute("""select sum(count), sum(count_absolute), t.tracking_type from tracking_summary t inner join resource r on t.resource_id=r.id where r.id=%s AND count IS NOT NULL AND count_absolute IS NOT NULL GROUP BY t.tracking_type""", (resource_dict['id'],))
+				
+				resource_dict['downloads'] = '0'
+				resource_dict['downloads_absolute'] = '0'
+				resource_dict['api_access_number'] = '0'
+				resource_dict['api_access_number_absolute'] = '0'
 
-				if len(row) != 0:
-					resource_dict['downloads'] = row[0]
-					resource_dict['downloads_absolute'] = row[1]
-				else:
-					resource_dict['downloads'] = '0'
-					resource_dict['downloads_absolute'] = '0'
+				for row in ckan_cursor:
+					if row[2] == 'api':
+						resource_dict['api_access_number'] = row[0]
+						resource_dict['api_access_number_absolute'] = row[1]
+					elif row[2] == 'resource':
+						resource_dict['downloads'] = row[0]
+						resource_dict['downloads_absolute'] = row[1]
 
 				ckan_cursor.close()
 				ckan_conn.close()
