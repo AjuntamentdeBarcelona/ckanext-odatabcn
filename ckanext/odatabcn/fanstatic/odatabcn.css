@@ -2020,3 +2020,7 @@ font-size: 1.2rem;
 .resource-view-filters {
     display: none;
 }
+
+.frequency{
+	margin: 0 0 0 0;
+}

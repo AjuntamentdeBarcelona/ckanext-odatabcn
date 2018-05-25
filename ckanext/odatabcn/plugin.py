@@ -164,8 +164,8 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 	def dataset_facets(self, facets_dict, package_type):
 		facets_dict['geolocation'] = toolkit._('Geolocation')
 		facets_dict['frequency'] = toolkit._('Frequency')
-		facets_dict['historical'] = toolkit._('Historical information available')
-		facets_dict['api'] = toolkit._('API available')
+		facets_dict['historical'] = toolkit._('Historical information')
+		facets_dict['api'] = toolkit._('API')
 		#if toolkit.c.userobj:
 		#	facets_dict['private'] = toolkit._('Private')
 		return facets_dict
@@ -173,8 +173,8 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 	def organization_facets(self, facets_dict, organization_type, package_type):
 		facets_dict['geolocation'] = toolkit._('Geolocation')	
 		facets_dict['frequency'] = toolkit._('Frequency')
-		facets_dict['historical'] = toolkit._('Historical information available')
-		facets_dict['api'] = toolkit._('API available')
+		facets_dict['historical'] = toolkit._('Historical information')
+		facets_dict['api'] = toolkit._('API')
 		return facets_dict
 
 	# Add created datasets to Drupal table to enable comments
