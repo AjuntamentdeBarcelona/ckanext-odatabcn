@@ -2874,3 +2874,6 @@ msgstr "Wooded zone"
 
 msgid "Guanyador"
 msgstr "The Event. The Projects"
+
+msgid "API available"
+msgstr "CKAN API available"

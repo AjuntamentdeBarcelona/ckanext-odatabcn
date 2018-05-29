@@ -3139,4 +3139,4 @@ msgid "Guanyador"
 msgstr "El evento. Los proyectos"
 
 msgid "API available"
-msgstr "API disponible"
+msgstr "API CKAN disponible"
