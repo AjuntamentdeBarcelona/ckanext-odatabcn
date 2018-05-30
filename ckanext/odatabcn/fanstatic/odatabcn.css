@@ -1277,7 +1277,7 @@ a.tag:hover {
 	color: #fff;
 }
 
-.secondary .module:first-child + .module .module-heading, .secondary .module:first-child + .module + .module + .module .module-heading, .secondary .module:first-child + .module + .module + .module + .module + .module .module-heading {
+.secondary .module:first-child + .module .module-heading, .secondary .module:first-child + .module + .module + .module .module-heading, .secondary .module:first-child + .module + .module + .module + .module + .module .module-heading, .secondary .module:first-child + .module + .module + .module + .module + .module + .module + .module .module-heading {
 	background: #5342AE;	
 }
 
