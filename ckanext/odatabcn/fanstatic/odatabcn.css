@@ -1281,6 +1281,22 @@ a.tag:hover {
 	background: #5342AE;	
 }
 
+.filter-block nav {
+	display: none;
+}
+
+.filter-block.filter-organization nav {
+	display: block;
+}
+
+.filter-block nav li ul {
+	display: none;
+}
+
+.filters-organization .filter-block nav li ul{
+	display: block;
+}
+
 /** Facets **/
 .nav-item ul {
 	padding-top: 10px;

@@ -38,6 +38,13 @@
     $('#show-more-tags').toggleClass('shown');
   });
   
+  $('.filter-block .module-heading').click(function () {
+    $(this).next("nav").slideToggle();
+	$(this).children('.pull-right').toggleClass('bcn-icon-menys-bold');
+	$(this).children('.pull-right').toggleClass('bcn-icon-mes-bold');
+  }); 
+  
+  
   /** Affix navigation **/
   $('#nav').affix();
   $('#nav-wrapper').height($("#nav").height());
