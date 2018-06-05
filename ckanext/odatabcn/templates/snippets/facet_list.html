@@ -49,7 +49,7 @@ within_tertiary
         {% set wrapper_class = 'nav-facet nav-facet-tertiary' %}
       {% endif %}
       {% block facet_list_item %}
-        <section class="{{ wrapper_class or 'module module-narrow module-shallow' }} filter-block filter-{{name}}">
+        <section class="{{ wrapper_class or 'module module-narrow module-shallow' }} filter-block filter-{{name}} {% if h.get_param_int('_%s_limit' % name) %}filter-active{% endif %}">
           {% block facet_list_heading %}
             <h2 class="module-heading">
               <i class="icon-medium icon-filter"></i>
@@ -120,13 +120,13 @@ within_tertiary
              {% if h.get_param_int('_%s_limit' % name) %}
                {% if h.has_more_facets(name) %}
 				{% if name == "tags" %}
-					<p class="module-footer"><a href="{{ h.url_for('home')}}tags" class="read-more">{{ _('Show All Tags') }}</a></p>
+					<p class="module-footer"><a href="{{ h.url_for('home')}}tags" class="read-more">{{ _('Show More') }}</a></p>
 				{% else %}
-					<p class="module-footer"><a href="{{ h.remove_url_param('_%s_limit' % name, replace=0, extras=extras, alternative_url=alternative_url) }}" class="read-more">{{ _('Show More {facet_type}').format(facet_type=title) }}</a></p>
+					<p class="module-footer"><a href="{{ h.remove_url_param('_%s_limit' % name, replace=0, extras=extras, alternative_url=alternative_url) }}" class="read-more">{{ _('Show More')}}</a></p>
 				{% endif %}
                {% endif %}
             {% else %}
-              <p class="module-footer"><a href="{{ h.remove_url_param('_%s_limit' % name, extras=extras, alternative_url=alternative_url) }}" class="read-more">{{ _('Show Only Popular {facet_type}').format(facet_type=title) }}</a></p>
+              <p class="module-footer"><a href="{{ h.remove_url_param('_%s_limit' % name, extras=extras, alternative_url=alternative_url) }}" class="read-more">{{ _('Show Only Popular')}}</a></p>
             {% endif %}
             {% else %}
               <p class="module-content empty">{{ _('There are no {facet_type} that match this search').format(facet_type=title) }}</p>

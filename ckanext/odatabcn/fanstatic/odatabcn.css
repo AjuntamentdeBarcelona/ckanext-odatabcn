@@ -1289,6 +1289,10 @@ a.tag:hover {
 	display: block;
 }
 
+.filter-block .module-heading {
+	cursor: pointer;
+}
+
 .filter-block nav li ul {
 	display: none;
 }

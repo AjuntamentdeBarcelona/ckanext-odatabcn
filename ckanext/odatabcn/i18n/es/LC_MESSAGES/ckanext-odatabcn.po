@@ -3140,3 +3140,6 @@ msgstr "El evento. Los proyectos"
 
 msgid "API available"
 msgstr "API CKAN disponible"
+
+msgid "Show More"
+msgstr "Mostrar más"
