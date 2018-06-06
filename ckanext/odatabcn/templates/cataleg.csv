@@ -10,7 +10,7 @@
 {%- if logged_in -%}
 ,"date_modified"
 {%- endif -%}
-,"organization_parent_name_ca","organization_name_ca","package_count","frequency","geolocation","historical","api","total_views","recent_views","total_downloads","total_downloads_absolute","total_api_access","total_api_access_absolute","tags_list","fuente"
+,"organization_parent_name_ca","organization_name_ca","package_count","frequency","geolocation","historical","api","total_views","recent_views","total_downloads_by_ip","total_downloads_absolute","total_api_access","total_api_access_absolute","tags_list","fuente"
 {%- if logged_in -%}
 	,"author","department","maintainer","maintainer_tel","maintainer_email","broadcasting_management","broadcasting_department","broadcasting_maintainer","broadcasting_maintainer_tel","broadcasting_maintainer_email"
 {%- endif -%}
