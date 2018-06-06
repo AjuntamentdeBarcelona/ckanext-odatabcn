@@ -1721,6 +1721,8 @@ label[for="include_children"] {
 		padding: 5px 0 6px 15px;
 		border-bottom: 1px solid #f0f1f1; 
 		background: #fff;
+		background:no-repeat url('../../../img/common/icon-mobile.png') 5px center;
+		padding-left: 35px;
 	}
 	
 	#mobile-title h1 {
