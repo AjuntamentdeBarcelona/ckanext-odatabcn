@@ -660,4 +660,4 @@ msgid "API available"
 msgstr "API CKAN disponible"
 
 msgid "Show More"
-msgstr "Veure més"
+msgstr "Veure'n més"
