@@ -1720,8 +1720,8 @@ label[for="include_children"] {
 		font-weight: 300;
 		padding: 5px 0 6px 15px;
 		border-bottom: 1px solid #f0f1f1; 
-		background: #fff;
-		background:no-repeat url('../../../img/common/icon-mobile.png') 5px center;
+		background:#fff no-repeat url('../../../img/common/icon-mobile.gif') 5px center;
+		background-size: 28px 28px;
 		padding-left: 35px;
 	}
 	
