@@ -1738,6 +1738,10 @@ label[for="include_children"] {
 		line-height: 1;
 	}
 	
+	.js [role="main"] .secondary .filters > div .module-footer {
+		display: block;
+	}
+	
 	.navbar.masthead {
 		background: transparent;
 		min-height: auto;

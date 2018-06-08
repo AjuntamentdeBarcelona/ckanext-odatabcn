@@ -44,6 +44,8 @@
 	$(this).children('.pull-right').toggleClass('bcn-icon-mes-bold');
   }); 
   
+   $('.nav-item.active').parent().parent("nav").show();
+  
   
   /** Affix navigation **/
   $('#nav').affix();
