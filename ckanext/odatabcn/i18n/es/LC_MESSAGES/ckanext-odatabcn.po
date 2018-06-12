@@ -3143,3 +3143,6 @@ msgstr "API CKAN disponible"
 
 msgid "Show More"
 msgstr "Mostrar más"
+
+msgid "Show Only Popular"
+msgstr "Mostrar sólo populares"
