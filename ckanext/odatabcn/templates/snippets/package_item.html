@@ -89,6 +89,18 @@ Example:
 	    {{ _(package.frequency) }}
 	  </p>
 	{% endif %}
+	
+	{% if (package.historical) and ('Yes' in package.historical) %}
+	  <p class="historical">
+	    <strong>{{ _('Historical information') }}:</strong>
+		{{ _('Yes') }}
+	  </p>
+	{% else %}
+	  <p class="historical">
+	    <strong>{{ _('Historical information') }}:</strong>
+		No
+	  </p>
+	{% endif %}
       </div>
       {% block resources %}
         {% if package.resources and not hide_resources %}

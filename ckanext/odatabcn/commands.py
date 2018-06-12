@@ -100,6 +100,25 @@ class Odatabcn(CkanCommand):
 		model.Session.commit()
 		print 'Resource IDs have been updated on tracking_summary'
 		
+		# Insert resource IDs on datastore API requests
+		sql_datastore_api = '''UPDATE tracking_summary t
+				SET resource_id =  REPLACE(SUBSTRING(url from 'id=[^&]+'), 'id=', '')
+				WHERE resource_id IS NULL
+					AND tracking_type = 'api'
+					AND url LIKE '%datastore_search\?%';'''
+		model.Session.execute(sql_datastore_api)
+		model.Session.commit()
+		
+		sql_datastore_api_sql = '''UPDATE tracking_summary t
+				SET resource_id =  REPLACE(SUBSTRING(url from 'FROM%20%22[^%]+'), 'FROM%20%22', '')
+				WHERE resource_id IS NULL
+					AND tracking_type = 'api'
+					AND url LIKE '%datastore_search_sql\?%'
+					AND url LIKE 'FROM%20%22';'''
+		model.Session.execute(sql_datastore_api_sql)
+		model.Session.commit()
+		print 'Resource IDs for datastore API calls have been updated on tracking_summary'
+		
 		# Insert absolute view count
 		sql_count = '''UPDATE tracking_summary ts
 					SET count_absolute = (SELECT COUNT(*)

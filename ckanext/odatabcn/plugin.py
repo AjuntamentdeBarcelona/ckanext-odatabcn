@@ -17,8 +17,10 @@ from ckan.lib.plugins import DefaultTranslation
 from ckanext.odatabcn import validators
 from collections import OrderedDict
 from pylons import config
+from routes.mapper import SubMapper
 
 log = logging.getLogger(__name__)
+apiController = 'ckanext.odatabcn.controllers:StatsApiController'
 
 ## Custom authorization functions
 def sysadmin_only(context, data_dict=None):
@@ -49,7 +51,6 @@ def logged_in_internal_use(context, data_dict=None):
 	else:
 		return {'success': False,
 				'msg': 'Only users are allowed to access user profiles'}
-				
 
 class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.DefaultDatasetForm):
 	plugins.implements(plugins.IConfigurer)
@@ -60,7 +61,7 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 	plugins.implements(plugins.IResourceController, inherit=True)
 	plugins.implements(plugins.IAuthFunctions, inherit=True)
 	plugins.implements(plugins.IValidators)
-
+	
 	# IConfigurer
 	def update_config(self, config_):
 		toolkit.add_template_directory(config_, 'templates')
@@ -93,12 +94,78 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 			controller='ckanext.odatabcn.controllers:ResourceDownloadController',
 			action='resource_download'
 		)
+		
+		# Override API controller in order to track access
+		GET = dict(method=['GET'])
+		PUT = dict(method=['PUT'])
+		POST = dict(method=['POST'])
+		DELETE = dict(method=['DELETE'])
+		GET_POST = dict(method=['GET', 'POST'])
+		
+		register_list = [
+			'package',
+			'dataset',
+			'resource',
+			'tag',
+			'group',
+			'revision',
+			'licenses',
+			'rating',
+			'user',
+			'activity'
+		]
+		register_list_str = '|'.join(register_list)
+		
+		with SubMapper(map, controller=apiController, path_prefix='/api{ver:/3|}',
+				ver='/3') as m:
+			m.connect('/action/{logic_function}', action='action',
+				conditions=GET_POST)
+
+		# /api ver 1, 2, 3 or none
+		with SubMapper(map, controller=apiController, path_prefix='/api{ver:/1|/2|/3|}',
+				ver='/1') as m:
+			m.connect('', action='get_api')
+			m.connect('/search/{register}', action='search')
+
+		# /api ver 1, 2 or none
+		with SubMapper(map, controller=apiController, path_prefix='/api{ver:/1|/2|}',
+				ver='/1') as m:
+			m.connect('/tag_counts', action='tag_counts')
+			m.connect('/rest', action='index')
+			m.connect('/qos/throughput/', action='throughput', conditions=GET)
+
+		# /api/rest ver 1, 2 or none
+		with SubMapper(map, controller=apiController, path_prefix='/api{ver:/1|/2|}',
+				ver='/1', requirements=dict(register=register_list_str)
+			) as m:
+
+			m.connect('/rest/{register}', action='list', conditions=GET)
+			m.connect('/rest/{register}', action='create', conditions=POST)
+			m.connect('/rest/{register}/{id}', action='show', conditions=GET)
+			m.connect('/rest/{register}/{id}', action='update', conditions=PUT)
+			m.connect('/rest/{register}/{id}', action='update', conditions=POST)
+			m.connect('/rest/{register}/{id}', action='delete', conditions=DELETE)
+			m.connect('/rest/{register}/{id}/:subregister', action='list',
+				conditions=GET)
+			m.connect('/rest/{register}/{id}/:subregister', action='create',
+				conditions=POST)
+			m.connect('/rest/{register}/{id}/:subregister/{id2}', action='create',
+				conditions=POST)
+			m.connect('/rest/{register}/{id}/:subregister/{id2}', action='show',
+				conditions=GET)
+			m.connect('/rest/{register}/{id}/:subregister/{id2}', action='update',
+				conditions=PUT)
+			m.connect('/rest/{register}/{id}/:subregister/{id2}', action='delete',
+				conditions=DELETE)
+
 		return map
 
 	# Add custom facets
 	def dataset_facets(self, facets_dict, package_type):
 		facets_dict['geolocation'] = toolkit._('Geolocation')
 		facets_dict['frequency'] = toolkit._('Frequency')
+		facets_dict['historical'] = toolkit._('Historical information')
+		facets_dict['api'] = toolkit._('API available')
 		#if toolkit.c.userobj:
 		#	facets_dict['private'] = toolkit._('Private')
 		return facets_dict
@@ -106,6 +173,8 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 	def organization_facets(self, facets_dict, organization_type, package_type):
 		facets_dict['geolocation'] = toolkit._('Geolocation')	
 		facets_dict['frequency'] = toolkit._('Frequency')
+		facets_dict['historical'] = toolkit._('Historical information')
+		facets_dict['api'] = toolkit._('API available')
 		return facets_dict
 
 	# Add created datasets to Drupal table to enable comments
@@ -172,34 +241,40 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 		
 		try:
 			# Add download info and change resource url only if not downloading a resource, editing or indexing
-			if not toolkit.c.action == 'resource_download':
+			if not toolkit.c.action == 'resource_download' and not toolkit.c.action == 'datapusher_submit':
 				reload(sys)
 				sys.setdefaultencoding('utf-8')
 				dbc = parse_db_config('sqlalchemy.url')
 				ckan_conn_string = "host='%s' dbname='%s' user='%s' password='%s'" % (dbc['db_host'], dbc['db_name'], dbc['db_user'], dbc['db_pass'])
 				ckan_conn = psycopg2.connect(ckan_conn_string)
 				ckan_cursor = ckan_conn.cursor()
-				ckan_cursor.execute("""select sum(count), sum(count_absolute) from tracking_summary t inner join resource r on t.resource_id=r.id where tracking_type='resource' AND r.id=%s AND count IS NOT NULL AND count_absolute IS NOT NULL""", (resource_dict['id'],))
-				row = ckan_cursor.fetchone()
+				ckan_cursor.execute("""select sum(count), sum(count_absolute), t.tracking_type from tracking_summary t where t.resource_id=%s AND count IS NOT NULL AND count_absolute IS NOT NULL GROUP BY t.tracking_type""", (resource_dict['id'],))
+				
+				resource_dict['downloads'] = 0
+				resource_dict['downloads_absolute'] = 0
+				resource_dict['api_access_number'] = 0
+				resource_dict['api_access_number_absolute'] = 0
 
-				if len(row) != 0:
-					resource_dict['downloads'] = row[0]
-					resource_dict['downloads_absolute'] = row[1]
-				else:
-					resource_dict['downloads'] = '0'
-					resource_dict['downloads_absolute'] = '0'
+				for row in ckan_cursor:
+					if row[2] == 'api':
+						resource_dict['api_access_number'] = int(row[0])
+						resource_dict['api_access_number_absolute'] = int(row[1])
+					elif row[2] == 'resource':
+						resource_dict['downloads'] = int(row[0])
+						resource_dict['downloads_absolute'] = int(row[1])
 
 				ckan_cursor.close()
 				ckan_conn.close()
-				
+
 				if (not toolkit.c.action == 'resource_edit' 
 					and not toolkit.c.action == 'resource_delete'
+					and not toolkit.c.action == 'resource_data'
 					and not toolkit.c.action == 'new_resource'
 					and not toolkit.c.action == 'edit'
 					and not toolkit.c.action == ''):
 					# Change resource download URLs in order to track downloads
 					# Show original URLs for sysadmin when accessing through API
-					if not resource_dict.get('url_type') == 'upload' and not (toolkit.c.user and authz.is_sysadmin(toolkit.c.user) and toolkit.c.controller == 'api'):
+					if not resource_dict.get('url_type') == 'upload' and not (toolkit.c.user and authz.is_sysadmin(toolkit.c.user) and toolkit.c.controller == apiController):
 						site_url = config.get('ckan.site_url') + config.get('ckan.root_path').replace('{{LANG}}', '')
 						resource_dict['url'] = '{site_url}dataset/{id}/resource/{resource_id}/download'.format(site_url=site_url, id=resource_dict['package_id'], resource_id=resource_dict['id']).encode('utf-8')
 		except:
@@ -210,7 +285,7 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 	def after_search(context, search_results):
 
 		try:
-			if not (toolkit.c.user and authz.is_sysadmin(toolkit.c.user) and toolkit.c.controller == 'api'):
+			if not (toolkit.c.user and authz.is_sysadmin(toolkit.c.user) and toolkit.c.controller == apiController):
 				site_url = config.get('ckan.site_url') + config.get('ckan.root_path').replace('{{LANG}}', '')
 				for resource in search_results['results']:
 					resource['url'] = '{site_url}dataset/{id}/resource/{resource_id}/download'.format(site_url=site_url, id=resource['package_id'], resource_id=resource['id']).encode('utf-8')
@@ -238,5 +313,6 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 	def get_validators(self):
 		return {
 			'required_if_public': validators.required_if_public,
+			'historical_yes_no': validators.historical_yes_no,
 		}
 	

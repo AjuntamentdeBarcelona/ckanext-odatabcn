@@ -10,6 +10,7 @@ import hashlib
 import ast
 import mimetypes as m
 import paste.fileapp
+import pprint
 import psycopg2
 import requests
 import sys
@@ -17,6 +18,7 @@ import unicodedata
 import ckan.lib.base as base
 from ckan.lib.render import TemplateNotFound
 from ckan.common import _, OrderedDict, request, response
+from ckan.controllers.api import ApiController
 from ckan.lib.cli import parse_db_config
 from pylons import config
 from pylons.controllers.util import redirect
@@ -130,6 +132,8 @@ class CSVController(t.BaseController):
 			flattened_formats = ','
 			downloads = 0
 			downloads_absolute = 0
+			api_access_number = 0
+			api_access_number_absolute = 0
 			qa = 0
 			automatic = 'N'
 			if 'update_string' in package and package['update_string']:
@@ -145,6 +149,12 @@ class CSVController(t.BaseController):
 					
 				if 'downloads_absolute' in resource and not (resource['downloads_absolute'] == 'None'):
 					downloads_absolute += int(resource['downloads_absolute'])
+					
+				if 'api_access_number' in resource and not (resource['api_access_number'] == 'None'):
+					api_access_number += int(resource['api_access_number'])
+				
+				if 'api_access_number_absolute' in resource and not (resource['api_access_number_absolute'] == 'None'):
+					api_access_number_absolute += int(resource['api_access_number_absolute'])
 				
 				if automatic == 'N':
 					if (
@@ -163,6 +173,8 @@ class CSVController(t.BaseController):
 			package['flattened_formats'] = flattened_formats
 			package['downloads'] = downloads
 			package['downloads_absolute'] = downloads_absolute
+			package['api_access_number'] = api_access_number
+			package['api_access_number_absolute'] = api_access_number_absolute
 			package['automatic'] = automatic
 			package['qa'] = qa
 			
@@ -178,7 +190,7 @@ class CSVController(t.BaseController):
 					
 			# Establecemos la tabla de anyos para cada dataset
 			package['years'] = OrderedDict()
-			for year in range (year_from, year_to):
+			for year in range (year_from, year_to+1):
 				year_value = 'N'
 				if 'Any ' + str(year) in package['flattened_tags']:
 					year_value = 'S'
@@ -329,3 +341,27 @@ class ResourceDownloadController(t.BaseController):
 		else:
 			#External redirect
 			return redirect(rsc['url'].encode('utf-8'))
+			
+class StatsApiController(ApiController):
+
+	def __call__(self, environ, start_response):
+
+		#Save access to tracking_raw
+		site_url = config.get('ckan.site_url') + config.get('ckan.root_path').replace('{{LANG}}', '')
+		data = {
+				'url': environ['REQUEST_URI'], 
+				'type': 'api'
+			}
+			
+		headers = {
+				'X-Forwarded-For': environ.get('REMOTE_ADDR'), 
+				'User-Agent': environ.get('HTTP_USER_AGENT'), 
+				'Accept-Language': environ.get('HTTP_ACCEPT_LANGUAGE', ''),
+				'Accept-Encoding': environ.get('HTTP_ACCEPT_ENCODING', '')
+			}
+		
+		requests.post(site_url + '_tracking',
+								data=data,
+								headers=headers)
+					
+		return ApiController.__call__(self, environ, start_response)

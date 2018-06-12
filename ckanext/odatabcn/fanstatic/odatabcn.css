@@ -1277,8 +1277,28 @@ a.tag:hover {
 	color: #fff;
 }
 
-.secondary .module:first-child + .module .module-heading, .secondary .module:first-child + .module + .module + .module .module-heading, .secondary .module:first-child + .module + .module + .module + .module + .module .module-heading {
+.secondary .module:first-child + .module .module-heading, .secondary .module:first-child + .module + .module + .module .module-heading, .secondary .module:first-child + .module + .module + .module + .module + .module .module-heading, .secondary .module:first-child + .module + .module + .module + .module + .module + .module + .module .module-heading {
 	background: #5342AE;	
+}
+
+.filter-block nav {
+	display: none;
+}
+
+.filter-block.filter-organization nav {
+	display: block;
+}
+
+.filter-block .module-heading {
+	cursor: pointer;
+}
+
+.filter-block nav li ul {
+	display: none;
+}
+
+.filters-organization .filter-block nav li ul, .filter-active nav{
+	display: block;
 }
 
 /** Facets **/
@@ -1700,7 +1720,9 @@ label[for="include_children"] {
 		font-weight: 300;
 		padding: 5px 0 6px 15px;
 		border-bottom: 1px solid #f0f1f1; 
-		background: #fff;
+		background:#fff no-repeat url('../../../img/common/icon-mobile.gif') 5px center;
+		background-size: 28px 28px;
+		padding-left: 35px;
 	}
 	
 	#mobile-title h1 {
@@ -1714,6 +1736,10 @@ label[for="include_children"] {
 		font-size: 2.3rem;
 		font-weight: 300;
 		line-height: 1;
+	}
+	
+	.js [role="main"] .secondary .filters > div .module-footer {
+		display: block;
 	}
 	
 	.navbar.masthead {
@@ -2019,4 +2045,8 @@ font-size: 1.2rem;
 /**Ocultar el filtro superior en el DataExplorer**/
 .resource-view-filters {
     display: none;
+}
+
+.frequency{
+	margin: 0 0 0 0;
 }

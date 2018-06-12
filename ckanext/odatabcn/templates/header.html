@@ -6,7 +6,7 @@
 {% snippet "brand/" ~ h.lang()  ~  ".html", path = request.path %}
 
 <div id="portal-title">
-	<h1><a href="/{{h.lang()}}/">Open Data <span>BCN</span></a></h1>
+	<h1><a href="/{{h.lang()}}/"><span class="bcn-icon-dades-obertes" style="color:#000; font-size: 0.75em;"></span> Open Data <span>BCN</span></a></h1>
 	<p class="slogan">{{ _('Barcelona-s City Hall Open Data Service') }}</p>
 </div>
 
@@ -98,7 +98,7 @@
 						<ul class="depth-3">
 							<li>
 								<i class="arrow hidden-xs bcn-icon-dreta-medium"></i>
-								<a href="/{{ lang }}/especial-visualitzacions">{{ _('Visualizations by themes') }}</a>
+								<a href="/{{ lang }}/visualitzacions-per-temes">{{ _('Visualizations by themes') }}</a>
 							</li>
 						</ul>
 					</li>
@@ -124,6 +124,12 @@
 					</li>
                     <li aria-controls="main-menu-ul" aria-checked="false">
 						<a href="/{{ lang }}/jurat-repte"><span>{{ _('Jurat') }}</span></a>
+					</li>
+					<li aria-controls="main-menu-ul" aria-checked="false">
+						<a href="/{{ lang }}/acte-final-repte"><span>{{ _('Acte Final') }}</span></a>
+					</li>
+					<li aria-controls="main-menu-ul" aria-checked="false">
+						<a href="/{{ lang }}/esdeveniment-projectes"><span>{{ _('Guanyador') }}</span></a>
 					</li>
                 </ul> 
 			</li>

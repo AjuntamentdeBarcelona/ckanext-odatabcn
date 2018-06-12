@@ -49,12 +49,17 @@ within_tertiary
         {% set wrapper_class = 'nav-facet nav-facet-tertiary' %}
       {% endif %}
       {% block facet_list_item %}
-        <section class="{{ wrapper_class or 'module module-narrow module-shallow' }}">
+        <section class="{{ wrapper_class or 'module module-narrow module-shallow' }} filter-block filter-{{name}} {% if not h.get_param_int('_%s_limit' % name) %}filter-active{% endif %}">
           {% block facet_list_heading %}
             <h2 class="module-heading">
               <i class="icon-medium icon-filter"></i>
               {% set title = title or h.get_facet_title(name) %}
               {{ title }}
+			  {% if name == "organization" %}
+			  <i class="bcn-icon-menys-bold pull-right"></i>
+			  {% else %}
+			  <i class="bcn-icon-mes-bold pull-right"></i>
+			  {% endif %}
             </h2>
           {% endblock %}
           {% block facet_list_items %}
@@ -64,6 +69,7 @@ within_tertiary
                 <ul class="{{ nav_class or 'unstyled nav nav-simple nav-facet' }} " id="{{name}}">
 
                 {% set parentlist = [] %}
+				{% set parentCount = {} %}
                 {% for item in items %}
                     {% set href = h.remove_url_param(name, item.name, extras=extras, alternative_url=alternative_url) if item.active else h.add_url_param(new_params={name: item.name}, extras=extras, alternative_url=alternative_url) %}
                     {% set label = label_function(item) if label_function else item.display_name %}
@@ -79,6 +85,10 @@ within_tertiary
 							{% set parentname = item.organization.parent.name %}
 							{% if item.organization.parent not in parentlist %}
 								{% set aux = parentlist.append(item.organization.parent) %}
+								{% do parentCount.update({item.organization.parent.name:  item['count']}) %}
+							{% else %}
+								{% set new_count = parentCount[item.organization.parent.name] + item['count'] %}
+								{% do parentCount.update({item.organization.parent.name: new_count}) %}
 							{% endif %}
 						{% endif %}
 					{% endif %}
@@ -94,36 +104,60 @@ within_tertiary
 					{% for parent in parentlist %}
 						{% set url_base = h.url_for(controller='package', action='search') if c.group_dict.name == parent.name else h.url_for(controller='organization', action='read', id=parent.name) %}  
 						{% set href = url_base + '?' + request.query_string if request.query_string else url_base %}
+						
 					  
 						<li class="{{ 'nav-item' }} {% if c.group_dict.name == parent.name  %} active{% endif %} parent" id="{{ parent.name }}">
 						  <a href="{{ href }}" title="{{ h.get_translated(parent, 'title') }}">
-							<span>{{ h.get_translated(parent, 'title') }} </span>
+							<span>{{ h.get_translated(parent, 'title') }} ({{parentCount[parent.name]}})</span>
 						  </a>
 						</li>
 					{% endfor %}
 				{% endif %}
 
                 </ul>
-              </nav>
+              
 
              {% if h.get_param_int('_%s_limit' % name) %}
                {% if h.has_more_facets(name) %}
 				{% if name == "tags" %}
-					<p class="module-footer"><a href="{{ h.url_for('home')}}tags" class="read-more">{{ _('Show All Tags') }}</a></p>
+					<p class="module-footer"><a href="{{ h.url_for('home')}}tags" class="read-more">{{ _('Show More') }}</a></p>
 				{% else %}
-					<p class="module-footer"><a href="{{ h.remove_url_param('_%s_limit' % name, replace=0, extras=extras, alternative_url=alternative_url) }}" class="read-more">{{ _('Show More {facet_type}').format(facet_type=title) }}</a></p>
+					<p class="module-footer"><a href="{{ h.remove_url_param('_%s_limit' % name, replace=0, extras=extras, alternative_url=alternative_url) }}" class="read-more">{{ _('Show More')}}</a></p>
 				{% endif %}
                {% endif %}
             {% else %}
-              <p class="module-footer"><a href="{{ h.remove_url_param('_%s_limit' % name, extras=extras, alternative_url=alternative_url) }}" class="read-more">{{ _('Show Only Popular {facet_type}').format(facet_type=title) }}</a></p>
+              <p class="module-footer"><a href="{{ h.remove_url_param('_%s_limit' % name, extras=extras, alternative_url=alternative_url) }}" class="read-more">{{ _('Show Only Popular')}}</a></p>
             {% endif %}
             {% else %}
               <p class="module-content empty">{{ _('There are no {facet_type} that match this search').format(facet_type=title) }}</p>
             {% endif %}
             {% endwith %}
           {% endblock %}
+		  </nav>
         </section>
       {% endblock %}
     {% endif %}
   {% endwith %}
+  
+  {#<section class="module module-narrow module-shallow">
+	<h2 class="module-heading">
+		<i class="icon-medium icon-filter"></i>
+		Historical information
+	</h2>
+	<nav>
+		<ul class="unstyled nav nav-simple nav-facet " id="geolocation">
+			<li class="nav-item" id="No" parent="">
+				<a href={{ h.remove_url_param('q', 'tags:Any*', extras=extras, alternative_url=alternative_url) if false else h.add_url_param(new_params={'q': 'tags:Any*'}, extras=extras, alternative_url=alternative_url) }}>
+					<span>Yes ({{ h.historical_information() }})</span>
+				</a>
+			</li>
+			<li class="nav-item" id="Yes_no_map_view" parent="">
+				<a href="/data/ca/dataset?q=-tags:Any*">
+					<span>No ({{ h.not_historical_information() }})</span>
+				</a>
+			</li>
+		</ul>
+	</nav>
+</section>#}
+  
 {% endblock %}

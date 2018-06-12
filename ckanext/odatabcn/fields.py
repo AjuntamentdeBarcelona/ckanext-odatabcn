@@ -48,6 +48,12 @@ class EditfieldsPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 		if 'user' in context and not context['user']:
 			delete_private_data(pkg_dict)
 			
+		#Actualiza valor de API en package	
+		pkg_dict['api'] = 'No'	
+		for resource in pkg_dict['resources']:
+			if (resource['datastore_active']):
+				pkg_dict['api'] = 'Yes'
+			
 	def before_search(self, search_params): 
 
 		#Change default search order
@@ -98,12 +104,13 @@ class EditfieldsPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 			if not toolkit.c.user:
 				delete_private_data(pkg)
 			elif (not toolkit.c.action == 'resource_download'
-					and not toolkit.c.action == 'resource_delete'
 					and not toolkit.c.action == 'resource_edit'
+					and not toolkit.c.action == 'resource_delete'
+					and not toolkit.c.action == 'resource_data'
 					and not toolkit.c.action == 'new_resource'
 					and not toolkit.c.action == 'edit'
 					and not toolkit.c.action == ''
-					and not (toolkit.c.user and authz.is_sysadmin(toolkit.c.user) and toolkit.c.controller == 'api')):
+					and not (toolkit.c.user and authz.is_sysadmin(toolkit.c.user) and toolkit.c.controller == 'ckanext.odatabcn.controllers:StatsApiController')):
 				change_resource_download_urls(pkg, site_url)
 
 		return search_results
