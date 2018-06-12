@@ -1297,7 +1297,7 @@ a.tag:hover {
 	display: none;
 }
 
-.filters-organization .filter-block nav li ul{
+.filters-organization .filter-block nav li ul, .filter-active nav{
 	display: block;
 }
 
