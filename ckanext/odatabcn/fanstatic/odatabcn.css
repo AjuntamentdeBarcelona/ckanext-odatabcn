@@ -390,6 +390,12 @@ a:hover, a:focus {
 	background: transparent;
 }
 
+span.depth-2 {
+    color: #1e529e;
+    font-weight: bold !important;
+    font-size: 14px;
+}
+
 /** Footer **/
 .site-footer {
 	background:#f2f2f2;
