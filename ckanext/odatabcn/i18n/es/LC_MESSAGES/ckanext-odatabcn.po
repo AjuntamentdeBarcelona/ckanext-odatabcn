@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ckan 2.6.0b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2016-10-18 10:37+0100\n"
-"PO-Revision-Date: 2018-06-13 16:08+0200\n"
+"PO-Revision-Date: 2018-06-15 13:09+0200\n"
 "Last-Translator: Isabel Ruiz <isaruizmellado@gmail.com>, 2016\n"
 "Language-Team: Spanish (https://www.transifex.com/okfn/teams/11162/es/)\n"
 "MIME-Version: 1.0\n"
@@ -3155,3 +3155,9 @@ msgstr "Logo"
 
 msgid "Icona"
 msgstr "Icono"
+
+msgid "PRIMERA EDICIO 2018"
+msgstr "PRIMERA EDICIÓN_2018"
+
+msgid "SEGONA EDICIO 2019"
+msgstr "SEGUNDA EDICIÓN_2019"
