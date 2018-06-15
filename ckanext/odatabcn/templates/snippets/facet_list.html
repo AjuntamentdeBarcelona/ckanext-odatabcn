@@ -115,7 +115,6 @@ within_tertiary
 				{% endif %}
 
                 </ul>
-              
 
              {% if h.get_param_int('_%s_limit' % name) %}
                {% if h.has_more_facets(name) %}
@@ -126,7 +125,9 @@ within_tertiary
 				{% endif %}
                {% endif %}
             {% else %}
-              <p class="module-footer"><a href="{{ h.remove_url_param('_%s_limit' % name, extras=extras, alternative_url=alternative_url) }}" class="read-more">{{ _('Show Only Popular')}}</a></p>
+				{% if h.has_more_facets(name) %}
+					<p class="module-footer"><a href="{{ h.remove_url_param('_%s_limit' % name, extras=extras, alternative_url=alternative_url) }}" class="read-more">{{ _('Show Only Popular')}}</a></p>
+				{% endif %}
             {% endif %}
             {% else %}
               <p class="module-content empty">{{ _('There are no {facet_type} that match this search').format(facet_type=title) }}</p>
