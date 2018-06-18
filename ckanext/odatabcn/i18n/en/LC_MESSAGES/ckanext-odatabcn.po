@@ -2892,3 +2892,6 @@ msgstr "FIRST EDITION_2018"
 
 msgid "SEGONA EDICIO 2019"
 msgstr "SECOND EDITION_2019"
+
+msgid "Aire"
+msgstr "Air"

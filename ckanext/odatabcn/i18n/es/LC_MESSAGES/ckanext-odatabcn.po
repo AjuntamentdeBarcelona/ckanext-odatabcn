@@ -3161,3 +3161,18 @@ msgstr "PRIMERA EDICIÓN_2018"
 
 msgid "SEGONA EDICIO 2019"
 msgstr "SEGUNDA EDICIÓN_2019"
+
+msgid "Aire"
+msgstr "Aire"
+
+msgid "NO2"
+msgstr "NO2"
+
+msgid "O3"
+msgstr "O3"
+
+msgid "Bicing"
+msgstr "Bicing"
+
+msgid "PM10"
+msgstr "PM10"
