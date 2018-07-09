@@ -2901,3 +2901,9 @@ msgstr "The Prize"
 
 msgid "Materials Formatius"
 msgstr "Training Materials"
+
+msgid "Carrer"
+msgstr "Street"
+
+msgid "Modificacions"
+msgstr "Modifications"

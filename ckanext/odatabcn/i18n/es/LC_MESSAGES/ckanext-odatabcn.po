@@ -3182,3 +3182,9 @@ msgstr "El Premio"
 
 msgid "Materials Formatius"
 msgstr "Materiales Formativos"
+
+msgid "Carrer"
+msgstr "Calle"
+
+msgid "Modificacions"
+msgstr "Modificaciones"
