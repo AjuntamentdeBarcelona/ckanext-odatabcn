@@ -2907,3 +2907,18 @@ msgstr "Street"
 
 msgid "Modificacions"
 msgstr "Modifications"
+
+msgid "Ocupació mitjana"
+msgstr "Average occupation"
+
+msgid "Estrangers"
+msgstr "Foreigners"
+
+msgid "Viu sola"
+msgstr "Live alone"
+
+msgid "Edat quinquenal"
+msgstr "Quinquenal age"
+
+msgid "Edats quinquenals"
+msgstr "Quinquenal ages"

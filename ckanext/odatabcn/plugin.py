@@ -166,8 +166,8 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 		facets_dict['frequency'] = toolkit._('Frequency')
 		facets_dict['historical'] = toolkit._('Historical information')
 		facets_dict['api'] = toolkit._('API available')
-		#if toolkit.c.userobj:
-		#	facets_dict['private'] = toolkit._('Private')
+		if toolkit.c.userobj:
+			facets_dict['date_deactivation_informed'] = toolkit._('Date deactivation informed')
 		return facets_dict
 		
 	def organization_facets(self, facets_dict, organization_type, package_type):
@@ -175,6 +175,9 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 		facets_dict['frequency'] = toolkit._('Frequency')
 		facets_dict['historical'] = toolkit._('Historical information')
 		facets_dict['api'] = toolkit._('API available')
+		if toolkit.c.userobj:
+			facets_dict['date_deactivation_informed'] = toolkit._('Date deactivation informed')
+		return facets_dict
 		return facets_dict
 
 	# Add created datasets to Drupal table to enable comments
@@ -314,5 +317,6 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 		return {
 			'required_if_public': validators.required_if_public,
 			'historical_yes_no': validators.historical_yes_no,
+			'date_deactivation_informed': validators.date_deactivation_informed,
 		}
 	

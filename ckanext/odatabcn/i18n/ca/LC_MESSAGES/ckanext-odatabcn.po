@@ -682,3 +682,6 @@ msgstr "El Premi"
 
 msgid "Materials Formatius"
 msgstr "Materials Formatius"
+
+msgid "Date deactivation informed"
+msgstr "Data desactivació informada"

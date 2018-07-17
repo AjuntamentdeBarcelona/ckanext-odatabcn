@@ -3188,3 +3188,18 @@ msgstr "Calle"
 
 msgid "Modificacions"
 msgstr "Modificaciones"
+
+msgid "Date deactivation informed"
+msgstr "Fecha desactivación informada"
+
+msgid "Ocupació mitjana"
+msgstr "Ocupación media"
+
+msgid "Estrangers"
+msgstr "Extranjeros"
+
+msgid "Viu sola"
+msgstr "Vive sola"
+
+msgid "Edat quinquenal"
+msgstr "Edad quinquenal"
