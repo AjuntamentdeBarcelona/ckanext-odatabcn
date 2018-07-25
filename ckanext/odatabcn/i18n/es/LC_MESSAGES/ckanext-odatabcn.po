@@ -3203,3 +3203,6 @@ msgstr "Vive sola"
 
 msgid "Edat quinquenal"
 msgstr "Edad quinquenal"
+
+msgid "Any alta padró"
+msgstr "Año alta padrón"

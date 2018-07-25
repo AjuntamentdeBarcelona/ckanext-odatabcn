@@ -2922,3 +2922,6 @@ msgstr "Quinquenal age"
 
 msgid "Edats quinquenals"
 msgstr "Quinquenal ages"
+
+msgid "Any alta padró"
+msgstr "Census sign up age"
