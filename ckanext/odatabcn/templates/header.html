@@ -90,7 +90,7 @@
                     <li class="submenu-header">
 						<a data-toggle="dropdown" href="#"><i class="arrow bcn-icon-esquerra-medium"></i> {{ _('Reusers') }}</a>
 					</li>
-                    <li class="first" aria-controls="main-menu-ul" aria-checked="false">
+                    			<li class="first" aria-controls="main-menu-ul" aria-checked="false">
 						<a href="/{{ lang }}/desenvolupadors"><span>{{ _('Developers') }}</span></a>
 					</li>
 					<li aria-controls="main-menu-ul" aria-checked="false">
@@ -113,25 +113,57 @@
 					<li class="submenu-header">
 						<a data-toggle="dropdown" href="#"><i class="arrow bcn-icon-esquerra-medium"></i> {{ _('Repte Barcelona Dades Obertes') }}</a>
 					</li>
-                    <li class="first" aria-controls="main-menu-ul" aria-checked="false">
-						<a href="/{{ lang }}/repte"><span>{{ _('Que es?') }}</span></a>
-					</li>
-                    <li aria-controls="main-menu-ul" aria-checked="false">
-						<a href="/{{ lang }}/novetats-repte"><span>{{ _('Novetats') }}</span></a>
-					</li>
-                    <li aria-controls="main-menu-ul" aria-checked="false">
-						<a href="/{{ lang }}/centres-participants"><span>{{ _('Centres Participants') }}</span></a>
-					</li>
-                    <li aria-controls="main-menu-ul" aria-checked="false">
-						<a href="/{{ lang }}/jurat-repte"><span>{{ _('Jurat') }}</span></a>
-					</li>
-					<li aria-controls="main-menu-ul" aria-checked="false">
-						<a href="/{{ lang }}/acte-final-repte"><span>{{ _('Acte Final') }}</span></a>
-					</li>
-					<li aria-controls="main-menu-ul" aria-checked="false">
-						<a href="/{{ lang }}/esdeveniment-projectes"><span>{{ _('Guanyador') }}</span></a>
-					</li>
-                </ul> 
+						<li aria-controls="main-menu-ul" aria-checked="false">
+							<span class="depth-2">{{ _('PRIMERA EDICIO 2018') }}</span>
+								<ul class="depth-3">
+                    							<li>
+										<i class="arrow hidden-xs bcn-icon-dreta-medium"></i>
+										<a href="/{{ lang }}/repte">{{ _('Que es?') }}</a>
+									</li>
+                    							<li>
+										<i class="arrow hidden-xs bcn-icon-dreta-medium"></i>
+										<a href="/{{ lang }}/novetats-repte">{{ _('Novetats') }}</a>
+									</li>
+                   							<li>
+										<i class="arrow hidden-xs bcn-icon-dreta-medium"></i>
+										<a href="/{{ lang }}/centres-participants">{{ _('Centres Participants') }}</a>
+									</li>
+                    							<li>
+										<i class="arrow hidden-xs bcn-icon-dreta-medium"></i>
+										<a href="/{{ lang }}/jurat-repte">{{ _('Jurat') }}</a>
+									</li>
+									<li>
+										<i class="arrow hidden-xs bcn-icon-dreta-medium"></i>
+										<a href="/{{ lang }}/acte-final-repte">{{ _('Acte Final') }}</a>
+									</li>
+									<li>
+										<i class="arrow hidden-xs bcn-icon-dreta-medium"></i>
+										<a href="/{{ lang }}/esdeveniment-projectes">{{ _('Guanyador') }}</a>
+									</li>
+									<li>
+										<i class="arrow hidden-xs bcn-icon-dreta-medium"></i>
+										<a href="/{{ lang }}/premi-repte">{{ _('Premi') }}</a>
+									</li>
+								</ul>
+						</li>
+						<li aria-controls="main-menu-ul" aria-checked="false">
+							<span class="depth-2">{{ _('SEGONA EDICIO 2019') }}</span>	
+								<ul class="depth-3">
+                    					<li>
+										<i class="arrow hidden-xs bcn-icon-dreta-medium"></i>
+										<a href="/{{ lang }}/repte-2019">{{ _('Que es?') }}</a>
+									</li>
+                    					<li>
+										<i class="arrow hidden-xs bcn-icon-dreta-medium"></i>
+										<a href="/{{ lang }}/novetats-repte-2019">{{ _('Novetats') }}</a>
+									</li>									
+									    <li>
+										<i class="arrow hidden-xs bcn-icon-dreta-medium"></i>
+										<a href="/{{ lang }}/materials-formatius-2019">{{ _('Materials Formatius') }}</a>
+									</li>	
+								</ul>	
+						</li>			
+                		</ul> 
 			</li>
 			{% set lang_abrev = 'c' %}
 			{% if lang=='es' %}

@@ -24,3 +24,15 @@ def historical_yes_no(key, data, errors, context):
 		data[key] = 'No'
 
 	return data[key]
+	
+# Date Deactivation Informed
+def date_deactivation_informed(key, data, errors, context):
+	value = data[key]
+	withdraw_date = data[('withdraw_date',)]
+	
+	if (withdraw_date):
+		data[key] = 'Yes'
+	else:
+		data[key] = 'No'
+
+	return data[key]

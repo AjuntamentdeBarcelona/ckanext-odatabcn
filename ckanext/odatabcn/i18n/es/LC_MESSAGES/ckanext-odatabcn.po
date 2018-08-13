@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ckan 2.6.0b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2016-10-18 10:37+0100\n"
-"PO-Revision-Date: 2018-06-12 16:17+0200\n"
+"PO-Revision-Date: 2018-07-09 13:20+0200\n"
 "Last-Translator: Isabel Ruiz <isaruizmellado@gmail.com>, 2016\n"
 "Language-Team: Spanish (https://www.transifex.com/okfn/teams/11162/es/)\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Generated-By: Babel 2.3.4\n"
 "Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.0.8\n"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "Maintainer Telephone"
@@ -2170,7 +2170,7 @@ msgid "Protocol Publicacio"
 msgstr "Protocolo de Publicación"
 
 msgid "Guia Publicacio"
-msgstr "Guía de publicación de nuevos Datasets en Open Data BCN"
+msgstr "Guía de publicación de nuevos Datasets"
 
 msgid "Documentacio"
 msgstr "Documentación"
@@ -3148,10 +3148,61 @@ msgid "Show Only Popular"
 msgstr "Mostrar sólo populares"
 
 msgid "Identitat Grafica"
-msgstr "Identidad Gráfica Open Data BCN"
+msgstr "Identidad Gráfica"
 
 msgid "Logo"
 msgstr "Logo"
 
 msgid "Icona"
 msgstr "Icono"
+
+msgid "PRIMERA EDICIO 2018"
+msgstr "PRIMERA EDICIÓN_2018"
+
+msgid "SEGONA EDICIO 2019"
+msgstr "SEGUNDA EDICIÓN_2019"
+
+msgid "Aire"
+msgstr "Aire"
+
+msgid "NO2"
+msgstr "NO2"
+
+msgid "O3"
+msgstr "O3"
+
+msgid "Bicing"
+msgstr "Bicing"
+
+msgid "PM10"
+msgstr "PM10"
+
+msgid "Premi"
+msgstr "El Premio"
+
+msgid "Materials Formatius"
+msgstr "Materiales Formativos"
+
+msgid "Carrer"
+msgstr "Calle"
+
+msgid "Modificacions"
+msgstr "Modificaciones"
+
+msgid "Date deactivation informed"
+msgstr "Fecha desactivación informada"
+
+msgid "Ocupació mitjana"
+msgstr "Ocupación media"
+
+msgid "Estrangers"
+msgstr "Extranjeros"
+
+msgid "Viu sola"
+msgstr "Vive sola"
+
+msgid "Edat quinquenal"
+msgstr "Edad quinquenal"
+
+msgid "Any alta padró"
+msgstr "Año alta padrón"

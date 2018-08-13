@@ -25,7 +25,11 @@
               {%- else -%}
                 {{ _(h.list_dict_filter(search_facets_items, 'name', 'display_name', value)) }}
               {%- endif %}
-              <a href="{{ facets.remove_field(field, value) }}" class="remove" title="{{ _('Remove') }}"><i class="icon-remove"></i></a>
+			  {% if '/organization/' in request.path %}
+				<a href="{{ facets.remove_field(field, value) |replace("/group/", "/organization/") }}" class="remove" title="{{ _('Remove') }}"><i class="icon-remove"></i></a>
+			  {% else %}
+				<a href="{{ facets.remove_field(field, value) }}" class="remove" title="{{ _('Remove') }}"><i class="icon-remove"></i></a>
+			  {%- endif %}
             </span>
           {% endfor %}
         {% endfor %}

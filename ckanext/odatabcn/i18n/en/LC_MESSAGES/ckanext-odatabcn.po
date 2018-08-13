@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ckan 2.6.0b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2016-10-18 10:37+0100\n"
-"PO-Revision-Date: 2018-06-12 16:19+0200\n"
+"PO-Revision-Date: 2018-07-09 13:22+0200\n"
 "Last-Translator: Isabel Ruiz <isaruizmellado@gmail.com>, 2016\n"
 "Language-Team: Spanish (https://www.transifex.com/okfn/teams/11162/es/)\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Generated-By: Babel 2.3.4\n"
 "Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.0.8\n"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "little"
@@ -1997,7 +1997,7 @@ msgid "Protocol Publicacio"
 msgstr "Publication Protocol"
 
 msgid "Guia Publicacio"
-msgstr "Guide to Publish new Datasets in Open Data BCN"
+msgstr "Guide to Publish new Datasets"
 
 msgid "Documentacio"
 msgstr "Documentation"
@@ -2879,10 +2879,49 @@ msgid "API available"
 msgstr "CKAN API available"
 
 msgid "Identitat Grafica"
-msgstr "Open Data BCN Graphic Identity"
+msgstr "Graphic Identity"
 
 msgid "Logo"
 msgstr "Logo"
 
 msgid "Icona"
 msgstr "Icon"
+
+msgid "PRIMERA EDICIO 2018"
+msgstr "FIRST EDITION_2018"
+
+msgid "SEGONA EDICIO 2019"
+msgstr "SECOND EDITION_2019"
+
+msgid "Aire"
+msgstr "Air"
+
+msgid "Premi"
+msgstr "The Prize"
+
+msgid "Materials Formatius"
+msgstr "Training Materials"
+
+msgid "Carrer"
+msgstr "Street"
+
+msgid "Modificacions"
+msgstr "Modifications"
+
+msgid "Ocupació mitjana"
+msgstr "Average occupation"
+
+msgid "Estrangers"
+msgstr "Foreigners"
+
+msgid "Viu sola"
+msgstr "Live alone"
+
+msgid "Edat quinquenal"
+msgstr "Quinquenal age"
+
+msgid "Edats quinquenals"
+msgstr "Quinquenal ages"
+
+msgid "Any alta padró"
+msgstr "Census sign up age"
