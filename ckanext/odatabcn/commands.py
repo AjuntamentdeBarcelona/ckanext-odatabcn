@@ -189,7 +189,7 @@ class Odatabcn(CkanCommand):
 			if current_total > previous_total:
 				deleted_total = abs(current_total - previous_total - published_total)
 			else:
-				deleted_total = abs(previous_total - current_total - published_total)
+				deleted_total = abs(previous_total - current_total + published_total)
 			print 'Number of datasets deleted between %s and %s: %s' % (last_month, last_month_last, deleted_total)
 			
 			# Insert row in DDBB
