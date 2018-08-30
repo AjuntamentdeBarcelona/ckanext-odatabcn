@@ -2925,3 +2925,9 @@ msgstr "Quinquenal ages"
 
 msgid "Any alta padró"
 msgstr "Census sign up age"
+
+msgid "Pàrquing"
+msgstr "Parking"
+
+msgid "Lloc naixement"
+msgstr "Birthplace"
