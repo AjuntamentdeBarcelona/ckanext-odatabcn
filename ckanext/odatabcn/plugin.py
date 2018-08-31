@@ -51,6 +51,15 @@ def logged_in_internal_use(context, data_dict=None):
 	else:
 		return {'success': False,
 				'msg': 'Only users are allowed to access user profiles'}
+				
+def resource_delete_editor(context, data_dict=None):
+	
+	# user = context.get('user')
+	user = context.get('user')
+	pprint.pprint(user)
+	
+	return {'success': True}
+	
 
 class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.DefaultDatasetForm):
 	plugins.implements(plugins.IConfigurer)
@@ -306,7 +315,8 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 				'user_show': logged_in_internal_use,
 				'user_list': logged_in_users_only,
 				'revision_list': logged_in_users_only,
-				'group_revision_list': logged_in_users_only
+				'group_revision_list': logged_in_users_only,
+				'resource_delete': resource_delete_editor,
 			}
 		
 		return auth_functions

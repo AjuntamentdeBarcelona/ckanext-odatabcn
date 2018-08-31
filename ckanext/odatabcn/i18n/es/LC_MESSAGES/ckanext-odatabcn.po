@@ -3206,3 +3206,9 @@ msgstr "Edad quinquenal"
 
 msgid "Any alta padró"
 msgstr "Año alta padrón"
+
+msgid "Pàrquing"
+msgstr "Párquing"
+
+msgid "Lloc naixement"
+msgstr "Lugar nacimiento"
