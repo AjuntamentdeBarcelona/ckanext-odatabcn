@@ -3212,3 +3212,27 @@ msgstr "Párquing"
 
 msgid "Lloc naixement"
 msgstr "Lugar nacimiento"
+
+msgid "Punts informació"
+msgstr "Puntos información"
+
+msgid "Nens"
+msgstr "Niños"
+
+msgid "Nenes"
+msgstr "Niñas"
+
+msgid "Lloc procedencia"
+msgstr "Lugar procedencia"
+
+msgid "Serveis Socials"
+msgstr "Servicios Sociales"
+
+msgid "Nacionalitat espanyola"
+msgstr "Nacionalidad española"
+
+msgid "Lloc destinació"
+msgstr "Destination Place"
+
+msgid "Dona"
+msgstr "Mujer"

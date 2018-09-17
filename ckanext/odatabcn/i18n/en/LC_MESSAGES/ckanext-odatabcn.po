@@ -2931,3 +2931,27 @@ msgstr "Parking"
 
 msgid "Lloc naixement"
 msgstr "Birthplace"
+
+msgid "Punts informació"
+msgstr "Information points"
+
+msgid "Nens"
+msgstr "Boys"
+
+msgid "Nenes"
+msgstr "Girls"
+
+msgid "Lloc procedencia"
+msgstr "Origin place"
+
+msgid "Serveis Socials"
+msgstr "Social Services"
+
+msgid "Nacionalitat espanyola"
+msgstr "Spanish nationality"
+
+msgid "Lloc destinació"
+msgstr "Destination Place"
+
+msgid "Dona"
+msgstr "Woman"
