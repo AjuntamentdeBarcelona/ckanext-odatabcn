@@ -194,8 +194,8 @@ msgstr "Accés a Govern Obert"
 msgid "Help"
 msgstr "Ajuda"
 
-msgid "Help us to improve"
-msgstr "Ajudeu-nos a millorar"
+msgid "Contact us"
+msgstr "Contacteu-nos"
 
 msgid "Help Datasets"
 msgstr "Ajuda datasets"

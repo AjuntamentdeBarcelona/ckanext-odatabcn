@@ -2001,8 +2001,8 @@ msgstr "Acceso a Gobierno Abierto"
 msgid "Help"
 msgstr "Ayuda"
 
-msgid "Help us to improve"
-msgstr "Ayúdenos a mejorar"
+msgid "Contact us"
+msgstr "Contáctenos"
 
 msgid "Help Datasets"
 msgstr "Ayuda datasets"
