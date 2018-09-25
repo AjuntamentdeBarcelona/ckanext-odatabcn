@@ -2955,3 +2955,6 @@ msgstr "Destination Place"
 
 msgid "Dona"
 msgstr "Woman"
+
+msgid "Nacionalitat estrangera"
+msgstr "Foreign Nationality"

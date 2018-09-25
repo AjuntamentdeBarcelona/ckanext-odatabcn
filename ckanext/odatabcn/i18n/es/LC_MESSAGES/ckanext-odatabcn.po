@@ -3236,3 +3236,6 @@ msgstr "Destination Place"
 
 msgid "Dona"
 msgstr "Mujer"
+
+msgid "Nacionalitat estrangera"
+msgstr "Nacionalidad extranjera"
