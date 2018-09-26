@@ -325,6 +325,15 @@ a:hover, a:focus {
 	background:#1e529e;
 }
 
+.nav-pills>li:nth-child(6) a {
+    font-size: 12px;
+}
+
+.nav-pills>li:nth-child(7) a {
+    font-size: 12px;
+	background-color: #ccc;
+}
+
 /** Navegacion **/
 .masthead .dropdown-menu .depth-3 {
 	color: #1e529e !important; 
