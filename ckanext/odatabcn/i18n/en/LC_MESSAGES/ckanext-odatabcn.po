@@ -2958,3 +2958,60 @@ msgstr "Woman"
 
 msgid "Nacionalitat estrangera"
 msgstr "Foreign Nationality"
+
+msgid "Punts assessorament energètic"
+msgstr "Energy advice points"
+
+msgid "Infraestructura"
+msgstr "Infrastructure"
+
+msgid "Habitatges tutelats"
+msgstr "Protected housing"
+
+msgid "Semàfor"
+msgstr "Traffic light"
+
+msgid "Menjador"
+msgstr "Dining room"
+
+msgid "Dones"
+msgstr "Women"
+
+msgid "Adolescència"
+msgstr "Adolescence"
+
+msgid "Residències gent gran"
+msgstr "Residences of the elderly"
+
+msgid "Pas vianants"
+msgstr "Pedestrian crossing"
+
+msgid "Centres Serveis Socials"
+msgstr "Social Services Centers"
+
+msgid "Equips atenció"
+msgstr "Attention teams"
+
+msgid "Gent gran"
+msgstr "Seniors"
+
+msgid "Oficines Benestar Social"
+msgstr "Social Welfare Offices"
+
+msgid "Senyal"
+msgstr "Signal"
+
+msgid "Infantesa"
+msgstr "Childhood"
+
+msgid "Suport"
+msgstr "Support"
+
+msgid "Centres dia"
+msgstr "Day centers"
+
+msgid "Punts atenció"
+msgstr "Attention points"
+
+msgid "Estacionament reservat"
+msgstr "Reserved parking lot"

@@ -3239,3 +3239,57 @@ msgstr "Mujer"
 
 msgid "Nacionalitat estrangera"
 msgstr "Nacionalidad extranjera"
+
+msgid "Punts assessorament energètic"
+msgstr "Puntos asesoramiento energético"
+
+msgid "Habitatges tutelats"
+msgstr "Viviendas tuteladas"
+
+msgid "Semàfor"
+msgstr "Semáforo"
+
+msgid "Menjador"
+msgstr "Comedor"
+
+msgid "Dones"
+msgstr "Mujeres"
+
+msgid "Adolescència"
+msgstr "Adolescencia"
+
+msgid "Residències gent gran"
+msgstr "Residencias ancianos"
+
+msgid "Pas vianants"
+msgstr "Paso de cebra"
+
+msgid "Centres Serveis Socials"
+msgstr "Centros Servicios Sociales"
+
+msgid "Equips atenció"
+msgstr "Equipos atención"
+
+msgid "Gent gran"
+msgstr "Ancianos"
+
+msgid "Oficines Benestar Social"
+msgstr "Oficinas Bienestar Social"
+
+msgid "Senyal"
+msgstr "Señal"
+
+msgid "Infantesa"
+msgstr "Infancia"
+
+msgid "Suport"
+msgstr "Apoyo"
+
+msgid "Centres dia"
+msgstr "Centros día"
+
+msgid "Punts atenció"
+msgstr "Puntos atención"
+
+msgid "Estacionament reservat"
+msgstr "Estacionamiento reservado"
