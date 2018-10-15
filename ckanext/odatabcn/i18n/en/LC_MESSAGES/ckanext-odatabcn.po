@@ -2992,7 +2992,7 @@ msgstr "Social Services Centers"
 msgid "Equips atenció"
 msgstr "Attention teams"
 
-msgid "Gent gran"
+msgid "Gent Gran"
 msgstr "Seniors"
 
 msgid "Oficines Benestar Social"
@@ -3015,3 +3015,6 @@ msgstr "Attention points"
 
 msgid "Estacionament reservat"
 msgstr "Reserved parking lot"
+
+msgid "Lloc destinacio"
+msgstr "Destination location"

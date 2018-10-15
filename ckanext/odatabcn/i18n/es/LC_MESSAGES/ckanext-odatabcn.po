@@ -3270,7 +3270,7 @@ msgstr "Centros Servicios Sociales"
 msgid "Equips atenció"
 msgstr "Equipos atención"
 
-msgid "Gent gran"
+msgid "Gent Gran"
 msgstr "Ancianos"
 
 msgid "Oficines Benestar Social"
@@ -3293,3 +3293,6 @@ msgstr "Puntos atención"
 
 msgid "Estacionament reservat"
 msgstr "Estacionamiento reservado"
+
+msgid "Lloc destinacio"
+msgstr "Lugar destino"
