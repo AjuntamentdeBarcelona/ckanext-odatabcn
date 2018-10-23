@@ -3018,3 +3018,36 @@ msgstr "Reserved parking lot"
 
 msgid "Lloc destinacio"
 msgstr "Destination location"
+
+msgid "Febrer"
+msgstr "February"
+
+msgid "Juliol"
+msgstr "July"
+
+msgid "Novembre"
+msgstr "November"
+
+msgid "Gener"
+msgstr "January"
+
+msgid "Juny"
+msgstr "June"
+
+msgid "Maig"
+msgstr "May"
+
+msgid "Març"
+msgstr "March"
+
+msgid "Desembre"
+msgstr "December"
+
+msgid "Agost"
+msgstr "August"
+
+msgid "Abril"
+msgstr "April"
+
+msgid "Contractació menor a genèrica"
+msgstr "Lesser procurement to generic"

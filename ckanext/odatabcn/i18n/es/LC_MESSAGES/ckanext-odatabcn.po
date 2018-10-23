@@ -3296,3 +3296,33 @@ msgstr "Estacionamiento reservado"
 
 msgid "Lloc destinacio"
 msgstr "Lugar destino"
+
+msgid "Febrer"
+msgstr "Febrero"
+
+msgid "Juliol"
+msgstr "Julio"
+
+msgid "Novembre"
+msgstr "Noviembre"
+
+msgid "Gener"
+msgstr "Enero"
+
+msgid "Juny"
+msgstr "Junio"
+
+msgid "Maig"
+msgstr "Mayo"
+
+msgid "Març"
+msgstr "Marzo"
+
+msgid "Desembre"
+msgstr "Diciembre"
+
+msgid "Agost"
+msgstr "Agosto"
+
+msgid "Contractació menor a genèrica"
+msgstr "Contratación menor a genérica"
