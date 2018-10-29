@@ -3051,3 +3051,9 @@ msgstr "April"
 
 msgid "Contractació menor a genèrica"
 msgstr "Lesser procurement to generic"
+
+msgid "Setembre"
+msgstr "September"
+
+msgid "Octubre"
+msgstr "October"
