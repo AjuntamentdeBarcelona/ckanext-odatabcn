@@ -3057,3 +3057,12 @@ msgstr "September"
 
 msgid "Octubre"
 msgstr "October"
+
+msgid "Camions"
+msgstr "Trucks"
+
+msgid "Furgonetes"
+msgstr "Vans"
+
+msgid "Altres vehicles"
+msgstr "Other vehicles"

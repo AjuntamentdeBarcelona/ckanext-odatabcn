@@ -3329,3 +3329,12 @@ msgstr "Contratación menor a genérica"
 
 msgid "Setembre"
 msgstr "Septiembre"
+
+msgid "Camions"
+msgstr "Camiones"
+
+msgid "Furgonetes"
+msgstr "Furgonetas"
+
+msgid "Altres vehicles"
+msgstr "Otros vehículos"
