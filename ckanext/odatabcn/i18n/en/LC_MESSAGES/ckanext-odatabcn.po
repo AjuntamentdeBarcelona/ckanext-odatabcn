@@ -3064,5 +3064,5 @@ msgstr "Trucks"
 msgid "Furgonetes"
 msgstr "Vans"
 
-msgid "Altres vehicles"
+msgid "Altres Vehicles"
 msgstr "Other vehicles"

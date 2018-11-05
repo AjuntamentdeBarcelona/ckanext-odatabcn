@@ -685,3 +685,6 @@ msgstr "Materials Formatius"
 
 msgid "Date deactivation informed"
 msgstr "Data desactivació informada"
+
+msgid "Altres Vehicles"
+msgstr "Altres Vehícles"

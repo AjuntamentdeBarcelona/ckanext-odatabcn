@@ -3336,5 +3336,5 @@ msgstr "Camiones"
 msgid "Furgonetes"
 msgstr "Furgonetas"
 
-msgid "Altres vehicles"
+msgid "Altres Vehicles"
 msgstr "Otros vehículos"
