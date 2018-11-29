@@ -3066,3 +3066,12 @@ msgstr "Vans"
 
 msgid "Altres Vehicles"
 msgstr "Other vehicles"
+
+msgid "Territori"
+msgstr "Territory"
+
+msgid "Economia"
+msgstr "Economy"
+
+msgid "Proximitat"
+msgstr "Proximity"

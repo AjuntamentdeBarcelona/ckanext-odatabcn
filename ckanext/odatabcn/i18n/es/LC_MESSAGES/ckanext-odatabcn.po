@@ -3338,3 +3338,12 @@ msgstr "Furgonetas"
 
 msgid "Altres Vehicles"
 msgstr "Otros vehículos"
+
+msgid "Territori"
+msgstr "Territorio"
+
+msgid "Economia"
+msgstr "Economía"
+
+msgid "Proximitat"
+msgstr "Proximidad"
