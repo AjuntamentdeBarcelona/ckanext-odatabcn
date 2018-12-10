@@ -3347,3 +3347,6 @@ msgstr "Economía"
 
 msgid "Proximitat"
 msgstr "Proximidad"
+
+msgid "Edat mitjana"
+msgstr "Edad media"

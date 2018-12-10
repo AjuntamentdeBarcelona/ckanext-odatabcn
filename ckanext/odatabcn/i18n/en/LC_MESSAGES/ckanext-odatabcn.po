@@ -3075,3 +3075,6 @@ msgstr "Economy"
 
 msgid "Proximitat"
 msgstr "Proximity"
+
+msgid "Edat mitjana"
+msgstr "Middle ages"
