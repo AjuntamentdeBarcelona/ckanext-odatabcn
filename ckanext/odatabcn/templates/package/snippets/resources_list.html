@@ -12,11 +12,24 @@ Example:
 <section id="dataset-resources" class="resources">
   <h2>{{ _('Data and Resources') }}</h2>
   <div class="accordion" id="historic-series">
-
   {% set series_number = 0 %}
   {% set aux_year = 0 %}
+  {% set tokens = {'required': False} %}
+  
   {% block resource_list %}
     {% if resources %}
+		{% for resource in resources %}
+			{% if resource.token_required and resource.token_required == 'Yes' %}
+				{% set void = tokens.update({'required': True}) %}
+			{% endif %}
+		{% endfor %}
+	{% if tokens.required %}
+	<div class="token2">
+			<p class="token"><i class="bcn-icon-proteccio-dades"> </i>{{ _('La utilitzación de los servicios web en tiempo real publicados en este dataset requieren la ') }}<a href="/{{ h.lang() }}/tokens">{{ _('solicitud previa de un token de acceso') }}</a>
+				<a href="/{{ h.lang() }}/tokens"><span class="badge">{{ _('More information') }}</span></a>
+			</p>
+	</div>
+	{% endif %}
       <ul class="{% block resource_list_class %}resource-list{% endblock %}">
         {% block resource_list_inner %}
           {% for resource in resources %}
