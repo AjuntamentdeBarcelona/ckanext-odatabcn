@@ -3356,3 +3356,12 @@ msgstr "Token requerido"
 
 msgid "Taxa baixa"
 msgstr "Tasa baja"
+
+msgid "Taxa mortalitat"
+msgstr "Tasa mortalidad"
+
+msgid "Taxa migració interna"
+msgstr "Tasa migración interna"
+
+msgid "Taxa emigracio"
+msgstr "Tasa emigración"

@@ -3087,3 +3087,12 @@ msgstr "prior request for an access token"
 
 msgid "Taxa baixa"
 msgstr "Rate of low"
+
+msgid "Taxa mortalitat"
+msgstr "Mortality rate"
+
+msgid "Taxa migració interna"
+msgstr "Internal migration rate"
+
+msgid "Taxa emigracio"
+msgstr "Emigration rate"
