@@ -939,6 +939,19 @@ div.span9 .module-content {
 	padding: 10px 5px 10px 60px;
 }
 
+.token2{
+	padding: 10px 10px 5px 10px;
+	background: linear-gradient(to bottom, #d3deed 0%, #ffffff 100%);
+}
+
+.token .bcn-icon-proteccio-dades{
+	font-size: 150%;
+}
+
+.token .badge{
+	float: right;
+}
+
 .tags {
 	clear: both;
 	padding-top: 10px;
