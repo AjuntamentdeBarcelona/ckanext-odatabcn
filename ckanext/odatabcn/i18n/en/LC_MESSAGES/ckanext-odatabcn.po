@@ -3096,3 +3096,6 @@ msgstr "Internal migration rate"
 
 msgid "Taxa emigracio"
 msgstr "Emigration rate"
+
+msgid "Taxa immigracio"
+msgstr "Immigration rate"

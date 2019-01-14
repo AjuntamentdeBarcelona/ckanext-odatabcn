@@ -3365,3 +3365,6 @@ msgstr "Tasa migración interna"
 
 msgid "Taxa emigracio"
 msgstr "Tasa emigración"
+
+msgid "Taxa immigracio"
+msgstr "Tasa inmigración"
