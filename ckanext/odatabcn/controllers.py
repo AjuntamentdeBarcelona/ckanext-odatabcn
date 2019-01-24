@@ -104,6 +104,22 @@ class CSVController(t.BaseController):
             if not format_strip:
                 formats.remove(format)
 
+        # Realizamos conexion a la BBDD de Drupal para obtener el numero de comentarios de cada dataset y almacenamos los valores en un array
+        dbc = parse_db_config('ckan.drupal.url')
+        ckan_conn_string = "host='%s' dbname='%s' user='%s' password='%s'" % (
+        dbc['db_host'], dbc['db_name'], dbc['db_user'], dbc['db_pass'])
+        ckan_conn = psycopg2.connect(ckan_conn_string)
+        ckan_cursor = ckan_conn.cursor()
+        ckan_cursor.execute("""SELECT OP.pkg_name, COUNT(*) FROM opendata_package OP INNER JOIN node N ON N.tnid = OP.pkg_node_id INNER JOIN comment C ON C.nid = N.nid WHERE N.tnid != 0 GROUP BY OP.pkg_name;""")
+        
+        comments = {}
+
+        for row in ckan_cursor:
+            comments.update({row[0] : row[1]})
+        pprint.pprint(comments)
+        ckan_cursor.close()
+        ckan_conn.close()
+
         # Incluimos la informacion que necesitamos mostrar para cada dataset
         for package in packages:
             for key in package['notes_translated']:
@@ -113,9 +129,9 @@ class CSVController(t.BaseController):
 
             # Obtenemos las vistas y descargas
             sql = '''SELECT running_total, recent_views FROM tracking_summary 
-						WHERE package_id LIKE '%s' 
-						ORDER BY tracking_date 
-						DESC LIMIT 1;''' % (package['id'])
+                        WHERE package_id LIKE '%s' 
+                        ORDER BY tracking_date 
+                        DESC LIMIT 1;''' % (package['id'])
             results = model.Session.execute(sql)
 
             for m in results:
@@ -201,6 +217,12 @@ class CSVController(t.BaseController):
             self.escape_text(package)
             self.escape_translated_text(package)
 
+            # Obtenemos numero comentarios
+            if (package['name'] in comments):
+                package['comments'] = comments[package['name']]
+            else:
+                package['comments'] = 0
+
         curdate = d.datetime.now().strftime('%Y-%m-%d_%H-%M')
         t.response.headers['Content-Type'] = 'application/csv; charset=utf-8'
         t.response.headers['Content-Disposition'] = 'attachment; filename=catalegBCN_' + curdate + '.csv'
@@ -220,11 +242,11 @@ class CSVController(t.BaseController):
 
         # Obtenemos los tags
         sql = '''SELECT T.name as name_tag, COUNT(*) as total_tag FROM tag T
-					INNER JOIN package_tag PT ON PT.tag_id = T.id
-					INNER JOIN package P ON P.id = PT.package_id
-					WHERE PT.state LIKE 'active' AND PT.package_id IS NOT NULL AND PT.package_id NOT LIKE '' AND P.private = FALSE
-					GROUP BY T.name
-					ORDER BY T.name;'''
+                    INNER JOIN package_tag PT ON PT.tag_id = T.id
+                    INNER JOIN package P ON P.id = PT.package_id
+                    WHERE PT.state LIKE 'active' AND PT.package_id IS NOT NULL AND PT.package_id NOT LIKE '' AND P.private = FALSE
+                    GROUP BY T.name
+                    ORDER BY T.name;'''
         results = model.Session.execute(sql)
 
         curdate = d.datetime.now().strftime('%Y-%m-%d_%H-%M')
@@ -238,11 +260,11 @@ class CSVController(t.BaseController):
 
         # Obtenemos los tags
         sql = '''SELECT T.name as name_tag, COUNT(*) as total_tag FROM tag T
-					INNER JOIN package_tag PT ON PT.tag_id = T.id
-					INNER JOIN package P ON P.id = PT.package_id
-					WHERE PT.state LIKE 'active' AND PT.package_id IS NOT NULL AND PT.package_id NOT LIKE '' AND P.private = FALSE
-					GROUP BY T.name
-					ORDER BY T.name;'''
+                    INNER JOIN package_tag PT ON PT.tag_id = T.id
+                    INNER JOIN package P ON P.id = PT.package_id
+                    WHERE PT.state LIKE 'active' AND PT.package_id IS NOT NULL AND PT.package_id NOT LIKE '' AND P.private = FALSE
+                    GROUP BY T.name
+                    ORDER BY T.name;'''
         results = model.Session.execute(sql)
 
         t.response.headers['Content-Type'] = 'text/html; charset=utf-8'
@@ -470,9 +492,9 @@ class ResourceDownloadController(t.BaseController):
             rsc = t.get_action('resource_show')(context, {'id': resource_id})
         except (NotFound, NotAuthorized):
             abort(404, _('Resource not found'))
-	
-	pprint.pprint(rsc.get('token_required'))
-	
+
+        pprint.pprint(rsc.get('token_required'))
+
         # Save download to tracking_raw
         site_url = config.get('ckan.site_url') + config.get('ckan.root_path').replace('{{LANG}}', '')
         data = {
@@ -491,48 +513,48 @@ class ResourceDownloadController(t.BaseController):
                       data=data,
                       headers=headers)
 
-	if rsc.get('token_required') == 'Yes':
-		authentication = environ.get('HTTP_AUTHORIZATION', '')
-		
-		if authentication == '':
-			base.abort(403, _('No existe authentication y no se permite la descarga del recurso'))
-		
-		dbd = parse_db_config('ckan.drupal.url')
-		drupal_conn_string = "host='%s' dbname='%s' user='%s' password='%s'" % (dbd['db_host'], dbd['db_name'], dbd['db_user'], dbd['db_pass'])
-		drupal_conn = psycopg2.connect(drupal_conn_string)
-		drupal_cursor = drupal_conn.cursor()
-		drupal_cursor.execute("""select id_usuario from opendata_tokens where tkn_usuario=%s""", (authentication,))
-		#drupal_cursor.execute("""select id_usuario from opendata_tokens""")
-		
-		if drupal_cursor.rowcount < 1:
-			base.abort(403, _('El token no existe y no se permite la descarga del recurso'))
-		
-	if rsc.get('url_type') == 'upload':
-		# Internal redirect
-		upload = uploader.get_resource_uploader(rsc)
-		filepath = upload.get_path(rsc['id'])
-		fileapp = paste.fileapp.FileApp(filepath)
-		try:
-			status, headers, app_iter = request.call_application(fileapp)
-		except OSError:
-			base.abort(404, _('Resource data not found'))
-		response.headers.update(dict(headers))
-		content_type, content_enc = m.guess_type(rsc.get('url', ''))
+        if rsc.get('token_required') == 'Yes':
+            authentication = environ.get('HTTP_AUTHORIZATION', '')
 
-		if content_type and content_type == 'application/xml':
-			response.headers['Content-Type'] = 'application/octet-stream'
-		elif content_type:
-			response.headers['Content-Type'] = content_type
+        if authentication == '':
+            base.abort(403, _('No existe authentication y no se permite la descarga del recurso'))
 
-		response.status = status
-		return app_iter
+        dbd = parse_db_config('ckan.drupal.url')
+        drupal_conn_string = "host='%s' dbname='%s' user='%s' password='%s'" % (dbd['db_host'], dbd['db_name'], dbd['db_user'], dbd['db_pass'])
+        drupal_conn = psycopg2.connect(drupal_conn_string)
+        drupal_cursor = drupal_conn.cursor()
+        drupal_cursor.execute("""select id_usuario from opendata_tokens where tkn_usuario=%s""", (authentication,))
+        #drupal_cursor.execute("""select id_usuario from opendata_tokens""")
 
-		h.redirect_to(rsc['url'].encode('utf-8'))
-	elif 'url' not in rsc:
-		base.abort(404, _('No download is available'))
-	else:
-		# External redirect
-		return redirect(rsc['url'].encode('utf-8'))
+        if drupal_cursor.rowcount < 1:
+            base.abort(403, _('El token no existe y no se permite la descarga del recurso'))
+
+        if rsc.get('url_type') == 'upload':
+            # Internal redirect
+            upload = uploader.get_resource_uploader(rsc)
+            filepath = upload.get_path(rsc['id'])
+            fileapp = paste.fileapp.FileApp(filepath)
+            try:
+                status, headers, app_iter = request.call_application(fileapp)
+            except OSError:
+                base.abort(404, _('Resource data not found'))
+            response.headers.update(dict(headers))
+            content_type, content_enc = m.guess_type(rsc.get('url', ''))
+
+            if content_type and content_type == 'application/xml':
+                response.headers['Content-Type'] = 'application/octet-stream'
+            elif content_type:
+                response.headers['Content-Type'] = content_type
+
+            response.status = status
+            return app_iter
+
+            h.redirect_to(rsc['url'].encode('utf-8'))
+        elif 'url' not in rsc:
+            base.abort(404, _('No download is available'))
+        else:
+            # External redirect
+            return redirect(rsc['url'].encode('utf-8'))
 
 
 class StatsApiController(ApiController):
