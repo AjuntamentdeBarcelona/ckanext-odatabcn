@@ -493,7 +493,7 @@ class ResourceDownloadController(t.BaseController):
         except (NotFound, NotAuthorized):
             abort(404, _('Resource not found'))
 
-    pprint.pprint(rsc.get('token_required'))
+        pprint.pprint(rsc.get('token_required'))
 
         # Save download to tracking_raw
         site_url = config.get('ckan.site_url') + config.get('ckan.root_path').replace('{{LANG}}', '')
