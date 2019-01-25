@@ -493,7 +493,7 @@ class ResourceDownloadController(t.BaseController):
         except (NotFound, NotAuthorized):
             abort(404, _('Resource not found'))
 
-        pprint.pprint(rsc.get('token_required'))
+    pprint.pprint(rsc.get('token_required'))
 
         # Save download to tracking_raw
         site_url = config.get('ckan.site_url') + config.get('ckan.root_path').replace('{{LANG}}', '')
@@ -513,48 +513,50 @@ class ResourceDownloadController(t.BaseController):
                       data=data,
                       headers=headers)
 
-        if rsc.get('token_required') == 'Yes':
-            authentication = environ.get('HTTP_AUTHORIZATION', '')
+    if rsc.get('token_required') == 'Yes':
+        authentication = environ.get('HTTP_AUTHORIZATION', '')
 
-            if authentication == '':
-                base.abort(403, _('No existe authentication y no se permite la descarga del recurso'))
+        if authentication == '':
+            base.abort(403, _('No existe authentication y no se permite la descarga del recurso'))
 
-                dbd = parse_db_config('ckan.drupal.url')
-                drupal_conn_string = "host='%s' dbname='%s' user='%s' password='%s'" % (dbd['db_host'], dbd['db_name'], dbd['db_user'], dbd['db_pass'])
-                drupal_conn = psycopg2.connect(drupal_conn_string)
-                drupal_cursor = drupal_conn.cursor()
-                drupal_cursor.execute("""select id_usuario from opendata_tokens where tkn_usuario=%s""", (authentication,))
-                #drupal_cursor.execute("""select id_usuario from opendata_tokens""")
+        dbd = parse_db_config('ckan.drupal.url')
+        drupal_conn_string = "host='%s' dbname='%s' user='%s' password='%s'" % (dbd['db_host'], dbd['db_name'], dbd['db_user'], dbd['db_pass'])
+        drupal_conn = psycopg2.connect(drupal_conn_string)
+        drupal_cursor = drupal_conn.cursor()
+        drupal_cursor.execute("""select id_usuario from opendata_tokens where tkn_usuario=%s""", (authentication,))
+        #drupal_cursor.execute("""select id_usuario from opendata_tokens""")
 
-                if drupal_cursor.rowcount < 1:
-                    base.abort(403, _('El token no existe y no se permite la descarga del recurso'))
+        if drupal_cursor.rowcount < 1:
+            base.abort(403, _('El token no existe y no se permite la descarga del recurso'))
 
-        if rsc.get('url_type') == 'upload':
-            # Internal redirect
-            upload = uploader.get_resource_uploader(rsc)
-            filepath = upload.get_path(rsc['id'])
-            fileapp = paste.fileapp.FileApp(filepath)
-            try:
-                status, headers, app_iter = request.call_application(fileapp)
-            except OSError:
-                base.abort(404, _('Resource data not found'))
-            response.headers.update(dict(headers))
-            content_type, content_enc = m.guess_type(rsc.get('url', ''))
 
-            if content_type and content_type == 'application/xml':
-                response.headers['Content-Type'] = 'application/octet-stream'
-            elif content_type:
-                response.headers['Content-Type'] = content_type
+    if rsc.get('url_type') == 'upload':
+        # Internal redirect
+        upload = uploader.get_resource_uploader(rsc)
+        filepath = upload.get_path(rsc['id'])
+        fileapp = paste.fileapp.FileApp(filepath)
 
-            response.status = status
-            return app_iter
+        try:
+            status, headers, app_iter = request.call_application(fileapp)
+        except OSError:
+            base.abort(404, _('Resource data not found'))
+        response.headers.update(dict(headers))
+        content_type, content_enc = m.guess_type(rsc.get('url', ''))
 
-            h.redirect_to(rsc['url'].encode('utf-8'))
-        elif 'url' not in rsc:
-            base.abort(404, _('No download is available'))
-        else:
-            # External redirect
-            return redirect(rsc['url'].encode('utf-8'))
+        if content_type and content_type == 'application/xml':
+            response.headers['Content-Type'] = 'application/octet-stream'
+        elif content_type:
+            response.headers['Content-Type'] = content_type
+
+        response.status = status
+        return app_iter
+
+        h.redirect_to(rsc['url'].encode('utf-8'))
+    elif 'url' not in rsc:
+        base.abort(404, _('No download is available'))
+    else:
+        # External redirect
+        return redirect(rsc['url'].encode('utf-8'))
 
 
 class StatsApiController(ApiController):
