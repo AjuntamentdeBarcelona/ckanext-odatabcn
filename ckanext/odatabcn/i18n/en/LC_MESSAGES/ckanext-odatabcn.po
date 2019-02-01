@@ -2204,7 +2204,7 @@ msgid "Consultes Usuaris BackOffice"
 msgstr "BackOffice Users"
 
 msgid "Formulari Peticio Alta"
-msgstr "Semiautomated registration request form"
+msgstr "Semiautomated registration/deleted request form"
 
 msgid "Contenidors reciclatge"
 msgstr "Recycling container"
