@@ -1985,7 +1985,7 @@ msgid "User info"
 msgstr "User information"
 
 msgid "Presentacio Formacio F3"
-msgstr "Open Data BCN: Presentation to the internal departments"
+msgstr "Open Data BCN: Presentation by the internal departments"
 
 msgid "Downloads"
 msgstr "Downloads"

@@ -2158,7 +2158,7 @@ msgid "User info"
 msgstr "Información de usuario"
 
 msgid "Presentacio Formacio F3"
-msgstr "Open Data BCN:Presentación a los departamentos internos"
+msgstr "Open Data BCN:Presentación por los departamentos internos"
 
 msgid "Downloads"
 msgstr "Descargas"

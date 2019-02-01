@@ -492,7 +492,7 @@ msgid "User info"
 msgstr "Informació d'usuari"
 
 msgid "Presentacio Formacio F3"
-msgstr "Open Data BCN:Presentació als departaments interns"
+msgstr "Open Data BCN:Presentació pels departaments interns"
 
 msgid "Downloads"
 msgstr "Descàrregues"
