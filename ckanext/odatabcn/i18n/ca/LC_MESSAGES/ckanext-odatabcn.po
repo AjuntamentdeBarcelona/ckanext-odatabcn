@@ -477,7 +477,7 @@ msgid "Consultes Usuaris BackOffice"
 msgstr "Usuaris BackOffice"
 
 msgid "Formulari Peticio Alta"
-msgstr "Formulari petició d’alta/esborrat semiautomatitzada"
+msgstr "Formulari petició d’alta/esborrat semiautomatitzat"
 
 msgid "Protocol Publicacio"
 msgstr "Protocol de publicació"

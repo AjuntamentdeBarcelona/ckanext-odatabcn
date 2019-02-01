@@ -2428,7 +2428,7 @@ msgid "Consultes Usuaris BackOffice"
 msgstr "Usuarios BackOffice"
 
 msgid "Formulari Peticio Alta"
-msgstr "Formulario petición de alta/borrado semiautomatizada"
+msgstr "Formulario petición de alta/borrado semiautomatizado"
 
 msgid "Contenidors reciclatge"
 msgstr "Contenedores reciclaje"
