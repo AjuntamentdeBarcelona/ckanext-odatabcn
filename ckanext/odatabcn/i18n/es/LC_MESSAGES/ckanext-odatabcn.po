@@ -3368,3 +3368,6 @@ msgstr "Tasa emigración"
 
 msgid "Taxa immigracio"
 msgstr "Tasa inmigración"
+
+msgid "Any 2019"
+msgstr "Año 2019"
