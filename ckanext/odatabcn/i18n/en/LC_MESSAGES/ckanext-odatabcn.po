@@ -3102,3 +3102,30 @@ msgstr "Immigration rate"
 
 msgid "Any 2019"
 msgstr "Year 2019"
+
+msgid "Domicilis menors 16 anys"
+msgstr "Addresses under 16 years old"
+
+msgid "Domicilis menors 18 anys"
+msgstr "Addresses under 18 years old"
+
+msgid "Domicilis 16 a 64 anys"
+msgstr "Addresses 16 to 64 yeras old"
+
+msgid "Domicilis 65 i més anys"
+msgstr "Addresses 65 and older"
+
+msgid "Domicilis nombre persones"
+msgstr "Addresses number people"
+
+msgid "Densitat neta"
+msgstr "Net density"
+
+msgid "Taxa natalitat"
+msgstr "Birth rate"
+
+msgid "Estructura domicilis"
+msgstr "Home structure"
+
+msgid "Taxa alta omissió"
+msgstr "High rate omission"
