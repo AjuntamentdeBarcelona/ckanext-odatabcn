@@ -3381,6 +3381,9 @@ msgstr "Domicilios menores 18 años"
 msgid "Domicilis 16 a 64 anys"
 msgstr "Domicilios 16 a 64 años"
 
+msgid "Domicilis 18 a 64 anys"
+msgstr "Domicilios 18 a 64 años"
+
 msgid "Domicilis 65 i més anys"
 msgstr "Domicilios 65 y más años"
 
@@ -3398,3 +3401,6 @@ msgstr "Estructura domicilios"
 
 msgid "Taxa alta omissió"
 msgstr "Tasa alta omisión"
+
+msgid "Impulsem el que fas"
+msgstr "Impulsamos lo que haces"

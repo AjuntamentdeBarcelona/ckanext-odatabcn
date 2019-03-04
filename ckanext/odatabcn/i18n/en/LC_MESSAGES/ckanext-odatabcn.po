@@ -3112,6 +3112,9 @@ msgstr "Addresses under 18 years old"
 msgid "Domicilis 16 a 64 anys"
 msgstr "Addresses 16 to 64 yeras old"
 
+msgid "Domicilis 18 a 64 anys"
+msgstr "Addresses 18 to 64 yeras old"
+
 msgid "Domicilis 65 i més anys"
 msgstr "Addresses 65 and older"
 
@@ -3129,3 +3132,6 @@ msgstr "Home structure"
 
 msgid "Taxa alta omissió"
 msgstr "High rate omission"
+
+msgid "Impulsem el que fas"
+msgstr "Boost what you do"
