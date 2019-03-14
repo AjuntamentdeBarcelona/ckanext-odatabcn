@@ -500,7 +500,7 @@ class ResourceDownloadController(t.BaseController):
         if not site_url:
              site_url = config.get('ckan.site_url')
 			 
-        site_url = config.get('ckan.site_url') + config.get('ckan.root_path').replace('{{LANG}}', '')
+        site_url = site_url + config.get('ckan.root_path').replace('{{LANG}}', '')
         data = {
             'url': rsc['url'],
             'type': 'resource'
