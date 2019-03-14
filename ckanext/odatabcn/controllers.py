@@ -496,6 +496,10 @@ class ResourceDownloadController(t.BaseController):
         pprint.pprint(rsc.get('token_required'))
 
         # Save download to tracking_raw
+		site_url = config.get('ckan.internal_url')
+        if not site_url:
+             site_url = config.get('ckan.site_url')
+			 
         site_url = config.get('ckan.site_url') + config.get('ckan.root_path').replace('{{LANG}}', '')
         data = {
             'url': rsc['url'],
