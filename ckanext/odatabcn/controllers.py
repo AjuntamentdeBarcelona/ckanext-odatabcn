@@ -563,12 +563,17 @@ class StatsApiController(ApiController):
 
     def __call__(self, environ, start_response):
         # Save access to tracking_raw
-        site_url = config.get('ckan.site_url') + config.get('ckan.root_path').replace('{{LANG}}', '')
+        site_url = config.get('ckan.internal_url')
+        if not site_url:
+             site_url = config.get('ckan.site_url')
+        
+        site_url = site_url + config.get('ckan.root_path').replace('{{LANG}}', '')
+        
         data = {
             'url': environ['REQUEST_URI'],
             'type': 'api'
         }
-
+        
         headers = {
             'X-Forwarded-For': environ.get('REMOTE_ADDR'),
             'User-Agent': environ.get('HTTP_USER_AGENT'),
