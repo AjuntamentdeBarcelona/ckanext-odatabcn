@@ -2001,8 +2001,8 @@ msgstr "Acceso a Gobierno Abierto"
 msgid "Help"
 msgstr "Ayuda"
 
-msgid "Help us to improve"
-msgstr "Ayúdenos a mejorar"
+msgid "Contact us"
+msgstr "Contáctenos"
 
 msgid "Help Datasets"
 msgstr "Ayuda datasets"
@@ -2158,7 +2158,7 @@ msgid "User info"
 msgstr "Información de usuario"
 
 msgid "Presentacio Formacio F3"
-msgstr "Sesión de Formación grupo F3 (Abril'17)(Resp.de datasets)"
+msgstr "Open Data BCN:Presentación por los departamentos internos"
 
 msgid "Downloads"
 msgstr "Descargas"
@@ -2428,7 +2428,7 @@ msgid "Consultes Usuaris BackOffice"
 msgstr "Usuarios BackOffice"
 
 msgid "Formulari Peticio Alta"
-msgstr "Formulario petición de alta semiautomatizada"
+msgstr "Formulario petición de alta/borrado semiautomatizado"
 
 msgid "Contenidors reciclatge"
 msgstr "Contenedores reciclaje"
@@ -3212,3 +3212,195 @@ msgstr "Párquing"
 
 msgid "Lloc naixement"
 msgstr "Lugar nacimiento"
+
+msgid "Punts informació"
+msgstr "Puntos información"
+
+msgid "Nens"
+msgstr "Niños"
+
+msgid "Nenes"
+msgstr "Niñas"
+
+msgid "Lloc procedencia"
+msgstr "Lugar procedencia"
+
+msgid "Serveis Socials"
+msgstr "Servicios Sociales"
+
+msgid "Nacionalitat espanyola"
+msgstr "Nacionalidad española"
+
+msgid "Lloc destinació"
+msgstr "Destination Place"
+
+msgid "Dona"
+msgstr "Mujer"
+
+msgid "Nacionalitat estrangera"
+msgstr "Nacionalidad extranjera"
+
+msgid "Punts assessorament energètic"
+msgstr "Puntos asesoramiento energético"
+
+msgid "Habitatges tutelats"
+msgstr "Viviendas tuteladas"
+
+msgid "Semàfor"
+msgstr "Semáforo"
+
+msgid "Menjador"
+msgstr "Comedor"
+
+msgid "Dones"
+msgstr "Mujeres"
+
+msgid "Adolescència"
+msgstr "Adolescencia"
+
+msgid "Residències gent gran"
+msgstr "Residencias ancianos"
+
+msgid "Pas vianants"
+msgstr "Paso de cebra"
+
+msgid "Centres Serveis Socials"
+msgstr "Centros Servicios Sociales"
+
+msgid "Equips atenció"
+msgstr "Equipos atención"
+
+msgid "Gent Gran"
+msgstr "Ancianos"
+
+msgid "Oficines Benestar Social"
+msgstr "Oficinas Bienestar Social"
+
+msgid "Senyal"
+msgstr "Señal"
+
+msgid "Infantesa"
+msgstr "Infancia"
+
+msgid "Suport"
+msgstr "Apoyo"
+
+msgid "Centres dia"
+msgstr "Centros día"
+
+msgid "Punts atenció"
+msgstr "Puntos atención"
+
+msgid "Estacionament reservat"
+msgstr "Estacionamiento reservado"
+
+msgid "Lloc destinacio"
+msgstr "Lugar destino"
+
+msgid "Febrer"
+msgstr "Febrero"
+
+msgid "Juliol"
+msgstr "Julio"
+
+msgid "Novembre"
+msgstr "Noviembre"
+
+msgid "Gener"
+msgstr "Enero"
+
+msgid "Juny"
+msgstr "Junio"
+
+msgid "Maig"
+msgstr "Mayo"
+
+msgid "Març"
+msgstr "Marzo"
+
+msgid "Desembre"
+msgstr "Diciembre"
+
+msgid "Agost"
+msgstr "Agosto"
+
+msgid "Contractació menor a genèrica"
+msgstr "Contratación menor a genérica"
+
+msgid "Setembre"
+msgstr "Septiembre"
+
+msgid "Camions"
+msgstr "Camiones"
+
+msgid "Furgonetes"
+msgstr "Furgonetas"
+
+msgid "Altres Vehicles"
+msgstr "Otros vehículos"
+
+msgid "Territori"
+msgstr "Territorio"
+
+msgid "Economia"
+msgstr "Economía"
+
+msgid "Proximitat"
+msgstr "Proximidad"
+
+msgid "Edat mitjana"
+msgstr "Edad media"
+
+msgid "Token required"
+msgstr "Token requerido"
+
+msgid "Taxa baixa"
+msgstr "Tasa baja"
+
+msgid "Taxa mortalitat"
+msgstr "Tasa mortalidad"
+
+msgid "Taxa migració interna"
+msgstr "Tasa migración interna"
+
+msgid "Taxa emigracio"
+msgstr "Tasa emigración"
+
+msgid "Taxa immigracio"
+msgstr "Tasa inmigración"
+
+msgid "Any 2019"
+msgstr "Año 2019"
+
+msgid "Domicilis menors 16 anys"
+msgstr "Domicilios menores 16 años"
+
+msgid "Domicilis menors 18 anys"
+msgstr "Domicilios menores 18 años"
+
+msgid "Domicilis 16 a 64 anys"
+msgstr "Domicilios 16 a 64 años"
+
+msgid "Domicilis 18 a 64 anys"
+msgstr "Domicilios 18 a 64 años"
+
+msgid "Domicilis 65 i més anys"
+msgstr "Domicilios 65 y más años"
+
+msgid "Domicilis nombre persones"
+msgstr "Domicilios número personas"
+
+msgid "Densitat neta"
+msgstr "Densidad neta"
+
+msgid "Taxa natalitat"
+msgstr "Tasa natalidad"
+
+msgid "Estructura domicilis"
+msgstr "Estructura domicilios"
+
+msgid "Taxa alta omissió"
+msgstr "Tasa alta omisión"
+
+msgid "Impulsem el que fas"
+msgstr "Impulsamos lo que haces"

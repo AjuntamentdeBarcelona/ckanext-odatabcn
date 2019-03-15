@@ -259,7 +259,7 @@ a:hover, a:focus {
 }
 
 .masthead .nav > li {
-	width: 16.66%;
+	width: 13.66%;
 }
 
 .masthead .nav > li > a, .masthead .nav > li > div > a {
@@ -323,6 +323,15 @@ a:hover, a:focus {
 
 .masthead .navigation .nav-pills li a:hover, .masthead .navigation .nav-pills li.active a {
 	background:#1e529e;
+}
+
+.nav-pills>li:nth-child(6) a {
+    font-size: 12px;
+}
+
+.nav-pills>li:nth-child(7) a {
+    font-size: 12px;
+	background-color: #ccc;
 }
 
 /** Navegacion **/
@@ -928,6 +937,19 @@ div.span9 .module-content {
 	min-height: 57px;
 	margin: 0.5%;
 	padding: 10px 5px 10px 60px;
+}
+
+.token2{
+	padding: 10px 10px 5px 10px;
+	background: linear-gradient(to bottom, #d3deed 0%, #ffffff 100%);
+}
+
+.token .bcn-icon-proteccio-dades{
+	font-size: 150%;
+}
+
+.token .badge{
+	float: right;
 }
 
 .tags {

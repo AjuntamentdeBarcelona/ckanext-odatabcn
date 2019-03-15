@@ -194,8 +194,8 @@ msgstr "Accés a Govern Obert"
 msgid "Help"
 msgstr "Ajuda"
 
-msgid "Help us to improve"
-msgstr "Ajudeu-nos a millorar"
+msgid "Contact us"
+msgstr "Contacteu-nos"
 
 msgid "Help Datasets"
 msgstr "Ajuda datasets"
@@ -477,7 +477,7 @@ msgid "Consultes Usuaris BackOffice"
 msgstr "Usuaris BackOffice"
 
 msgid "Formulari Peticio Alta"
-msgstr "Formulari petició d’alta semiautomatitzada"
+msgstr "Formulari petició d’alta/esborrat semiautomatitzat"
 
 msgid "Protocol Publicacio"
 msgstr "Protocol de publicació"
@@ -492,7 +492,7 @@ msgid "User info"
 msgstr "Informació d'usuari"
 
 msgid "Presentacio Formacio F3"
-msgstr "Sessió de Formació grup F3 (Abril'17)(Resp. de datasets)"
+msgstr "Open Data BCN:Presentació pels departaments interns"
 
 msgid "Downloads"
 msgstr "Descàrregues"
@@ -685,3 +685,15 @@ msgstr "Materials Formatius"
 
 msgid "Date deactivation informed"
 msgstr "Data desactivació informada"
+
+msgid "Altres Vehicles"
+msgstr "Altres Vehícles"
+
+msgid "Token required"
+msgstr "Token requerit"
+
+msgid "La utilitzación de los servicios web en tiempo real publicados en este dataset requieren la "
+msgstr "La utilització dels serveis web en temps real publicats en aquest dataset requereixen la "
+
+msgid "solicitud previa de un token de acceso"
+msgstr "sol·licitud prèvia d'un token d'accés"

@@ -103,7 +103,8 @@ class EditfieldsPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 		for pkg in search_results['results']:
 			if not toolkit.c.user:
 				delete_private_data(pkg)
-			elif (not toolkit.c.action == 'resource_download'
+			
+			if (not toolkit.c.action == 'resource_download'
 					and not toolkit.c.action == 'resource_edit'
 					and not toolkit.c.action == 'resource_delete'
 					and not toolkit.c.action == 'resource_data'

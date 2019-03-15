@@ -12,7 +12,7 @@
         {% link_for _('Manage'), controller='package', action='edit', id=pkg.name, class_='btn pull-right manage-button', icon='wrench' %}
       {% endif %}
 	  
-	  <div class="span12">
+	  <div class="span12" typeof="dcat:Dataset">
 
       {% if c.revision_date %}
         <div class="module info alert alert-info">
@@ -27,7 +27,7 @@
 		
 		
     <h1 class="page-heading">
-        {{ h.dataset_display_name(pkg) }}
+        <span property="dc:title">{{ h.dataset_display_name(pkg) }}</span>
         {% if pkg.state.startswith('draft') %}
           [{{ _('Draft') }}]
         {% endif %}

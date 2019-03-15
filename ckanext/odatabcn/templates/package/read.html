@@ -21,7 +21,7 @@
       	{% if parent[0] %}
 			{% set href = h.url_for(controller='organization', action='read', id=parent[0].name) %}  
 		  	<li class="parent">
-				<a href="{{href}}">
+				<a href="{{href}}" rel="dc:subject">
     				{% if parent[0].image_url %}
         				<i class="{{parent[0].image_url}}"></i>
     				{% endif %}
@@ -32,7 +32,7 @@
 		{% set href = h.url_for(controller='organization', action='read', id=pkg.organization.name) %}
 		{% set organization = h.get_organization(pkg.organization.name) %}
 		<li class="child">
-			<a href="{{href}}">
+			<a href="{{href}}" rel="dc:subject">
 				{% if organization.image_url %}
         			<i class="{{ organization.image_url}}"></i>
     			{% endif %}
@@ -43,7 +43,7 @@
 	{% endif %}
 
     {% if pkg.notes %}
-        <div class="notes embedded-content">
+        <div class="notes embedded-content" property="dc:description">
           {{ h.render_markdown(h.get_translated(pkg, 'notes')) }}    
         </div>
     {% endif %}

@@ -1985,7 +1985,7 @@ msgid "User info"
 msgstr "User information"
 
 msgid "Presentacio Formacio F3"
-msgstr "Training session group F3 (April'17)(Dataset resp.)"
+msgstr "Open Data BCN: Presentation by the internal departments"
 
 msgid "Downloads"
 msgstr "Downloads"
@@ -2204,7 +2204,7 @@ msgid "Consultes Usuaris BackOffice"
 msgstr "BackOffice Users"
 
 msgid "Formulari Peticio Alta"
-msgstr "Semiautomated registration request form"
+msgstr "Semiautomated registration/deleted request form"
 
 msgid "Contenidors reciclatge"
 msgstr "Recycling container"
@@ -2931,3 +2931,207 @@ msgstr "Parking"
 
 msgid "Lloc naixement"
 msgstr "Birthplace"
+
+msgid "Punts informació"
+msgstr "Information points"
+
+msgid "Nens"
+msgstr "Boys"
+
+msgid "Nenes"
+msgstr "Girls"
+
+msgid "Lloc procedencia"
+msgstr "Origin place"
+
+msgid "Serveis Socials"
+msgstr "Social Services"
+
+msgid "Nacionalitat espanyola"
+msgstr "Spanish nationality"
+
+msgid "Lloc destinació"
+msgstr "Destination Place"
+
+msgid "Dona"
+msgstr "Woman"
+
+msgid "Nacionalitat estrangera"
+msgstr "Foreign Nationality"
+
+msgid "Punts assessorament energètic"
+msgstr "Energy advice points"
+
+msgid "Infraestructura"
+msgstr "Infrastructure"
+
+msgid "Habitatges tutelats"
+msgstr "Protected housing"
+
+msgid "Semàfor"
+msgstr "Traffic light"
+
+msgid "Menjador"
+msgstr "Dining room"
+
+msgid "Dones"
+msgstr "Women"
+
+msgid "Adolescència"
+msgstr "Adolescence"
+
+msgid "Residències gent gran"
+msgstr "Residences of the elderly"
+
+msgid "Pas vianants"
+msgstr "Pedestrian crossing"
+
+msgid "Centres Serveis Socials"
+msgstr "Social Services Centers"
+
+msgid "Equips atenció"
+msgstr "Attention teams"
+
+msgid "Gent Gran"
+msgstr "Seniors"
+
+msgid "Oficines Benestar Social"
+msgstr "Social Welfare Offices"
+
+msgid "Senyal"
+msgstr "Signal"
+
+msgid "Infantesa"
+msgstr "Childhood"
+
+msgid "Suport"
+msgstr "Support"
+
+msgid "Centres dia"
+msgstr "Day centers"
+
+msgid "Punts atenció"
+msgstr "Attention points"
+
+msgid "Estacionament reservat"
+msgstr "Reserved parking lot"
+
+msgid "Lloc destinacio"
+msgstr "Destination location"
+
+msgid "Febrer"
+msgstr "February"
+
+msgid "Juliol"
+msgstr "July"
+
+msgid "Novembre"
+msgstr "November"
+
+msgid "Gener"
+msgstr "January"
+
+msgid "Juny"
+msgstr "June"
+
+msgid "Maig"
+msgstr "May"
+
+msgid "Març"
+msgstr "March"
+
+msgid "Desembre"
+msgstr "December"
+
+msgid "Agost"
+msgstr "August"
+
+msgid "Abril"
+msgstr "April"
+
+msgid "Contractació menor a genèrica"
+msgstr "Lesser procurement to generic"
+
+msgid "Setembre"
+msgstr "September"
+
+msgid "Octubre"
+msgstr "October"
+
+msgid "Camions"
+msgstr "Trucks"
+
+msgid "Furgonetes"
+msgstr "Vans"
+
+msgid "Altres Vehicles"
+msgstr "Other vehicles"
+
+msgid "Territori"
+msgstr "Territory"
+
+msgid "Economia"
+msgstr "Economy"
+
+msgid "Proximitat"
+msgstr "Proximity"
+
+msgid "Edat mitjana"
+msgstr "Middle ages"
+
+msgid "La utilitzación de los servicios web en tiempo real publicados en este dataset requieren la "
+msgstr "The utilization of real-time web services published in this dataset requires the "
+
+msgid "solicitud previa de un token de acceso"
+msgstr "prior request for an access token"
+
+msgid "Taxa baixa"
+msgstr "Rate of low"
+
+msgid "Taxa mortalitat"
+msgstr "Mortality rate"
+
+msgid "Taxa migració interna"
+msgstr "Internal migration rate"
+
+msgid "Taxa emigracio"
+msgstr "Emigration rate"
+
+msgid "Taxa immigracio"
+msgstr "Immigration rate"
+
+msgid "Any 2019"
+msgstr "Year 2019"
+
+msgid "Domicilis menors 16 anys"
+msgstr "Addresses under 16 years old"
+
+msgid "Domicilis menors 18 anys"
+msgstr "Addresses under 18 years old"
+
+msgid "Domicilis 16 a 64 anys"
+msgstr "Addresses 16 to 64 yeras old"
+
+msgid "Domicilis 18 a 64 anys"
+msgstr "Addresses 18 to 64 yeras old"
+
+msgid "Domicilis 65 i més anys"
+msgstr "Addresses 65 and older"
+
+msgid "Domicilis nombre persones"
+msgstr "Addresses number people"
+
+msgid "Densitat neta"
+msgstr "Net density"
+
+msgid "Taxa natalitat"
+msgstr "Birth rate"
+
+msgid "Estructura domicilis"
+msgstr "Home structure"
+
+msgid "Taxa alta omissió"
+msgstr "High rate omission"
+
+msgid "Impulsem el que fas"
+msgstr "Boost what you do"

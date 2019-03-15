@@ -1,5 +1,12 @@
 {% ckan_extends %}
 
+{% block resource_item_title %}
+  <a class="heading" href="{{ url }}" title="{{ res.name or res.description }}" rel="dcat:distribution">
+    {{ h.resource_display_name(res) | truncate(50) }}<span class="format-label" property="dcat:mediaType" data-format="{{ res.format.lower() or 'data' }}" content="{{ h.get_mimetype(res) }}">{{ h.get_translated(res, 'format') }}</span>
+    {{ h.popular('views', res.tracking_summary.total, min=10) }}
+  </a>
+{% endblock %}
+
 {% block resource_item_explore %}
   {% if not url_is_edit %}
   <div class="resource-actions-small">
