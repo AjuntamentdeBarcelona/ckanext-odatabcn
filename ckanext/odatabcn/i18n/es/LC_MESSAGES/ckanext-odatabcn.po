@@ -3404,3 +3404,24 @@ msgstr "Tasa alta omisión"
 
 msgid "Impulsem el que fas"
 msgstr "Impulsamos lo que haces"
+
+msgid "Llibreries"
+msgstr "Librerias"
+
+msgid "Equipaments culturals"
+msgstr "Equipamientos culturales"
+
+msgid "Grans auditoris"
+msgstr "Grandes auditorios"
+
+msgid "Usuaris"
+msgstr "Usuarios"
+
+msgid "Xarxa llibreries Barcelona"
+msgstr "Red librerias Barcelona"
+
+msgid "Teatre"
+msgstr "Teatro"
+
+msgid "Ornamentals"
+msgstr "Ornamentales"

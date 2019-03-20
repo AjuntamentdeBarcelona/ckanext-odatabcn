@@ -3135,3 +3135,24 @@ msgstr "High rate omission"
 
 msgid "Impulsem el que fas"
 msgstr "Boost what you do"
+
+msgid "Llibreries"
+msgstr "Libraries"
+
+msgid "Equipaments culturals"
+msgstr "Cultural Facilities"
+
+msgid "Grans auditoris"
+msgstr "Large auditoriums"
+
+msgid "Usuaris"
+msgstr "Users"
+
+msgid "Xarxa llibreries Barcelona"
+msgstr "Net libraries Barcelona"
+
+msgid "Teatre"
+msgstr "Theater"
+
+msgid "Ornamentals"
+msgstr "Ornamental"
