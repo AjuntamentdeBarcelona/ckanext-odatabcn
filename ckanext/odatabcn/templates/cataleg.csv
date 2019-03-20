@@ -10,7 +10,7 @@
 {%- if logged_in -%}
 ,"date_modified"
 {%- endif -%}
-,"organization_parent_name_ca","organization_name_ca","package_count","frequency","geolocation","historical","date_deactivation_informed","api","total_views","recent_views","total_downloads_by_ip","total_downloads_absolute","total_api_access","total_api_access_absolute","tags_list","fuente"
+,"organization_parent_name_ca","organization_name_ca","package_count","frequency","geolocation","token_required","historical","date_deactivation_informed","api","total_views","recent_views","total_downloads_by_ip","total_downloads_absolute","total_api_access","total_api_access_absolute","tags_list","fuente"
 {%- if logged_in -%}
 	,"comments","author","department","maintainer","maintainer_tel","maintainer_email","broadcasting_management","broadcasting_department","broadcasting_maintainer","broadcasting_maintainer_tel","broadcasting_maintainer_email"
 {%- endif -%}
@@ -59,7 +59,7 @@
 {%- else -%}
 	,
 {%- endif -%}
-,"{{ package.organization.display_name | safe }}","{{ package.organization.package_count }}","{{ package.frequency }}","{{ package.geolocation }}","{{ package.historical }}","{{ package.date_deactivation_informed }}","{{ package.api }}","{{ package.tracking_total }}","{{ package.tracking_recent }}","{{ package.downloads }}","{{ package.downloads_absolute }}","{{ package.api_access_number }}","{{ package.api_access_number_absolute }}","{{ package.flattened_tags | safe }}","{{ package.fuente | safe }}"
+,"{{ package.organization.display_name | safe }}","{{ package.organization.package_count }}","{{ package.frequency }}","{{ package.geolocation }}","{{ package.token_required }}","{{ package.historical }}","{{ package.date_deactivation_informed }}","{{ package.api }}","{{ package.tracking_total }}","{{ package.tracking_recent }}","{{ package.downloads }}","{{ package.downloads_absolute }}","{{ package.api_access_number }}","{{ package.api_access_number_absolute }}","{{ package.flattened_tags | safe }}","{{ package.fuente | safe }}"
 {%- if logged_in -%}
 	,"{{ package.comments | safe }}","{{ package.author | safe }}","{{ package.department | safe }}","{{ package.maintainer | safe }}","{{ package.maintainer_tel | safe }}","{{ package.maintainer_email | safe  }}","{{ package.broadcasting_management | safe }}","{{ package.broadcasting_department | safe }}","{{ package.broadcasting_maintainer | safe }}","{{ package.broadcasting_maintainer_tel | safe }}","{{ package.broadcasting_maintainer_email | safe }}"
 {%- endif -%}
