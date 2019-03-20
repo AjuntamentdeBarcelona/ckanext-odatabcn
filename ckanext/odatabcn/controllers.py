@@ -189,7 +189,7 @@ class CSVController(t.BaseController):
                         qa = int(resource_qa['openness_score'])
 						
                 if 'token_required' == 'No' and resource['token_required'] == 'Yes':
-                    token_required == 'Yes'
+                    token_required = 'Yes'
 
             package['flattened_formats'] = flattened_formats
             package['downloads'] = downloads
