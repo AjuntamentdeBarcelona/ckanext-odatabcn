@@ -26,7 +26,7 @@ Example:
 	{% if tokens.required %}
 	<div class="token2">
 			<p class="token"><i class="bcn-icon-proteccio-dades"> </i>{{ _('La descarga de los recursos de este dataset requiere la ') }}<a href="/{{ h.lang() }}/tokens">{{ _('solicitud previa de un token de acceso') }}</a>
-				<a href="/{{ h.lang() }}/tokens"><span class="bcn-icon-informacio"></span></a>
+				<a style="text-decoration: none !important;" href="/{{ h.lang() }}/tokens"><span class="bcn-icon-informacio"></span></a>
 			</p>
 	</div>
 	{% endif %}
