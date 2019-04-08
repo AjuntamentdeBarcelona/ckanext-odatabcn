@@ -3425,3 +3425,33 @@ msgstr "Teatro"
 
 msgid "Ornamentals"
 msgstr "Ornamentales"
+
+msgid "Estacions"
+msgstr "Estaciones"
+
+msgid "Dades"
+msgstr "Datos"
+
+msgid "servei public"
+msgstr "Servicio público"
+
+msgid "Ciutat"
+msgstr "Ciudad"
+
+msgid "Sales música en viu"
+msgstr "Salas música en vivo"
+
+msgid "Projectes creació"
+msgstr "Proyectos creación"
+
+msgid "Contaminants"
+msgstr "Contaminantes"
+
+msgid "Estat"
+msgstr "Estado"
+
+msgid "Districtes Barcelona"
+msgstr "Distritos Barcelona"
+
+msgid "Espais prioritaris"
+msgstr "Espacios prioritarios"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ckan 2.6.0b0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2016-10-18 10:37+0100\n"
-"PO-Revision-Date: 2019-03-20 12:47+0100\n"
+"PO-Revision-Date: 2018-07-09 13:22+0200\n"
 "Last-Translator: Isabel Ruiz <isaruizmellado@gmail.com>, 2016\n"
 "Language-Team: Spanish (https://www.transifex.com/okfn/teams/11162/es/)\n"
 "MIME-Version: 1.0\n"
@@ -3079,11 +3079,11 @@ msgstr "Proximity"
 msgid "Edat mitjana"
 msgstr "Middle ages"
 
-msgid "La descarga de los recursos de este dataset requiere la "
-msgstr "Downloading resources from this dataset requires the "
+msgid "La utilitzación de los servicios web en tiempo real publicados en este dataset requieren la "
+msgstr "The utilization of real-time web services published in this dataset requires the "
 
 msgid "solicitud previa de un token de acceso"
-msgstr "previous request of an access token"
+msgstr "prior request for an access token"
 
 msgid "Taxa baixa"
 msgstr "Rate of low"
@@ -3156,3 +3156,30 @@ msgstr "Theater"
 
 msgid "Ornamentals"
 msgstr "Ornamental"
+
+msgid "Estacions"
+msgstr "Stations"
+
+msgid "Dades"
+msgstr "Data"
+
+msgid "servei public"
+msgstr "Public service"
+
+msgid "Ciutat"
+msgstr "City"
+
+msgid "Sales música en viu"
+msgstr "Live music halls"
+
+msgid "Projectes creació"
+msgstr "Creation projects"
+
+msgid "Estat"
+msgstr "Status"
+
+msgid "Districtes Barcelona"
+msgstr "Districts Barcelona"
+
+msgid "Espais prioritaris"
+msgstr "Priority spaces"
