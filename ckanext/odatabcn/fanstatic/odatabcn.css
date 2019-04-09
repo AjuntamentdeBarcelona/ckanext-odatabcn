@@ -1983,6 +1983,10 @@ label[for="include_children"] {
 		padding: 10px;
 	}
 	
+	.masthead .nav-pills > li a {
+		font-size: inherit;
+	}
+	
 	.masthead .depth-3 .arrow {
 		float: left;
 		margin-top: 3px;
