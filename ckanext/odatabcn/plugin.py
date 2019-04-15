@@ -195,12 +195,12 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
             sys.setdefaultencoding('utf-8')
 
             dbc = parse_db_config('sqlalchemy.url')
-            ckan_conn_string = "host='%s' dbname='%s' user='%s' password='%s'" % (
-                dbc['db_host'], dbc['db_name'], dbc['db_user'], dbc['db_pass'])
+            ckan_conn_string = "host='%s' port='%s' dbname='%s' user='%s' password='%s'" % (
+                dbc['db_host'], dbc['db_port'], dbc['db_name'], dbc['db_user'], dbc['db_pass'])
 
             dbd = parse_db_config('ckan.drupal.url')
-            drupal_conn_string = "host='%s' dbname='%s' user='%s' password='%s'" % (
-                dbd['db_host'], dbd['db_name'], dbd['db_user'], dbd['db_pass'])
+            drupal_conn_string = "host='%s' port='%s' dbname='%s' user='%s' password='%s'" % (
+                dbd['db_host'], dbc['db_port'], dbd['db_name'], dbd['db_user'], dbd['db_pass'])
 
             ckan_conn = psycopg2.connect(ckan_conn_string)
             drupal_conn = psycopg2.connect(drupal_conn_string)
@@ -262,8 +262,8 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
                 reload(sys)
                 sys.setdefaultencoding('utf-8')
                 dbc = parse_db_config('sqlalchemy.url')
-                ckan_conn_string = "host='%s' dbname='%s' user='%s' password='%s'" % (
-                    dbc['db_host'], dbc['db_name'], dbc['db_user'], dbc['db_pass'])
+                ckan_conn_string = "host='%s' port='%s' dbname='%s' user='%s' password='%s'" % (
+                    dbc['db_host'], dbc['db_port'], dbc['db_name'], dbc['db_user'], dbc['db_pass'])
                 ckan_conn = psycopg2.connect(ckan_conn_string)
                 ckan_cursor = ckan_conn.cursor()
                 ckan_cursor.execute(

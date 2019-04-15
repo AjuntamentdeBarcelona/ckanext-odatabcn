@@ -106,8 +106,8 @@ class CSVController(t.BaseController):
 
         # Realizamos conexion a la BBDD de Drupal para obtener el numero de comentarios de cada dataset y almacenamos los valores en un array
         dbc = parse_db_config('ckan.drupal.url')
-        ckan_conn_string = "host='%s' dbname='%s' user='%s' password='%s'" % (
-        dbc['db_host'], dbc['db_name'], dbc['db_user'], dbc['db_pass'])
+        ckan_conn_string = "host='%s' port='%s' dbname='%s' user='%s' password='%s'" % (
+        dbc['db_host'], dbc['db_port'], dbc['db_name'], dbc['db_user'], dbc['db_pass'])
         ckan_conn = psycopg2.connect(ckan_conn_string)
         ckan_cursor = ckan_conn.cursor()
         ckan_cursor.execute("""SELECT OP.pkg_name, COUNT(*) FROM opendata_package OP INNER JOIN node N ON N.tnid = OP.pkg_node_id INNER JOIN comment C ON C.nid = N.nid WHERE N.tnid != 0 GROUP BY OP.pkg_name;""")
@@ -163,7 +163,7 @@ class CSVController(t.BaseController):
                     # Lo rodeamos con otros caracteres para que los strings contenidos en otros no den resultado "true" (ej: XLS y XLSX)
                     flattened_formats = flattened_formats + resource['format'].lower() + ','
 
-                if not (resource['downloads'] == 'None'):
+                if 'downloads' in resource and not (resource['downloads'] == 'None'):
                     downloads += int(resource['downloads'])
 
                 if 'downloads_absolute' in resource and not (resource['downloads_absolute'] == 'None'):
