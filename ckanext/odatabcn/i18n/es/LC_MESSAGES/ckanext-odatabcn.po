@@ -3455,3 +3455,12 @@ msgstr "Distritos Barcelona"
 
 msgid "Espais prioritaris"
 msgstr "Espacios prioritarios"
+
+msgid "Preu total"
+msgstr "Precio total"
+
+msgid "Preu construït"
+msgstr "Precio construido"
+
+msgid "Compravenda"
+msgstr "Compraventa"

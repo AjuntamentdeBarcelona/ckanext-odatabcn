@@ -3183,3 +3183,12 @@ msgstr "Districts Barcelona"
 
 msgid "Espais prioritaris"
 msgstr "Priority spaces"
+
+msgid "Preu total"
+msgstr "Total price"
+
+msgid "Preu construït"
+msgstr "Built price"
+
+msgid "Compravenda"
+msgstr "Trading"
