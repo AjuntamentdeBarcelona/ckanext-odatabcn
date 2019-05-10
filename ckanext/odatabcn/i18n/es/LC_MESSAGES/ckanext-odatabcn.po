@@ -3464,3 +3464,6 @@ msgstr "Precio construido"
 
 msgid "Compravenda"
 msgstr "Compraventa"
+
+msgid "Incorporated in CityOs"
+msgstr "Incorporado en el CityOs"

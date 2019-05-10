@@ -700,3 +700,6 @@ msgstr "sol·licitud prèvia d'un token d'accés"
 
 msgid "servei public"
 msgstr "Servei públic"
+
+msgid "Incorporated in CityOs"
+msgstr "Incorporat al CityOs"
