@@ -3192,3 +3192,15 @@ msgstr "Built price"
 
 msgid "Compravenda"
 msgstr "Trading"
+
+msgid "Partits politics"
+msgstr "Political parties"
+
+msgid "transparència"
+msgstr "transparency"
+
+msgid "Opció vot"
+msgstr "Vot option"
+
+msgid "Abstenció"
+msgstr "Abstention"

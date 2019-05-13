@@ -3467,3 +3467,15 @@ msgstr "Compraventa"
 
 msgid "Incorporated in CityOs"
 msgstr "Incorporado en el CityOs"
+
+msgid "Partits politics"
+msgstr "Partidos políticos"
+
+msgid "transparència"
+msgstr "transparencia"
+
+msgid "Opció vot"
+msgstr "Opción voto"
+
+msgid "Abstenció"
+msgstr "Abstención"
