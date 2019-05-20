@@ -3479,3 +3479,12 @@ msgstr "Opción voto"
 
 msgid "Abstenció"
 msgstr "Abstención"
+
+msgid "Suggeriments"
+msgstr "Sugerencias"
+
+msgid "Estació"
+msgstr "Estación"
+
+msgid "rutes"
+msgstr "rutas"

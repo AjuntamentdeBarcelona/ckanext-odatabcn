@@ -3204,3 +3204,15 @@ msgstr "Vot option"
 
 msgid "Abstenció"
 msgstr "Abstention"
+
+msgid "Suggeriments"
+msgstr "Suggestions"
+
+msgid "Estació"
+msgstr "Station"
+
+msgid "rutes"
+msgstr "routes"
+
+msgid "autobús"
+msgstr "bus"
