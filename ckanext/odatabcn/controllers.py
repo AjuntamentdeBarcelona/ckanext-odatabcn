@@ -16,6 +16,7 @@ import requests
 import sys
 import unicodedata
 import ckan.lib.base as base
+from ckan.model import Session
 from ckan.lib.render import TemplateNotFound
 from ckan.common import _, OrderedDict, request, response
 from ckan.controllers.api import ApiController
@@ -120,6 +121,44 @@ class CSVController(t.BaseController):
         ckan_cursor.close()
         ckan_conn.close()
 
+        sql_downloads = '''select sum(count) AS downloads, sum(count_absolute) AS downloads_absolute, t.tracking_type, p.name from tracking_summary t
+                                inner join resource r ON r.id = t.resource_id
+                                inner join package p ON p.id = r.package_id
+                                GROUP BY p.name, t.tracking_type;'''
+        results_downloads = model.Session.execute(sql_downloads)
+
+                                
+        downloads = {}
+        downloads_absolute = {}
+        api_access_number = {}
+        api_access_number_absolute = {}
+
+        for row in results_downloads:
+            if row.tracking_type == 'resource':
+                downloads.update({row.name : row.downloads})
+                downloads_absolute.update({row.name : row.downloads_absolute})
+            else:
+                api_access_number.update({row.name : row.downloads})
+                api_access_number_absolute.update({row.name : row.downloads_absolute})
+
+        sql_views = '''SELECT t.tracking_date, t.running_total, t.recent_views, t.package_id
+                            FROM tracking_summary t
+                            INNER JOIN
+                                (SELECT package_id, MAX(tracking_date) AS tracking_date
+                                FROM tracking_summary 
+                                GROUP BY package_id) t2
+                                ON t.package_id = t2.package_id
+                            INNER JOIN package p ON p.id = t.package_id
+                            AND t.tracking_date = t2.tracking_date;'''
+        results_views = model.Session.execute(sql_views)
+
+        tracking_total = {}
+        tracking_recent = {}
+
+        for row in results_views:
+            tracking_total.update({row.package_id : row.running_total})
+            tracking_recent.update({row.package_id : row.recent_views})
+
         # Incluimos la informacion que necesitamos mostrar para cada dataset
         for package in packages:
             for key in package['notes_translated']:
@@ -128,15 +167,25 @@ class CSVController(t.BaseController):
                                                                                                                    ' ')
 
             # Obtenemos las vistas y descargas
-            sql = '''SELECT running_total, recent_views FROM tracking_summary 
-                        WHERE package_id LIKE '%s' 
-                        ORDER BY tracking_date 
-                        DESC LIMIT 1;''' % (package['id'])
-            results = model.Session.execute(sql)
+            #sql = '''SELECT running_total, recent_views FROM tracking_summary 
+            #            WHERE package_id LIKE '%s' 
+            #            ORDER BY tracking_date 
+            #            DESC LIMIT 1;''' % (package['id'])
+            #results = model.Session.execute(sql)
 
-            for m in results:
-                package['tracking_total'] = str(m.running_total)
-                package['tracking_recent'] = str(m.recent_views)
+            #for m in results:
+            #    package['tracking_total'] = str(m.running_total)
+            #    package['tracking_recent'] = str(m.recent_views)
+                
+            # Obtenemos las descargas
+            #sql2 = '''select sum(count) AS downloads, sum(count_absolute) AS downloads_absolute from tracking_summary t
+            #            inner join resource r ON r.id = t.resource_id
+            #            WHERE tracking_type='resource' and r.package_id = '%s';''' % (package['id'])
+            #results2 = model.Session.execute(sql2)
+
+            #for n in results2:
+            #    package['downloads'] = str(n.downloads)
+            #    package['downloads_absolute'] = str(n.downloads_absolute)
 
             # Obtenemos un string con las etiquetas
             tags = ''
@@ -147,14 +196,14 @@ class CSVController(t.BaseController):
             # Obtenemos un string con los formatos de sus recursos, el total de descargas y el valor de openness_score del dataset
             # y si el dataset esta automatizado
             flattened_formats = ','
-            downloads = 0
-            downloads_absolute = 0
-            api_access_number = 0
-            api_access_number_absolute = 0
+            #downloads = 0
+            #downloads_absolute = 0
+            #api_access_number = 0
+            #api_access_number_absolute = 0
             qa = 0
             automatic = 'N'
             token_required = 'No'
-			
+            
             if 'update_string' in package and package['update_string']:
                 automatic = 'S'
 
@@ -163,17 +212,17 @@ class CSVController(t.BaseController):
                     # Lo rodeamos con otros caracteres para que los strings contenidos en otros no den resultado "true" (ej: XLS y XLSX)
                     flattened_formats = flattened_formats + resource['format'].lower() + ','
 
-                if 'downloads' in resource and not (resource['downloads'] == 'None'):
-                    downloads += int(resource['downloads'])
+                #if 'downloads' in resource and not (resource['downloads'] == 'None'):
+                #    downloads += int(resource['downloads'])
 
-                if 'downloads_absolute' in resource and not (resource['downloads_absolute'] == 'None'):
-                    downloads_absolute += int(resource['downloads_absolute'])
+                #if 'downloads_absolute' in resource and not (resource['downloads_absolute'] == 'None'):
+                #    downloads_absolute += int(resource['downloads_absolute'])
 
-                if 'api_access_number' in resource and not (resource['api_access_number'] == 'None'):
-                    api_access_number += int(resource['api_access_number'])
+                #if 'api_access_number' in resource and not (resource['api_access_number'] == 'None'):
+                #    api_access_number += int(resource['api_access_number'])
 
-                if 'api_access_number_absolute' in resource and not (resource['api_access_number_absolute'] == 'None'):
-                    api_access_number_absolute += int(resource['api_access_number_absolute'])
+                #if 'api_access_number_absolute' in resource and not (resource['api_access_number_absolute'] == 'None'):
+                #    api_access_number_absolute += int(resource['api_access_number_absolute'])
 
                 if automatic == 'N':
                     if (
@@ -187,15 +236,15 @@ class CSVController(t.BaseController):
                     resource_qa = ast.literal_eval(resource['qa'])
                     if (resource_qa['openness_score'] > qa):
                         qa = int(resource_qa['openness_score'])
-						
+                        
                 if token_required == 'No' and 'token_required' in resource and resource['token_required'] == 'Yes':
                     token_required = 'Yes'
 
             package['flattened_formats'] = flattened_formats
-            package['downloads'] = downloads
-            package['downloads_absolute'] = downloads_absolute
-            package['api_access_number'] = api_access_number
-            package['api_access_number_absolute'] = api_access_number_absolute
+            #package['downloads'] = downloads
+            #package['downloads_absolute'] = downloads_absolute
+            #package['api_access_number'] = api_access_number
+            #package['api_access_number_absolute'] = api_access_number_absolute
             package['automatic'] = automatic
             package['qa'] = qa
             package['token_required'] = token_required
@@ -228,6 +277,36 @@ class CSVController(t.BaseController):
                 package['comments'] = comments[package['name']]
             else:
                 package['comments'] = 0
+            
+            if (package['name'] in downloads):
+                package['downloads'] = downloads[package['name']]
+            else:
+                package['downloads'] = 0
+            
+            if (package['name'] in downloads_absolute):
+                package['downloads_absolute'] = downloads_absolute[package['name']]
+            else:
+                package['downloads_absolute'] = 0
+            
+            if (package['name'] in api_access_number):
+                package['api_access_number'] = api_access_number[package['name']]
+            else:
+                package['api_access_number'] = 0
+            
+            if (package['name'] in api_access_number_absolute):
+                package['api_access_number_absolute'] = api_access_number_absolute[package['name']]
+            else:
+                package['api_access_number_absolute'] = 0
+
+            if (package['id'] in tracking_total):
+                package['tracking_total'] = tracking_total[package['id']]
+            else:
+                package['tracking_total'] = 0
+
+            if (package['id'] in tracking_recent):
+                package['tracking_recent'] = tracking_recent[package['id']]
+            else:
+                package['tracking_recent'] = 0
 
         curdate = d.datetime.now().strftime('%Y-%m-%d_%H-%M')
         t.response.headers['Content-Type'] = 'application/csv; charset=utf-8'
@@ -243,6 +322,39 @@ class CSVController(t.BaseController):
             'auth_user_obj': c.userobj,
             'request': request
         })
+
+    def escape_text(self, pkg_dict):
+        keys = (
+            'author',
+            'department',
+            'flattened_tags',
+            'fuente',
+            'license_title',
+            'maintainer',
+            'maintainer_email',
+            'maintainer_tel',
+            'broadcasting_maintainer',
+            'broadcasting_maintainer_tel',
+            'broadcasting_maintainer_email',
+            'broadcasting_management',
+            'broadcasting_department',
+            'observations'
+        )
+
+        for key in keys:
+            if key in pkg_dict:
+                pkg_dict[key] = pkg_dict[key].replace('"', '""')
+
+    def escape_translated_text(self, pkg_dict):
+        keys = (
+            'title',
+            'notes'
+        )
+
+        for key in keys:
+            for locale in i18n.get_locales():
+                if key + '_translated' in pkg_dict:
+                    pkg_dict[key + '_translated'][locale] = pkg_dict[key + '_translated'][locale].replace('"', '""')
 
     def view_tags(self):
 
@@ -278,215 +390,6 @@ class CSVController(t.BaseController):
             'tags': results,
             'unicodedata': unicodedata
         })
-
-    def view_stats_by_date(self):
-
-        context = {'model': model, 'session': model.Session,
-                   'user': c.user, 'for_view': True,
-                   'auth_user_obj': c.userobj}
-
-        # Obtenemos parametros de configuracion
-        site_url = config.get('ckan.site_url') + config.get('ckan.root_path').replace('{{LANG}}', '')
-
-        # Inicializamos variables
-        now = d.datetime.now()
-        year_from = 2005
-        year_to = now.year
-
-        # Comprobamos si es un usuario identificado o no
-        logged_in = False
-        if 'user' in context and context['user']:
-            logged_in = True
-
-        # Si se pide el catalogo publico ignoramos el usuario identificado
-        if logged_in and 'public' in request.params and request.params.get('public') == 'true':
-            logged_in = False
-
-        if not logged_in:
-            # Obtenemos el catalogo para usuarios no identificados
-            packages = t.get_action('package_search')(context, {
-                'include_private': False,
-                'rows': 1000,
-                'sort': 'name asc'
-            })
-            packages = packages['results']
-        elif c.userobj.sysadmin:
-            # Obtenemos el catalogo para sysadmin
-            packages = t.get_action('package_search')(context, {
-                'include_private': True,
-                'rows': 1000,
-                'sort': 'name asc'
-            })
-            packages = packages['results']
-        else:
-            # Obtenemos el catalogo para usuarios identificados: solo los de sus organizaciones
-            user_org = t.get_action('organization_list_for_user')(context, {
-                'permission': 'create_dataset'
-            })
-            org_facets = ''
-            for org in user_org:
-                if org_facets != '':
-                    org_facets = org_facets + ' OR '
-                org_facets = org_facets + org['name']
-
-            packages = t.get_action('package_search')(context, {
-                'fq': 'organization:(' + org_facets + ')',
-                'include_private': True,
-                'rows': 1000,
-                'sort': 'name asc'
-            })
-            packages = packages['results']
-
-        # obtenemos los formatos
-        formats = t.get_action('format_autocomplete')(context, {
-            'q': '',
-            'limit': 50
-        })
-        # puede devolver formatos duplicados, lo convertimos a un set que eliminara los elementos
-        # duplicados y de nuevo a una lista
-        formats = list(set(formats))
-
-        for format in formats:
-            format_strip = format.strip()
-            if not format_strip:
-                formats.remove(format)
-
-        # Incluimos la informacion que necesitamos mostrar para cada dataset
-        for package in packages:
-            for key in package['notes_translated']:
-                if package['notes_translated'][key]:
-                    package['notes_translated'][key] = package['notes_translated'][key].replace('\n', ' ').replace('\r',
-                                                                                                                   ' ')
-
-            # Obtenemos las vistas y descargas
-            sql = 'SELECT name FROM package;'
-            results = model.Session.execute(sql)
-
-            for m in results:
-                package['dataset_name'] = str(m.name)
-
-            # Obtenemos un string con las etiquetas
-            tags = ''
-            for tag in package['tags']:
-                tags = tags + ' ' + tag['display_name']
-            package['flattened_tags'] = tags
-
-            # Obtenemos un string con los formatos de sus recursos, el total de descargas y el valor de openness_score del dataset
-            # y si el dataset esta automatizado
-            flattened_formats = ','
-            downloads = 0
-            downloads_absolute = 0
-            api_access_number = 0
-            api_access_number_absolute = 0
-            qa = 0
-            automatic = 'N'
-			
-            if 'update_string' in package and package['update_string']:
-                automatic = 'S'
-
-            for resource in package['resources']:
-                if resource['format'].lower() not in flattened_formats:
-                    # Lo rodeamos con otros caracteres para que los strings contenidos en otros no den resultado "true" (ej: XLS y XLSX)
-                    flattened_formats = flattened_formats + resource['format'].lower() + ','
-
-                if not (resource['downloads'] == 'None'):
-                    downloads += int(resource['downloads'])
-
-                if 'downloads_absolute' in resource and not (resource['downloads_absolute'] == 'None'):
-                    downloads_absolute += int(resource['downloads_absolute'])
-
-                if 'api_access_number' in resource and not (resource['api_access_number'] == 'None'):
-                    api_access_number += int(resource['api_access_number'])
-
-                if 'api_access_number_absolute' in resource and not (resource['api_access_number_absolute'] == 'None'):
-                    api_access_number_absolute += int(resource['api_access_number_absolute'])
-
-                if automatic == 'N':
-                    if (
-                            not resource['url_type'] == 'upload' and
-                            not '/resources/opendata/' in resource['url'] and
-                            not '/resource/' + resource['id'] + '/download/' in resource['url']
-                    ):
-                        automatic = 'S'
-
-                if 'qa' in resource:
-                    resource_qa = ast.literal_eval(resource['qa'])
-                    if (resource_qa['openness_score'] > qa):
-                        qa = int(resource_qa['openness_score'])
-				
-
-            package['flattened_formats'] = flattened_formats
-            package['downloads'] = downloads
-            package['downloads_absolute'] = downloads_absolute
-            package['api_access_number'] = api_access_number
-            package['api_access_number_absolute'] = api_access_number_absolute
-            package['automatic'] = automatic
-            package['qa'] = qa
-
-            # Establecemos la tabla de formatos para cada dataset
-            package['formats'] = OrderedDict()
-
-            for format in formats:
-                format_value = 'N'
-                if ',' + format + ',' in flattened_formats:
-                    format_value = 'S'
-
-                package['formats'][format] = format_value
-
-            # Establecemos la tabla de anyos para cada dataset
-            package['years'] = OrderedDict()
-            for year in range(year_from, year_to + 1):
-                year_value = 'N'
-                if 'Any ' + str(year) in package['flattened_tags']:
-                    year_value = 'S'
-
-                package['years'][year] = year_value
-
-            # Escapamos los campos de texto
-            self.escape_text(package)
-            self.escape_translated_text(package)
-
-        curdate = d.datetime.now().strftime('%Y-%m-%d_%H-%M')
-        t.response.headers['Content-Type'] = 'application/csv; charset=utf-8'
-        t.response.headers['Content-Disposition'] = 'attachment; filename=statsBCN' + curdate + '.csv'
-        return t.render('stats_by_date.csv', extra_vars={
-            'packages': packages,
-            'year_from': year_from,
-            'year_to': year_to,
-        })
-
-    def escape_text(self, pkg_dict):
-        keys = (
-            'author',
-            'department',
-            'flattened_tags',
-            'fuente',
-            'license_title',
-            'maintainer',
-            'maintainer_email',
-            'maintainer_tel',
-            'broadcasting_maintainer',
-            'broadcasting_maintainer_tel',
-            'broadcasting_maintainer_email',
-            'broadcasting_management',
-            'broadcasting_department',
-            'observations'
-        )
-
-        for key in keys:
-            if key in pkg_dict:
-                pkg_dict[key] = pkg_dict[key].replace('"', '""')
-
-    def escape_translated_text(self, pkg_dict):
-        keys = (
-            'title',
-            'notes'
-        )
-
-        for key in keys:
-            for locale in i18n.get_locales():
-                if key + '_translated' in pkg_dict:
-                    pkg_dict[key + '_translated'][locale] = pkg_dict[key + '_translated'][locale].replace('"', '""')
 
 
 class ResourceDownloadController(t.BaseController):
@@ -524,6 +427,7 @@ class ResourceDownloadController(t.BaseController):
         requests.post(site_url + '_tracking',
                       data=data,
                       headers=headers)
+        #CustomTrackingController.update(data, environ)
 
         if rsc.get('token_required') == 'Yes':
             authentication = environ.get('HTTP_AUTHORIZATION', '')
@@ -598,3 +502,24 @@ class StatsApiController(ApiController):
                       headers=headers)
 
         return ApiController.__call__(self, environ, start_response)
+
+class CustomTrackingController:
+
+    @staticmethod
+    def update(data, environ):
+
+        # we want a unique anonomized key for each user so that we do
+        # not count multiple clicks from the same user.
+        key = ''.join([
+            environ.get('HTTP_USER_AGENT'),
+            environ.get('REMOTE_ADDR'),
+            environ.get('HTTP_ACCEPT_LANGUAGE', ''),
+            environ.get('HTTP_ACCEPT_ENCODING', ''),
+        ])
+        key = hashlib.md5(key).hexdigest()
+        # store key/data here
+
+        sql = '''INSERT INTO tracking_raw
+                 (user_key, url, tracking_type)
+                 VALUES (%s, %s, %s)'''
+        Session.execute(sql, key, data.get('url'), data.get('type'))
