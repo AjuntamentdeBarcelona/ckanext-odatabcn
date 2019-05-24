@@ -101,7 +101,7 @@ msgstr "A petició alcaldía"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "PETICIO_NEGOCI"
-msgstr "Segons disponibilitat"
+msgstr "Segons disponibilitat/necessitat"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "BIMESTRAL"

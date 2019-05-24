@@ -85,7 +85,7 @@ msgstr "Mayor request"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "PETICIO_NEGOCI"
-msgstr "According to availability"
+msgstr "According to availability/needed"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "BIMESTRAL"
