@@ -3216,3 +3216,12 @@ msgstr "routes"
 
 msgid "autobús"
 msgstr "bus"
+
+msgid "Serveis sanitaris"
+msgstr "Health services"
+
+msgid "Farmàcies"
+msgstr "Pharmacies"
+
+msgid "Catàleg"
+msgstr "Catalog"

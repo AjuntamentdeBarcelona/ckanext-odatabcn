@@ -3488,3 +3488,15 @@ msgstr "Estación"
 
 msgid "rutes"
 msgstr "rutas"
+
+msgid "Serveis sanitaris"
+msgstr "Servicios sanitarios"
+
+msgid "Farmàcies"
+msgstr "Farmacias"
+
+msgid "Catàleg"
+msgstr "Catálogo"
+
+msgid "Hospitals"
+msgstr "Hospitales"
