@@ -3500,3 +3500,15 @@ msgstr "Catálogo"
 
 msgid "Hospitals"
 msgstr "Hospitales"
+
+msgid "Ensenyament no reglat"
+msgstr "Enseñanza no reglada"
+
+msgid "Ensenyament reglat"
+msgstr "Enseñanza reglada"
+
+msgid "Ensenyament infantil"
+msgstr "Enseñanza infantil"
+
+msgid "Centres Atenció Primària"
+msgstr "Centros Atención Primaria"

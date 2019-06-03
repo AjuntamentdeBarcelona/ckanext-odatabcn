@@ -3225,3 +3225,15 @@ msgstr "Pharmacies"
 
 msgid "Catàleg"
 msgstr "Catalog"
+
+msgid "Ensenyament no reglat"
+msgstr "Non-regulated education"
+
+msgid "Ensenyament reglat"
+msgstr "Regulated education"
+
+msgid "Ensenyament infantil"
+msgstr "Child education"
+
+msgid "Centres Atenció Primària"
+msgstr "Primary Care Centers"
