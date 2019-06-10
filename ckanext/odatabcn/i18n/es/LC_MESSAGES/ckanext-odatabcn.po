@@ -3512,3 +3512,9 @@ msgstr "Enseñanza infantil"
 
 msgid "Centres Atenció Primària"
 msgstr "Centros Atención Primaria"
+
+msgid "Artícles"
+msgstr "Artículos"
+
+msgid "Capítols"
+msgstr "Capítulos"

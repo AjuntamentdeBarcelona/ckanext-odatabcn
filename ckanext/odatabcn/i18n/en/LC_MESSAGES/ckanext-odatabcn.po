@@ -3237,3 +3237,9 @@ msgstr "Child education"
 
 msgid "Centres Atenció Primària"
 msgstr "Primary Care Centers"
+
+msgid "Artícles"
+msgstr "Articles"
+
+msgid "Capítols"
+msgstr "Chapters"
