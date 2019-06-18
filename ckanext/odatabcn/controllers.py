@@ -436,7 +436,7 @@ class ResourceDownloadController(t.BaseController):
                 base.abort(403, _('No existe authentication y no se permite la descarga del recurso'))
 
             dbd = parse_db_config('ckan.drupal.url')
-            drupal_conn_string = "host='%s' dbname='%s' user='%s' password='%s'" % (dbd['db_host'], dbd['db_name'], dbd['db_user'], dbd['db_pass'])
+            drupal_conn_string = "host='%s' dbname='%s' port='%s' user='%s' password='%s'" % (dbd['db_host'], dbd['db_name'], dbd['db_port'], dbd['db_user'], dbd['db_pass'])
             drupal_conn = psycopg2.connect(drupal_conn_string)
             drupal_cursor = drupal_conn.cursor()
             drupal_cursor.execute("""select id_usuario from opendata_tokens where tkn_usuario=%s""", (authentication,))
