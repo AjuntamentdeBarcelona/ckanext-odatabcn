@@ -3243,3 +3243,15 @@ msgstr "Articles"
 
 msgid "Capítols"
 msgstr "Chapters"
+
+msgid "Alta padró"
+msgstr "Census registration"
+
+msgid "Població que viu sola"
+msgstr "Population that lives alone"
+
+msgid "Lloc de naixement"
+msgstr "Place of birth"
+
+msgid "Edat any a any"
+msgstr "Age year to year"

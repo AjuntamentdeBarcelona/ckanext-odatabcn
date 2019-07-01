@@ -3518,3 +3518,18 @@ msgstr "Artículos"
 
 msgid "Capítols"
 msgstr "Capítulos"
+
+msgid "autobús"
+msgstr "Autobús"
+
+msgid "Alta padró"
+msgstr "Alta padrón"
+
+msgid "Població que viu sola"
+msgstr "Población que vive sola"
+
+msgid "Lloc de naixement"
+msgstr "Lugar de nacimiento"
+
+msgid "Edat any a any"
+msgstr "Edad año a año"
