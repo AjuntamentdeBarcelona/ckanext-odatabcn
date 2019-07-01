@@ -50,9 +50,13 @@ class EditfieldsPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 			
 		#Actualiza valor de API en package	
 		pkg_dict['api'] = 'No'	
+		pkg_dict['token_required'] = 'No'	
 		for resource in pkg_dict['resources']:
 			if (resource['datastore_active']):
 				pkg_dict['api'] = 'Yes'
+				
+			if ('token_required' in resource and resource['token_required']):
+				pkg_dict['token_required'] = 'Yes'
 			
 	def before_search(self, search_params): 
 
