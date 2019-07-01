@@ -202,7 +202,6 @@ class CSVController(t.BaseController):
             #api_access_number_absolute = 0
             qa = 0
             automatic = 'N'
-            token_required = 'No'
             
             if 'update_string' in package and package['update_string']:
                 automatic = 'S'
@@ -237,8 +236,6 @@ class CSVController(t.BaseController):
                     if (resource_qa['openness_score'] > qa):
                         qa = int(resource_qa['openness_score'])
                         
-                if token_required == 'No' and 'token_required' in resource and resource['token_required'] == 'Yes':
-                    token_required = 'Yes'
 
             package['flattened_formats'] = flattened_formats
             #package['downloads'] = downloads
@@ -247,7 +244,6 @@ class CSVController(t.BaseController):
             #package['api_access_number_absolute'] = api_access_number_absolute
             package['automatic'] = automatic
             package['qa'] = qa
-            package['token_required'] = token_required
 
             # Establecemos la tabla de formatos para cada dataset
             package['formats'] = OrderedDict()
