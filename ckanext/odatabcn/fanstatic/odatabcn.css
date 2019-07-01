@@ -727,7 +727,6 @@ span.depth-2 {
 }
 
 /** Help_text info **/
-/*.modal { display: none; }*/
 
 #dataset-edit.dataset-form.form-horizontal .control-group.control-medium .info-block {
 	margin-top: 0px;
@@ -737,18 +736,20 @@ span.depth-2 {
 }
 
 .dataset-form.form-horizontal .control-group .info-block {
-	font-size: 14px;
 	padding-left: 10px !important;
-	float: unset !important;
+	width: 45px;
+	height: 40px;
 }
 
 #dataset-edit.dataset-form.form-horizontal .control-group .info-block .icon-info-sign:hover {
 	cursor: pointer;
 }
 
-/*.dataset-form.form-horizontal .control-group .info-block .icon-info-sign { 
-	display: none;
-}*/
+.dataset-form.form-horizontal .control-group .info-block .icon-info-sign { 
+	float: unset;
+	position: relative;
+	top: 5px;
+}
 
 
 
