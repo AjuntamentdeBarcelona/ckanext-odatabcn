@@ -107,6 +107,10 @@ class EditfieldsPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 		for pkg in search_results['results']:
 			if not toolkit.c.user:
 				delete_private_data(pkg)
+				
+			for resource in pkg['resources']:			
+				if ('token_required' in resource and resource['token_required']):
+					pkg['token_required'] = 'Yes'
 			
 			if (not toolkit.c.action == 'resource_download'
 					and not toolkit.c.action == 'resource_edit'
