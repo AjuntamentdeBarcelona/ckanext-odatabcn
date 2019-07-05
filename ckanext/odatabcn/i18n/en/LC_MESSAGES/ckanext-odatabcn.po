@@ -3079,11 +3079,11 @@ msgstr "Proximity"
 msgid "Edat mitjana"
 msgstr "Middle ages"
 
-msgid "La utilitzación de los servicios web en tiempo real publicados en este dataset requieren la "
-msgstr "The utilization of real-time web services published in this dataset requires the "
+msgid "La descarga de algunos de los recursos de este dataset requiere la "
+msgstr "Downloading some of the resources in this dataset requires the "
 
 msgid "solicitud previa de un token de acceso"
-msgstr "prior request for an access token"
+msgstr "previous request of an access token"
 
 msgid "Taxa baixa"
 msgstr "Rate of low"
