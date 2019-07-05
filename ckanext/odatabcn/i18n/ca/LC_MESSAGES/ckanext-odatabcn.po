@@ -692,8 +692,8 @@ msgstr "Altres Vehícles"
 msgid "Token required"
 msgstr "Token requerit"
 
-msgid "La utilitzación de los servicios web en tiempo real publicados en este dataset requieren la "
-msgstr "La utilització dels serveis web en temps real publicats en aquest dataset requereixen la "
+msgid "La descarga de algunos de los recursos de este dataset requiere la "
+msgstr "La descàrrega d'alguns dels recursos d'aquest dataset requereix la "
 
 msgid "solicitud previa de un token de acceso"
 msgstr "sol·licitud prèvia d'un token d'accés"
