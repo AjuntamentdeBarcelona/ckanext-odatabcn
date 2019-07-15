@@ -55,7 +55,7 @@ class EditfieldsPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 			if (resource['datastore_active']):
 				pkg_dict['api'] = 'Yes'
 				
-			if ('token_required' in resource and resource['token_required']):
+			if ('token_required' in resource and resource['token_required'] == 'Yes'):
 				pkg_dict['token_required'] = 'Yes'
 			
 	def before_search(self, search_params): 
@@ -112,7 +112,7 @@ class EditfieldsPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 				delete_private_data(pkg)
 				
 			for resource in pkg['resources']:			
-				if ('token_required' in resource and resource['token_required']):
+				if ('token_required' in resource and resource['token_required'] == 'Yes'):
 					pkg['token_required'] = 'Yes'
 			
 			if (not toolkit.c.action == 'resource_download'

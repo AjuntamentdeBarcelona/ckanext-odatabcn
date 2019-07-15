@@ -172,7 +172,7 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
         facets_dict['frequency'] = toolkit._('Frequency')
         facets_dict['historical'] = toolkit._('Historical information')
         facets_dict['api'] = toolkit._('API available')
-        facets_dict['token_required'] = toolkit._('Token required')
+        #facets_dict['token_required'] = toolkit._('Token required')
         if toolkit.c.userobj:
             facets_dict['date_deactivation_informed'] = toolkit._('Date deactivation informed')
         return facets_dict
@@ -182,7 +182,7 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
         facets_dict['frequency'] = toolkit._('Frequency')
         facets_dict['historical'] = toolkit._('Historical information')
         facets_dict['api'] = toolkit._('API available')
-        facets_dict['token_required'] = toolkit._('Token required')
+        #facets_dict['token_required'] = toolkit._('Token required')
         if toolkit.c.userobj:
             facets_dict['date_deactivation_informed'] = toolkit._('Date deactivation informed')
         return facets_dict
