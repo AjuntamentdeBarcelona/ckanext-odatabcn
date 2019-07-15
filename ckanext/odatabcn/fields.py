@@ -103,8 +103,11 @@ class EditfieldsPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 		#Do not include private data if user is not logged in
 		#Change resource download URL to track downloads
 		site_url = config.get('ckan.site_url') + config.get('ckan.root_path').replace('{{LANG}}', '')
-		
+
 		for pkg in search_results['results']:
+		
+			pkg['token_required'] = 'No'	
+			
 			if not toolkit.c.user:
 				delete_private_data(pkg)
 				
