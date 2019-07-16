@@ -3255,3 +3255,9 @@ msgstr "Place of birth"
 
 msgid "Edat any a any"
 msgstr "Age year to year"
+
+msgid "Monocolor - Blanc"
+msgstr "Monocolor - White"
+
+msgid "Monocolor - Negre"
+msgstr "Monocolor - Black"
