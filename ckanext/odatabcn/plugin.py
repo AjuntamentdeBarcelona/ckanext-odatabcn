@@ -72,23 +72,18 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 
     def before_map(self, map):
         map.connect(
-            'stats_by_date', '/stats_by_date.csv',
-            controller='ckanext.odatabcn.controllers:CSVController',
-            action='view_stats_by_date'
-        )
-        map.connect(
             'cataleg', '/cataleg.csv',
-            controller='ckanext.odatabcn.controllers:CSVController',
+            controller='ckanext.odatabcn.csv_controller:CSVController',
             action='view'
         )
         map.connect(
             'tags_csv', '/tags.csv',
-            controller='ckanext.odatabcn.controllers:CSVController',
+            controller='ckanext.odatabcn.csv_controller:CSVController',
             action='view_tags'
         )
         map.connect(
             'tags_html', '/tags',
-            controller='ckanext.odatabcn.controllers:CSVController',
+            controller='ckanext.odatabcn.controllers:TagsController',
             action='view_tags_html'
         )
         map.connect(
