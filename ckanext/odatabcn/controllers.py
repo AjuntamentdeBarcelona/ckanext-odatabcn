@@ -11,6 +11,7 @@ import model as extmodel
 import paste.fileapp
 import psycopg2
 import requests
+import unicodedata
 from ckan.common import _, OrderedDict, request, response
 from ckan.controllers.api import ApiController
 from ckan.lib.cli import parse_db_config
