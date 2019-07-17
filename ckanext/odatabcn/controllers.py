@@ -126,8 +126,8 @@ class CustomTrackingController:
         # we want a unique anonimized key for each user so that we do
         # not count multiple clicks from the same user.
         key = ''.join([
-            environ.get('HTTP_USER_AGENT'),
-            environ.get('REMOTE_ADDR'),
+            environ.get('HTTP_USER_AGENT', ''),
+            environ.get('REMOTE_ADDR', ''),
             environ.get('HTTP_ACCEPT_LANGUAGE', ''),
             environ.get('HTTP_ACCEPT_ENCODING', ''),
         ])
