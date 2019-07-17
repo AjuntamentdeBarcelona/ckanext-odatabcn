@@ -11,7 +11,7 @@ from ckan import plugins
 from ckan import model
 from ckan.plugins import toolkit
 from ckan.plugins import interfaces
-from ckan.model import domain_object
+from ckan.model import domain_object, Session
 from ckan.model import package as _package
 from ckan.lib.plugins import DefaultTranslation
 from ckanext.odatabcn import validators
@@ -252,36 +252,25 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 
     # Add resource downloads to resource_show
     def before_show(context, resource_dict):
-
         try:
             # Add download info and change resource url only if not downloading a resource, editing or indexing
             if not toolkit.c.action == 'resource_download' and not toolkit.c.action == 'datapusher_submit':
                 reload(sys)
-                sys.setdefaultencoding('utf-8')
-                dbc = parse_db_config('sqlalchemy.url')
-                ckan_conn_string = "host='%s' port='%s' dbname='%s' user='%s' password='%s'" % (
-                    dbc['db_host'], dbc['db_port'], dbc['db_name'], dbc['db_user'], dbc['db_pass'])
-                ckan_conn = psycopg2.connect(ckan_conn_string)
-                ckan_cursor = ckan_conn.cursor()
-                ckan_cursor.execute(
-                    """select sum(count), sum(count_absolute), t.tracking_type from tracking_summary t where t.resource_id=%s AND count IS NOT NULL AND count_absolute IS NOT NULL GROUP BY t.tracking_type""",
-                    (resource_dict['id'],))
+                sql = '''select sum(count), sum(count_absolute), t.tracking_type from tracking_summary t where t.resource_id=:resource_id AND count IS NOT NULL AND count_absolute IS NOT NULL GROUP BY t.tracking_type'''
+                results = model.Session.execute(sql, {'resource_id' : resource_dict['id']})
 
                 resource_dict['downloads'] = 0
                 resource_dict['downloads_absolute'] = 0
                 resource_dict['api_access_number'] = 0
                 resource_dict['api_access_number_absolute'] = 0
 
-                for row in ckan_cursor:
+                for row in results:
                     if row[2] == 'api':
                         resource_dict['api_access_number'] = int(row[0])
                         resource_dict['api_access_number_absolute'] = int(row[1])
                     elif row[2] == 'resource':
                         resource_dict['downloads'] = int(row[0])
                         resource_dict['downloads_absolute'] = int(row[1])
-
-                ckan_cursor.close()
-                ckan_conn.close()
 
                 if (not toolkit.c.action == 'resource_edit'
                         and not toolkit.c.action == 'resource_delete'
@@ -297,8 +286,8 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
                         resource_dict['url'] = '{site_url}dataset/{id}/resource/{resource_id}/download'.format(
                             site_url=site_url, id=resource_dict['package_id'], resource_id=resource_dict['id']).encode(
                             'utf-8')
-        except:
-            log.error('An error occurred on the before_show method')
+        except Exception as e:
+            log.error('An error occurred on the before_show method' + e.message)
 
     # Add resource downloads to resource_search
     def after_search(context, search_results):

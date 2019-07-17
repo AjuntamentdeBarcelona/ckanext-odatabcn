@@ -132,6 +132,6 @@ class CustomTrackingController:
             environ.get('HTTP_ACCEPT_ENCODING', ''),
         ])
         key = hashlib.md5(key).hexdigest()
-        tracking = extmodel.TrackingRaw(user_key= key, url = url, tracking_type = type)
+        tracking = extmodel.TrackingRaw(user_key = key, url = url, tracking_type = type)
         model.Session.add(tracking)
         model.Session.commit()
