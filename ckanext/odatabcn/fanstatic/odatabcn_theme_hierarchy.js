@@ -50,6 +50,9 @@
   /** Affix navigation **/
   $('#nav').affix();
   $('#nav-wrapper').height($("#nav").height());
+  
+  /** Show modal **/
+  $('#dashboardModal').modal('show');
  
   
   function checkSize () {
