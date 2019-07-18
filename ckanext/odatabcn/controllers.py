@@ -1,6 +1,7 @@
 import ckan.lib.base as base
 import ckan.lib.helpers as h
 import ckan.lib.uploader as uploader
+import ckan.logic as logic
 import ckan.model as model
 import ckan.plugins.toolkit as t
 import datetime as d
@@ -52,8 +53,8 @@ class ResourceDownloadController(t.BaseController):
 
         try:
             rsc = t.get_action('resource_show')(context, {'id': resource_id})
-        except (NotFound, NotAuthorized):
-            abort(404, _('Resource not found'))
+        except (logic.NotFound, logic.NotAuthorized):
+            base.abort(404, _('Resource not found'))
 
         headers = {
             'X-Forwarded-For': environ.get('REMOTE_ADDR'),
