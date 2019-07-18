@@ -3261,3 +3261,6 @@ msgstr "Monocolor - White"
 
 msgid "Monocolor - Negre"
 msgstr "Monocolor - Black"
+
+msgid "Para descargar este recurso, es necesaria la "
+msgstr "To download this resource, yout must "

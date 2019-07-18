@@ -706,3 +706,6 @@ msgstr "Incorporat al CityOs"
 
 msgid "autobús"
 msgstr "Autobús"
+
+msgid "Para descargar este recurso, es necesaria la "
+msgstr "Per descarregar aquest recurs, és necessari la "

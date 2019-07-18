@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import ckan.lib.base as base
 import ckan.lib.helpers as h
 import ckan.lib.uploader as uploader
@@ -67,14 +70,12 @@ class ResourceDownloadController(t.BaseController):
             authentication = environ.get('HTTP_AUTHORIZATION', '')
 
             if authentication == '':
-                base.abort(403, _('No existe authentication y no se permite la descarga del recurso'))
-
+                 return t.render('package/error_tokens.html')
             dbd = parse_db_config('ckan.drupal.url')
             drupal_conn_string = "host='%s' dbname='%s' port='%s' user='%s' password='%s'" % (dbd['db_host'], dbd['db_name'], dbd['db_port'], dbd['db_user'], dbd['db_pass'])
             drupal_conn = psycopg2.connect(drupal_conn_string)
             drupal_cursor = drupal_conn.cursor()
             drupal_cursor.execute("""select id_usuario from opendata_tokens where tkn_usuario=%s""", (authentication,))
-            #drupal_cursor.execute("""select id_usuario from opendata_tokens""")
 
             if drupal_cursor.rowcount < 1:
                 base.abort(403, _('El token no existe y no se permite la descarga del recurso'))
