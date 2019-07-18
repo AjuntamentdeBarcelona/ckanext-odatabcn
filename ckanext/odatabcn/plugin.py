@@ -191,17 +191,11 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
             reload(sys)
             sys.setdefaultencoding('utf-8')
 
-            dbc = parse_db_config('sqlalchemy.url')
-            ckan_conn_string = "host='%s' port='%s' dbname='%s' user='%s' password='%s'" % (
+            dbc = parse_db_config('ckan.drupal.url')
+            drupal_conn_string = "host='%s' port='%s' dbname='%s' user='%s' password='%s'" % (
                 dbc['db_host'], dbc['db_port'], dbc['db_name'], dbc['db_user'], dbc['db_pass'])
 
-            dbd = parse_db_config('ckan.drupal.url')
-            drupal_conn_string = "host='%s' port='%s' dbname='%s' user='%s' password='%s'" % (
-                dbd['db_host'], dbc['db_port'], dbd['db_name'], dbd['db_user'], dbd['db_pass'])
-
-            ckan_conn = psycopg2.connect(ckan_conn_string)
             drupal_conn = psycopg2.connect(drupal_conn_string)
-            ckan_cursor = ckan_conn.cursor()
             drupal_cursor = drupal_conn.cursor()
 
             titles = json.loads(entity.title_translated)
@@ -242,9 +236,50 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
             drupal_conn.commit()
             drupal_cursor.close()
             drupal_conn.close()
+            
+            #Habilitar una vez importado el esquema de drupal en ckan
+            '''
+            titles = json.loads(entity.title_translated)
+            descriptions = json.loads(entity.notes_translated)
+            title_en = ''
+            if 'en' in titles:
+                title_en = titles['en']
+            title_es = ''
+            if 'es' in titles:
+                title_es = titles['es']
+            title_ca = ''
+            if 'ca' in titles:
+                title_ca = titles['ca']
+            desc_en = ''
+            if 'en' in descriptions:
+                desc_en = descriptions['en']
+            desc_es = ''
+            if 'es' in descriptions:
+                desc_es = descriptions['es']
+            desc_ca = ''
+            if 'ca' in descriptions:
+                desc_ca = descriptions['ca']
 
-            ckan_cursor.close()
-            ckan_conn.close()
+            log.debug("Inserting package %s: %s %s %s: %s %s %s %s" % (
+                entity.id, entity.name, title_en, title_es, title_ca, desc_en, desc_es, desc_ca))
+
+            try:
+                sql = """insert into opendata_package (pkg_id, pkg_name, pkg_title_en, pkg_title_es, pkg_title_ca, pkg_description_en, pkg_description_es, pkg_description_ca)
+                    values (:entity_id, :entity_name, :title_en, :title_es, :title_ca, :desc_en, :desc_es, :desc_ca)"""
+                model.Session.execute(sql, {
+                        "entity_id" : entity.id, 
+                        "entity_name" : self.format_drupal_string(entity.name), 
+                        "title_en" : self.format_drupal_string(title_en),
+                        "title_es" : self.format_drupal_string(title_es), 
+                        "title_ca" : self.format_drupal_string(title_ca),
+                        "desc_en" : self.format_drupal_string(desc_en), 
+                        "desc_es" : self.format_drupal_string(desc_es),
+                        "desc_ca" : self.format_drupal_string(desc_ca)
+                    })
+                model.Session.commit()
+            except Exception as e:
+                log.warn('Postgresql Database Exception %s', e.message)
+            '''
 
     def format_drupal_string(self, ds):
         dstr = ds.encode('utf-8')
