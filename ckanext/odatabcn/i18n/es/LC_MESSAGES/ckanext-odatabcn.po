@@ -101,7 +101,7 @@ msgstr "A petición de alcaldía"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "PETICIO_NEGOCI"
-msgstr "Según disponibilidad"
+msgstr "Según disponibilidad/necesidad"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "BIMESTRAL"
@@ -3404,3 +3404,138 @@ msgstr "Tasa alta omisión"
 
 msgid "Impulsem el que fas"
 msgstr "Impulsamos lo que haces"
+
+msgid "Llibreries"
+msgstr "Librerias"
+
+msgid "Equipaments culturals"
+msgstr "Equipamientos culturales"
+
+msgid "Grans auditoris"
+msgstr "Grandes auditorios"
+
+msgid "Usuaris"
+msgstr "Usuarios"
+
+msgid "Xarxa llibreries Barcelona"
+msgstr "Red librerias Barcelona"
+
+msgid "Teatre"
+msgstr "Teatro"
+
+msgid "Ornamentals"
+msgstr "Ornamentales"
+
+msgid "Estacions"
+msgstr "Estaciones"
+
+msgid "Dades"
+msgstr "Datos"
+
+msgid "servei public"
+msgstr "Servicio público"
+
+msgid "Ciutat"
+msgstr "Ciudad"
+
+msgid "Sales música en viu"
+msgstr "Salas música en vivo"
+
+msgid "Projectes creació"
+msgstr "Proyectos creación"
+
+msgid "Contaminants"
+msgstr "Contaminantes"
+
+msgid "Estat"
+msgstr "Estado"
+
+msgid "Districtes Barcelona"
+msgstr "Distritos Barcelona"
+
+msgid "Espais prioritaris"
+msgstr "Espacios prioritarios"
+
+msgid "Preu total"
+msgstr "Precio total"
+
+msgid "Preu construït"
+msgstr "Precio construido"
+
+msgid "Compravenda"
+msgstr "Compraventa"
+
+msgid "Incorporated in CityOs"
+msgstr "Incorporado en el CityOs"
+
+msgid "Partits politics"
+msgstr "Partidos políticos"
+
+msgid "transparència"
+msgstr "transparencia"
+
+msgid "Opció vot"
+msgstr "Opción voto"
+
+msgid "Abstenció"
+msgstr "Abstención"
+
+msgid "Suggeriments"
+msgstr "Sugerencias"
+
+msgid "Estació"
+msgstr "Estación"
+
+msgid "rutes"
+msgstr "rutas"
+
+msgid "Serveis sanitaris"
+msgstr "Servicios sanitarios"
+
+msgid "Farmàcies"
+msgstr "Farmacias"
+
+msgid "Catàleg"
+msgstr "Catálogo"
+
+msgid "Hospitals"
+msgstr "Hospitales"
+
+msgid "Ensenyament no reglat"
+msgstr "Enseñanza no reglada"
+
+msgid "Ensenyament reglat"
+msgstr "Enseñanza reglada"
+
+msgid "Ensenyament infantil"
+msgstr "Enseñanza infantil"
+
+msgid "Centres Atenció Primària"
+msgstr "Centros Atención Primaria"
+
+msgid "Artícles"
+msgstr "Artículos"
+
+msgid "Capítols"
+msgstr "Capítulos"
+
+msgid "autobús"
+msgstr "Autobús"
+
+msgid "Alta padró"
+msgstr "Alta padrón"
+
+msgid "Població que viu sola"
+msgstr "Población que vive sola"
+
+msgid "Lloc de naixement"
+msgstr "Lugar de nacimiento"
+
+msgid "Edat any a any"
+msgstr "Edad año a año"
+
+msgid "Monocolor - Blanc"
+msgstr "Monocolor - Blanco"
+
+msgid "Monocolor - Negre"
+msgstr "Monocolor - Negro"

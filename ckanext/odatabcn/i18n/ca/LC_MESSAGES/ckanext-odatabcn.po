@@ -101,7 +101,7 @@ msgstr "A petició alcaldía"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "PETICIO_NEGOCI"
-msgstr "Segons disponibilitat"
+msgstr "Segons disponibilitat/necessitat"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "BIMESTRAL"
@@ -692,8 +692,20 @@ msgstr "Altres Vehícles"
 msgid "Token required"
 msgstr "Token requerit"
 
-msgid "La utilitzación de los servicios web en tiempo real publicados en este dataset requieren la "
-msgstr "La utilització dels serveis web en temps real publicats en aquest dataset requereixen la "
+msgid "La descarga de algunos de los recursos de este dataset requiere la "
+msgstr "La descàrrega d'alguns dels recursos d'aquest dataset requereix la "
 
 msgid "solicitud previa de un token de acceso"
 msgstr "sol·licitud prèvia d'un token d'accés"
+
+msgid "servei public"
+msgstr "Servei públic"
+
+msgid "Incorporated in CityOs"
+msgstr "Incorporat al CityOs"
+
+msgid "autobús"
+msgstr "Autobús"
+
+msgid "Para descargar este recurso, es necesaria la "
+msgstr "Per descarregar aquest recurs, és necessari la "

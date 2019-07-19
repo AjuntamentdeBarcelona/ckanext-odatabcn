@@ -85,7 +85,7 @@ msgstr "Mayor request"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "PETICIO_NEGOCI"
-msgstr "According to availability"
+msgstr "According to availability/needed"
 
 #: ckan/templates/package/snippets/package_metadata_fields.html
 msgid "BIMESTRAL"
@@ -3079,11 +3079,11 @@ msgstr "Proximity"
 msgid "Edat mitjana"
 msgstr "Middle ages"
 
-msgid "La utilitzación de los servicios web en tiempo real publicados en este dataset requieren la "
-msgstr "The utilization of real-time web services published in this dataset requires the "
+msgid "La descarga de algunos de los recursos de este dataset requiere la "
+msgstr "Downloading some of the resources in this dataset requires the "
 
 msgid "solicitud previa de un token de acceso"
-msgstr "prior request for an access token"
+msgstr "previous request of an access token"
 
 msgid "Taxa baixa"
 msgstr "Rate of low"
@@ -3135,3 +3135,132 @@ msgstr "High rate omission"
 
 msgid "Impulsem el que fas"
 msgstr "Boost what you do"
+
+msgid "Llibreries"
+msgstr "Libraries"
+
+msgid "Equipaments culturals"
+msgstr "Cultural Facilities"
+
+msgid "Grans auditoris"
+msgstr "Large auditoriums"
+
+msgid "Usuaris"
+msgstr "Users"
+
+msgid "Xarxa llibreries Barcelona"
+msgstr "Net libraries Barcelona"
+
+msgid "Teatre"
+msgstr "Theater"
+
+msgid "Ornamentals"
+msgstr "Ornamental"
+
+msgid "Estacions"
+msgstr "Stations"
+
+msgid "Dades"
+msgstr "Data"
+
+msgid "servei public"
+msgstr "Public service"
+
+msgid "Ciutat"
+msgstr "City"
+
+msgid "Sales música en viu"
+msgstr "Live music halls"
+
+msgid "Projectes creació"
+msgstr "Creation projects"
+
+msgid "Estat"
+msgstr "Status"
+
+msgid "Districtes Barcelona"
+msgstr "Districts Barcelona"
+
+msgid "Espais prioritaris"
+msgstr "Priority spaces"
+
+msgid "Preu total"
+msgstr "Total price"
+
+msgid "Preu construït"
+msgstr "Built price"
+
+msgid "Compravenda"
+msgstr "Trading"
+
+msgid "Partits politics"
+msgstr "Political parties"
+
+msgid "transparència"
+msgstr "transparency"
+
+msgid "Opció vot"
+msgstr "Vot option"
+
+msgid "Abstenció"
+msgstr "Abstention"
+
+msgid "Suggeriments"
+msgstr "Suggestions"
+
+msgid "Estació"
+msgstr "Station"
+
+msgid "rutes"
+msgstr "routes"
+
+msgid "autobús"
+msgstr "bus"
+
+msgid "Serveis sanitaris"
+msgstr "Health services"
+
+msgid "Farmàcies"
+msgstr "Pharmacies"
+
+msgid "Catàleg"
+msgstr "Catalog"
+
+msgid "Ensenyament no reglat"
+msgstr "Non-regulated education"
+
+msgid "Ensenyament reglat"
+msgstr "Regulated education"
+
+msgid "Ensenyament infantil"
+msgstr "Child education"
+
+msgid "Centres Atenció Primària"
+msgstr "Primary Care Centers"
+
+msgid "Artícles"
+msgstr "Articles"
+
+msgid "Capítols"
+msgstr "Chapters"
+
+msgid "Alta padró"
+msgstr "Census registration"
+
+msgid "Població que viu sola"
+msgstr "Population that lives alone"
+
+msgid "Lloc de naixement"
+msgstr "Place of birth"
+
+msgid "Edat any a any"
+msgstr "Age year to year"
+
+msgid "Monocolor - Blanc"
+msgstr "Monocolor - White"
+
+msgid "Monocolor - Negre"
+msgstr "Monocolor - Black"
+
+msgid "Para descargar este recurso, es necesaria la "
+msgstr "To download this resource, yout must "

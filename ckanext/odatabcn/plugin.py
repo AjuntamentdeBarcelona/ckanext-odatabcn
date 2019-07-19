@@ -11,7 +11,7 @@ from ckan import plugins
 from ckan import model
 from ckan.plugins import toolkit
 from ckan.plugins import interfaces
-from ckan.model import domain_object
+from ckan.model import domain_object, Session
 from ckan.model import package as _package
 from ckan.lib.plugins import DefaultTranslation
 from ckanext.odatabcn import validators
@@ -72,23 +72,18 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 
     def before_map(self, map):
         map.connect(
-            'stats_by_date', '/stats_by_date.csv',
-            controller='ckanext.odatabcn.controllers:CSVController',
-            action='view_stats_by_date'
-        )
-        map.connect(
             'cataleg', '/cataleg.csv',
-            controller='ckanext.odatabcn.controllers:CSVController',
+            controller='ckanext.odatabcn.csv_controller:CSVController',
             action='view'
         )
         map.connect(
             'tags_csv', '/tags.csv',
-            controller='ckanext.odatabcn.controllers:CSVController',
+            controller='ckanext.odatabcn.csv_controller:CSVController',
             action='view_tags'
         )
         map.connect(
             'tags_html', '/tags',
-            controller='ckanext.odatabcn.controllers:CSVController',
+            controller='ckanext.odatabcn.controllers:TagsController',
             action='view_tags_html'
         )
         map.connect(
@@ -172,6 +167,7 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
         facets_dict['frequency'] = toolkit._('Frequency')
         facets_dict['historical'] = toolkit._('Historical information')
         facets_dict['api'] = toolkit._('API available')
+        facets_dict['token_required'] = toolkit._('Token required')
         if toolkit.c.userobj:
             facets_dict['date_deactivation_informed'] = toolkit._('Date deactivation informed')
         return facets_dict
@@ -181,6 +177,7 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
         facets_dict['frequency'] = toolkit._('Frequency')
         facets_dict['historical'] = toolkit._('Historical information')
         facets_dict['api'] = toolkit._('API available')
+        facets_dict['token_required'] = toolkit._('Token required')
         if toolkit.c.userobj:
             facets_dict['date_deactivation_informed'] = toolkit._('Date deactivation informed')
         return facets_dict
@@ -194,17 +191,11 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
             reload(sys)
             sys.setdefaultencoding('utf-8')
 
-            dbc = parse_db_config('sqlalchemy.url')
-            ckan_conn_string = "host='%s' dbname='%s' user='%s' password='%s'" % (
-                dbc['db_host'], dbc['db_name'], dbc['db_user'], dbc['db_pass'])
+            dbc = parse_db_config('ckan.drupal.url')
+            drupal_conn_string = "host='%s' port='%s' dbname='%s' user='%s' password='%s'" % (
+                dbc['db_host'], dbc['db_port'], dbc['db_name'], dbc['db_user'], dbc['db_pass'])
 
-            dbd = parse_db_config('ckan.drupal.url')
-            drupal_conn_string = "host='%s' dbname='%s' user='%s' password='%s'" % (
-                dbd['db_host'], dbd['db_name'], dbd['db_user'], dbd['db_pass'])
-
-            ckan_conn = psycopg2.connect(ckan_conn_string)
             drupal_conn = psycopg2.connect(drupal_conn_string)
-            ckan_cursor = ckan_conn.cursor()
             drupal_cursor = drupal_conn.cursor()
 
             titles = json.loads(entity.title_translated)
@@ -245,9 +236,50 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
             drupal_conn.commit()
             drupal_cursor.close()
             drupal_conn.close()
+            
+            #Habilitar una vez importado el esquema de drupal en ckan
+            '''
+            titles = json.loads(entity.title_translated)
+            descriptions = json.loads(entity.notes_translated)
+            title_en = ''
+            if 'en' in titles:
+                title_en = titles['en']
+            title_es = ''
+            if 'es' in titles:
+                title_es = titles['es']
+            title_ca = ''
+            if 'ca' in titles:
+                title_ca = titles['ca']
+            desc_en = ''
+            if 'en' in descriptions:
+                desc_en = descriptions['en']
+            desc_es = ''
+            if 'es' in descriptions:
+                desc_es = descriptions['es']
+            desc_ca = ''
+            if 'ca' in descriptions:
+                desc_ca = descriptions['ca']
 
-            ckan_cursor.close()
-            ckan_conn.close()
+            log.debug("Inserting package %s: %s %s %s: %s %s %s %s" % (
+                entity.id, entity.name, title_en, title_es, title_ca, desc_en, desc_es, desc_ca))
+
+            try:
+                sql = """insert into opendata_package (pkg_id, pkg_name, pkg_title_en, pkg_title_es, pkg_title_ca, pkg_description_en, pkg_description_es, pkg_description_ca)
+                    values (:entity_id, :entity_name, :title_en, :title_es, :title_ca, :desc_en, :desc_es, :desc_ca)"""
+                model.Session.execute(sql, {
+                        "entity_id" : entity.id, 
+                        "entity_name" : self.format_drupal_string(entity.name), 
+                        "title_en" : self.format_drupal_string(title_en),
+                        "title_es" : self.format_drupal_string(title_es), 
+                        "title_ca" : self.format_drupal_string(title_ca),
+                        "desc_en" : self.format_drupal_string(desc_en), 
+                        "desc_es" : self.format_drupal_string(desc_es),
+                        "desc_ca" : self.format_drupal_string(desc_ca)
+                    })
+                model.Session.commit()
+            except Exception as e:
+                log.warn('Postgresql Database Exception %s', e.message)
+            '''
 
     def format_drupal_string(self, ds):
         dstr = ds.encode('utf-8')
@@ -255,36 +287,25 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
 
     # Add resource downloads to resource_show
     def before_show(context, resource_dict):
-
         try:
             # Add download info and change resource url only if not downloading a resource, editing or indexing
             if not toolkit.c.action == 'resource_download' and not toolkit.c.action == 'datapusher_submit':
                 reload(sys)
-                sys.setdefaultencoding('utf-8')
-                dbc = parse_db_config('sqlalchemy.url')
-                ckan_conn_string = "host='%s' dbname='%s' user='%s' password='%s'" % (
-                    dbc['db_host'], dbc['db_name'], dbc['db_user'], dbc['db_pass'])
-                ckan_conn = psycopg2.connect(ckan_conn_string)
-                ckan_cursor = ckan_conn.cursor()
-                ckan_cursor.execute(
-                    """select sum(count), sum(count_absolute), t.tracking_type from tracking_summary t where t.resource_id=%s AND count IS NOT NULL AND count_absolute IS NOT NULL GROUP BY t.tracking_type""",
-                    (resource_dict['id'],))
+                sql = '''select sum(count), sum(count_absolute), t.tracking_type from tracking_summary t where t.resource_id=:resource_id AND count IS NOT NULL AND count_absolute IS NOT NULL GROUP BY t.tracking_type'''
+                results = model.Session.execute(sql, {'resource_id' : resource_dict['id']})
 
                 resource_dict['downloads'] = 0
                 resource_dict['downloads_absolute'] = 0
                 resource_dict['api_access_number'] = 0
                 resource_dict['api_access_number_absolute'] = 0
 
-                for row in ckan_cursor:
+                for row in results:
                     if row[2] == 'api':
                         resource_dict['api_access_number'] = int(row[0])
                         resource_dict['api_access_number_absolute'] = int(row[1])
                     elif row[2] == 'resource':
                         resource_dict['downloads'] = int(row[0])
                         resource_dict['downloads_absolute'] = int(row[1])
-
-                ckan_cursor.close()
-                ckan_conn.close()
 
                 if (not toolkit.c.action == 'resource_edit'
                         and not toolkit.c.action == 'resource_delete'
@@ -300,8 +321,8 @@ class OdatabcnPlugin(plugins.SingletonPlugin, DefaultTranslation, toolkit.Defaul
                         resource_dict['url'] = '{site_url}dataset/{id}/resource/{resource_id}/download'.format(
                             site_url=site_url, id=resource_dict['package_id'], resource_id=resource_dict['id']).encode(
                             'utf-8')
-        except:
-            log.error('An error occurred on the before_show method')
+        except Exception as e:
+            log.error('An error occurred on the before_show method' + e.message)
 
     # Add resource downloads to resource_search
     def after_search(context, search_results):

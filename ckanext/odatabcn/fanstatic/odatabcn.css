@@ -12,6 +12,7 @@
   font-style: normal;
 }
 
+
 [class^="bcn-icon2-"] {
 	/* use !important to prevent issues with browser extensions that change fonts */
 	font-family: 'icoajuntament2' !important;
@@ -725,6 +726,30 @@ span.depth-2 {
 	color: #fff;
 }
 
+/** Help_text info **/
+
+#dataset-edit.dataset-form.form-horizontal .control-group.control-medium .info-block {
+	margin-top: 0px;
+	padding-bottom: 0px;
+	padding-top: 0px;
+	display: inline;
+}
+
+.dataset-form.form-horizontal .control-group .info-block {
+	padding-left: 10px !important;
+	width: 45px;
+	height: 40px;
+}
+
+#dataset-edit.dataset-form.form-horizontal .control-group .info-block .icon-info-sign:hover {
+	cursor: pointer;
+}
+
+.dataset-form.form-horizontal .control-group .info-block .icon-info-sign { 
+	float: unset;
+	position: relative;
+	top: 5px;
+}
 
 /** CKAN content **/
 .module-content {
@@ -1305,7 +1330,7 @@ a.tag:hover {
 	color: #fff;
 }
 
-.secondary .module:first-child + .module .module-heading, .secondary .module:first-child + .module + .module + .module .module-heading, .secondary .module:first-child + .module + .module + .module + .module + .module .module-heading, .secondary .module:first-child + .module + .module + .module + .module + .module + .module + .module .module-heading {
+.secondary .module:first-child + .module .module-heading, .secondary .module:first-child + .module + .module + .module .module-heading, .secondary .module:first-child + .module + .module + .module + .module + .module .module-heading, .secondary .module:first-child + .module + .module + .module + .module + .module + .module + .module .module-heading, .secondary .module:first-child + .module + .module + .module + .module + .module + .module + .module + .module + .module .module-heading {
 	background: #5342AE;	
 }
 
@@ -1981,6 +2006,10 @@ label[for="include_children"] {
 	.masthead .dropdown-menu .depth-3 li {
 		border-bottom: 0px;
 		padding: 10px;
+	}
+	
+	.masthead .nav-pills > li a {
+		font-size: inherit;
 	}
 	
 	.masthead .depth-3 .arrow {

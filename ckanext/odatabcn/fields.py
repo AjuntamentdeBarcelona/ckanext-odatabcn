@@ -50,9 +50,13 @@ class EditfieldsPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 			
 		#Actualiza valor de API en package	
 		pkg_dict['api'] = 'No'	
+		pkg_dict['token_required'] = 'No'	
 		for resource in pkg_dict['resources']:
 			if (resource['datastore_active']):
 				pkg_dict['api'] = 'Yes'
+				
+			if ('token_required' in resource and resource['token_required'] == 'Yes'):
+				pkg_dict['token_required'] = 'Yes'
 			
 	def before_search(self, search_params): 
 
@@ -99,10 +103,17 @@ class EditfieldsPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 		#Do not include private data if user is not logged in
 		#Change resource download URL to track downloads
 		site_url = config.get('ckan.site_url') + config.get('ckan.root_path').replace('{{LANG}}', '')
-		
+
 		for pkg in search_results['results']:
+		
+			pkg['token_required'] = 'No'	
+			
 			if not toolkit.c.user:
 				delete_private_data(pkg)
+				
+			for resource in pkg['resources']:			
+				if ('token_required' in resource and resource['token_required'] == 'Yes'):
+					pkg['token_required'] = 'Yes'
 			
 			if (not toolkit.c.action == 'resource_download'
 					and not toolkit.c.action == 'resource_edit'

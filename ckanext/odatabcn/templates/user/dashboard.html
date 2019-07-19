@@ -1,0 +1,43 @@
+{% ckan_extends %}
+
+{% set user = c.userobj %}
+
+    {% block page_header %}
+   <!-- Button trigger modal -->
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#dashboardModal">
+ Últims avisos
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="dashboardModal" tabindex="-1" role="dialog" aria-labelledby="exampleDashboardModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleDashboardModalLabel" style="display: inline;">Aviso</h5>
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique ex consectetur purus pellentesque, a cursus ex porta. In faucibus est eros, ac aliquet urna hendrerit dictum.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Tancar</button>
+      </div>
+    </div>
+  </div>
+</div>
+	  <header class="module-content page-header hug">
+        <div class="content_action">
+          {% link_for _('Edit settings'), controller='user', action='edit', id=user.name, class_='btn', icon='cog' %}
+        </div>
+        <ul class="nav nav-tabs">
+          {{ h.build_nav_icon('user_dashboard', _('News feed')) }}
+          {{ h.build_nav_icon('user_dashboard_datasets', _('My Datasets')) }}
+          {{ h.build_nav_icon('user_dashboard_organizations', _('My Organizations')) }}
+          {{ h.build_nav_icon('user_dashboard_groups', _('My Groups')) }}
+        </ul>
+      </header>
+    {% endblock %}
+
