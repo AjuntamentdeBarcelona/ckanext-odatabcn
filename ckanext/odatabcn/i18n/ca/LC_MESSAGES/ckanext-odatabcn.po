@@ -709,3 +709,9 @@ msgstr "Autobús"
 
 msgid "Para descargar este recurso, es necesaria la "
 msgstr "Per descarregar aquest recurs, és necessari la "
+
+msgid "Unique downloads"
+msgstr "Descàrregues recents"
+
+msgid "Total downloads"
+msgstr "Descàrregues totals"

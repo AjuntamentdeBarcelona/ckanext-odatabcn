@@ -3539,3 +3539,9 @@ msgstr "Monocolor - Blanco"
 
 msgid "Monocolor - Negre"
 msgstr "Monocolor - Negro"
+
+msgid "Unique downloads"
+msgstr "Descargas recientes"
+
+msgid "Total downloads"
+msgstr "Descargas totales"
