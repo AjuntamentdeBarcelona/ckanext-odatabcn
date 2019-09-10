@@ -3264,3 +3264,6 @@ msgstr "Monocolor - Black"
 
 msgid "Para descargar este recurso, es necesaria la "
 msgstr "To download this resource, yout must "
+
+msgid "Unique downloads"
+msgstr "Total downloads by IP"

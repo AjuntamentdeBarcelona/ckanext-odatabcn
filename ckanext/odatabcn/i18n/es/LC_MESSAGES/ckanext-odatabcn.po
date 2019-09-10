@@ -3541,7 +3541,7 @@ msgid "Monocolor - Negre"
 msgstr "Monocolor - Negro"
 
 msgid "Unique downloads"
-msgstr "Descargas recientes"
+msgstr "Descargas totales por IP"
 
 msgid "Total downloads"
 msgstr "Descargas totales"
