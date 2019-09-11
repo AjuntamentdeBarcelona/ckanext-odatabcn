@@ -14,7 +14,7 @@
 {%- if logged_in -%}
 ,"date_deactivation_informed"
 {%- endif -%}
-,"api","total_views","recent_views","total_downloads_by_ip","total_downloads_absolute","total_api_access","total_api_access_absolute","tags_list","fuente"
+,"api","total_views","recent_views","total_downloads_by_ip","total_downloads_absolute","total_api_access_by_api","total_api_access_absolute","tags_list","fuente"
 {%- if logged_in -%}
 	,"comments","author","department","maintainer","maintainer_tel","maintainer_email","broadcasting_management","broadcasting_department","broadcasting_maintainer","broadcasting_maintainer_tel","broadcasting_maintainer_email"
 {%- endif -%}
