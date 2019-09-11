@@ -735,6 +735,17 @@ span.depth-2 {
 	display: inline;
 }
 
+.dataset-form div[data-module=dataset-visibility] .control-group .controls { display: flex; }
+.dataset-form div[data-module=dataset-visibility] .control-group .controls .info-block { margin: 0; paddint-top: 0; }
+.dataset-form div[data-module=dataset-visibility] .control-group .controls .info-block .icon-info-sign { top: 0px; }
+
+.dataset-form.form-horizontal .control-group.control-full { position: relative; }
+.dataset-form.form-horizontal .control-group.control-full .info-block {
+	position: absolute;
+	top: -15px;
+	right: -40px;
+}
+
 .dataset-form.form-horizontal .control-group .info-block {
 	padding-left: 10px !important;
 	width: 45px;
