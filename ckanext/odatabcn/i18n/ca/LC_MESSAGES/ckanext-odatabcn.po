@@ -715,3 +715,6 @@ msgstr "Descàrregues totals per IP"
 
 msgid "Total downloads"
 msgstr "Descàrregues totals"
+
+msgid "My account"
+msgstr "El meu compte"

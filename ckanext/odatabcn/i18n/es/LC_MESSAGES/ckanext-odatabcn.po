@@ -3545,3 +3545,6 @@ msgstr "Descargas totales por IP"
 
 msgid "Total downloads"
 msgstr "Descargas totales"
+
+msgid "My account"
+msgstr "Mi cuenta"
