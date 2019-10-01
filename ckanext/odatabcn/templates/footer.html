@@ -79,6 +79,15 @@
 			  {% set lang = h.lang() %}
               <li>Ajuntament de Barcelona</li>
 			  {% if lang=='ca' %}
+              <li><a href="https://opendata-ajuntament.barcelona.cat/ca/user">El meu compte</a></li>
+			  {% endif %}
+			  {% if lang=='es' %}
+			  <li><a href="https://opendata-ajuntament.barcelona.cat/es/user">Mi cuenta</a></li>
+			  {% endif %}
+			  {% if lang=='en' %}
+			  <li><a href="https://opendata-ajuntament.barcelona.cat/en/user">My account</a></li>
+			  {% endif %}
+			  {% if lang=='ca' %}
               <li><a href="http://www.bcn.cat/cgi-bin/consultesIRIS?id=239">{{ _('Contact us') }}</a></li>
 			  {% endif %}
 			  {% if lang=='es' %}
