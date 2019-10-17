@@ -3548,3 +3548,9 @@ msgstr "Descargas totales"
 
 msgid "My account"
 msgstr "Mi cuenta"
+
+msgid "Visibility texto manual"
+msgstr "El dataset es 'Privado' en el momento de la creación o en el caso de desactivación y 'Público' cuando se publica al portal. Los responsables del servicio Open Data BCN son los encargados del cambio de la visibilidad."
+
+msgid "Field texto manual"
+msgstr "Campos que constituyen los recursos del dataset. Inicialmente se presentan una lista de 3 y, a medida que se van ampliando, se añadiran nuevos automáticamente. Los campos vacios no se mostrarán."
