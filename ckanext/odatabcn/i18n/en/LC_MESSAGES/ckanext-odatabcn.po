@@ -3267,3 +3267,9 @@ msgstr "To download this resource, yout must "
 
 msgid "Unique downloads"
 msgstr "Total downloads by IP"
+
+msgid "Visibility texto manual"
+msgstr "El dataset és 'Privat' en el moment de la creació o en el cas dedesactivació i 'Públic', un cop es publica al portal. Els responsables del servei Open Data BCN són els encarregats del canvi de visibilitat."
+
+msgid "Field texto manual"
+msgstr "Camps que constitueixen els recursos del dataset. Inicialment es presenta una llista de 3 i, a mesura que es vagin omplint, se n’afegiran de nous automàticament. Els camps buits no es mostraran."
