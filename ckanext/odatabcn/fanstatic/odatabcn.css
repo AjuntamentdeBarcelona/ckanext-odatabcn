@@ -736,7 +736,7 @@ span.depth-2 {
 }
 
 .dataset-form div[data-module=dataset-visibility] .control-group .controls { display: flex; }
-.dataset-form div[data-module=dataset-visibility] .control-group .controls .info-block { margin: 0; paddint-top: 0; }
+.dataset-form div[data-module=dataset-visibility] .control-group .controls .info-block { margin: 0; padding-top: 0; }
 .dataset-form div[data-module=dataset-visibility] .control-group .controls .info-block .icon-info-sign { top: 0px; }
 
 .dataset-form.form-horizontal .control-group.control-full { position: relative; }
@@ -752,7 +752,8 @@ span.depth-2 {
 	height: 40px;
 }
 
-#dataset-edit.dataset-form.form-horizontal .control-group .info-block .icon-info-sign:hover {
+#dataset-edit.dataset-form.form-horizontal .control-group .info-block .icon-info-sign:hover, 
+#dataset-edit.dataset-form.form-horizontal fieldset.help .info-block .icon-info-sign:hover {
 	cursor: pointer;
 }
 
@@ -761,6 +762,12 @@ span.depth-2 {
 	position: relative;
 	top: 5px;
 }
+
+#dataset-edit.dataset-form.form-horizontal fieldset.help {  position: relative; }
+#dataset-edit.dataset-form.form-horizontal fieldset.help .info-block.inline { position: absolute; padding: 0; margin: 0; top: -55px; left: 460px; } 
+
+#dataset-edit.dataset-form.form-horizontal [data-module="custom-fields"] { position: relative; }
+#dataset-edit.dataset-form.form-horizontal [data-module="custom-fields"] > .info-block { position: absolute; top: -6px; right: 0px; padding: 0; }
 
 /** CKAN content **/
 .module-content {
