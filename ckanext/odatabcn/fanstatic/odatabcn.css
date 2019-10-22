@@ -764,7 +764,7 @@ span.depth-2 {
 	top: 5px;
 }
 
-#dataset-edit.dataset-form.form-horizontal fieldset.help {  position: relative; }
+#dataset-edit.dataset-form.form-horizontal fieldset.help { position: relative; width: 100%; height: 100%; }
 #dataset-edit.dataset-form.form-horizontal fieldset.help .info-block.inline { position: absolute; padding: 0; margin: 0; top: -55px; left: 460px; } 
 
 #dataset-edit.dataset-form.form-horizontal [data-module="custom-fields"] { position: relative; }
