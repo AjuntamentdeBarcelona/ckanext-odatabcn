@@ -728,12 +728,15 @@ span.depth-2 {
 
 /** Help_text info **/
 
-#dataset-edit.dataset-form.form-horizontal .control-group.control-medium .info-block {
+#dataset-edit.dataset-form.form-horizontal .control-group.control-medium .info-block,
+#resource-edit.dataset-form.form-horizontal .control-group.control-medium .info-block
+{
 	margin-top: 0px;
 	padding-bottom: 0px;
 	padding-top: 0px;
 	display: inline;
 }
+
 
 .dataset-form div[data-module=dataset-visibility] .control-group .controls { display: flex; }
 .dataset-form div[data-module=dataset-visibility] .control-group .controls .info-block { margin: 0; padding-top: 0; }
@@ -754,8 +757,18 @@ span.depth-2 {
 
 #dataset-edit.dataset-form.form-horizontal .control-group .info-block .icon-info-sign:hover, 
 #dataset-edit.dataset-form.form-horizontal fieldset.help .info-block .icon-info-sign:hover,
-#dataset-edit.dataset-form.form-horizontal [data-module="custom-fields"] > .info-block:hover {
+#dataset-edit.dataset-form.form-horizontal [data-module="custom-fields"] > .info-block:hover,
+#resource-edit.dataset-form.form-horizontal .control-group .info-block .icon-info-sign:hover,
+#resource-edit.dataset-form.form-horizontal .image-upload + .info-block .icon-info-sign:hover {
 	cursor: pointer;
+}
+
+#resource-edit.dataset-form.form-horizontal .image-upload { width: 100%; }
+#resource-edit.dataset-form.form-horizontal .image-upload + .info-block { 
+	float: right; 
+	top: -56px; 
+	padding: 0; 
+	left: 34px; 
 }
 
 .dataset-form.form-horizontal .control-group .info-block .icon-info-sign { 
