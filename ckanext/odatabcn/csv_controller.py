@@ -28,7 +28,7 @@ class CSVController(t.BaseController):
 
         # Inicializamos variables
         now = d.datetime.now()
-        year_from = 2005
+        year_from = 1989
         year_to = now.year
 
         # Comprobamos si es un usuario identificado o no
