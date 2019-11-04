@@ -53,7 +53,8 @@ class BsmApi (CustomApi):
         self.user_id = user_id
         self.user_key = user_key
         self.user_secret = user_secret
-        self.username = username
+        self.username = username + '5'
+        pprint.pprint(self.username)
         self.email = email
         
         if app_token:
@@ -65,8 +66,7 @@ class BsmApi (CustomApi):
         
     def execute(self):
         if (not self.user_key): 
-            #Register user
-            self.user_token = self.registerUser()
+            self.registerUser()
 
         return self.getResource()
    
@@ -99,7 +99,6 @@ class BsmApi (CustomApi):
             self.user_key = json_response['consumerKey']
             self.user_secret = json_response['consumerSecret']
             super(BsmApi, self).saveUser(self.user_id, self.PROVIDER_NAME, self.user_key, self.user_secret)
-            return json_response['token']['accessToken']
             
     def subscribeUser(self):
         url_subscription = config.get('ckanext.odatabcn.api.bsm.url.subscription').replace('{username}', self.username)
