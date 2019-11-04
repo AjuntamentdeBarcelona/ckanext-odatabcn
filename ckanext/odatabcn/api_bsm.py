@@ -10,13 +10,14 @@ import json
 import os
 import requests
 from oauthlib.oauth2 import BackendApplicationClient
+import pprint
 import requests_oauthlib
 import sys
 import time
 import os, ssl
 from ckanext.odatabcn.api import CustomApi
+from pylons import config
 #from api import CustomApi
-from ckan.lib.cli import parse_db_config
 if (not os.environ.get('PYTHONHTTPSVERIFY', '') and getattr(ssl, '_create_unverified_context', None)): 
     ssl._create_default_https_context = ssl._create_unverified_context
     
@@ -52,9 +53,8 @@ class BsmApi (CustomApi):
         self.user_id = user_id
         self.user_key = user_key
         self.user_secret = user_secret
-        self.username = username + '4'
+        self.username = username
         self.email = email
-        self.url_subscription = ''
         
         if app_token:
             self.app_token = ast.literal_eval(app_token)
@@ -72,7 +72,9 @@ class BsmApi (CustomApi):
    
             
     def registerUser(self):
-        url_signup = parse_db_config('ckanext.odatabcn.api.bsm.url.signup')
+        pprint.pprint("registerUser")
+        pprint.pprint(self.username)
+        url_signup = config.get('ckanext.odatabcn.api.bsm.url.signup')
         
         self.username = super(BsmApi, self).getUsername(self.username)
         password = super(BsmApi, self).randomString()
@@ -100,7 +102,7 @@ class BsmApi (CustomApi):
             return json_response['token']['accessToken']
             
     def subscribeUser(self):
-        url_subscription = parse_db_config('ckanext.odatabcn.api.bsm.url.subscription').replace('{username}', self.username)
+        url_subscription = config.get('ckanext.odatabcn.api.bsm.url.subscription').replace('{username}', self.username)
         
         api_name, api_version, api_provider = self.getApiInfo()
         data = {
@@ -136,7 +138,7 @@ class BsmApi (CustomApi):
             session = requests_oauthlib.OAuth2Session(client=client)
         
             self.app_token = session.fetch_token(
-                token_url=parse_db_config('ckanext.odatabcn.api.bsm.url.token'),
+                token_url=config.get('ckanext.odatabcn.api.bsm.url.token'),
                 client_id=self.consumer_key,
                 client_secret=self.consumer_secret,
                 verify=False
@@ -155,7 +157,7 @@ class BsmApi (CustomApi):
             session = requests_oauthlib.OAuth2Session(client=client_user)
 
             self.user_token = session.fetch_token(
-                token_url=parse_db_config('ckanext.odatabcn.api.bsm.url.token'),
+                token_url=config.get('ckanext.odatabcn.api.bsm.url.token'),
                 client_id=self.user_key,
                 client_secret=self.user_secret,
                 verify=False

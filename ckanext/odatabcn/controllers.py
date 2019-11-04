@@ -14,6 +14,7 @@ import ast
 import mimetypes as m
 import model as extmodel
 import paste.fileapp
+import pprint
 import psycopg2
 import requests
 import StringIO
@@ -22,6 +23,7 @@ from ckan.common import _, OrderedDict, request, response
 from ckan.controllers.api import ApiController
 from ckan.lib.cli import parse_db_config
 from pylons.controllers.util import redirect
+from pylons import config
 
 log = __import__('logging').getLogger(__name__)
 namespace = 'ckanext.odatabcn'
@@ -72,7 +74,7 @@ class ResourceDownloadController(t.BaseController):
             authentication = environ.get('HTTP_AUTHORIZATION', '')
 
             if authentication == '':
-                url_redirect = "http://opendatabcn-desa.alfatecsistemas.es/tokens?resource_id=%s&package_id=%s#download" % (resource_id, rsc['package_id'])
+                url_redirect = "%s/tokens?resource_id=%s&package_id=%s#download" % (config.get('ckan.site_url'), resource_id, rsc['package_id'])
                 return redirect(url_redirect.encode('utf-8'))
             dbd = parse_db_config('ckan.drupal.url')
             drupal_conn_string = "host='%s' dbname='%s' port='%s' user='%s' password='%s'" % (dbd['db_host'], dbd['db_name'], dbd['db_port'], dbd['db_user'], dbd['db_pass'])
@@ -104,6 +106,8 @@ class ResourceDownloadController(t.BaseController):
                             user_secret=record['secret'], 
                             username=record['name'], 
                             email=record['mail'])
+                
+                pprint.pprint(record['app_token'])
                 
                 api_content, status, headers = api.execute()
                 
