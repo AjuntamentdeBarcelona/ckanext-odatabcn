@@ -54,7 +54,6 @@ class BsmApi (CustomApi):
         self.user_key = user_key
         self.user_secret = user_secret
         self.username = username
-        pprint.pprint(self.username)
         self.email = email
         
         if app_token:
@@ -77,6 +76,7 @@ class BsmApi (CustomApi):
         url_signup = config.get('ckanext.odatabcn.api.bsm.url.signup')
         
         self.username = super(BsmApi, self).getUsername(self.username)
+        pprint.pprint(self.username)
         password = super(BsmApi, self).randomString()
         api_name, api_version, api_provider = self.getApiInfo()
         data = {
@@ -128,6 +128,8 @@ class BsmApi (CustomApi):
         else:
             response = session.put(url, data=json.dumps(data), headers=headers, verify=False)
 
+            
+        pprint.pprint(response)
         return response
         
         
@@ -151,6 +153,10 @@ class BsmApi (CustomApi):
         return session
         
     def getUserSession(self):
+    
+        pprint.pprint(self.user_token)
+        pprint.pprint(self.user_key)
+        pprint.pprint(self.user_secret)
         if not self.user_token or ('expires_at' in self.user_token and time.time() > self.user_token['expires_at']):
             client_user = BackendApplicationClient(client_id=self.user_key)
             session = requests_oauthlib.OAuth2Session(client=client_user)
