@@ -53,7 +53,7 @@ class BsmApi (CustomApi):
         self.user_id = user_id
         self.user_key = user_key
         self.user_secret = user_secret
-        self.username = username + '5'
+        self.username = username
         pprint.pprint(self.username)
         self.email = email
         
