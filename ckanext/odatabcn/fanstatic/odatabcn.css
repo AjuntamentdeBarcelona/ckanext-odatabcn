@@ -728,11 +728,25 @@ span.depth-2 {
 
 /** Help_text info **/
 
-#dataset-edit.dataset-form.form-horizontal .control-group.control-medium .info-block {
+#dataset-edit.dataset-form.form-horizontal .control-group.control-medium .info-block,
+#resource-edit.dataset-form.form-horizontal .control-group.control-medium .info-block
+{
 	margin-top: 0px;
 	padding-bottom: 0px;
 	padding-top: 0px;
 	display: inline;
+}
+
+
+.dataset-form div[data-module=dataset-visibility] .control-group .controls { display: flex; }
+.dataset-form div[data-module=dataset-visibility] .control-group .controls .info-block { margin: 0; padding-top: 0; }
+.dataset-form div[data-module=dataset-visibility] .control-group .controls .info-block .icon-info-sign { top: 0px; }
+
+.dataset-form.form-horizontal .control-group.control-full { position: relative; }
+.dataset-form.form-horizontal .control-group.control-full .info-block {
+	position: absolute;
+	top: -15px;
+	right: -40px;
 }
 
 .dataset-form.form-horizontal .control-group .info-block {
@@ -741,8 +755,20 @@ span.depth-2 {
 	height: 40px;
 }
 
-#dataset-edit.dataset-form.form-horizontal .control-group .info-block .icon-info-sign:hover {
+#dataset-edit.dataset-form.form-horizontal .control-group .info-block .icon-info-sign:hover, 
+#dataset-edit.dataset-form.form-horizontal fieldset.help .info-block .icon-info-sign:hover,
+#dataset-edit.dataset-form.form-horizontal [data-module="custom-fields"] > .info-block:hover,
+#resource-edit.dataset-form.form-horizontal .control-group .info-block .icon-info-sign:hover,
+#resource-edit.dataset-form.form-horizontal .image-upload + .info-block .icon-info-sign:hover {
 	cursor: pointer;
+}
+
+#resource-edit.dataset-form.form-horizontal .image-upload { width: 100%; }
+#resource-edit.dataset-form.form-horizontal .image-upload + .info-block { 
+	float: right; 
+	top: -56px; 
+	padding: 0; 
+	left: 34px; 
 }
 
 .dataset-form.form-horizontal .control-group .info-block .icon-info-sign { 
@@ -750,6 +776,12 @@ span.depth-2 {
 	position: relative;
 	top: 5px;
 }
+
+#dataset-edit.dataset-form.form-horizontal fieldset.help { position: relative; width: 100%; height: 100%; }
+#dataset-edit.dataset-form.form-horizontal fieldset.help .info-block.inline { position: absolute; padding: 0; margin: 0; top: -55px; left: 460px; } 
+
+#dataset-edit.dataset-form.form-horizontal [data-module="custom-fields"] { position: relative; }
+#dataset-edit.dataset-form.form-horizontal [data-module="custom-fields"] > .info-block { position: absolute; top: -6px; right: 0px; padding: 0; }
 
 /** CKAN content **/
 .module-content {

@@ -23,15 +23,14 @@
         {% if res.url and h.is_url(res.url) %}
         <li>
           <a href="{{ res.url }}" target="_blank">
-            {% if res.has_views %}
-              <i class="icon-download"></i>
-              {{ _('Download') }}
+            {% if res.token_required and res.token_required == 'Yes' %}
+              <i class="icon-key"></i> {{ _('Download') }}
+            {% elif res.has_views %}
+              <i class="icon-download"></i> {{ _('Download') }}
             {% elif res.format == 'WMS' or res.format == 'WMTS' %}
-              <i class="icon-link"></i>
-              {{ _('Link to URL') }}
+              <i class="icon-link"></i> {{ _('Link to URL') }}
             {% else %}
-              <i class="icon-download"></i>
-              {{ _('Go to resource') }}
+              <i class="icon-download"></i> {{ _('Go to resource') }}
             {% endif %}
           </a>
         </li>

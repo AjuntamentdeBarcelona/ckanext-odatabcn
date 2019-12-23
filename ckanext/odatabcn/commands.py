@@ -88,11 +88,13 @@ class Odatabcn(CkanCommand):
 		# Insert resource ids
 		sql = '''UPDATE tracking_summary t
 				SET resource_id = (SELECT CASE WHEN r.id IS NOT NULL THEN r.id
-					WHEN split_part(r.url, '/', 8) LIKE 'resource' THEN  split_part(r.url, '/', 9)
-					ELSE split_part(r.url, '/', 8)
+					WHEN split_part(ts.url, '/', 8) LIKE 'resource' THEN  split_part(ts.url, '/', 9)
+                    WHEN split_part(ts.url, '/', 5) LIKE 'resource' THEN  split_part(ts.url, '/', 6)
+					ELSE split_part(ts.url, '/', 8)
 					END AS resource_id
-					FROM resource r 
-					WHERE r.url = t.url AND r.state = 'active'
+					FROM tracking_summary ts
+                    LEFT JOIN resource r ON r.url = ts.url AND r.state = 'active'
+					WHERE ts.url = t.url
 					ORDER BY created ASC LIMIT 1)
 				WHERE resource_id IS NULL
 				AND tracking_type = 'resource';'''

@@ -78,6 +78,7 @@
             {% block footer_links %}
 			  {% set lang = h.lang() %}
               <li>Ajuntament de Barcelona</li>
+			  <li><a href="/{{ lang }}/user">{{ _('My account') }}</a></li>
 			  {% if lang=='ca' %}
               <li><a href="http://www.bcn.cat/cgi-bin/consultesIRIS?id=239">{{ _('Contact us') }}</a></li>
 			  {% endif %}

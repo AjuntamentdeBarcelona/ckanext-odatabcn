@@ -7,19 +7,23 @@ import ckan.lib.uploader as uploader
 import ckan.logic as logic
 import ckan.model as model
 import ckan.plugins.toolkit as t
+import ckanext.odatabcn.api_bsm as bsm
 import datetime as d
 import hashlib
 import ast
 import mimetypes as m
 import model as extmodel
 import paste.fileapp
+import pprint
 import psycopg2
 import requests
+import StringIO
 import unicodedata
 from ckan.common import _, OrderedDict, request, response
 from ckan.controllers.api import ApiController
 from ckan.lib.cli import parse_db_config
 from pylons.controllers.util import redirect
+from pylons import config
 
 log = __import__('logging').getLogger(__name__)
 namespace = 'ckanext.odatabcn'
@@ -68,17 +72,45 @@ class ResourceDownloadController(t.BaseController):
 
         if rsc.get('token_required') == 'Yes':
             authentication = environ.get('HTTP_AUTHORIZATION', '')
+            url_redirect = "%s/tokens?resource_id=%s&package_id=%s" % (config.get('ckan.site_url'), resource_id, rsc['package_id'])
 
             if authentication == '':
-                 return t.render('package/error_tokens.html')
+                return redirect(url_redirect.encode('utf-8'))
             dbd = parse_db_config('ckan.drupal.url')
             drupal_conn_string = "host='%s' dbname='%s' port='%s' user='%s' password='%s'" % (dbd['db_host'], dbd['db_name'], dbd['db_port'], dbd['db_user'], dbd['db_pass'])
             drupal_conn = psycopg2.connect(drupal_conn_string)
-            drupal_cursor = drupal_conn.cursor()
-            drupal_cursor.execute("""select id_usuario from opendata_tokens where tkn_usuario=%s""", (authentication,))
+            drupal_cursor = drupal_conn.cursor(cursor_factory = psycopg2.extras.DictCursor)
+            if not rsc.get('token_type'):
+                drupal_cursor.execute("""select id_usuario from opendata_tokens where tkn_usuario=%s""", (authentication,))
+            else:
+                drupal_cursor.execute("""SELECT t.*, pu.*, p.*, u.name, u.mail, u.uid FROM opendata_tokens t
+                        LEFT JOIN opendata_tokens_provider_user pu ON pu.id_usuario=t.id_usuario
+                        LEFT JOIN opendata_tokens_provider p ON (pu.provider = p.id  OR p.id='bsm')
+                        LEFT JOIN users u ON t.id_usuario = u.uid
+                        WHERE t.tkn_usuario = %s AND (p.id IS NULL OR p.id = %s)""", (authentication,rsc.get('token_type')))
 
             if drupal_cursor.rowcount < 1:
-                base.abort(403, _('El token no existe y no se permite la descarga del recurso'))
+                return redirect(url_redirect.encode('utf-8'))
+            elif rsc.get('token_type'):
+                record = drupal_cursor.fetchone()
+                api = None
+                
+                if rsc.get('token_type') == 'bsm':
+                    api = bsm.BsmApi(rsc, 
+                            app_token=record['app_token'], 
+                            consumer_key=record['consumer_key'], 
+                            consumer_secret=record['consumer_secret'], 
+                            user_token=record['token'], 
+                            user_id=record['uid'], 
+                            user_key=record['key'], 
+                            user_secret=record['secret'], 
+                            username=record['name'], 
+                            email=record['mail'])
+                
+                pprint.pprint(record['app_token'])
+                
+                api_content, status, headers = api.execute()
+                
 
         # Save download to tracking_raw
         CustomTrackingController.update(environ['REQUEST_URI'], 'resource', environ)
@@ -93,7 +125,10 @@ class ResourceDownloadController(t.BaseController):
                 status, headers, app_iter = request.call_application(fileapp)
             except OSError:
                 base.abort(404, _('Resource data not found'))
+
             response.headers.update(dict(headers))
+            
+            
             content_type, content_enc = m.guess_type(rsc.get('url', ''))
 
             if content_type and content_type == 'application/xml':
@@ -102,9 +137,14 @@ class ResourceDownloadController(t.BaseController):
                 response.headers['Content-Type'] = content_type
 
             response.status = status
+            
             return app_iter
 
             h.redirect_to(rsc['url'].encode('utf-8'))
+        elif api_content:
+            response.headers['Content-Type'] = headers['content-type']
+            response.status = status
+            return api_content
         elif 'url' not in rsc:
             base.abort(404, _('No download is available'))
         else:

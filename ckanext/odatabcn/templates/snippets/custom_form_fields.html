@@ -27,16 +27,43 @@ Example:
   {% set total_extras = extras|count %}
   {% set empty_extras = (limit or 3) - total_extras %}
   {% if empty_extras <= 0 %}{% set empty_extras = 1 %}{% endif %}
-
   {% for extra in range(total_extras, total_extras + empty_extras) %}
     {% set index = loop.index0 + (extras|count) %}
     {% set prefix = 'extras__%d__' % index %}
-    {{ form.custom(
+	
+	{% if index == 0 %}
+		<!--ADDD Button trigger modal -->
+				<div type="button" class="info-block" data-toggle="modal" data-target="#extras__0__key ">
+				  <i class="icon-info-sign"></i>
+				</div>
+
+				<!-- Modal -->
+				<div class="modal fade" id="extras__0__key" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-extras__0__key" style="display:none;">
+				  <div class="modal-dialog" role="document">
+					<div class="modal-content">
+					  <div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabel-private"> {{ _('Field') }} </h4>
+					  </div>
+					  <div class="modal-body">
+						{{ _('Field texto manual') }} 
+					  </div>
+					  <div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Tancar</button>
+					  </div>
+					</div>
+				  </div>
+				</div>
+		<!--ADDD Button trigger modal -->	
+	{% endif %}
+    
+	{{ form.custom(
       names=(prefix ~ 'key', prefix ~ 'value', prefix ~ 'deleted'),
       id='field-extras-%d' % index,
       label=_('Field'),
       values=(extra.key, extra.value, extra.deleted),
       error=errors[prefix ~ 'key'] or errors[prefix ~ 'value']
     ) }}
+
   {% endfor %}
 </div>
