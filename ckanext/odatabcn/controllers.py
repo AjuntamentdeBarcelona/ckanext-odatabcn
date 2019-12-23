@@ -72,9 +72,9 @@ class ResourceDownloadController(t.BaseController):
 
         if rsc.get('token_required') == 'Yes':
             authentication = environ.get('HTTP_AUTHORIZATION', '')
+            url_redirect = "%s/tokens?resource_id=%s&package_id=%s" % (config.get('ckan.site_url'), resource_id, rsc['package_id'])
 
             if authentication == '':
-                url_redirect = "%s/tokens?resource_id=%s&package_id=%s" % (config.get('ckan.site_url'), resource_id, rsc['package_id'])
                 return redirect(url_redirect.encode('utf-8'))
             dbd = parse_db_config('ckan.drupal.url')
             drupal_conn_string = "host='%s' dbname='%s' port='%s' user='%s' password='%s'" % (dbd['db_host'], dbd['db_name'], dbd['db_port'], dbd['db_user'], dbd['db_pass'])
@@ -90,7 +90,7 @@ class ResourceDownloadController(t.BaseController):
                         WHERE t.tkn_usuario = %s AND (p.id IS NULL OR p.id = %s)""", (authentication,rsc.get('token_type')))
 
             if drupal_cursor.rowcount < 1:
-                base.abort(403, _('El token no existe y no se permite la descarga del recurso'))
+                return redirect(url_redirect.encode('utf-8'))
             elif rsc.get('token_type'):
                 record = drupal_cursor.fetchone()
                 api = None
