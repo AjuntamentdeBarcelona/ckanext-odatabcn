@@ -778,7 +778,8 @@ span.depth-2 {
 }
 
 #dataset-edit.dataset-form.form-horizontal fieldset.help { position: relative; width: 100%; height: 100%; }
-#dataset-edit.dataset-form.form-horizontal fieldset.help .info-block.inline { position: absolute; padding: 0; margin: 0; top: -55px; left: 460px; } 
+#dataset-edit.dataset-form.form-horizontal fieldset.help > legend { margin-bottom: 0; }
+#dataset-edit.dataset-form.form-horizontal fieldset.help .info-block.inline { padding: 0; margin: 0; top: -35px; left: 460px; } 
 
 #dataset-edit.dataset-form.form-horizontal [data-module="custom-fields"] { position: relative; }
 #dataset-edit.dataset-form.form-horizontal [data-module="custom-fields"] > .info-block { position: absolute; top: -6px; right: 0px; padding: 0; }
